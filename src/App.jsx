@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const LANGS = ['de', 'fr', 'en']
@@ -57,7 +57,10 @@ function LangSwitch() {
         <button
           key={lng}
           className={i18n.language === lng ? 'is-active' : ''}
-          onClick={() => i18n.changeLanguage(lng)}
+          onClick={() => {
+            localStorage.setItem('valanto_lang', lng)
+            i18n.changeLanguage(lng)
+          }}
           aria-pressed={i18n.language === lng}
           aria-label={LANG_NAMES[lng]}
         >
@@ -396,8 +399,21 @@ function Footer() {
 }
 
 export default function App() {
+  const { i18n } = useTranslation()
+
+  // Restore the saved language AFTER hydration only — initial render must stay
+  // 'de' to match the statically prerendered HTML (no hydration mismatch).
+  useEffect(() => {
+    const saved = localStorage.getItem('valanto_lang')
+    if (saved && saved !== i18n.language) i18n.changeLanguage(saved)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
+      <a className="skip-link" href="#home">
+        Zum Inhalt
+      </a>
       <Nav />
       <main>
         <Hero />

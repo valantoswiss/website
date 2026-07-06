@@ -8,11 +8,9 @@ dist
 dist-ssr
 .vite-react-ssg-temp
 
-# Local env files
+# Local env files (Vite convention: only *.local hold secrets and are ignored;
+# committed .env holds only public build vars like VITE_SITE_URL)
 *.local
-.env
-.env.*
-!.env.example
 
 # Editor / OS
 .vscode/*

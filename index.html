@@ -6,30 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Valanto – die Schweizer Immobiliensoftware, die Bewertung, Vermarktung und Verwaltung in einem Werkzeug vereint. Entwickelt und gehostet in der Schweiz." />
 
+    <!-- Kanonische Domain kommt aus VITE_SITE_URL (.env). Default: Vercel-URL.
+         Fuer die finale Domain: VITE_SITE_URL=https://valanto.ch setzen. -->
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+
+    <!-- hreflang: aktuell wird nur DE ins statische HTML prerendert.
+         TODO (mehrsprachiges SEO): sobald echte Locale-Routen (/fr, /en) via
+         vite-react-ssg existieren, hier hreflang="fr"/"en" auf die jeweiligen
+         URLs ergaenzen und pro Seite das passende og:locale setzen. -->
+    <link rel="alternate" hreflang="de" href="%VITE_SITE_URL%/" />
+    <link rel="alternate" hreflang="x-default" href="%VITE_SITE_URL%/" />
+
     <!-- Open Graph / Social Sharing -->
-    <!-- NOTE: absolute URLs required by crawlers. Adjust the domain below if the
-         Vercel production URL differs from valanto-website.vercel.app -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Valanto" />
     <meta property="og:locale" content="de_CH" />
-    <meta property="og:url" content="https://valanto-website.vercel.app/" />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
     <meta property="og:title" content="Valanto – Immobiliensoftware aus der Schweiz" />
-    <meta property="og:description" content="Bewerten, vermarkten, verwalten – in einem Werkzeug. Entwickelt und gehostet in der Schweiz." />
-    <meta property="og:image" content="https://valanto-website.vercel.app/og-image.png" />
+    <meta property="og:description" content="Bewerten, vermarkten, verwalten – endlich in einem Werkzeug. Entwickelt und gehostet in der Schweiz." />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Valanto – Bewerten, vermarkten, verwalten in einem Werkzeug." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Valanto – Immobiliensoftware aus der Schweiz" />
-    <meta name="twitter:description" content="Bewerten, vermarkten, verwalten – in einem Werkzeug. Entwickelt und gehostet in der Schweiz." />
-    <meta name="twitter:image" content="https://valanto-website.vercel.app/og-image.png" />
+    <meta name="twitter:description" content="Bewerten, vermarkten, verwalten – endlich in einem Werkzeug. Entwickelt und gehostet in der Schweiz." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
-      rel="stylesheet"
-    />
     <title>Valanto – Immobiliensoftware aus der Schweiz</title>
   </head>
   <body>
