@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Valanto – Immobiliensoftware aus der Schweiz",
-    "description": "Bewerten, vermarkten, verwalten – in einem Werkzeug. Entwickelt und gehostet in der Schweiz."
+    "description": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug. Entwickelt und gehostet in der Schweiz."
   },
   "nav": {
     "features": "Funktionen",
@@ -14,8 +14,8 @@
   },
   "hero": {
     "eyebrow": "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",
-    "h1": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",
-    "lead": "Valanto bündelt Liegenschaftsverwaltung, professionelle Bewertungen mit Dossier und Vermarktung in einer einzigen Plattform. Entwickelt für Makler, Bewerter und Spezialisten – gehostet in der Schweiz.",
+    "h1": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug.",
+    "lead": "Sie kennen das: für die Bewertung das eine Tool, für die Vermarktung das nächste – und die Daten pflegen Sie überall doppelt. Valanto bringt alles zusammen: Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Entwickelt aus der Schweizer Immobilienpraxis, gehostet in der Schweiz.",
     "cta1": "Kostenlos testen",
     "cta2": "Demo buchen",
     "trust": "Keine Kreditkarte nötig · 1 Bewertung gratis · Schweizer Hosting"
@@ -32,37 +32,37 @@
     "hosted": "Gehostet in der Schweiz"
   },
   "trust": {
-    "line": "Vertraut von Immobilienprofis in der ganzen Schweiz",
+    "line": "Aus der Schweizer Immobilienpraxis entstanden – für Makler, Bewerter und Verwalter.",
     "b1": "In der Schweiz gehostet",
     "b2": "SIV-nah",
     "b3": "Partner-Logos folgen"
   },
   "features": {
     "eyebrow": "ALLES AN EINEM ORT",
-    "h2": "Ein Werkzeug für den ganzen Immobilien-Workflow",
-    "intro": "Statt drei Tools und doppelter Datenpflege: Valanto deckt den kompletten Ablauf ab – von der ersten Bewertung bis zur fertigen Vermarktung.",
+    "h2": "Ein Werkzeug für Ihren ganzen Arbeitstag",
+    "intro": "Statt drei Programme und doppelter Datenpflege: Mit Valanto arbeiten Sie durchgehend an einem Ort – von der ersten Bewertung bis zur fertigen Vermarktung.",
     "items": [
-      { "t": "Liegenschaften erfassen", "d": "Alle Objekte zentral verwalten – inklusive vollständigem Dossier pro Liegenschaft." },
-      { "t": "Bewertungen mit Dossier", "d": "Professionelle Immobilienbewertungen erstellen und als sauberes Dossier ausgeben." },
-      { "t": "Neubauprojekte", "d": "Projekte anlegen, Einheiten verwalten und den Verkaufsstand im Blick behalten." },
-      { "t": "Landingpages", "d": "Für jedes Objekt oder Projekt eine eigene Vermarktungsseite – ohne Zusatztool." },
-      { "t": "Verkäufer-Portal", "d": "Eigener Zugang für Verkäufer und Partner – transparent und kontrolliert." },
-      { "t": "CRM & Einstellungen", "d": "Kontakte, Interessenten und Konfiguration an einem Ort. (geplant / in Entwicklung)" }
+      { "t": "Liegenschaften erfassen", "d": "Alle Ihre Objekte an einem Ort – jedes mit vollständigem Dossier. Sie finden alles wieder, wenn Sie es brauchen." },
+      { "t": "Bewertungen mit Dossier", "d": "Erstellen Sie nachvollziehbare Bewertungen und geben Sie sie als sauberes Dossier aus – bereit für Ihre Kunden." },
+      { "t": "Neubauprojekte", "d": "Legen Sie Projekte an, verwalten Sie Einheiten und behalten Sie den Verkaufsstand jederzeit im Blick." },
+      { "t": "Landingpages", "d": "Für jedes Objekt eine eigene Vermarktungsseite – ganz ohne zweites Tool." },
+      { "t": "Verkäufer-Portal", "d": "Ein eigener, transparenter Zugang für Ihre Verkäufer und Partner." },
+      { "t": "CRM & Einstellungen", "d": "Kontakte und Interessenten an einem Ort – bald direkt in Valanto. (in Entwicklung)" }
     ]
   },
   "audience": {
-    "eyebrow": "FÜR IHRE ARBEITSWEISE",
-    "h2": "Gemacht für Ihre Rolle",
+    "eyebrow": "FÜR IHRE ARBEIT",
+    "h2": "Gemacht für Ihre Arbeit",
     "items": [
-      { "role": "Makler", "text": "Verwalten Sie Liegenschaften, erstellen Sie Landingpages und behalten Sie Ihre Neubauprojekte im Griff – alles ohne Toolwechsel." },
-      { "role": "Bewerter", "text": "Erstellen Sie normkonforme Bewertungen mit professionellem Dossier. Schnell, nachvollziehbar, exportierbar." },
-      { "role": "Spezialist", "text": "Sie machen beides? Kombinieren Sie Bewertung und Vermarktung in einer durchgängigen Plattform – mit allen Modulen." }
+      { "role": "Makler", "text": "Verwalten, vermarkten, Projekte steuern – ohne ständig das Programm zu wechseln." },
+      { "role": "Bewerter", "text": "Nachvollziehbare Bewertungen mit professionellem Dossier. Schnell erstellt, sauber exportiert." },
+      { "role": "Spezialist", "text": "Sie machen beides? Dann haben Sie mit Valanto alles in einer durchgängigen Plattform – mit allen Modulen." }
     ]
   },
   "pricing": {
     "eyebrow": "TRANSPARENTE PREISE",
-    "h2": "Ein Paket für jede Rolle",
-    "intro": "Monatlich kündbar. Ohne versteckte Kosten. Starten Sie mit einer kostenlosen Bewertung.",
+    "h2": "Ein Paket für Ihre Rolle",
+    "intro": "Monatlich kündbar, keine versteckten Kosten. Und Ihre erste Bewertung erstellen Sie kostenlos.",
     "popular": "Beliebt",
     "note": "Alle Preise exkl. MwSt. · Individuelle Lösungen für Teams auf Anfrage.",
     "test": "Testen",
@@ -89,8 +89,8 @@
   },
   "siv": {
     "eyebrow": "VERANKERT IM SCHWEIZER MARKT",
-    "h2": "Nähe zum Schätzer-Ökosystem",
-    "text": "Valanto entsteht aus der täglichen Praxis der Immobilienbewertung und pflegt den Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an den Anforderungen echter Bewertungsarbeit – nicht an denen einer beliebigen Software von der Stange.",
+    "h2": "In der Schweizer Praxis verankert",
+    "text": "Valanto entsteht aus der täglichen Bewertungsarbeit und im Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an dem, was Sie in der Praxis wirklich brauchen – statt an dem, was eine Software von der Stange bietet.",
     "points": [
       { "t": "Schweizer Hosting", "d": "Ihre Daten bleiben im Land." },
       { "t": "Sicher & stabil", "d": "Auf verlässlicher Infrastruktur gebaut." },
@@ -98,8 +98,8 @@
     ]
   },
   "cta": {
-    "h2": "Bereit, es auszuprobieren?",
-    "text": "Erstellen Sie Ihre erste Bewertung kostenlos oder lassen Sie sich die Plattform in einer persönlichen Demo zeigen."
+    "h2": "Probieren Sie es in Ruhe aus.",
+    "text": "Erstellen Sie Ihre erste Bewertung kostenlos – oder lassen Sie sich Valanto in einer persönlichen Demo zeigen."
   },
   "footer": {
     "claim": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",

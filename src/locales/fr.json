@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Valanto – Logiciel immobilier suisse",
-    "description": "Estimer, commercialiser, gérer – dans un seul outil. Conçu et hébergé en Suisse."
+    "description": "Estimer, commercialiser, gérer – enfin dans un seul outil. Conçu et hébergé en Suisse."
   },
   "nav": {
     "features": "Fonctions",
@@ -14,8 +14,8 @@
   },
   "hero": {
     "eyebrow": "LOGICIEL IMMOBILIER SUISSE",
-    "h1": "Estimer, commercialiser, gérer – dans un seul outil.",
-    "lead": "Valanto réunit la gestion des biens, les estimations professionnelles avec dossier et la commercialisation sur une seule plateforme. Conçu pour les courtiers, les évaluateurs et les spécialistes – hébergé en Suisse.",
+    "h1": "Estimer, commercialiser, gérer – enfin dans un seul outil.",
+    "lead": "Vous connaissez la situation : un outil pour l'estimation, un autre pour la commercialisation – et vous saisissez les données deux fois. Valanto réunit tout : biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse, hébergé en Suisse.",
     "cta1": "Essai gratuit",
     "cta2": "Réserver une démo",
     "trust": "Sans carte de crédit · 1 estimation offerte · Hébergement suisse"
@@ -32,37 +32,37 @@
     "hosted": "Hébergé en Suisse"
   },
   "trust": {
-    "line": "Adopté par les professionnels de l'immobilier dans toute la Suisse",
+    "line": "Né de la pratique immobilière suisse – pour les courtiers, les évaluateurs et les gérants.",
     "b1": "Hébergé en Suisse",
     "b2": "Proche du SIV",
     "b3": "Logos partenaires à venir"
   },
   "features": {
     "eyebrow": "TOUT AU MÊME ENDROIT",
-    "h2": "Un outil pour tout le workflow immobilier",
-    "intro": "Plutôt que trois outils et une double saisie : Valanto couvre l'ensemble du processus – de la première estimation jusqu'à la commercialisation finale.",
+    "h2": "Un outil pour toute votre journée de travail",
+    "intro": "Plutôt que trois logiciels et une double saisie : avec Valanto, vous travaillez de bout en bout au même endroit – de la première estimation jusqu'à la commercialisation finale.",
     "items": [
-      { "t": "Saisir les biens", "d": "Gérer tous les objets de façon centralisée – avec un dossier complet par bien." },
-      { "t": "Estimations avec dossier", "d": "Réaliser des estimations professionnelles et les exporter sous forme de dossier soigné." },
-      { "t": "Projets de construction", "d": "Créer des projets, gérer les unités et suivre l'état des ventes." },
-      { "t": "Landing pages", "d": "Une page de commercialisation dédiée pour chaque bien ou projet – sans outil supplémentaire." },
-      { "t": "Portail vendeurs", "d": "Un accès propre pour les vendeurs et partenaires – transparent et maîtrisé." },
-      { "t": "CRM & réglages", "d": "Contacts, prospects et configuration au même endroit. (prévu / en développement)" }
+      { "t": "Saisir les biens", "d": "Tous vos biens au même endroit – chacun avec un dossier complet. Vous retrouvez tout quand vous en avez besoin." },
+      { "t": "Estimations avec dossier", "d": "Réalisez des estimations traçables et exportez-les sous forme de dossier soigné – prêtes pour vos clients." },
+      { "t": "Projets de construction", "d": "Créez des projets, gérez les unités et gardez l'état des ventes à l'œil à tout moment." },
+      { "t": "Landing pages", "d": "Une page de commercialisation dédiée pour chaque bien – sans aucun second outil." },
+      { "t": "Portail vendeurs", "d": "Un accès dédié et transparent pour vos vendeurs et partenaires." },
+      { "t": "CRM & réglages", "d": "Contacts et prospects au même endroit – bientôt directement dans Valanto. (en développement)" }
     ]
   },
   "audience": {
-    "eyebrow": "POUR VOTRE FAÇON DE TRAVAILLER",
-    "h2": "Conçu pour votre rôle",
+    "eyebrow": "POUR VOTRE TRAVAIL",
+    "h2": "Conçu pour votre travail",
     "items": [
-      { "role": "Courtier", "text": "Gérez les biens, créez des landing pages et gardez la main sur vos projets de construction – sans changer d'outil." },
-      { "role": "Évaluateur", "text": "Réalisez des estimations conformes aux normes avec un dossier professionnel. Rapide, traçable, exportable." },
-      { "role": "Spécialiste", "text": "Vous faites les deux ? Combinez estimation et commercialisation sur une plateforme continue – avec tous les modules." }
+      { "role": "Courtier", "text": "Gérer, commercialiser, piloter des projets – sans changer sans cesse de logiciel." },
+      { "role": "Évaluateur", "text": "Des estimations traçables avec un dossier professionnel. Créées rapidement, exportées proprement." },
+      { "role": "Spécialiste", "text": "Vous faites les deux ? Avec Valanto, vous avez tout sur une plateforme continue – avec tous les modules." }
     ]
   },
   "pricing": {
     "eyebrow": "TARIFS TRANSPARENTS",
-    "h2": "Une offre pour chaque rôle",
-    "intro": "Résiliable chaque mois. Sans frais cachés. Commencez avec une estimation gratuite.",
+    "h2": "Une offre pour votre rôle",
+    "intro": "Résiliable chaque mois, sans frais cachés. Et votre première estimation, vous la créez gratuitement.",
     "popular": "Populaire",
     "note": "Tous les prix HT · Solutions sur mesure pour les équipes sur demande.",
     "test": "Essayer",
@@ -89,8 +89,8 @@
   },
   "siv": {
     "eyebrow": "ANCRÉ DANS LE MARCHÉ SUISSE",
-    "h2": "Proche de l'écosystème des évaluateurs",
-    "text": "Valanto naît de la pratique quotidienne de l'estimation immobilière et entretient l'échange avec l'association suisse des évaluateurs SIV. La plateforme reste ainsi proche des exigences du vrai travail d'évaluation – pas de celles d'un logiciel standard.",
+    "h2": "Ancré dans la pratique suisse",
+    "text": "Valanto naît du travail quotidien d'estimation et de l'échange avec l'association suisse des évaluateurs SIV. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [
       { "t": "Hébergement suisse", "d": "Vos données restent dans le pays." },
       { "t": "Sûr & stable", "d": "Bâti sur une infrastructure fiable." },
@@ -98,8 +98,8 @@
     ]
   },
   "cta": {
-    "h2": "Prêt à l'essayer ?",
-    "text": "Créez votre première estimation gratuitement ou découvrez la plateforme lors d'une démo personnalisée."
+    "h2": "Essayez-le tranquillement.",
+    "text": "Créez votre première estimation gratuitement – ou découvrez Valanto lors d'une démo personnalisée."
   },
   "footer": {
     "claim": "Estimer, commercialiser, gérer – dans un seul outil.",

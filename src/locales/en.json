@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Valanto – Real estate software from Switzerland",
-    "description": "Value, market, manage – in one tool. Built and hosted in Switzerland."
+    "description": "Value, market, manage – finally in one tool. Built and hosted in Switzerland."
   },
   "nav": {
     "features": "Features",
@@ -14,8 +14,8 @@
   },
   "hero": {
     "eyebrow": "REAL ESTATE SOFTWARE FROM SWITZERLAND",
-    "h1": "Value, market, manage – in one tool.",
-    "lead": "Valanto brings property management, professional valuations with dossier, and marketing together on a single platform. Built for brokers, valuers and specialists – hosted in Switzerland.",
+    "h1": "Value, market, manage – finally in one tool.",
+    "lead": "You know the drill: one tool for the valuation, another for the marketing – and you keep the same data in both. Valanto brings it all together: properties, valuations with dossier and marketing in one place. Built from Swiss real-estate practice, hosted in Switzerland.",
     "cta1": "Try for free",
     "cta2": "Book a demo",
     "trust": "No credit card required · 1 free valuation · Swiss hosting"
@@ -32,37 +32,37 @@
     "hosted": "Hosted in Switzerland"
   },
   "trust": {
-    "line": "Trusted by real estate professionals across Switzerland",
+    "line": "Born from Swiss real-estate practice – for brokers, valuers and property managers.",
     "b1": "Hosted in Switzerland",
     "b2": "Close to SIV",
     "b3": "Partner logos coming"
   },
   "features": {
     "eyebrow": "EVERYTHING IN ONE PLACE",
-    "h2": "One tool for the entire real estate workflow",
-    "intro": "Instead of three tools and duplicate data entry: Valanto covers the whole process – from the first valuation to finished marketing.",
+    "h2": "One tool for your entire working day",
+    "intro": "Instead of three programs and duplicate data entry: with Valanto you work end to end in one place – from the first valuation to finished marketing.",
     "items": [
-      { "t": "Capture properties", "d": "Manage every object centrally – including a complete dossier per property." },
-      { "t": "Valuations with dossier", "d": "Create professional property valuations and export them as a clean dossier." },
-      { "t": "New-build projects", "d": "Set up projects, manage units and keep an eye on the sales status." },
-      { "t": "Landing pages", "d": "A dedicated marketing page for every object or project – no extra tool." },
-      { "t": "Seller portal", "d": "A dedicated access for sellers and partners – transparent and controlled." },
-      { "t": "CRM & settings", "d": "Contacts, prospects and configuration in one place. (planned / in development)" }
+      { "t": "Capture properties", "d": "All your properties in one place – each with a complete dossier. You'll find everything again when you need it." },
+      { "t": "Valuations with dossier", "d": "Create traceable valuations and export them as a clean dossier – ready for your clients." },
+      { "t": "New-build projects", "d": "Set up projects, manage units and keep an eye on the sales status at any time." },
+      { "t": "Landing pages", "d": "A dedicated marketing page for every property – with no second tool at all." },
+      { "t": "Seller portal", "d": "A dedicated, transparent access for your sellers and partners." },
+      { "t": "CRM & settings", "d": "Contacts and prospects in one place – soon directly in Valanto. (in development)" }
     ]
   },
   "audience": {
-    "eyebrow": "FOR THE WAY YOU WORK",
-    "h2": "Built for your role",
+    "eyebrow": "FOR YOUR WORK",
+    "h2": "Built for your work",
     "items": [
-      { "role": "Broker", "text": "Manage properties, create landing pages and stay on top of your new-build projects – all without switching tools." },
-      { "role": "Valuer", "text": "Create standard-compliant valuations with a professional dossier. Fast, traceable, exportable." },
-      { "role": "Specialist", "text": "You do both? Combine valuation and marketing on one continuous platform – with all modules." }
+      { "role": "Broker", "text": "Manage, market, steer projects – without constantly switching programs." },
+      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported." },
+      { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules." }
     ]
   },
   "pricing": {
     "eyebrow": "TRANSPARENT PRICING",
-    "h2": "A plan for every role",
-    "intro": "Cancel monthly. No hidden costs. Start with a free valuation.",
+    "h2": "A plan for your role",
+    "intro": "Cancel monthly, no hidden costs. And you create your first valuation for free.",
     "popular": "Popular",
     "note": "All prices excl. VAT · Custom solutions for teams on request.",
     "test": "Try it",
@@ -89,8 +89,8 @@
   },
   "siv": {
     "eyebrow": "ROOTED IN THE SWISS MARKET",
-    "h2": "Close to the valuer ecosystem",
-    "text": "Valanto grows out of the daily practice of property valuation and maintains an exchange with the Swiss valuers' association SIV. This keeps the platform close to the demands of real valuation work – not those of any off-the-shelf software.",
+    "h2": "Rooted in Swiss practice",
+    "text": "Valanto grows out of the daily work of valuation and the exchange with the Swiss valuers' association SIV. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
     "points": [
       { "t": "Swiss hosting", "d": "Your data stays in the country." },
       { "t": "Secure & stable", "d": "Built on reliable infrastructure." },
@@ -98,8 +98,8 @@
     ]
   },
   "cta": {
-    "h2": "Ready to give it a try?",
-    "text": "Create your first valuation for free, or let us show you the platform in a personal demo."
+    "h2": "Try it out at your own pace.",
+    "text": "Create your first valuation for free – or let us show you Valanto in a personal demo."
   },
   "footer": {
     "claim": "Value, market, manage – in one tool.",
