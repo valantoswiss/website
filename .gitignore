@@ -32,3 +32,8 @@ pnpm-debug.log*
 # Briefing / source material (not part of the app)
 *.zip
 Website Briefing Portal screenshots.zip
+
+# Superseded raw OG exports from the design tool (odd dimensions, tool chrome).
+# The clean 1200×630 render lives in public/og-image.png (built from og-image-source.html)
+/og-image.png
+/_og_raw.png

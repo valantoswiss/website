@@ -65,8 +65,8 @@ Farben:
 - `--accent-hover` **#2E9DB0** — Petrol Hover auf dunklem Grund
 - `--accent-soft` **#8FBFC8** — gedämpfter Petrol (Balken, sekundär)
 - `--text` **#55585F** — Fliesstext
-- `--muted` **#A6A296** — gedämpfter Text, Hinweise, „per Monat"
-- `--muted-warm` **#B4B0A5** / **#8E8B82** — Footer-Text
+- `--muted` **#6E6A60** — gedämpfter Text, Hinweise, „per Monat" (auf Papier). *AA-korrigiert von #A6A296 (2.3:1) → #6E6A60 (~4.7:1 auf #FAF7F2).*
+- `--muted-warm` **#B4B0A5** / **#8E8B82** — Footer-Text (auf dunklem Grund). *Footer-Labels/Copyright AA-korrigiert von #6E6B64 (~3.1:1) → #8E8B82 (~4.8:1 auf #1A1C21).*
 - `--line` **#23262D** — Rasterlinien (voll) · `#DED8CC` (Hairline auf Papier, dezent)
 - `--line-dark` **#4A4E57** — Linien auf dunklem Grund
 - Weiss **#FFFFFF** — Dossier-Karte, „Beliebt"-Preiskarte, SIV-Punktebox
@@ -91,7 +91,7 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
 - Mitte: Nav-Links `Funktionen · Für wen · Preise · Über uns` (Archivo 14.5px, 500,
   `#55585F`) — Anker auf die Sektionen.
 - Rechts: **Sprachumschalter** `DE / FR / EN` als 1px-umrandete Segmentgruppe (aktives
-  Segment: Text `#23262D` auf `#ECE6DC`; inaktiv: `#A6A296`, transparent) · Text-Link
+  Segment: Text `#23262D` auf `#ECE6DC`; inaktiv: `#6E6A60`, transparent) · Text-Link
   „Login" (Unterstrich) · Button „Kostenlos testen" (Vollquadrat, `#23262D` Bg, weiss;
   Hover → `#23808F`).
 
@@ -100,7 +100,7 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
 - Links: Eyebrow (26×2px Petrol-Strich + Text) · H1 (Source Serif 4, 54px, 600,
   `line-height:1.13`) · Lead (17px, max-width 520px) · Button-Gruppe (Primär Petrol
   „Kostenlos testen" + Sekundär Outline „Demo buchen", **geteilte Kante, kein Gap**) ·
-  Trust-Zeile (13px, `#A6A296`): „Keine Kreditkarte nötig · 1 Bewertung gratis ·
+  Trust-Zeile (13px, `#6E6A60`): „Keine Kreditkarte nötig · 1 Bewertung gratis ·
   Schweizer Hosting".
 - Rechts: **Dossier-Motiv** (Platzhalter für echten Screenshot). Zwei gestapelte
   Papierlagen: hinten `#F1ECE2` mit 1px-Rand, vorne weisse Karte mit `border:1px solid
@@ -308,7 +308,7 @@ colors: {
   paper: '#FAF7F2', paper2: '#F1ECE2',
   ink: '#23262D', ink2: '#1A1C21',
   accent: '#23808F', accentHover: '#2E9DB0', accentSoft: '#8FBFC8',
-  body: '#55585F', muted: '#A6A296',
+  body: '#55585F', muted: '#6E6A60', // AA-korrigiert (war #A6A296)
   lineDark: '#4A4E57', lineFoot: '#34373E',
 },
 borderRadius: { none: '0' }, // radius durchgängig 0 — keine rounded-* utilities nutzen
@@ -329,6 +329,55 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 return Inertia::render('Home');
 ```
 Statische Seite — keine DB. Test-/Demo-Formulare später als eigene Inertia-Actions.
+
+### SSR / „Content im HTML" & Social Meta (wichtig für SEO + Link-Vorschau)
+**Problem:** Ohne SSR liefert Laravel nur `<div id="app"></div>` aus; Inhalt kommt erst
+per JS. Schlecht für Google und für Scraper von LinkedIn/WhatsApp (die kein JS ausführen).
+
+**Empfohlener Weg — offizielle Inertia-SSR** (kein Vite-Prerender-Plugin, kein Next.js):
+1. `resources/js/ssr.jsx` anlegen (Inertia-SSR-Entry mit `createServer` +
+   `createInertiaApp` aus `@inertiajs/react/server`); i18n dort ebenfalls importieren, damit
+   die Übersetzungen serverseitig gerendert werden.
+2. In `vite.config.js` das SSR-Input ergänzen: `laravel({ input: ['resources/js/app.jsx'],
+   ssr: 'resources/js/ssr.jsx' })`.
+3. Build: `npm run build` erzeugt `bootstrap/ssr/ssr.js`. Laufzeit: `php artisan
+   inertia:start-ssr` (ein Node-Prozess; auf Forge/Herd als Daemon, optional via Laravel
+   Octane). Fällt der Prozess aus, degradiert Inertia sauber auf Client-Rendering.
+4. In `config/inertia.php` SSR aktivieren (`'ssr' => ['enabled' => true]`).
+
+Danach steht Hero-Text, Preise und alle Section-Überschriften im ausgelieferten HTML.
+
+**Titel/Head pro Seite:** die `<Head>`-Komponente aus `@inertiajs/react` in `Home.jsx`
+verwenden (`<Head title="…"><meta … /></Head>`) — wird mit SSR ins `<head>` gerendert.
+
+**Open-Graph-Tags server-seitig ins Blade-Root** (`resources/views/app.blade.php`, im
+`<head>`) — so sind sie **immer** present, auch ohne laufenden SSR-Node-Prozess und für
+JS-lose Scraper. Statische Inhalte, daher hartkodierbar (oder pro Locale via Shared-Prop):
+```blade
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Valanto">
+<meta property="og:title" content="Valanto – Immobiliensoftware aus der Schweiz">
+<meta property="og:description" content="Bewerten, vermarkten, verwalten – in einem Werkzeug. Für Makler, Bewerter und Spezialisten. Entwickelt und gehostet in der Schweiz.">
+<meta property="og:url" content="https://valanto.ch/">
+<meta property="og:image" content="https://valanto.ch/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Bewerten, vermarkten, verwalten – in einem Werkzeug. Für Makler, Bewerter und Spezialisten. Gehostet in der Schweiz.">
+```
+Bei mehrsprachig: pro Locale eigene `og:title`/`description` + `og:locale`
+(`de_CH` / `fr_CH` / `en`) und `hreflang`-Alternates rendern.
+
+**og:image (1200×630):** muss noch als echtes Bild erstellt und unter
+`public/og-image.png` abgelegt werden — im Valanto-Stil (dunkles Anthrazit, Wortmarke,
+Claim). *(Kann im Design-Tool erstellt werden.)*
+
+**Prüfen nach Umsetzung:**
+- Browser „View Source" (nicht DevTools-Inspector!) auf `https://valanto.test` bzw. der
+  Live-Domain: Hero-H1, die drei Preise (CHF 50/80/120) und die Section-Überschriften
+  müssen im rohen HTML stehen — nicht nur ein leeres root-div.
+- `curl -s https://valanto.ch/ | grep -i "og:title"` → OG-Tags vorhanden.
+- Facebook Sharing Debugger / LinkedIn Post Inspector zur Vorschau-Kontrolle.
 
 ## Files
 - `Valanto Website.dc.html` — Design-Prototyp (Referenz, nur im Design-Tool lauffähig).
