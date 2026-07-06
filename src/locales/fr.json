@@ -1,11 +1,16 @@
 {
+  "meta": {
+    "title": "Valanto – Logiciel immobilier suisse",
+    "description": "Estimer, commercialiser, gérer – dans un seul outil. Conçu et hébergé en Suisse."
+  },
   "nav": {
     "features": "Fonctions",
     "forwho": "Pour qui",
     "pricing": "Tarifs",
     "about": "À propos",
     "login": "Connexion",
-    "try": "Essai gratuit"
+    "try": "Essai gratuit",
+    "menu": "Menu"
   },
   "hero": {
     "eyebrow": "LOGICIEL IMMOBILIER SUISSE",

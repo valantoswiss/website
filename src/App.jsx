@@ -2,6 +2,11 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const LANGS = ['de', 'fr', 'en']
+const LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English' }
+
+// Placeholder links (Login, legal, contact) have no destination yet in this
+// prototype — prevent the bare "#" href from jumping the page to the top.
+const placeholderClick = (e) => e.preventDefault()
 
 /* Fixed (non-translated) sample data for the hero dossier visual */
 const DOSSIER = {
@@ -33,6 +38,7 @@ function LangSwitch() {
           className={i18n.language === lng ? 'is-active' : ''}
           onClick={() => i18n.changeLanguage(lng)}
           aria-pressed={i18n.language === lng}
+          aria-label={LANG_NAMES[lng]}
         >
           {lng.toUpperCase()}
         </button>
@@ -51,7 +57,7 @@ function Nav() {
     { href: '#siv', label: t('nav.about') },
   ]
   return (
-    <>
+    <div className="header">
       <header className="nav">
         <Brand />
         <nav className="nav__links">
@@ -63,13 +69,13 @@ function Nav() {
         </nav>
         <div className="nav__right">
           <LangSwitch />
-          <a className="nav__login" href="#">
+          <a className="nav__login" href="#" onClick={placeholderClick}>
             {t('nav.login')}
           </a>
           <button className="btn nav__try">{t('nav.try')}</button>
           <button
             className="burger"
-            aria-label="Menü"
+            aria-label={t('nav.menu')}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
@@ -85,11 +91,17 @@ function Nav() {
             {l.label}
           </a>
         ))}
-        <a href="#" onClick={() => setOpen(false)}>
+        <a
+          href="#"
+          onClick={(e) => {
+            placeholderClick(e)
+            setOpen(false)
+          }}
+        >
           {t('nav.login')}
         </a>
       </nav>
-    </>
+    </div>
   )
 }
 
@@ -153,7 +165,9 @@ function Hero() {
         <div className="hero__visual">
           <div className="dossier-back" />
           <Dossier />
-          <div className="hosted-badge">🇨🇭 {t('dossier.hosted')}</div>
+          <div className="hosted-badge">
+            <span aria-hidden="true">🇨🇭</span> {t('dossier.hosted')}
+          </div>
         </div>
       </div>
     </section>
@@ -167,7 +181,9 @@ function TrustBar() {
       <div className="inner">
         <span className="trustbar__line">{t('trust.line')}</span>
         <div className="trustbar__badges">
-          <span className="badge">🇨🇭 {t('trust.b1')}</span>
+          <span className="badge">
+            <span aria-hidden="true">🇨🇭</span> {t('trust.b1')}
+          </span>
           <span className="badge">{t('trust.b2')}</span>
           <span className="badge badge--soft">{t('trust.b3')}</span>
         </div>
@@ -326,25 +342,27 @@ function Footer() {
           <div className="footer__brand">
             <Brand />
             <p className="footer__claim">{t('footer.claim')}</p>
-            <span className="footer__madein">🇨🇭 {t('footer.madein')}</span>
+            <span className="footer__madein">
+              <span aria-hidden="true">🇨🇭</span> {t('footer.madein')}
+            </span>
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c1')}</span>
             <a href="#features">{t('nav.features')}</a>
             <a href="#pricing">{t('nav.pricing')}</a>
-            <a href="#">{t('nav.login')}</a>
+            <a href="#" onClick={placeholderClick}>{t('nav.login')}</a>
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c2')}</span>
             <a href="#siv">{t('nav.about')}</a>
-            <a href="#">{t('footer.contact')}</a>
+            <a href="#" onClick={placeholderClick}>{t('footer.contact')}</a>
             <a href="#siv">SIV</a>
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c3')}</span>
-            <a href="#">{t('footer.imprint')}</a>
-            <a href="#">{t('footer.privacy')}</a>
-            <a href="#">{t('footer.terms')}</a>
+            <a href="#" onClick={placeholderClick}>{t('footer.imprint')}</a>
+            <a href="#" onClick={placeholderClick}>{t('footer.privacy')}</a>
+            <a href="#" onClick={placeholderClick}>{t('footer.terms')}</a>
           </div>
         </div>
         <div className="footer__copy">{t('footer.copy')}</div>

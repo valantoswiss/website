@@ -1,11 +1,16 @@
 {
+  "meta": {
+    "title": "Valanto – Real estate software from Switzerland",
+    "description": "Value, market, manage – in one tool. Built and hosted in Switzerland."
+  },
   "nav": {
     "features": "Features",
     "forwho": "Who it's for",
     "pricing": "Pricing",
     "about": "About",
     "login": "Login",
-    "try": "Try for free"
+    "try": "Try for free",
+    "menu": "Menu"
   },
   "hero": {
     "eyebrow": "REAL ESTATE SOFTWARE FROM SWITZERLAND",

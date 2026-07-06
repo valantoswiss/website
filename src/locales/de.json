@@ -1,11 +1,16 @@
 {
+  "meta": {
+    "title": "Valanto – Immobiliensoftware aus der Schweiz",
+    "description": "Bewerten, vermarkten, verwalten – in einem Werkzeug. Entwickelt und gehostet in der Schweiz."
+  },
   "nav": {
     "features": "Funktionen",
     "forwho": "Für wen",
     "pricing": "Preise",
     "about": "Über uns",
     "login": "Login",
-    "try": "Kostenlos testen"
+    "try": "Kostenlos testen",
+    "menu": "Menü"
   },
   "hero": {
     "eyebrow": "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",

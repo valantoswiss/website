@@ -50,6 +50,10 @@ body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* safety net against decorative absolute layers (e.g. the hero dossier
+     back-plate) triggering a horizontal scrollbar at in-between widths.
+     `clip` (not `hidden`) so it never breaks position: sticky. */
+  overflow-x: clip;
 }
 
 img {
@@ -120,15 +124,17 @@ img {
    NAV
    ============================================================ */
 
-.nav {
+.header {
   position: sticky;
   top: 0;
   z-index: 40;
+}
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 18px var(--pad-x);
+  padding: 20px var(--pad-x);
   border-bottom: 1px solid var(--ink);
   background: rgba(250, 247, 242, 0.92);
   backdrop-filter: blur(8px);
@@ -239,15 +245,13 @@ img {
   background: var(--ink);
 }
 
-/* mobile dropdown */
+/* mobile dropdown — lives inside the sticky .header, so it docks flush under
+   the bar without a hardcoded offset */
 .mobile-menu {
   display: none;
   flex-direction: column;
   border-bottom: 1px solid var(--ink);
   background: var(--bg);
-  position: sticky;
-  top: 61px;
-  z-index: 39;
 }
 .mobile-menu a {
   padding: 14px var(--pad-x);
@@ -868,6 +872,12 @@ img {
   display: flex;
   margin-top: 8px;
 }
+/* spec 2a: closing buttons are slightly wider (32px) than the hero buttons (30px) */
+.closing__ctas .btn-primary,
+.closing__ctas .btn-ghost {
+  padding-left: 32px;
+  padding-right: 32px;
+}
 .closing__ctas .btn-primary:hover {
   background: var(--teal-hover);
 }
@@ -951,6 +961,9 @@ img {
    ============================================================ */
 
 @media (max-width: 900px) {
+  .nav {
+    padding: 14px var(--pad-x);
+  }
   .nav__links {
     display: none;
   }
@@ -1043,8 +1056,38 @@ img {
     border: 1.5px solid var(--line-dark);
     border-top: none;
   }
+  /* spec 3a: trust bar becomes a vertical stack of full-width, connected badges */
   .trustbar .inner {
-    gap: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .trustbar__badges {
+    flex-direction: column;
+  }
+  .badge + .badge {
+    border-left: 1px solid var(--line-dark);
+    border-top: none;
+  }
+
+  /* spec 3a: tighter vertical rhythm on phones than the desktop comp */
+  .hero {
+    padding: 40px var(--pad-x) 36px;
+  }
+  .features {
+    padding: 44px var(--pad-x) 32px;
+  }
+  .audience {
+    padding: 40px var(--pad-x);
+  }
+  .pricing {
+    padding: 40px var(--pad-x) 48px;
+  }
+  .siv {
+    padding: 48px var(--pad-x);
+  }
+  .closing {
+    padding: 48px 24px;
   }
 }
 
