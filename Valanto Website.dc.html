@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECEDEA;font-family:"Archivo",system-ui,sans-serif}
+a{color:#2E8FA0;text-decoration:none}a:hover{color:#236F7C}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t3">
+  <div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Mobile-first — 390px, gestapelt · gleiche Copy &amp; Sprachumschalter wie <a class="dv-oid" href="#2a">2a</a></span></div>
+  <div class="dv-opts">
+    <div class="dv-opt" id="3a">
+      <div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>Mobile-Layout — Claim → CTA → Beweis, eckig, Ein-Spalten-Raster</div>
+      <div class="dv-card" style="width:390px;border-radius:0;box-shadow:none;border-color:#23262D">
+        <div data-screen-label="Valanto Mobile" style="background:#FAF7F2;font-family:'Archivo',sans-serif;color:#3C3F47">
+
+          <!-- MOBILE NAV -->
+          <div style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #23262D;background:rgba(250,247,242,.94);backdrop-filter:blur(8px)">
+            <div style="display:flex;align-items:baseline;gap:7px">
+              <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:20px;color:#23262D">Valanto</div>
+              <div style="width:5px;height:5px;background:#23808F;transform:translateY(-1px)"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="display:flex;gap:0;font-size:11px;font-weight:700;border:1px solid #23262D">
+                <span onClick="{{ pickDE }}" style="{{ deStyle }};padding:4px 7px;cursor:pointer">DE</span>
+                <span onClick="{{ pickFR }}" style="{{ frStyle }};padding:4px 7px;cursor:pointer;border-left:1px solid #23262D;border-right:1px solid #23262D">FR</span>
+                <span onClick="{{ pickEN }}" style="{{ enStyle }};padding:4px 7px;cursor:pointer">EN</span>
+              </div>
+              <div style="width:34px;height:34px;border:1px solid #23262D;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer">
+                <div style="width:16px;height:2px;background:#23262D"></div>
+                <div style="width:16px;height:2px;background:#23262D"></div>
+                <div style="width:16px;height:2px;background:#23262D"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOBILE HERO -->
+          <div style="padding:40px 20px 36px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:22px;height:2px;background:#23808F"></div>
+              <div style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;color:#23808F">{{ hero_eyebrow }}</div>
+            </div>
+            <div style="font-family:'Source Serif 4',serif;font-size:34px;font-weight:600;line-height:1.16;color:#23262D;letter-spacing:-0.01em;text-wrap:pretty">{{ hero_h1 }}</div>
+            <div style="font-size:15px;line-height:1.65;color:#55585F;text-wrap:pretty">{{ hero_lead }}</div>
+            <div style="display:flex;flex-direction:column;gap:0;margin-top:2px">
+              <div style="padding:15px;background:#23808F;color:#fff;font-weight:600;font-size:15px;text-align:center;cursor:pointer">{{ hero_cta1 }}</div>
+              <div style="padding:15px;border:1.5px solid #23262D;border-top:none;color:#23262D;font-weight:600;font-size:15px;text-align:center;cursor:pointer">{{ hero_cta2 }}</div>
+            </div>
+            <div style="font-size:12px;color:#A6A296;font-weight:500;text-align:center">{{ hero_trust }}</div>
+
+            <!-- Dossier, mobil -->
+            <div style="margin-top:12px;background:#fff;border:1px solid #23262D;box-shadow:10px 10px 0 rgba(35,38,45,.08);padding:24px 22px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9.5px;font-weight:700;letter-spacing:0.14em;color:#23808F">{{ dossier_label }}</div>
+                <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:13px;color:#23262D">Valanto</div>
+              </div>
+              <div style="height:1px;background:#23262D"></div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="font-size:11px;color:#A6A296">{{ dossier_type }}</div>
+                <div style="font-family:'Source Serif 4',serif;font-size:19px;font-weight:600;color:#23262D">Seestrasse 14, Erlenbach</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;color:#A6A296">{{ dossier_mv }}</div>
+                <div style="font-family:'Source Serif 4',serif;font-size:32px;font-weight:700;color:#23808F">CHF 1'240'000</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div style="width:64px;font-size:11px;font-weight:600;color:#55585F">{{ dossier_r1 }}</div>
+                  <div style="flex:1;height:7px;background:#F0EBE1"><div style="width:82%;height:100%;background:#23808F"></div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div style="width:64px;font-size:11px;font-weight:600;color:#55585F">{{ dossier_r2 }}</div>
+                  <div style="flex:1;height:7px;background:#F0EBE1"><div style="width:70%;height:100%;background:#23808F"></div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div style="width:64px;font-size:11px;font-weight:600;color:#55585F">{{ dossier_r3 }}</div>
+                  <div style="flex:1;height:7px;background:#F0EBE1"><div style="width:64%;height:100%;background:#8FBFC8"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOBILE TRUST -->
+          <div style="background:#23262D;color:#EDE8DE;padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:12px;color:#B4B0A5;font-weight:500">{{ trust_line }}</div>
+            <div style="display:flex;flex-direction:column;gap:0">
+              <div style="font-size:12px;font-weight:600;color:#EDE8DE;border:1px solid #4A4E57;padding:9px 13px">🇨🇭 {{ trust_b1 }}</div>
+              <div style="font-size:12px;font-weight:600;color:#EDE8DE;border:1px solid #4A4E57;border-top:none;padding:9px 13px">{{ trust_b2 }}</div>
+              <div style="font-size:12px;font-weight:600;color:#8E8B82;border:1px dashed #4A4E57;border-top:none;padding:9px 13px">{{ trust_b3 }}</div>
+            </div>
+          </div>
+
+          <!-- MOBILE FEATURES -->
+          <div style="padding:44px 20px 8px;display:flex;flex-direction:column;gap:16px">
+            <div style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;color:#23808F">{{ feat_eyebrow }}</div>
+            <div style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;color:#23262D;line-height:1.18;letter-spacing:-0.01em">{{ feat_h2 }}</div>
+            <div style="font-size:14px;line-height:1.6;color:#55585F;text-wrap:pretty">{{ feat_intro }}</div>
+          </div>
+          <div style="padding:16px 20px 36px;border-top:1px solid #23262D;margin:0 20px 0">
+            <div style="border-left:1px solid #23262D;border-top:1px solid #23262D">
+              <sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+                <div style="border-right:1px solid #23262D;border-bottom:1px solid #23262D;padding:20px 18px;display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;align-items:center;justify-content:space-between">
+                    <div style="font-family:'Source Serif 4',serif;font-size:14px;font-weight:700;letter-spacing:0.06em;color:#23808F">{{ f.no }}</div>
+                    <div style="width:18px;height:18px;border:1px solid #23262D"></div>
+                  </div>
+                  <div style="font-size:16px;font-weight:700;color:#23262D">{{ f.t }}</div>
+                  <div style="font-size:13px;line-height:1.55;color:#55585F">{{ f.d }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <!-- MOBILE PRICING -->
+          <div style="padding:20px 20px 40px;display:flex;flex-direction:column;gap:16px">
+            <div style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;color:#23808F">{{ pricing_eyebrow }}</div>
+            <div style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;color:#23262D;line-height:1.18;letter-spacing:-0.01em">{{ pricing_h2 }}</div>
+            <div style="font-size:14px;line-height:1.6;color:#55585F;text-wrap:pretty">{{ pricing_intro }}</div>
+            <div style="display:flex;flex-direction:column;gap:0;border:1px solid #23262D;margin-top:6px">
+              <sc-for list="{{ plans }}" as="plan" hint-placeholder-count="3">
+                <div style="{{ plan.mcard }}">
+                  <sc-if value="{{ plan.popular }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;top:0;left:0;right:0;background:#23808F;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-align:center;padding:6px 0">{{ popular_badge }}</div>
+                  </sc-if>
+                  <div style="font-family:'Source Serif 4',serif;font-size:13px;font-weight:700;letter-spacing:0.12em;color:#23262D">{{ plan.name }}</div>
+                  <div style="display:flex;align-items:baseline;gap:6px;margin:10px 0 4px">
+                    <div style="font-family:'Source Serif 4',serif;font-size:34px;font-weight:700;color:#23262D">{{ plan.price }}</div>
+                    <div style="font-size:13px;color:#A6A296;font-weight:500">{{ plan.per }}</div>
+                  </div>
+                  <div style="height:1px;background:#23262D;margin:14px 0 16px"></div>
+                  <div style="display:flex;flex-direction:column;gap:11px">
+                    <sc-for list="{{ plan.features }}" as="feat" hint-placeholder-count="4">
+                      <div style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.4;color:#55585F">
+                        <div style="width:15px;height:15px;background:#23808F;display:grid;place-items:center;flex:none;margin-top:1px;color:#fff;font-size:9px;font-weight:800">✓</div>
+                        <span>{{ feat }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="{{ plan.mcta }}">{{ plan.ctaLabel }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="font-size:11.5px;color:#A6A296;font-weight:500;text-align:center;margin-top:4px">{{ pricing_note }}</div>
+          </div>
+
+          <!-- MOBILE CTA -->
+          <div style="background:#23262D;padding:48px 24px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+            <div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:600;color:#FAF7F2;line-height:1.2">{{ cta_h2 }}</div>
+            <div style="font-size:14px;line-height:1.6;color:#B9BCC2">{{ cta_text }}</div>
+            <div style="display:flex;flex-direction:column;gap:0;width:100%;margin-top:4px">
+              <div style="padding:14px;background:#23808F;color:#fff;font-weight:600;font-size:15px;text-align:center;cursor:pointer">{{ hero_cta1 }}</div>
+              <div style="padding:14px;border:1.5px solid #4A4E57;border-top:none;color:#FAF7F2;font-weight:600;font-size:15px;text-align:center;cursor:pointer">{{ hero_cta2 }}</div>
+            </div>
+          </div>
+
+          <!-- MOBILE FOOTER -->
+          <div style="background:#1A1C21;color:#B4B0A5;padding:36px 24px 22px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:baseline;gap:7px">
+                <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:18px;color:#FAF7F2">Valanto</div>
+                <div style="width:5px;height:5px;background:#23808F;transform:translateY(-1px)"></div>
+              </div>
+              <div style="font-size:13px;line-height:1.55;color:#8E8B82">{{ footer_claim }}</div>
+              <div style="font-size:12px;font-weight:600;color:#B4B0A5">🇨🇭 {{ footer_madein }}</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid #34373E;padding-top:18px">
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="font-size:10.5px;font-weight:700;letter-spacing:0.1em;color:#6E6B64">{{ footer_c1 }}</div>
+                <span style="font-size:13px;color:#B4B0A5">{{ nav_features }}</span>
+                <span style="font-size:13px;color:#B4B0A5">{{ nav_pricing }}</span>
+                <span style="font-size:13px;color:#B4B0A5">{{ nav_login }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="font-size:10.5px;font-weight:700;letter-spacing:0.1em;color:#6E6B64">{{ footer_c3 }}</div>
+                <span style="font-size:13px;color:#B4B0A5">{{ footer_imprint }}</span>
+                <span style="font-size:13px;color:#B4B0A5">{{ footer_privacy }}</span>
+                <span style="font-size:13px;color:#B4B0A5">{{ footer_terms }}</span>
+              </div>
+            </div>
+            <div style="font-size:11px;color:#6E6B64;border-top:1px solid #34373E;padding-top:16px">{{ footer_copy }}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="dv-next">Weiter z. B.: «Tablet-Breakpoint zeigen» · «Burger-Menü offen darstellen» · «Mobile-Specs ins Handover-README ergänzen»</p>
+</section>
+
+<section class="dv-turn" id="t2">
+  <div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Valanto — komplette Startseite, kantig · alle 9 Sektionen · Sprachumschalter DE/FR/EN funktional</span></div>
+  <div class="dv-opts">
+    <div class="dv-opt" id="2a">
+      <div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Dossier-Editorial, kantig — klick DE · FR · EN oben rechts zum Umschalten</div>
+      <div class="dv-card" style="width:1280px;border-radius:0;box-shadow:none;border-color:#DED8CC">
+        <div data-screen-label="Valanto Startseite" style="background:#FAF7F2;font-family:'Archivo',sans-serif;color:#3C3F47">
+
+          <!-- NAV -->
+          <div style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px 52px;border-bottom:1px solid #23262D;background:rgba(250,247,242,.92);backdrop-filter:blur(8px)">
+            <div style="display:flex;align-items:baseline;gap:8px">
+              <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:23px;color:#23262D;letter-spacing:0.01em">Valanto</div>
+              <div style="width:6px;height:6px;background:#23808F;transform:translateY(-1px)"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500;color:#55585F">
+              <span>{{ nav_features }}</span><span>{{ nav_forwho }}</span><span>{{ nav_pricing }}</span><span>{{ nav_about }}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div style="display:flex;gap:0;font-size:12px;font-weight:700;border:1px solid #23262D">
+                <span onClick="{{ pickDE }}" style="{{ deStyle }};padding:5px 9px;cursor:pointer">DE</span>
+                <span onClick="{{ pickFR }}" style="{{ frStyle }};padding:5px 9px;cursor:pointer;border-left:1px solid #23262D;border-right:1px solid #23262D">FR</span>
+                <span onClick="{{ pickEN }}" style="{{ enStyle }};padding:5px 9px;cursor:pointer">EN</span>
+              </div>
+              <div style="font-size:14px;font-weight:600;color:#23262D;border-bottom:1.5px solid #23262D;padding-bottom:1px;cursor:pointer">{{ nav_login }}</div>
+              <div style="padding:11px 24px;background:#23262D;color:#FAF7F2;font-weight:600;font-size:14px;cursor:pointer" style-hover="background:#23808F">{{ nav_try }}</div>
+            </div>
+          </div>
+
+          <!-- HERO -->
+          <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:72px 52px 60px">
+            <div style="display:flex;flex-direction:column;gap:24px">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:26px;height:2px;background:#23808F"></div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#23808F">{{ hero_eyebrow }}</div>
+              </div>
+              <div style="font-family:'Source Serif 4',serif;font-size:54px;font-weight:600;line-height:1.13;color:#23262D;letter-spacing:-0.01em;text-wrap:pretty">{{ hero_h1 }}</div>
+              <div style="font-size:17px;line-height:1.7;color:#55585F;max-width:520px;text-wrap:pretty">{{ hero_lead }}</div>
+              <div style="display:flex;gap:0;margin-top:6px">
+                <div style="padding:15px 30px;background:#23808F;color:#fff;font-weight:600;font-size:15.5px;cursor:pointer" style-hover="background:#23262D">{{ hero_cta1 }}</div>
+                <div style="padding:15px 30px;border:1.5px solid #23262D;border-left:none;color:#23262D;font-weight:600;font-size:15.5px;cursor:pointer" style-hover="background:#23262D;color:#FAF7F2">{{ hero_cta2 }}</div>
+              </div>
+              <div style="font-size:13px;color:#A6A296;font-weight:500">{{ hero_trust }}</div>
+            </div>
+            <div style="position:relative;height:520px">
+              <div style="position:absolute;top:34px;left:70px;width:352px;height:452px;background:#F1ECE2;border:1px solid #DED8CC"></div>
+              <div style="position:absolute;top:8px;left:20px;width:384px;height:490px;background:#fff;border:1px solid #23262D;box-shadow:14px 14px 0 rgba(35,38,45,.08);padding:30px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:16px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;color:#23808F">{{ dossier_label }}</div>
+                  <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;color:#23262D">Valanto</div>
+                </div>
+                <div style="height:1px;background:#23262D"></div>
+                <div style="display:flex;flex-direction:column;gap:5px">
+                  <div style="font-size:12px;color:#A6A296">{{ dossier_type }}</div>
+                  <div style="font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;color:#23262D">Seestrasse 14, 8703 Erlenbach</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:3px;margin-top:6px">
+                  <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:#A6A296">{{ dossier_mv }}</div>
+                  <div style="font-family:'Source Serif 4',serif;font-size:38px;font-weight:700;color:#23808F">CHF 1'240'000</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:78px;font-size:12px;font-weight:600;color:#55585F">{{ dossier_r1 }}</div>
+                    <div style="flex:1;height:8px;background:#F0EBE1"><div style="width:82%;height:100%;background:#23808F"></div></div>
+                    <div style="font-size:12px;font-weight:700;color:#23262D;width:26px;text-align:right">4.5</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:78px;font-size:12px;font-weight:600;color:#55585F">{{ dossier_r2 }}</div>
+                    <div style="flex:1;height:8px;background:#F0EBE1"><div style="width:70%;height:100%;background:#23808F"></div></div>
+                    <div style="font-size:12px;font-weight:700;color:#23262D;width:26px;text-align:right">4.0</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:78px;font-size:12px;font-weight:600;color:#55585F">{{ dossier_r3 }}</div>
+                    <div style="flex:1;height:8px;background:#F0EBE1"><div style="width:64%;height:100%;background:#8FBFC8"></div></div>
+                    <div style="font-size:12px;font-weight:700;color:#23262D;width:26px;text-align:right">3.5</div>
+                  </div>
+                </div>
+                <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #23262D;padding-top:14px">
+                  <div style="font-size:11px;color:#A6A296">{{ dossier_footer }}</div>
+                  <div style="font-size:11px;font-weight:700;color:#23808F">{{ dossier_pdf }}</div>
+                </div>
+              </div>
+              <div style="position:absolute;bottom:22px;right:8px;background:#23262D;color:#FAF7F2;padding:9px 18px;font-size:12px;font-weight:600">🇨🇭 {{ hosted }}</div>
+            </div>
+          </div>
+
+          <!-- TRUST BAR -->
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 52px;border-top:1px solid #23262D;border-bottom:1px solid #23262D;background:#23262D;color:#EDE8DE">
+            <div style="font-size:13px;color:#B4B0A5;font-weight:500">{{ trust_line }}</div>
+            <div style="display:flex;align-items:center;gap:0;flex-wrap:wrap">
+              <div style="font-size:12.5px;font-weight:600;color:#EDE8DE;border:1px solid #4A4E57;padding:7px 15px">🇨🇭 {{ trust_b1 }}</div>
+              <div style="font-size:12.5px;font-weight:600;color:#EDE8DE;border:1px solid #4A4E57;border-left:none;padding:7px 15px">{{ trust_b2 }}</div>
+              <div style="font-size:12.5px;font-weight:600;color:#8E8B82;border:1px dashed #4A4E57;border-left:none;padding:7px 15px">{{ trust_b3 }}</div>
+            </div>
+          </div>
+
+          <!-- FEATURES -->
+          <div style="padding:80px 52px 40px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px">
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#23808F">{{ feat_eyebrow }}</div>
+                <div style="font-family:'Source Serif 4',serif;font-size:38px;font-weight:600;color:#23262D;letter-spacing:-0.01em;line-height:1.15">{{ feat_h2 }}</div>
+              </div>
+              <div style="font-size:15px;line-height:1.7;color:#55585F;text-wrap:pretty;padding-bottom:4px">{{ feat_intro }}</div>
+            </div>
+            <div style="border-top:1px solid #23262D;border-left:1px solid #23262D;display:grid;grid-template-columns:repeat(3,1fr)">
+              <sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+                <div style="border-right:1px solid #23262D;border-bottom:1px solid #23262D;padding:28px 26px;background:#FAF7F2;display:flex;flex-direction:column;gap:12px;min-height:150px" style-hover="background:#fff">
+                  <div style="display:flex;align-items:center;justify-content:space-between">
+                    <div style="font-family:'Source Serif 4',serif;font-size:15px;font-weight:700;letter-spacing:0.08em;color:#23808F">{{ f.no }}</div>
+                    <div style="width:22px;height:22px;border:1px solid #23262D"></div>
+                  </div>
+                  <div style="font-size:17px;font-weight:700;color:#23262D;margin-top:4px">{{ f.t }}</div>
+                  <div style="font-size:13.5px;line-height:1.6;color:#55585F;text-wrap:pretty">{{ f.d }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <!-- AUDIENCE SPLIT -->
+          <div style="padding:56px 52px 40px">
+            <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#23808F">{{ aud_eyebrow }}</div>
+              <div style="font-family:'Source Serif 4',serif;font-size:38px;font-weight:600;color:#23262D;letter-spacing:-0.01em">{{ aud_h2 }}</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #23262D">
+              <sc-for list="{{ audiences }}" as="a" hint-placeholder-count="3">
+                <div style="{{ a.style }}">
+                  <div style="font-family:'Source Serif 4',serif;font-size:24px;font-weight:600;color:#23262D">{{ a.role }}</div>
+                  <div style="width:34px;height:2px;background:#23808F;margin:16px 0 18px"></div>
+                  <div style="font-size:14.5px;line-height:1.7;color:#55585F;text-wrap:pretty">{{ a.text }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <!-- PRICING -->
+          <div style="padding:56px 52px 84px">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:44px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#23808F">{{ pricing_eyebrow }}</div>
+              <div style="font-family:'Source Serif 4',serif;font-size:40px;font-weight:600;color:#23262D;letter-spacing:-0.01em">{{ pricing_h2 }}</div>
+              <div style="font-size:16px;line-height:1.65;color:#55585F;max-width:520px;text-wrap:pretty">{{ pricing_intro }}</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1000px;margin:0 auto;border:1px solid #23262D">
+              <sc-for list="{{ plans }}" as="plan" hint-placeholder-count="3">
+                <div style="{{ plan.card }}">
+                  <sc-if value="{{ plan.popular }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;top:0;left:0;right:0;background:#23808F;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.1em;text-align:center;padding:6px 0">{{ popular_badge }}</div>
+                  </sc-if>
+                  <div style="font-family:'Source Serif 4',serif;font-size:14px;font-weight:700;letter-spacing:0.12em;color:#23262D">{{ plan.name }}</div>
+                  <div style="display:flex;align-items:baseline;gap:6px;margin:16px 0 4px">
+                    <div style="font-family:'Source Serif 4',serif;font-size:42px;font-weight:700;color:#23262D">{{ plan.price }}</div>
+                    <div style="font-size:14px;color:#A6A296;font-weight:500">{{ plan.per }}</div>
+                  </div>
+                  <div style="height:1px;background:#23262D;margin:18px 0 20px"></div>
+                  <div style="display:flex;flex-direction:column;gap:13px;flex:1">
+                    <sc-for list="{{ plan.features }}" as="feat" hint-placeholder-count="4">
+                      <div style="display:flex;align-items:flex-start;gap:11px;font-size:14px;line-height:1.4;color:#55585F">
+                        <div style="width:16px;height:16px;background:#23808F;display:grid;place-items:center;flex:none;margin-top:1px;color:#fff;font-size:10px;font-weight:800">✓</div>
+                        <span>{{ feat }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="{{ plan.cta }}">{{ plan.ctaLabel }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="text-align:center;font-size:12.5px;color:#A6A296;font-weight:500;margin-top:26px">{{ pricing_note }}</div>
+          </div>
+
+          <!-- SIV / TRUST -->
+          <div style="border-top:1px solid #23262D;background:#F1ECE2;padding:76px 52px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:18px">
+                <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#23808F">{{ siv_eyebrow }}</div>
+                <div style="font-family:'Source Serif 4',serif;font-size:36px;font-weight:600;color:#23262D;letter-spacing:-0.01em;line-height:1.15">{{ siv_h2 }}</div>
+                <div style="font-size:15.5px;line-height:1.75;color:#55585F;max-width:480px;text-wrap:pretty">{{ siv_text }}</div>
+              </div>
+              <div style="display:flex;flex-direction:column;border:1px solid #23262D;background:#fff">
+                <sc-for list="{{ sivPoints }}" as="p" hint-placeholder-count="3">
+                  <div style="{{ p.style }}">
+                    <div style="font-size:19px;width:30px;flex:none">{{ p.icon }}</div>
+                    <div style="display:flex;flex-direction:column;gap:3px">
+                      <div style="font-size:15px;font-weight:700;color:#23262D">{{ p.t }}</div>
+                      <div style="font-size:13.5px;line-height:1.55;color:#55585F">{{ p.d }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <!-- CLOSING CTA -->
+          <div style="background:#23262D;padding:72px 52px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
+            <div style="font-family:'Source Serif 4',serif;font-size:36px;font-weight:600;color:#FAF7F2">{{ cta_h2 }}</div>
+            <div style="font-size:16px;line-height:1.6;color:#B9BCC2;max-width:480px">{{ cta_text }}</div>
+            <div style="display:flex;gap:0;margin-top:8px">
+              <div style="padding:15px 32px;background:#23808F;color:#fff;font-weight:600;font-size:15.5px;cursor:pointer" style-hover="background:#2E9DB0">{{ hero_cta1 }}</div>
+              <div style="padding:15px 32px;border:1.5px solid #4A4E57;border-left:none;color:#FAF7F2;font-weight:600;font-size:15.5px;cursor:pointer" style-hover="border-color:#FAF7F2">{{ hero_cta2 }}</div>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div style="background:#1A1C21;color:#B4B0A5;padding:56px 52px 28px">
+            <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid #34373E">
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;align-items:baseline;gap:8px">
+                  <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:20px;color:#FAF7F2">Valanto</div>
+                  <div style="width:6px;height:6px;background:#23808F;transform:translateY(-1px)"></div>
+                </div>
+                <div style="font-size:13.5px;line-height:1.6;color:#8E8B82;max-width:280px">{{ footer_claim }}</div>
+                <div style="font-size:12.5px;font-weight:600;color:#B4B0A5;margin-top:4px">🇨🇭 {{ footer_madein }}</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:#6E6B64">{{ footer_c1 }}</div>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ nav_features }}</span>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ nav_pricing }}</span>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ nav_login }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:#6E6B64">{{ footer_c2 }}</div>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ nav_about }}</span>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ footer_contact }}</span>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">SIV</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:#6E6B64">{{ footer_c3 }}</div>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ footer_imprint }}</span>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ footer_privacy }}</span>
+                <span style="font-size:13.5px;color:#B4B0A5;cursor:pointer">{{ footer_terms }}</span>
+              </div>
+            </div>
+            <div style="font-size:12px;color:#6E6B64;padding-top:20px">{{ footer_copy }}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="dv-next">Weiter z. B.: «Preis-Karten kompakter» · «Hero-Dossier grösser» · dann sag «Handover für Code» für das Entwickler-Paket</p>
+</section>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Valanto — drei Hero-Richtungen (DE-Copy final, Preise &amp; Ausbau folgen nach Auswahl)</span></div>
+  <div style="max-width:820px;font:13px/1.6 system-ui,sans-serif;color:rgba(0,0,0,.6);margin:0 0 24px">
+    Annahmen: Name <strong>Valanto</strong>, Branding «Felsberg-nah, aber eigenständig» — Cyan zu einem tieferen Petrol <span style="font-family:ui-monospace,monospace">#2E8FA0</span> abgewandelt, Anthrazit <span style="font-family:ui-monospace,monospace">#363A43</span> bleibt. Drei Signature-Ideen: <a class="dv-oid" href="#1a">1a</a> Rundungen/Pill (Felsberg-DNA), <a class="dv-oid" href="#1b">1b</a> Dossier als Motiv, <a class="dv-oid" href="#1c">1c</a> ruhiges Schweizer Raster. Sprachumschalter wird im Ausbau funktional.
+  </div>
+  <div class="dv-opts">
+
+    <!-- ============ 1a Freundlich-professionell ============ -->
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Freundlich-professionell — Felsberg-DNA, Pill-Buttons, Radius 24, M PLUS Rounded</div>
+      <div class="dv-card" style="width:1240px">
+        <div data-screen-label="Hero 1a" style="background:#FFFFFF;font-family:'M PLUS Rounded 1c',sans-serif;color:#4A4C54">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid #EDF1F2">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:34px;height:34px;border-radius:11px;background:#2E8FA0;display:grid;place-items:center;color:#fff;font-weight:800;font-size:19px">v</div>
+              <div style="font-weight:800;font-size:20px;color:#363A43;letter-spacing:-0.01em">valanto</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500">
+              <span>Funktionen</span><span>Für wen</span><span>Preise</span><span>Über uns</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <div style="display:flex;gap:2px;font-size:12.5px;font-weight:700;color:#939598"><span style="color:#363A43">DE</span><span style="padding:0 3px">·</span><span>FR</span><span style="padding:0 3px">·</span><span>EN</span></div>
+              <div style="padding:9px 22px;border-radius:50px;border:1.5px solid #2E8FA0;color:#2E8FA0;font-weight:700;font-size:14px;cursor:pointer" style-hover="background:#2E8FA0;color:#fff">Login</div>
+              <div style="padding:10.5px 24px;border-radius:50px;background:#2E8FA0;color:#fff;font-weight:700;font-size:14px;cursor:pointer" style-hover="background:#fff;color:#2E8FA0;box-shadow:inset 0 0 0 1.5px #2E8FA0">Kostenlos testen</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;padding:64px 48px 72px">
+            <div style="display:flex;flex-direction:column;gap:22px">
+              <div style="font-size:12.5px;font-weight:800;letter-spacing:0.16em;color:#2E8FA0">IMMOBILIENSOFTWARE AUS DER SCHWEIZ</div>
+              <div style="font-size:46px;font-weight:800;line-height:1.18;color:#363A43;letter-spacing:-0.01em;text-wrap:pretty">Bewerten, vermarkten, verwalten – in einem Werkzeug.</div>
+              <div style="font-size:17px;line-height:1.7;color:#4A4C54;max-width:520px;text-wrap:pretty">Valanto bündelt Liegenschaftsverwaltung, professionelle Bewertungen mit Dossier und Vermarktung in einer einzigen Plattform. Entwickelt für Makler, Bewerter und Spezialisten – gehostet in der Schweiz.</div>
+              <div style="display:flex;gap:14px;margin-top:6px">
+                <div style="padding:14px 30px;border-radius:50px;background:#2E8FA0;color:#fff;font-weight:700;font-size:15.5px;cursor:pointer;box-shadow:0 10px 24px rgba(46,143,160,.28)" style-hover="background:#fff;color:#2E8FA0;box-shadow:inset 0 0 0 1.5px #2E8FA0">Kostenlos testen</div>
+                <div style="padding:14px 30px;border-radius:50px;border:1.5px solid #D6DDE0;color:#363A43;font-weight:700;font-size:15.5px;cursor:pointer" style-hover="border-color:#2E8FA0;color:#2E8FA0">Demo buchen</div>
+              </div>
+              <div style="font-size:13px;color:#939598;font-weight:500">Keine Kreditkarte nötig · 1 Bewertung gratis · Schweizer Hosting</div>
+            </div>
+            <div style="position:relative">
+              <div style="border-radius:24px;border:1px solid #E6ECEE;background:#fff;box-shadow:0 28px 64px rgba(54,58,67,.14);overflow:hidden">
+                <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid #EDF1F2">
+                  <div style="width:9px;height:9px;border-radius:50%;background:#E4E8EA"></div>
+                  <div style="width:9px;height:9px;border-radius:50%;background:#E4E8EA"></div>
+                  <div style="width:9px;height:9px;border-radius:50%;background:#E4E8EA"></div>
+                  <div style="flex:1;margin-left:8px;background:#F4F6F7;border-radius:20px;padding:5px 14px;font-size:11px;color:#939598">app.valanto.ch</div>
+                </div>
+                <div style="display:flex;background:#F4F6F7">
+                  <div style="width:54px;background:#fff;border-right:1px solid #EDF1F2;display:flex;flex-direction:column;align-items:center;gap:14px;padding:16px 0">
+                    <div style="width:26px;height:26px;border-radius:8px;background:#2E8FA0"></div>
+                    <div style="width:22px;height:22px;border-radius:7px;background:#E9EEF0"></div>
+                    <div style="width:22px;height:22px;border-radius:7px;background:#E9EEF0"></div>
+                    <div style="width:22px;height:22px;border-radius:7px;background:#E9EEF0"></div>
+                    <div style="width:22px;height:22px;border-radius:7px;background:#E9EEF0"></div>
+                  </div>
+                  <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:12px">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                      <div style="background:#fff;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px">
+                        <div style="font-size:10.5px;color:#939598;font-weight:700;letter-spacing:0.06em">LIEGENSCHAFTEN</div>
+                        <div style="font-size:24px;font-weight:800;color:#363A43">38</div>
+                      </div>
+                      <div style="background:#fff;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px">
+                        <div style="font-size:10.5px;color:#939598;font-weight:700;letter-spacing:0.06em">BEWERTUNGEN</div>
+                        <div style="font-size:24px;font-weight:800;color:#2E8FA0">12</div>
+                      </div>
+                    </div>
+                    <div style="background:#fff;border-radius:16px;padding:14px 16px">
+                      <div style="font-size:10.5px;color:#939598;font-weight:700;letter-spacing:0.06em;margin-bottom:10px">MARKTWERT PORTFOLIO</div>
+                      <div style="display:flex;align-items:flex-end;gap:8px;height:74px">
+                        <div style="flex:1;height:38%;border-radius:6px 6px 3px 3px;background:#DCEAED"></div>
+                        <div style="flex:1;height:52%;border-radius:6px 6px 3px 3px;background:#DCEAED"></div>
+                        <div style="flex:1;height:44%;border-radius:6px 6px 3px 3px;background:#DCEAED"></div>
+                        <div style="flex:1;height:66%;border-radius:6px 6px 3px 3px;background:#8FC3CD"></div>
+                        <div style="flex:1;height:58%;border-radius:6px 6px 3px 3px;background:#8FC3CD"></div>
+                        <div style="flex:1;height:84%;border-radius:6px 6px 3px 3px;background:#2E8FA0"></div>
+                      </div>
+                    </div>
+                    <div style="background:#fff;border-radius:16px;padding:12px 16px;display:flex;flex-direction:column;gap:9px">
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <div style="width:26px;height:26px;border-radius:8px;background:#EAF3F5"></div>
+                        <div style="flex:1;font-size:12px;font-weight:700;color:#363A43">Seestrasse 14, Erlenbach</div>
+                        <div style="font-size:11px;font-weight:800;color:#2E8FA0">CHF 1.24 M</div>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:10px">
+                        <div style="width:26px;height:26px;border-radius:8px;background:#EAF3F5"></div>
+                        <div style="flex:1;font-size:12px;font-weight:700;color:#363A43">Rebweg 3, Felsberg</div>
+                        <div style="font-size:11px;font-weight:800;color:#2E8FA0">CHF 890 k</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="position:absolute;top:-14px;right:-10px;background:#fff;border:1px solid #E6ECEE;border-radius:50px;padding:8px 16px;font-size:12px;font-weight:800;color:#363A43;box-shadow:0 10px 24px rgba(54,58,67,.12)">🇨🇭 In der Schweiz gehostet</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 1b Dossier-Editorial ============ -->
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Dossier-Editorial — das Bewertungs-Dossier als Signature-Motiv, Serifen-Headline</div>
+      <div class="dv-card" style="width:1240px">
+        <div data-screen-label="Hero 1b" style="background:#FAF7F2;font-family:'Archivo',sans-serif;color:#3C3F47">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 52px;border-bottom:1px solid #ECE6DC">
+            <div style="display:flex;align-items:baseline;gap:7px">
+              <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:23px;color:#23262D">Valanto</div>
+              <div style="width:7px;height:7px;border-radius:50%;background:#23808F;transform:translateY(-1px)"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500;color:#55585F">
+              <span>Funktionen</span><span>Für wen</span><span>Preise</span><span>Über uns</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div style="display:flex;gap:2px;font-size:12px;font-weight:700;color:#A6A296"><span style="color:#23262D">DE</span><span style="padding:0 3px">·</span><span>FR</span><span style="padding:0 3px">·</span><span>EN</span></div>
+              <div style="font-size:14px;font-weight:600;color:#23262D;border-bottom:1.5px solid #23262D;padding-bottom:1px;cursor:pointer">Login</div>
+              <div style="padding:11px 24px;border-radius:50px;background:#23262D;color:#FAF7F2;font-weight:600;font-size:14px;cursor:pointer" style-hover="background:#23808F">Kostenlos testen</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:72px 52px 80px">
+            <div style="display:flex;flex-direction:column;gap:24px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#23808F">IMMOBILIENSOFTWARE AUS DER SCHWEIZ</div>
+              <div style="font-family:'Source Serif 4',serif;font-size:54px;font-weight:600;line-height:1.14;color:#23262D;letter-spacing:-0.01em;text-wrap:pretty">Bewerten, vermarkten, verwalten – in einem Werkzeug.</div>
+              <div style="font-size:17px;line-height:1.7;color:#55585F;max-width:520px;text-wrap:pretty">Valanto bündelt Liegenschaftsverwaltung, professionelle Bewertungen mit Dossier und Vermarktung in einer einzigen Plattform. Entwickelt für Makler, Bewerter und Spezialisten – gehostet in der Schweiz.</div>
+              <div style="display:flex;gap:14px;margin-top:4px">
+                <div style="padding:14px 30px;border-radius:50px;background:#23808F;color:#fff;font-weight:600;font-size:15.5px;cursor:pointer" style-hover="background:#23262D">Kostenlos testen</div>
+                <div style="padding:14px 30px;border-radius:50px;border:1.5px solid #C9C2B4;color:#23262D;font-weight:600;font-size:15.5px;cursor:pointer" style-hover="border-color:#23262D">Demo buchen</div>
+              </div>
+              <div style="font-size:13px;color:#A6A296;font-weight:500">Keine Kreditkarte nötig · 1 Bewertung gratis · Schweizer Hosting</div>
+            </div>
+            <div style="position:relative;height:520px">
+              <div style="position:absolute;top:36px;left:64px;width:360px;height:460px;background:#fff;border:1px solid #ECE6DC;border-radius:6px;transform:rotate(5deg);box-shadow:0 18px 44px rgba(35,38,45,.10)"></div>
+              <div style="position:absolute;top:10px;left:24px;width:380px;height:488px;background:#fff;border:1px solid #ECE6DC;border-radius:6px;transform:rotate(-2deg);box-shadow:0 26px 60px rgba(35,38,45,.14);padding:30px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:16px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;color:#23808F">BEWERTUNGS-DOSSIER</div>
+                  <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;color:#23262D">Valanto</div>
+                </div>
+                <div style="height:1px;background:#ECE6DC"></div>
+                <div style="display:flex;flex-direction:column;gap:5px">
+                  <div style="font-size:12px;color:#A6A296">Einfamilienhaus</div>
+                  <div style="font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;color:#23262D">Seestrasse 14, 8703 Erlenbach</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:3px;margin-top:6px">
+                  <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:#A6A296">MARKTWERT PER 03.07.2026</div>
+                  <div style="font-family:'Source Serif 4',serif;font-size:38px;font-weight:700;color:#23808F">CHF 1'240'000</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:70px;font-size:12px;font-weight:600;color:#55585F">Lage</div>
+                    <div style="flex:1;height:7px;border-radius:4px;background:#F0EBE1;overflow:hidden"><div style="width:82%;height:100%;border-radius:4px;background:#23808F"></div></div>
+                    <div style="font-size:12px;font-weight:700;color:#23262D;width:26px;text-align:right">4.5</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:70px;font-size:12px;font-weight:600;color:#55585F">Zustand</div>
+                    <div style="flex:1;height:7px;border-radius:4px;background:#F0EBE1;overflow:hidden"><div style="width:70%;height:100%;border-radius:4px;background:#23808F"></div></div>
+                    <div style="font-size:12px;font-weight:700;color:#23262D;width:26px;text-align:right">4.0</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:70px;font-size:12px;font-weight:600;color:#55585F">Ausbau</div>
+                    <div style="flex:1;height:7px;border-radius:4px;background:#F0EBE1;overflow:hidden"><div style="width:64%;height:100%;border-radius:4px;background:#8FBFC8"></div></div>
+                    <div style="font-size:12px;font-weight:700;color:#23262D;width:26px;text-align:right">3.5</div>
+                  </div>
+                </div>
+                <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ECE6DC;padding-top:14px">
+                  <div style="font-size:11px;color:#A6A296">Bewertung Nr. 2043 · Seite 1 / 18</div>
+                  <div style="font-size:11px;font-weight:700;color:#23808F">PDF-Export</div>
+                </div>
+              </div>
+              <div style="position:absolute;bottom:26px;right:12px;background:#23262D;color:#FAF7F2;border-radius:50px;padding:9px 18px;font-size:12px;font-weight:600;box-shadow:0 12px 28px rgba(35,38,45,.25)">🇨🇭 Gehostet in der Schweiz</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 1c Swiss Grid ============ -->
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Swiss Grid — ruhiges Raster, grosse Typografie, Cyan nur als Akzent</div>
+      <div class="dv-card" style="width:1240px">
+        <div data-screen-label="Hero 1c" style="background:#F4F6F7;font-family:'Archivo',sans-serif;color:#4A4C54">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid #DDE2E4;background:#F4F6F7">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="width:30px;height:30px;background:#363A43;display:grid;place-items:center;color:#45B7C3;font-weight:800;font-size:17px;border-radius:7px">v</div>
+              <div style="font-weight:700;font-size:19px;color:#363A43;letter-spacing:-0.02em">valanto</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500;color:#55585F">
+              <span>Funktionen</span><span>Für wen</span><span>Preise</span><span>Über uns</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <div style="display:flex;gap:2px;font-size:12px;font-weight:700;color:#9AA1A5"><span style="color:#363A43">DE</span><span style="padding:0 3px">·</span><span>FR</span><span style="padding:0 3px">·</span><span>EN</span></div>
+              <div style="padding:9px 18px;border-radius:9px;border:1px solid #C6CDD0;color:#363A43;font-weight:600;font-size:13.5px;cursor:pointer" style-hover="border-color:#363A43">Login</div>
+              <div style="padding:10px 20px;border-radius:9px;background:#363A43;color:#fff;font-weight:600;font-size:13.5px;cursor:pointer" style-hover="background:#2E8FA0">Kostenlos testen</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:64px 48px 0">
+            <div style="position:absolute;top:40px;left:32px;color:#B9C2C6;font-size:18px;font-weight:400">+</div>
+            <div style="position:absolute;top:40px;right:32px;color:#B9C2C6;font-size:18px;font-weight:400">+</div>
+            <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:end;padding-bottom:48px">
+              <div style="display:flex;flex-direction:column;gap:22px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div style="width:22px;height:2px;background:#45B7C3"></div>
+                  <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#4A4C54">IMMOBILIENSOFTWARE AUS DER SCHWEIZ</div>
+                </div>
+                <div style="font-size:62px;font-weight:800;line-height:1.06;color:#363A43;letter-spacing:-0.028em;text-wrap:pretty">Bewerten, vermarkten, verwalten – in einem Werkzeug.</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:20px;padding-bottom:6px">
+                <div style="font-size:16px;line-height:1.7;color:#55585F;text-wrap:pretty">Valanto bündelt Liegenschaftsverwaltung, Bewertungen mit Dossier und Vermarktung in einer Plattform. Für Makler, Bewerter und Spezialisten – gehostet in der Schweiz.</div>
+                <div style="display:flex;gap:12px">
+                  <div style="padding:13px 26px;border-radius:10px;background:#363A43;color:#fff;font-weight:600;font-size:14.5px;cursor:pointer" style-hover="background:#2E8FA0">Kostenlos testen</div>
+                  <div style="padding:13px 26px;border-radius:10px;border:1px solid #C6CDD0;color:#363A43;font-weight:600;font-size:14.5px;cursor:pointer;background:#fff" style-hover="border-color:#363A43">Demo buchen</div>
+                </div>
+                <div style="font-size:12.5px;color:#9AA1A5;font-weight:500">Keine Kreditkarte nötig · 1 Bewertung gratis · Schweizer Hosting</div>
+              </div>
+            </div>
+            <div style="border:1px solid #D5DBDE;border-bottom:none;border-radius:14px 14px 0 0;background:#fff;overflow:hidden;box-shadow:0 -18px 48px rgba(54,58,67,.08)">
+              <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #E8ECEE">
+                <div style="width:8px;height:8px;border-radius:50%;background:#DDE2E4"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#DDE2E4"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#DDE2E4"></div>
+                <div style="margin-left:10px;font-size:11px;color:#9AA1A5">app.valanto.ch — Liegenschaften</div>
+              </div>
+              <div style="display:flex;height:300px">
+                <div style="width:200px;border-right:1px solid #E8ECEE;padding:16px 0;display:flex;flex-direction:column;gap:2px;font-size:12.5px;font-weight:600">
+                  <div style="padding:9px 18px;background:#F0F7F8;color:#2E8FA0;border-right:2px solid #2E8FA0">Liegenschaften</div>
+                  <div style="padding:9px 18px;color:#55585F">Bewertungen</div>
+                  <div style="padding:9px 18px;color:#55585F">Neubauprojekte</div>
+                  <div style="padding:9px 18px;color:#55585F">Landingpages</div>
+                  <div style="padding:9px 18px;color:#55585F">Verkäufer-Portal</div>
+                </div>
+                <div style="flex:1;padding:18px 22px;display:flex;flex-direction:column;gap:0">
+                  <div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 0.9fr;gap:12px;font-size:10.5px;font-weight:700;letter-spacing:0.08em;color:#9AA1A5;padding:0 8px 10px;border-bottom:1px solid #E8ECEE">
+                    <div>OBJEKT</div><div>STATUS</div><div>MARKTWERT</div><div>DOSSIER</div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 0.9fr;gap:12px;align-items:center;font-size:12.5px;padding:12px 8px;border-bottom:1px solid #F0F2F3">
+                    <div style="font-weight:600;color:#363A43">Seestrasse 14, Erlenbach</div>
+                    <div><span style="font-size:11px;font-weight:700;color:#2E8FA0;background:#E7F3F5;border-radius:5px;padding:3px 8px">In Vermarktung</span></div>
+                    <div style="font-weight:700;color:#363A43">CHF 1'240'000</div>
+                    <div style="color:#2E8FA0;font-weight:600;font-size:12px">Öffnen</div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 0.9fr;gap:12px;align-items:center;font-size:12.5px;padding:12px 8px;border-bottom:1px solid #F0F2F3">
+                    <div style="font-weight:600;color:#363A43">Rebweg 3, Felsberg</div>
+                    <div><span style="font-size:11px;font-weight:700;color:#8A6D1F;background:#F6EFDB;border-radius:5px;padding:3px 8px">Bewertung</span></div>
+                    <div style="font-weight:700;color:#363A43">CHF 890'000</div>
+                    <div style="color:#2E8FA0;font-weight:600;font-size:12px">Öffnen</div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 0.9fr;gap:12px;align-items:center;font-size:12.5px;padding:12px 8px">
+                    <div style="font-weight:600;color:#363A43">Überbauung Sonnhalde, Chur</div>
+                    <div><span style="font-size:11px;font-weight:700;color:#55585F;background:#EEF0F1;border-radius:5px;padding:3px 8px">Neubauprojekt</span></div>
+                    <div style="font-weight:700;color:#363A43">14 / 22 verkauft</div>
+                    <div style="color:#2E8FA0;font-weight:600;font-size:12px">Öffnen</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Weiter z. B.: «bau <a class="dv-oid" href="#1a">1a</a> mit Preisen aus» · «<a class="dv-oid" href="#1b">1b</a>, aber mit dem Raster von <a class="dv-oid" href="#1c">1c</a>» · «zeig die Preis-Sektion in allen drei Stilen»</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: "de" };
+
+  T = {
+    de: {
+      nav_features: "Funktionen", nav_forwho: "Für wen", nav_pricing: "Preise", nav_about: "Über uns",
+      nav_login: "Login", nav_try: "Kostenlos testen",
+      hero_eyebrow: "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",
+      hero_h1: "Bewerten, vermarkten, verwalten – in einem Werkzeug.",
+      hero_lead: "Valanto bündelt Liegenschaftsverwaltung, professionelle Bewertungen mit Dossier und Vermarktung in einer einzigen Plattform. Entwickelt für Makler, Bewerter und Spezialisten – gehostet in der Schweiz.",
+      hero_cta1: "Kostenlos testen", hero_cta2: "Demo buchen",
+      hero_trust: "Keine Kreditkarte nötig · 1 Bewertung gratis · Schweizer Hosting",
+      dossier_label: "BEWERTUNGS-DOSSIER", dossier_type: "Einfamilienhaus", dossier_mv: "MARKTWERT PER 03.07.2026",
+      dossier_r1: "Lage", dossier_r2: "Zustand", dossier_r3: "Ausbau",
+      dossier_footer: "Bewertung Nr. 2043 · Seite 1 / 18", dossier_pdf: "PDF-Export", hosted: "Gehostet in der Schweiz",
+      trust_line: "Vertraut von Immobilienprofis in der ganzen Schweiz",
+      trust_b1: "In der Schweiz gehostet", trust_b2: "SIV-nah", trust_b3: "Partner-Logos folgen",
+      pricing_eyebrow: "TRANSPARENTE PREISE", pricing_h2: "Ein Paket für jede Rolle",
+      pricing_intro: "Monatlich kündbar. Ohne versteckte Kosten. Starten Sie mit einer kostenlosen Bewertung.",
+      popular_badge: "Beliebt", pricing_note: "Alle Preise exkl. MwSt. · Individuelle Lösungen für Teams auf Anfrage.",
+      cta_h2: "Bereit, es auszuprobieren?",
+      cta_text: "Erstellen Sie Ihre erste Bewertung kostenlos oder lassen Sie sich die Plattform in einer persönlichen Demo zeigen.",
+      p_test: "Testen",
+      plan1_name: "BEWERTER", plan1_price: "CHF 50.–", plan1_per: "/ Monat",
+      plan1_f: ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Schweizer Hosting"],
+      plan2_name: "MAKLER", plan2_price: "CHF 80.–", plan2_per: "/ Monat",
+      plan2_f: ["Liegenschaften & Dossier", "Neubauprojekte", "Landingpages", "Verkäufer-Portal"],
+      plan3_name: "SPEZIALIST", plan3_price: "CHF 120.–", plan3_per: "/ Monat",
+      plan3_f: ["Alles aus Makler", "Plus: Bewertungen mit Dossier", "Für alle, die bewerten und vermarkten"],
+      feat_eyebrow: "ALLES AN EINEM ORT", feat_h2: "Ein Werkzeug für den ganzen Immobilien-Workflow",
+      feat_intro: "Statt drei Tools und doppelter Datenpflege: Valanto deckt den kompletten Ablauf ab – von der ersten Bewertung bis zur fertigen Vermarktung.",
+      features: [
+        { t: "Liegenschaften erfassen", d: "Alle Objekte zentral verwalten – inklusive vollständigem Dossier pro Liegenschaft." },
+        { t: "Bewertungen mit Dossier", d: "Professionelle Immobilienbewertungen erstellen und als sauberes Dossier ausgeben." },
+        { t: "Neubauprojekte", d: "Projekte anlegen, Einheiten verwalten und den Verkaufsstand im Blick behalten." },
+        { t: "Landingpages", d: "Für jedes Objekt oder Projekt eine eigene Vermarktungsseite – ohne Zusatztool." },
+        { t: "Verkäufer-Portal", d: "Eigener Zugang für Verkäufer und Partner – transparent und kontrolliert." },
+        { t: "CRM & Einstellungen", d: "Kontakte, Interessenten und Konfiguration an einem Ort. (geplant / in Entwicklung)" },
+      ],
+      aud_eyebrow: "FÜR IHRE ARBEITSWEISE", aud_h2: "Gemacht für Ihre Rolle",
+      audiences: [
+        { role: "Makler", text: "Verwalten Sie Liegenschaften, erstellen Sie Landingpages und behalten Sie Ihre Neubauprojekte im Griff – alles ohne Toolwechsel." },
+        { role: "Bewerter", text: "Erstellen Sie normkonforme Bewertungen mit professionellem Dossier. Schnell, nachvollziehbar, exportierbar." },
+        { role: "Spezialist", text: "Sie machen beides? Kombinieren Sie Bewertung und Vermarktung in einer durchgängigen Plattform – mit allen Modulen." },
+      ],
+      siv_eyebrow: "VERANKERT IM SCHWEIZER MARKT", siv_h2: "Nähe zum Schätzer-Ökosystem",
+      siv_text: "Valanto entsteht aus der täglichen Praxis der Immobilienbewertung und pflegt den Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an den Anforderungen echter Bewertungsarbeit – nicht an denen einer beliebigen Software von der Stange.",
+      sivPoints: [
+        { icon: "🇨🇭", t: "Schweizer Hosting", d: "Ihre Daten bleiben im Land." },
+        { icon: "🔒", t: "Sicher & stabil", d: "Auf verlässlicher Infrastruktur gebaut." },
+        { icon: "🤝", t: "Aus der Praxis", d: "Von Immobilienprofis für Immobilienprofis." },
+      ],
+      footer_claim: "Bewerten, vermarkten, verwalten – in einem Werkzeug.", footer_madein: "Made & hosted in Switzerland",
+      footer_c1: "PRODUKT", footer_c2: "UNTERNEHMEN", footer_c3: "RECHTLICHES",
+      footer_contact: "Kontakt", footer_imprint: "Impressum", footer_privacy: "Datenschutz", footer_terms: "AGB",
+      footer_copy: "© 2026 Valanto / Felsberg Consulting GmbH. Alle Rechte vorbehalten.",
+    },
+    fr: {
+      nav_features: "Fonctions", nav_forwho: "Pour qui", nav_pricing: "Tarifs", nav_about: "À propos",
+      nav_login: "Connexion", nav_try: "Essai gratuit",
+      hero_eyebrow: "LOGICIEL IMMOBILIER SUISSE",
+      hero_h1: "Estimer, commercialiser, gérer – dans un seul outil.",
+      hero_lead: "Valanto réunit la gestion des biens, les estimations professionnelles avec dossier et la commercialisation sur une seule plateforme. Conçu pour les courtiers, les évaluateurs et les spécialistes – hébergé en Suisse.",
+      hero_cta1: "Essai gratuit", hero_cta2: "Réserver une démo",
+      hero_trust: "Sans carte de crédit · 1 estimation offerte · Hébergement suisse",
+      dossier_label: "DOSSIER D'ESTIMATION", dossier_type: "Maison individuelle", dossier_mv: "VALEUR AU 03.07.2026",
+      dossier_r1: "Situation", dossier_r2: "État", dossier_r3: "Finitions",
+      dossier_footer: "Estimation n° 2043 · Page 1 / 18", dossier_pdf: "Export PDF", hosted: "Hébergé en Suisse",
+      trust_line: "Adopté par les professionnels de l'immobilier dans toute la Suisse",
+      trust_b1: "Hébergé en Suisse", trust_b2: "Proche du SIV", trust_b3: "Logos partenaires à venir",
+      pricing_eyebrow: "TARIFS TRANSPARENTS", pricing_h2: "Une offre pour chaque rôle",
+      pricing_intro: "Résiliable chaque mois. Sans frais cachés. Commencez avec une estimation gratuite.",
+      popular_badge: "Populaire", pricing_note: "Tous les prix HT · Solutions sur mesure pour les équipes sur demande.",
+      cta_h2: "Prêt à l'essayer ?",
+      cta_text: "Créez votre première estimation gratuitement ou découvrez la plateforme lors d'une démo personnalisée.",
+      p_test: "Essayer",
+      plan1_name: "ÉVALUATEUR", plan1_price: "CHF 50.–", plan1_per: "/ mois",
+      plan1_f: ["Estimations avec dossier", "Données de base des biens", "Hébergement suisse"],
+      plan2_name: "COURTIER", plan2_price: "CHF 80.–", plan2_per: "/ mois",
+      plan2_f: ["Biens & dossier", "Projets de construction", "Landing pages", "Portail vendeurs"],
+      plan3_name: "SPÉCIALISTE", plan3_price: "CHF 120.–", plan3_per: "/ mois",
+      plan3_f: ["Tout de Courtier", "Plus : estimations avec dossier", "Pour ceux qui estiment et commercialisent"],
+      feat_eyebrow: "TOUT AU MÊME ENDROIT", feat_h2: "Un outil pour tout le workflow immobilier",
+      feat_intro: "Plutôt que trois outils et une double saisie : Valanto couvre l'ensemble du processus – de la première estimation jusqu'à la commercialisation finale.",
+      features: [
+        { t: "Saisir les biens", d: "Gérer tous les objets de façon centralisée – avec un dossier complet par bien." },
+        { t: "Estimations avec dossier", d: "Réaliser des estimations professionnelles et les exporter sous forme de dossier soigné." },
+        { t: "Projets de construction", d: "Créer des projets, gérer les unités et suivre l'état des ventes." },
+        { t: "Landing pages", d: "Une page de commercialisation dédiée pour chaque bien ou projet – sans outil supplémentaire." },
+        { t: "Portail vendeurs", d: "Un accès propre pour les vendeurs et partenaires – transparent et maîtrisé." },
+        { t: "CRM & réglages", d: "Contacts, prospects et configuration au même endroit. (prévu / en développement)" },
+      ],
+      aud_eyebrow: "POUR VOTRE FAÇON DE TRAVAILLER", aud_h2: "Conçu pour votre rôle",
+      audiences: [
+        { role: "Courtier", text: "Gérez les biens, créez des landing pages et gardez la main sur vos projets de construction – sans changer d'outil." },
+        { role: "Évaluateur", text: "Réalisez des estimations conformes aux normes avec un dossier professionnel. Rapide, traçable, exportable." },
+        { role: "Spécialiste", text: "Vous faites les deux ? Combinez estimation et commercialisation sur une plateforme continue – avec tous les modules." },
+      ],
+      siv_eyebrow: "ANCRÉ DANS LE MARCHÉ SUISSE", siv_h2: "Proche de l'écosystème des évaluateurs",
+      siv_text: "Valanto naît de la pratique quotidienne de l'estimation immobilière et entretient l'échange avec l'association suisse des évaluateurs SIV. La plateforme reste ainsi proche des exigences du vrai travail d'évaluation – pas de celles d'un logiciel standard.",
+      sivPoints: [
+        { icon: "🇨🇭", t: "Hébergement suisse", d: "Vos données restent dans le pays." },
+        { icon: "🔒", t: "Sûr & stable", d: "Bâti sur une infrastructure fiable." },
+        { icon: "🤝", t: "Issu de la pratique", d: "Par des professionnels, pour des professionnels." },
+      ],
+      footer_claim: "Estimer, commercialiser, gérer – dans un seul outil.", footer_madein: "Conçu & hébergé en Suisse",
+      footer_c1: "PRODUIT", footer_c2: "ENTREPRISE", footer_c3: "MENTIONS LÉGALES",
+      footer_contact: "Contact", footer_imprint: "Impressum", footer_privacy: "Confidentialité", footer_terms: "CGU",
+      footer_copy: "© 2026 Valanto / Felsberg Consulting GmbH. Tous droits réservés.",
+    },
+    en: {
+      nav_features: "Features", nav_forwho: "Who it's for", nav_pricing: "Pricing", nav_about: "About",
+      nav_login: "Login", nav_try: "Try for free",
+      hero_eyebrow: "REAL ESTATE SOFTWARE FROM SWITZERLAND",
+      hero_h1: "Value, market, manage – in one tool.",
+      hero_lead: "Valanto brings property management, professional valuations with dossier, and marketing together on a single platform. Built for brokers, valuers and specialists – hosted in Switzerland.",
+      hero_cta1: "Try for free", hero_cta2: "Book a demo",
+      hero_trust: "No credit card required · 1 free valuation · Swiss hosting",
+      dossier_label: "VALUATION DOSSIER", dossier_type: "Single-family house", dossier_mv: "MARKET VALUE AS OF 03.07.2026",
+      dossier_r1: "Location", dossier_r2: "Condition", dossier_r3: "Fit-out",
+      dossier_footer: "Valuation no. 2043 · Page 1 / 18", dossier_pdf: "PDF export", hosted: "Hosted in Switzerland",
+      trust_line: "Trusted by real estate professionals across Switzerland",
+      trust_b1: "Hosted in Switzerland", trust_b2: "Close to SIV", trust_b3: "Partner logos coming",
+      pricing_eyebrow: "TRANSPARENT PRICING", pricing_h2: "A plan for every role",
+      pricing_intro: "Cancel monthly. No hidden costs. Start with a free valuation.",
+      popular_badge: "Popular", pricing_note: "All prices excl. VAT · Custom solutions for teams on request.",
+      cta_h2: "Ready to give it a try?",
+      cta_text: "Create your first valuation for free, or let us show you the platform in a personal demo.",
+      p_test: "Try it",
+      plan1_name: "VALUER", plan1_price: "CHF 50.–", plan1_per: "/ month",
+      plan1_f: ["Valuations with dossier", "Property base data", "Swiss hosting"],
+      plan2_name: "BROKER", plan2_price: "CHF 80.–", plan2_per: "/ month",
+      plan2_f: ["Properties & dossier", "New-build projects", "Landing pages", "Seller portal"],
+      plan3_name: "SPECIALIST", plan3_price: "CHF 120.–", plan3_per: "/ month",
+      plan3_f: ["Everything in Broker", "Plus: valuations with dossier", "For those who value and market"],
+      feat_eyebrow: "EVERYTHING IN ONE PLACE", feat_h2: "One tool for the entire real estate workflow",
+      feat_intro: "Instead of three tools and duplicate data entry: Valanto covers the whole process – from the first valuation to finished marketing.",
+      features: [
+        { t: "Capture properties", d: "Manage every object centrally – including a complete dossier per property." },
+        { t: "Valuations with dossier", d: "Create professional property valuations and export them as a clean dossier." },
+        { t: "New-build projects", d: "Set up projects, manage units and keep an eye on the sales status." },
+        { t: "Landing pages", d: "A dedicated marketing page for every object or project – no extra tool." },
+        { t: "Seller portal", d: "A dedicated access for sellers and partners – transparent and controlled." },
+        { t: "CRM & settings", d: "Contacts, prospects and configuration in one place. (planned / in development)" },
+      ],
+      aud_eyebrow: "FOR THE WAY YOU WORK", aud_h2: "Built for your role",
+      audiences: [
+        { role: "Broker", text: "Manage properties, create landing pages and stay on top of your new-build projects – all without switching tools." },
+        { role: "Valuer", text: "Create standard-compliant valuations with a professional dossier. Fast, traceable, exportable." },
+        { role: "Specialist", text: "You do both? Combine valuation and marketing on one continuous platform – with all modules." },
+      ],
+      siv_eyebrow: "ROOTED IN THE SWISS MARKET", siv_h2: "Close to the valuer ecosystem",
+      siv_text: "Valanto grows out of the daily practice of property valuation and maintains an exchange with the Swiss valuers' association SIV. This keeps the platform close to the demands of real valuation work – not those of any off-the-shelf software.",
+      sivPoints: [
+        { icon: "🇨🇭", t: "Swiss hosting", d: "Your data stays in the country." },
+        { icon: "🔒", t: "Secure & stable", d: "Built on reliable infrastructure." },
+        { icon: "🤝", t: "From practice", d: "By real estate professionals, for real estate professionals." },
+      ],
+      footer_claim: "Value, market, manage – in one tool.", footer_madein: "Made & hosted in Switzerland",
+      footer_c1: "PRODUCT", footer_c2: "COMPANY", footer_c3: "LEGAL",
+      footer_contact: "Contact", footer_imprint: "Imprint", footer_privacy: "Privacy", footer_terms: "Terms",
+      footer_copy: "© 2026 Valanto / Felsberg Consulting GmbH. All rights reserved.",
+    },
+  };
+
+  langChip(active) {
+    return active ? "color:#23262D;background:#ECE6DC" : "color:#A6A296;background:transparent";
+  }
+
+  renderVals() {
+    const t = this.T[this.state.lang];
+    const cardBase = "position:relative;display:flex;flex-direction:column;background:#FAF7F2;padding:36px 28px 30px;border-right:1px solid #23262D";
+    const cardLast = "position:relative;display:flex;flex-direction:column;background:#FAF7F2;padding:36px 28px 30px";
+    const cardPop = "position:relative;display:flex;flex-direction:column;background:#fff;padding:44px 28px 30px;border-right:1px solid #23262D";
+    const ctaGhost = "margin-top:24px;padding:13px 20px;border:1.5px solid #23262D;color:#23262D;font-weight:600;font-size:14px;text-align:center;cursor:pointer";
+    const ctaFill = "margin-top:24px;padding:13px 20px;background:#23808F;color:#fff;font-weight:600;font-size:14px;text-align:center;cursor:pointer";
+    const featCell = "border-right:1px solid #23262D;border-bottom:1px solid #23262D;padding:28px 26px;background:#FAF7F2;display:flex;flex-direction:column;gap:12px;min-height:150px";
+    const audCell = "padding:32px 30px 34px;background:#FAF7F2";
+    const audMid = "padding:32px 30px 34px;background:#FAF7F2;border-left:1px solid #23262D;border-right:1px solid #23262D";
+    const sivRow = "display:flex;gap:16px;align-items:flex-start;padding:22px 26px;border-bottom:1px solid #23262D";
+    const sivLast = "display:flex;gap:16px;align-items:flex-start;padding:22px 26px";
+    const mcardBase = "position:relative;display:flex;flex-direction:column;background:#FAF7F2;padding:26px 22px 24px;border-bottom:1px solid #23262D";
+    const mcardLast = "position:relative;display:flex;flex-direction:column;background:#FAF7F2;padding:26px 22px 24px";
+    const mcardPop = "position:relative;display:flex;flex-direction:column;background:#fff;padding:38px 22px 24px;border-bottom:1px solid #23262D";
+    const mctaGhost = "margin-top:20px;padding:12px;border:1.5px solid #23262D;color:#23262D;font-weight:600;font-size:14px;text-align:center;cursor:pointer";
+    const mctaFill = "margin-top:20px;padding:12px;background:#23808F;color:#fff;font-weight:600;font-size:14px;text-align:center;cursor:pointer";
+    return {
+      ...t,
+      pickDE: () => this.setState({ lang: "de" }),
+      pickFR: () => this.setState({ lang: "fr" }),
+      pickEN: () => this.setState({ lang: "en" }),
+      deStyle: this.langChip(this.state.lang === "de"),
+      frStyle: this.langChip(this.state.lang === "fr"),
+      enStyle: this.langChip(this.state.lang === "en"),
+      features: t.features.map((f, i) => ({ ...f, no: String(i + 1).padStart(2, "0"), style: featCell })),
+      audiences: t.audiences.map((a, i) => ({ ...a, style: i === 1 ? audMid : audCell })),
+      sivPoints: t.sivPoints.map((p, i) => ({ ...p, style: i === t.sivPoints.length - 1 ? sivLast : sivRow })),
+      plans: [
+        { name: t.plan1_name, price: t.plan1_price, per: t.plan1_per, features: t.plan1_f, popular: false, card: cardBase, cta: ctaGhost, mcard: mcardBase, mcta: mctaGhost, ctaLabel: t.p_test },
+        { name: t.plan2_name, price: t.plan2_price, per: t.plan2_per, features: t.plan2_f, popular: true, card: cardPop, cta: ctaFill, mcard: mcardPop, mcta: mctaFill, ctaLabel: t.p_test },
+        { name: t.plan3_name, price: t.plan3_price, per: t.plan3_per, features: t.plan3_f, popular: false, card: cardLast, cta: ctaGhost, mcard: mcardLast, mcta: mctaGhost, ctaLabel: t.p_test },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

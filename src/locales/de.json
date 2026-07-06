@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "forwho": "Für wen",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "login": "Login",
+    "try": "Kostenlos testen"
+  },
+  "hero": {
+    "eyebrow": "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",
+    "h1": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",
+    "lead": "Valanto bündelt Liegenschaftsverwaltung, professionelle Bewertungen mit Dossier und Vermarktung in einer einzigen Plattform. Entwickelt für Makler, Bewerter und Spezialisten – gehostet in der Schweiz.",
+    "cta1": "Kostenlos testen",
+    "cta2": "Demo buchen",
+    "trust": "Keine Kreditkarte nötig · 1 Bewertung gratis · Schweizer Hosting"
+  },
+  "dossier": {
+    "label": "BEWERTUNGS-DOSSIER",
+    "type": "Einfamilienhaus",
+    "mv": "MARKTWERT PER 03.07.2026",
+    "r1": "Lage",
+    "r2": "Zustand",
+    "r3": "Ausbau",
+    "footer": "Bewertung Nr. 2043 · Seite 1 / 18",
+    "pdf": "PDF-Export",
+    "hosted": "Gehostet in der Schweiz"
+  },
+  "trust": {
+    "line": "Vertraut von Immobilienprofis in der ganzen Schweiz",
+    "b1": "In der Schweiz gehostet",
+    "b2": "SIV-nah",
+    "b3": "Partner-Logos folgen"
+  },
+  "features": {
+    "eyebrow": "ALLES AN EINEM ORT",
+    "h2": "Ein Werkzeug für den ganzen Immobilien-Workflow",
+    "intro": "Statt drei Tools und doppelter Datenpflege: Valanto deckt den kompletten Ablauf ab – von der ersten Bewertung bis zur fertigen Vermarktung.",
+    "items": [
+      { "t": "Liegenschaften erfassen", "d": "Alle Objekte zentral verwalten – inklusive vollständigem Dossier pro Liegenschaft." },
+      { "t": "Bewertungen mit Dossier", "d": "Professionelle Immobilienbewertungen erstellen und als sauberes Dossier ausgeben." },
+      { "t": "Neubauprojekte", "d": "Projekte anlegen, Einheiten verwalten und den Verkaufsstand im Blick behalten." },
+      { "t": "Landingpages", "d": "Für jedes Objekt oder Projekt eine eigene Vermarktungsseite – ohne Zusatztool." },
+      { "t": "Verkäufer-Portal", "d": "Eigener Zugang für Verkäufer und Partner – transparent und kontrolliert." },
+      { "t": "CRM & Einstellungen", "d": "Kontakte, Interessenten und Konfiguration an einem Ort. (geplant / in Entwicklung)" }
+    ]
+  },
+  "audience": {
+    "eyebrow": "FÜR IHRE ARBEITSWEISE",
+    "h2": "Gemacht für Ihre Rolle",
+    "items": [
+      { "role": "Makler", "text": "Verwalten Sie Liegenschaften, erstellen Sie Landingpages und behalten Sie Ihre Neubauprojekte im Griff – alles ohne Toolwechsel." },
+      { "role": "Bewerter", "text": "Erstellen Sie normkonforme Bewertungen mit professionellem Dossier. Schnell, nachvollziehbar, exportierbar." },
+      { "role": "Spezialist", "text": "Sie machen beides? Kombinieren Sie Bewertung und Vermarktung in einer durchgängigen Plattform – mit allen Modulen." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "TRANSPARENTE PREISE",
+    "h2": "Ein Paket für jede Rolle",
+    "intro": "Monatlich kündbar. Ohne versteckte Kosten. Starten Sie mit einer kostenlosen Bewertung.",
+    "popular": "Beliebt",
+    "note": "Alle Preise exkl. MwSt. · Individuelle Lösungen für Teams auf Anfrage.",
+    "test": "Testen",
+    "plans": [
+      {
+        "name": "BEWERTER",
+        "price": "CHF 50.–",
+        "per": "/ Monat",
+        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Schweizer Hosting"]
+      },
+      {
+        "name": "MAKLER",
+        "price": "CHF 80.–",
+        "per": "/ Monat",
+        "features": ["Liegenschaften & Dossier", "Neubauprojekte", "Landingpages", "Verkäufer-Portal"]
+      },
+      {
+        "name": "SPEZIALIST",
+        "price": "CHF 120.–",
+        "per": "/ Monat",
+        "features": ["Alles aus Makler", "Plus: Bewertungen mit Dossier", "Für alle, die bewerten und vermarkten"]
+      }
+    ]
+  },
+  "siv": {
+    "eyebrow": "VERANKERT IM SCHWEIZER MARKT",
+    "h2": "Nähe zum Schätzer-Ökosystem",
+    "text": "Valanto entsteht aus der täglichen Praxis der Immobilienbewertung und pflegt den Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an den Anforderungen echter Bewertungsarbeit – nicht an denen einer beliebigen Software von der Stange.",
+    "points": [
+      { "icon": "🇨🇭", "t": "Schweizer Hosting", "d": "Ihre Daten bleiben im Land." },
+      { "icon": "🔒", "t": "Sicher & stabil", "d": "Auf verlässlicher Infrastruktur gebaut." },
+      { "icon": "🤝", "t": "Aus der Praxis", "d": "Von Immobilienprofis für Immobilienprofis." }
+    ]
+  },
+  "cta": {
+    "h2": "Bereit, es auszuprobieren?",
+    "text": "Erstellen Sie Ihre erste Bewertung kostenlos oder lassen Sie sich die Plattform in einer persönlichen Demo zeigen."
+  },
+  "footer": {
+    "claim": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",
+    "madein": "Made & hosted in Switzerland",
+    "c1": "PRODUKT",
+    "c2": "UNTERNEHMEN",
+    "c3": "RECHTLICHES",
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "copy": "© 2026 Valanto / Felsberg Consulting GmbH. Alle Rechte vorbehalten."
+  }
+}

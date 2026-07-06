@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "features": "Features",
+    "forwho": "Who it's for",
+    "pricing": "Pricing",
+    "about": "About",
+    "login": "Login",
+    "try": "Try for free"
+  },
+  "hero": {
+    "eyebrow": "REAL ESTATE SOFTWARE FROM SWITZERLAND",
+    "h1": "Value, market, manage – in one tool.",
+    "lead": "Valanto brings property management, professional valuations with dossier, and marketing together on a single platform. Built for brokers, valuers and specialists – hosted in Switzerland.",
+    "cta1": "Try for free",
+    "cta2": "Book a demo",
+    "trust": "No credit card required · 1 free valuation · Swiss hosting"
+  },
+  "dossier": {
+    "label": "VALUATION DOSSIER",
+    "type": "Single-family house",
+    "mv": "MARKET VALUE AS OF 03.07.2026",
+    "r1": "Location",
+    "r2": "Condition",
+    "r3": "Fit-out",
+    "footer": "Valuation no. 2043 · Page 1 / 18",
+    "pdf": "PDF export",
+    "hosted": "Hosted in Switzerland"
+  },
+  "trust": {
+    "line": "Trusted by real estate professionals across Switzerland",
+    "b1": "Hosted in Switzerland",
+    "b2": "Close to SIV",
+    "b3": "Partner logos coming"
+  },
+  "features": {
+    "eyebrow": "EVERYTHING IN ONE PLACE",
+    "h2": "One tool for the entire real estate workflow",
+    "intro": "Instead of three tools and duplicate data entry: Valanto covers the whole process – from the first valuation to finished marketing.",
+    "items": [
+      { "t": "Capture properties", "d": "Manage every object centrally – including a complete dossier per property." },
+      { "t": "Valuations with dossier", "d": "Create professional property valuations and export them as a clean dossier." },
+      { "t": "New-build projects", "d": "Set up projects, manage units and keep an eye on the sales status." },
+      { "t": "Landing pages", "d": "A dedicated marketing page for every object or project – no extra tool." },
+      { "t": "Seller portal", "d": "A dedicated access for sellers and partners – transparent and controlled." },
+      { "t": "CRM & settings", "d": "Contacts, prospects and configuration in one place. (planned / in development)" }
+    ]
+  },
+  "audience": {
+    "eyebrow": "FOR THE WAY YOU WORK",
+    "h2": "Built for your role",
+    "items": [
+      { "role": "Broker", "text": "Manage properties, create landing pages and stay on top of your new-build projects – all without switching tools." },
+      { "role": "Valuer", "text": "Create standard-compliant valuations with a professional dossier. Fast, traceable, exportable." },
+      { "role": "Specialist", "text": "You do both? Combine valuation and marketing on one continuous platform – with all modules." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "TRANSPARENT PRICING",
+    "h2": "A plan for every role",
+    "intro": "Cancel monthly. No hidden costs. Start with a free valuation.",
+    "popular": "Popular",
+    "note": "All prices excl. VAT · Custom solutions for teams on request.",
+    "test": "Try it",
+    "plans": [
+      {
+        "name": "VALUER",
+        "price": "CHF 50.–",
+        "per": "/ month",
+        "features": ["Valuations with dossier", "Property base data", "Swiss hosting"]
+      },
+      {
+        "name": "BROKER",
+        "price": "CHF 80.–",
+        "per": "/ month",
+        "features": ["Properties & dossier", "New-build projects", "Landing pages", "Seller portal"]
+      },
+      {
+        "name": "SPECIALIST",
+        "price": "CHF 120.–",
+        "per": "/ month",
+        "features": ["Everything in Broker", "Plus: valuations with dossier", "For those who value and market"]
+      }
+    ]
+  },
+  "siv": {
+    "eyebrow": "ROOTED IN THE SWISS MARKET",
+    "h2": "Close to the valuer ecosystem",
+    "text": "Valanto grows out of the daily practice of property valuation and maintains an exchange with the Swiss valuers' association SIV. This keeps the platform close to the demands of real valuation work – not those of any off-the-shelf software.",
+    "points": [
+      { "icon": "🇨🇭", "t": "Swiss hosting", "d": "Your data stays in the country." },
+      { "icon": "🔒", "t": "Secure & stable", "d": "Built on reliable infrastructure." },
+      { "icon": "🤝", "t": "From practice", "d": "By real estate professionals, for real estate professionals." }
+    ]
+  },
+  "cta": {
+    "h2": "Ready to give it a try?",
+    "text": "Create your first valuation for free, or let us show you the platform in a personal demo."
+  },
+  "footer": {
+    "claim": "Value, market, manage – in one tool.",
+    "madein": "Made & hosted in Switzerland",
+    "c1": "PRODUCT",
+    "c2": "COMPANY",
+    "c3": "LEGAL",
+    "contact": "Contact",
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copy": "© 2026 Valanto / Felsberg Consulting GmbH. All rights reserved."
+  }
+}
