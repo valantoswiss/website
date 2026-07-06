@@ -150,9 +150,10 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
 - Block-Bg `#F1ECE2`, `border-top:1px solid #23262D`, padding `76px 52px`.
 - Grid `1fr 1fr`: links Eyebrow „VERANKERT IM SCHWEIZER MARKT" + H2 „Nähe zum
   Schätzer-Ökosystem" + Text; rechts weisse Box mit 1px-Rahmen, drei durch 1px getrennte
-  Zeilen (🇨🇭 Schweizer Hosting / 🔒 Sicher & stabil / 🤝 Aus der Praxis).
+  Zeilen (Schweizerkreuz-Icon / Schloss-Icon / Haus-Icon → Schweizer Hosting / Sicher &
+  stabil / Aus der Praxis).
 - **Vorsicht Copy:** bewusst „Austausch"/„Nähe", **keine** offizielle SIV-Partnerschaft
-  behaupten, bis mit Jürg geklärt. Emoji-Icons später durch Line-Icons ersetzen.
+  behaupten, bis mit Jürg geklärt.
 
 ### 8. Abschluss-CTA
 - Volle Breite, **Anthrazit-Band** (`#23262D`), padding `72px 52px`, zentriert.
@@ -210,6 +211,16 @@ Mobile-Regeln pro Sektion:
 
 Hit-Targets durchgängig ≥ 44px. Buttons behalten `border-radius: 0`.
 
+## Barrierefreiheit (WCAG AA)
+- Alle Fliess-/Hinweistext-Farben erfüllen **AA (≥ 4.5:1)**. Zwei Tokens wurden dafür
+  korrigiert: `--muted` #A6A296 → **#6E6A60** (auf Papier), Footer-Labels/Copyright
+  #6E6B64 → **#8E8B82** (auf dunklem Grund). Diese Werte im Code verwenden, nicht die alten.
+- Petrol `#23808F` als Text auf Papier `#FAF7F2` ≈ 4.6:1 (AA für Normaltext ok); als
+  weisser Text auf Petrol-Fläche ≈ 4.7:1.
+- Beim Nachbauen: semantisches HTML (`<header>`, `<nav>`, `<section>`, `<h1/h2>`,
+  `<footer>`), `alt`-Texte für den (echten) Hero-Screenshot, `:focus-visible`-Stil für
+  Tastaturnavigation (z. B. 2px Petrol-Outline), `aria-current` am aktiven Sprach-Segment.
+
 ## State Management
 - `language: 'de' | 'fr' | 'en'` (Default `de`) — über i18n. Persistenz optional
   (localStorage / `<html lang>`).
@@ -227,8 +238,12 @@ Hit-Targets durchgängig ≥ 44px. Buttons behalten `border-radius: 0`.
 ## Assets
 - **Fonts:** Google Fonts — `Source Serif 4`, `Archivo`. (M PLUS Rounded 1c aus dem
   Briefing wird NICHT verwendet.)
-- **Icons:** Aktuell Emoji (🇨🇭 🔒 🤝) als Platzhalter — vor Go-Live durch echte
-  Line-Icons ersetzen. Feature-Marker sind Ziffern „01–06", keine Icons.
+- **Icons:** Alle Emoji wurden durch **eckige Inline-SVG-Icons** ersetzt (keine Emoji
+  mehr im Design): Schweiz = Petrol-Quadrat mit weissem Kreuz (`#23808F` + `#fff`); SIV
+  „Sicher & stabil" = Schloss-Linien-Icon; „Aus der Praxis" = Haus-Linien-Icon
+  (`stroke:#23262D`, `stroke-width:1.8`, eckig). Beim Nachbau als eigene `<Icon>`-
+  Komponenten übernehmen (z. B. Lucide `lock`/`home` + custom Swiss-Cross-SVG).
+  Feature-Marker sind Ziffern „01–06", keine Icons.
 - **Produkt-Screenshots:** fehlen. Hero-Dossier und Dashboard sind HTML-Platzhalter —
   durch echte Screenshots des Tools ersetzen.
 - **Logo:** Wortmarke „Valanto" + Petrol-Quadrat (Text-basiert, kein Bild-Asset nötig;
@@ -368,9 +383,9 @@ JS-lose Scraper. Statische Inhalte, daher hartkodierbar (oder pro Locale via Sha
 Bei mehrsprachig: pro Locale eigene `og:title`/`description` + `og:locale`
 (`de_CH` / `fr_CH` / `en`) und `hreflang`-Alternates rendern.
 
-**og:image (1200×630):** muss noch als echtes Bild erstellt und unter
-`public/og-image.png` abgelegt werden — im Valanto-Stil (dunkles Anthrazit, Wortmarke,
-Claim). *(Kann im Design-Tool erstellt werden.)*
+**og:image (1200×630):** **liegt als `og-image.png` im Paket** (Valanto-Stil: Anthrazit,
+Wortmarke, Claim, Modul-Leiste). Nach `public/og-image.png` legen; `og:image`-URL zeigt
+bereits darauf. Editierbare Quelle: `og-image-source.html`.
 
 **Prüfen nach Umsetzung:**
 - Browser „View Source" (nicht DevTools-Inspector!) auf `https://valanto.test` bzw. der
@@ -381,6 +396,8 @@ Claim). *(Kann im Design-Tool erstellt werden.)*
 
 ## Files
 - `Valanto Website.dc.html` — Design-Prototyp (Referenz, nur im Design-Tool lauffähig).
+- `og-image.png` — fertiges 1200×630 Social-Share-Bild → nach `public/og-image.png`.
+- `og-image-source.html` — editierbare Quelle des OG-Bilds.
 - `locales/de.json`, `locales/fr.json`, `locales/en.json` — react-i18next-Sprachdateien,
   1:1 nach `resources/js/locales/` übernehmen.
 - `screenshots/` — Desktop- und Mobile-Aufnahmen des Designs.
