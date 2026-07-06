@@ -92,9 +92,9 @@
     "h2": "Close to the valuer ecosystem",
     "text": "Valanto grows out of the daily practice of property valuation and maintains an exchange with the Swiss valuers' association SIV. This keeps the platform close to the demands of real valuation work – not those of any off-the-shelf software.",
     "points": [
-      { "icon": "🇨🇭", "t": "Swiss hosting", "d": "Your data stays in the country." },
-      { "icon": "🔒", "t": "Secure & stable", "d": "Built on reliable infrastructure." },
-      { "icon": "🤝", "t": "From practice", "d": "By real estate professionals, for real estate professionals." }
+      { "t": "Swiss hosting", "d": "Your data stays in the country." },
+      { "t": "Secure & stable", "d": "Built on reliable infrastructure." },
+      { "t": "From practice", "d": "By real estate professionals, for real estate professionals." }
     ]
   },
   "cta": {

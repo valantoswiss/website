@@ -8,6 +8,27 @@ const LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English' }
 // prototype — prevent the bare "#" href from jumping the page to the top.
 const placeholderClick = (e) => e.preventDefault()
 
+/* Angular inline-SVG icons (Valanto style) — replace all emoji */
+const SwissCross = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 14 14" aria-hidden="true" style={{ flex: 'none' }}>
+    <rect width="14" height="14" fill="#23808F" />
+    <rect x="5.9" y="2.8" width="2.2" height="8.4" fill="#fff" />
+    <rect x="2.8" y="5.9" width="8.4" height="2.2" fill="#fff" />
+  </svg>
+)
+const IconLock = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
+    <rect x="4" y="10.5" width="16" height="10.5" /><path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3" />
+  </svg>
+)
+const IconHouse = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
+    <path d="M4 11 12 4l8 7" /><path d="M6 10.5V20h12v-9.5" />
+  </svg>
+)
+const IconSwissBox = () => <SwissCross size={26} />
+const SIV_ICONS = [IconSwissBox, IconLock, IconHouse] // positionsbasiert
+
 /* Fixed (non-translated) sample data for the hero dossier visual */
 const DOSSIER = {
   address: 'Seestrasse 14, 8703 Erlenbach',
@@ -166,7 +187,7 @@ function Hero() {
           <div className="dossier-back" />
           <Dossier />
           <div className="hosted-badge">
-            <span aria-hidden="true">🇨🇭</span> {t('dossier.hosted')}
+            <SwissCross /> {t('dossier.hosted')}
           </div>
         </div>
       </div>
@@ -182,7 +203,7 @@ function TrustBar() {
         <span className="trustbar__line">{t('trust.line')}</span>
         <div className="trustbar__badges">
           <span className="badge">
-            <span aria-hidden="true">🇨🇭</span> {t('trust.b1')}
+            <SwissCross /> {t('trust.b1')}
           </span>
           <span className="badge">{t('trust.b2')}</span>
           <span className="badge badge--soft">{t('trust.b3')}</span>
@@ -304,15 +325,18 @@ function Siv() {
           <p className="siv__text">{t('siv.text')}</p>
         </div>
         <div className="siv__points">
-          {points.map((p, i) => (
-            <div className="sivrow" key={i}>
-              <span className="sivrow__icon">{p.icon}</span>
-              <div>
-                <div className="sivrow__title">{p.t}</div>
-                <div className="sivrow__desc">{p.d}</div>
+          {points.map((p, i) => {
+            const Icon = SIV_ICONS[i]
+            return (
+              <div className="sivrow" key={i}>
+                <span className="sivrow__icon">{Icon ? <Icon /> : null}</span>
+                <div>
+                  <div className="sivrow__title">{p.t}</div>
+                  <div className="sivrow__desc">{p.d}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
@@ -343,7 +367,7 @@ function Footer() {
             <Brand />
             <p className="footer__claim">{t('footer.claim')}</p>
             <span className="footer__madein">
-              <span aria-hidden="true">🇨🇭</span> {t('footer.madein')}
+              <SwissCross /> {t('footer.madein')}
             </span>
           </div>
           <div className="footer__col">

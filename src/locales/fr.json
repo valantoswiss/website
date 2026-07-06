@@ -92,9 +92,9 @@
     "h2": "Proche de l'écosystème des évaluateurs",
     "text": "Valanto naît de la pratique quotidienne de l'estimation immobilière et entretient l'échange avec l'association suisse des évaluateurs SIV. La plateforme reste ainsi proche des exigences du vrai travail d'évaluation – pas de celles d'un logiciel standard.",
     "points": [
-      { "icon": "🇨🇭", "t": "Hébergement suisse", "d": "Vos données restent dans le pays." },
-      { "icon": "🔒", "t": "Sûr & stable", "d": "Bâti sur une infrastructure fiable." },
-      { "icon": "🤝", "t": "Issu de la pratique", "d": "Par des professionnels, pour des professionnels." }
+      { "t": "Hébergement suisse", "d": "Vos données restent dans le pays." },
+      { "t": "Sûr & stable", "d": "Bâti sur une infrastructure fiable." },
+      { "t": "Issu de la pratique", "d": "Par des professionnels, pour des professionnels." }
     ]
   },
   "cta": {

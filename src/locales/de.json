@@ -92,9 +92,9 @@
     "h2": "Nähe zum Schätzer-Ökosystem",
     "text": "Valanto entsteht aus der täglichen Praxis der Immobilienbewertung und pflegt den Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an den Anforderungen echter Bewertungsarbeit – nicht an denen einer beliebigen Software von der Stange.",
     "points": [
-      { "icon": "🇨🇭", "t": "Schweizer Hosting", "d": "Ihre Daten bleiben im Land." },
-      { "icon": "🔒", "t": "Sicher & stabil", "d": "Auf verlässlicher Infrastruktur gebaut." },
-      { "icon": "🤝", "t": "Aus der Praxis", "d": "Von Immobilienprofis für Immobilienprofis." }
+      { "t": "Schweizer Hosting", "d": "Ihre Daten bleiben im Land." },
+      { "t": "Sicher & stabil", "d": "Auf verlässlicher Infrastruktur gebaut." },
+      { "t": "Aus der Praxis", "d": "Von Immobilienprofis für Immobilienprofis." }
     ]
   },
   "cta": {

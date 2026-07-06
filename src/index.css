@@ -14,7 +14,8 @@
   --teal-light: #8fbfc8;
   --text: #3c3f47;
   --text-soft: #55585f;
-  --muted: #a6a296;
+  /* abgedunkelt von #a6a296 auf ~5:1 (WCAG AA) gegen Papier/Weiss, warmer Ton bleibt */
+  --muted: #6f6a5c;
   --track: #f0ebe1;
 
   /* on dark backgrounds */
@@ -24,7 +25,8 @@
   --footer-bg: #1a1c21;
   --footer-text: #b4b0a5;
   --footer-muted: #8e8b82;
-  --footer-label: #6e6b64;
+  /* aufgehellt von #6e6b64 auf ~5:1 (WCAG AA) gegen den dunklen Footer */
+  --footer-label: #8f8b81;
   --footer-line: #34373e;
 
   --sans: 'Archivo', system-ui, -apple-system, sans-serif;
