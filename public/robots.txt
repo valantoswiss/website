@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://valanto.ch/sitemap.xml
+Sitemap: https://www.valanto.ch/sitemap.xml
