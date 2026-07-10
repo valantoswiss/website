@@ -40,11 +40,40 @@ const DOSSIER = {
   ],
 }
 
-function Brand({ className }) {
+/* Wortmarke "valanto" mit Petrol-Giebeldach überm "v" (brand/logo-valanto-*.svg,
+   inline damit sie die Textfarbe/Grösse per CSS erbt; Archivo ist via
+   @fontsource geladen). variant="light" für dunkle Flächen (Footer). */
+function Brand({ className, variant = 'dark' }) {
+  const ink = variant === 'light' ? '#FAF7F2' : '#23262D'
+  const roof = variant === 'light' ? '#3FB0C0' : '#23808F'
   return (
     <div className={`brand ${className || ''}`}>
-      <span className="brand__name">Valanto</span>
-      <span className="brand__dot" />
+      <svg
+        viewBox="0 0 250 96"
+        role="img"
+        aria-label="valanto"
+        className="brand__logo"
+      >
+        <text
+          x="0"
+          y="78"
+          fontFamily="Archivo, system-ui, sans-serif"
+          fontSize="72"
+          fontWeight="700"
+          fill={ink}
+          letterSpacing="-2"
+        >
+          valanto
+        </text>
+        <path
+          d="M1 33 L19 18 L37 33"
+          fill="none"
+          stroke={roof}
+          strokeWidth="8"
+          strokeLinejoin="miter"
+          strokeLinecap="butt"
+        />
+      </svg>
     </div>
   )
 }
@@ -367,7 +396,7 @@ function Footer() {
       <div className="inner">
         <div className="footer__grid">
           <div className="footer__brand">
-            <Brand />
+            <Brand variant="light" />
             <p className="footer__claim">{t('footer.claim')}</p>
             <span className="footer__madein">
               <SwissCross /> {t('footer.madein')}

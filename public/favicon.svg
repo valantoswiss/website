@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#23262D"/><rect x="14.2" y="7" width="3.6" height="18" fill="#23808F"/><rect x="7" y="14.2" width="18" height="3.6" fill="#23808F"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Valanto">
+  
+  <rect width="32" height="32" fill="#23262D"></rect>
+  <text x="16" y="25" text-anchor="middle" font-family="Archivo, system-ui, sans-serif" font-size="30" font-weight="700" fill="#EDE8DE" letter-spacing="-1">v</text>
+  <path d="M4.5 9 L16 3.5 L27.5 9" fill="none" stroke="#3FB0C0" stroke-width="3" stroke-linejoin="miter" stroke-linecap="butt"></path>
+</svg>
