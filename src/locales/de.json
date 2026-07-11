@@ -122,6 +122,20 @@
   },
   "contactPage": {
     "h1": "Kontakt",
-    "text": "Haben Sie Fragen zu Valanto? Schreiben Sie uns."
+    "text": "Haben Sie Fragen zu Valanto? Schreiben Sie uns.",
+    "mailIntro": "Oder direkt per E-Mail:",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "firma": "Firma (optional)",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet …",
+      "success": "Vielen Dank für Ihre Nachricht — wir melden uns so rasch wie möglich.",
+      "error": "Das hat leider nicht geklappt. Bitte versuchen Sie es erneut oder schreiben Sie an info@valanto.ch.",
+      "unavailable": "Das Formular ist im Moment nicht verfügbar. Bitte schreiben Sie an info@valanto.ch.",
+      "privacy": "Ihre Angaben verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage.",
+      "privacyLink": "Mehr in der Datenschutzerklärung."
+    }
   }
 }
