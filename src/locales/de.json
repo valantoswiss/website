@@ -120,5 +120,9 @@
     "link": "Mehr dazu in der Datenschutzerklärung",
     "accept": "Akzeptieren",
     "decline": "Ablehnen"
+  },
+  "contactPage": {
+    "h1": "Kontakt",
+    "text": "Haben Sie Fragen zu Valanto? Schreiben Sie uns."
   }
 }

@@ -120,5 +120,9 @@
     "link": "More in the privacy policy",
     "accept": "Accept",
     "decline": "Decline"
+  },
+  "contactPage": {
+    "h1": "Contact",
+    "text": "Do you have questions about Valanto? Write to us."
   }
 }
