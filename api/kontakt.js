@@ -78,7 +78,9 @@ export default async function handler(req, res) {
         .filter((line) => line !== null)
         .join('\n'),
     })
-  } catch {
+  } catch (error) {
+    // Nur serverseitig (Vercel-Logs) — Fehlerdetails gehören nicht zum Client.
+    console.error('kontakt mail_failed:', error?.code, error?.message)
     res.status(502).json({ error: 'mail_failed' })
     return
   }
