@@ -389,7 +389,74 @@ function ClosingCta() {
   )
 }
 
-function Footer() {
+function ImpressumModal({ onClose }) {
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose()
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose])
+
+  return (
+    <div className="legal-overlay" onClick={onClose}>
+      <div className="legal-modal" onClick={(e) => e.stopPropagation()}>
+        <button className="legal-modal__close" onClick={onClose} aria-label="Schliessen">
+          ×
+        </button>
+        <h2>Impressum</h2>
+
+        <h3>Betreiberin dieser Website</h3>
+        <p>
+          Felsberg Consulting GmbH
+          <br />
+          Felsbergstrasse 2
+          <br />
+          8625 Gossau ZH
+          <br />
+          Schweiz
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>E-Mail: <a href="mailto:info@valanto.ch">info@valanto.ch</a></p>
+
+        <h3>Handelsregister</h3>
+        <p>
+          Eingetragen im Handelsregister des Kantons Zürich
+          <br />
+          UID: CHE-172.827.128
+        </p>
+
+        <h3>Vertretungsberechtigte Person</h3>
+        <p>Jürg Artho, Geschäftsführer</p>
+
+        <h3>Mehrwertsteuer</h3>
+        <p>CHE-172.827.128 MWST</p>
+
+        <h3>Haftungsausschluss</h3>
+        <p>
+          Die Inhalte dieser Website wurden mit grösstmöglicher Sorgfalt erstellt. Die
+          Betreiberin übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit
+          und Aktualität der bereitgestellten Inhalte. Haftungsansprüche wegen Schäden
+          materieller oder immaterieller Art, die aus der Nutzung der angebotenen
+          Informationen entstehen, sind ausgeschlossen, soweit gesetzlich zulässig.
+          <br />
+          Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres
+          Verantwortungsbereichs. Der Zugriff und die Nutzung solcher Webseiten erfolgen
+          auf eigene Gefahr.
+        </p>
+
+        <h3>Urheberrecht</h3>
+        <p>
+          Die Urheber- und alle anderen Rechte an Inhalten, Bildern und Dateien auf
+          dieser Website gehören ausschliesslich der Felsberg Consulting GmbH oder den
+          speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist
+          die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function Footer({ onOpenImpressum }) {
   const { t } = useTranslation()
   return (
     <footer className="footer">
@@ -416,7 +483,15 @@ function Footer() {
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c3')}</span>
-            <a href="#" onClick={placeholderClick}>{t('footer.imprint')}</a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault()
+                onOpenImpressum()
+              }}
+            >
+              {t('footer.imprint')}
+            </a>
             <a href="#" onClick={placeholderClick}>{t('footer.privacy')}</a>
             <a href="#" onClick={placeholderClick}>{t('footer.terms')}</a>
           </div>
@@ -429,6 +504,7 @@ function Footer() {
 
 export default function App() {
   const { i18n } = useTranslation()
+  const [impressumOpen, setImpressumOpen] = useState(false)
 
   // Restore the saved language AFTER hydration only — initial render must stay
   // 'de' to match the statically prerendered HTML (no hydration mismatch).
@@ -453,7 +529,8 @@ export default function App() {
         <Siv />
         <ClosingCta />
       </main>
-      <Footer />
+      <Footer onOpenImpressum={() => setImpressumOpen(true)} />
+      {impressumOpen && <ImpressumModal onClose={() => setImpressumOpen(false)} />}
     </>
   )
 }

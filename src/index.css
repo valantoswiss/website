@@ -1126,3 +1126,74 @@ button:focus-visible,
     font-size: 19px;
   }
 }
+
+/* ============================================================
+   LEGAL MODAL (Impressum / Datenschutz / AGB)
+   ============================================================ */
+
+.legal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 28, 33, 0.6);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6vh 20px;
+  z-index: 100;
+  overflow-y: auto;
+}
+.legal-modal {
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+  max-width: 640px;
+  border: 1px solid var(--ink);
+  box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.18);
+  padding: 40px clamp(24px, 4vw, 44px) 44px;
+  position: relative;
+}
+.legal-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.legal-modal__close:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+.legal-modal h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.legal-modal h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+.legal-modal h3:first-of-type {
+  margin-top: 0;
+}
+.legal-modal p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.legal-modal a {
+  color: var(--teal);
+}
