@@ -85,6 +85,10 @@ function Hero() {
         <div className="hero__visual">
           <div className="dossier-back" />
           <Dossier />
+          {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' — betrifft
+              die Keys dossier.hosted, trust.b1, hero.trust/lead, meta.description,
+              pricing features und siv.points[0] in allen drei Locales sowie die
+              index.html-Metas und das og-Bild (og-image-source.html). */}
           <div className="hosted-badge">
             <SwissCross /> {t('dossier.hosted')}
           </div>

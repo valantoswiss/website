@@ -32,7 +32,8 @@ export default function Footer() {
             <span className="footer__label">{t('footer.c3')}</span>
             <a href="/impressum">{t('footer.imprint')}</a>
             <a href="/datenschutz">{t('footer.privacy')}</a>
-            <a href="#" onClick={placeholderClick}>{t('footer.terms')}</a>
+            {/* AGB-Link folgt erst zum Verkaufsstart (footer.terms bleibt in
+                den Locales für die Wiederverwendung). */}
             <a
               href="#"
               onClick={(e) => {

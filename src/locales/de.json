@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Valanto – Immobiliensoftware aus der Schweiz",
-    "description": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug. Entwickelt und gehostet in der Schweiz."
+    "description": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug. Entwickelt in der Schweiz."
   },
   "nav": {
     "features": "Funktionen",
@@ -15,10 +15,10 @@
   "hero": {
     "eyebrow": "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",
     "h1": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug.",
-    "lead": "Sie kennen das: für die Bewertung das eine Tool, für die Vermarktung das nächste – und die Daten pflegen Sie überall doppelt. Valanto bringt alles zusammen: Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Entwickelt aus der Schweizer Immobilienpraxis, gehostet in der Schweiz.",
+    "lead": "Sie kennen das: für die Bewertung das eine Tool, für die Vermarktung das nächste – und die Daten pflegen Sie überall doppelt. Valanto bringt alles zusammen: Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Entwickelt aus der Schweizer Immobilienpraxis.",
     "cta1": "Kostenlos testen",
     "cta2": "Demo buchen",
-    "trust": "Keine Kreditkarte nötig · 1 Bewertung gratis · Schweizer Hosting"
+    "trust": "Keine Kreditkarte nötig · 1 Bewertung gratis · Datenschutzkonform (revDSG)"
   },
   "dossier": {
     "label": "BEWERTUNGS-DOSSIER",
@@ -29,11 +29,11 @@
     "r3": "Ausbau",
     "footer": "Bewertung Nr. 2043 · Seite 1 / 18",
     "pdf": "PDF-Export",
-    "hosted": "Gehostet in der Schweiz"
+    "hosted": "Made in Switzerland"
   },
   "trust": {
     "line": "Aus der Schweizer Immobilienpraxis entstanden – für Makler, Bewerter und Verwalter.",
-    "b1": "In der Schweiz gehostet",
+    "b1": "Datenschutzkonform (revDSG)",
     "b2": "SIV-nah",
     "b3": "Partner-Logos folgen"
   },
@@ -71,7 +71,7 @@
         "name": "BEWERTER",
         "price": "CHF 50.–",
         "per": "/ Monat",
-        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Schweizer Hosting"]
+        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Datenschutzkonform (revDSG)"]
       },
       {
         "name": "MAKLER",
@@ -92,7 +92,7 @@
     "h2": "In der Schweizer Praxis verankert",
     "text": "Valanto entsteht aus der täglichen Bewertungsarbeit und im Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an dem, was Sie in der Praxis wirklich brauchen – statt an dem, was eine Software von der Stange bietet.",
     "points": [
-      { "t": "Schweizer Hosting", "d": "Ihre Daten bleiben im Land." },
+      { "t": "Datenschutzkonform (revDSG)", "d": "Wir behandeln Ihre Daten nach Schweizer Datenschutzrecht." },
       { "t": "Sicher & stabil", "d": "Auf verlässlicher Infrastruktur gebaut." },
       { "t": "Aus der Praxis", "d": "Von Immobilienprofis für Immobilienprofis." }
     ]
@@ -103,7 +103,7 @@
   },
   "footer": {
     "claim": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",
-    "madein": "Made & hosted in Switzerland",
+    "madein": "Made in Switzerland",
     "c1": "PRODUKT",
     "c2": "UNTERNEHMEN",
     "c3": "RECHTLICHES",

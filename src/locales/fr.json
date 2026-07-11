@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Valanto – Logiciel immobilier suisse",
-    "description": "Estimer, commercialiser, gérer – enfin dans un seul outil. Conçu et hébergé en Suisse."
+    "description": "Estimer, commercialiser, gérer – enfin dans un seul outil. Conçu en Suisse."
   },
   "nav": {
     "features": "Fonctions",
@@ -15,10 +15,10 @@
   "hero": {
     "eyebrow": "LOGICIEL IMMOBILIER SUISSE",
     "h1": "Estimer, commercialiser, gérer – enfin dans un seul outil.",
-    "lead": "Vous connaissez la situation : un outil pour l'estimation, un autre pour la commercialisation – et vous saisissez les données deux fois. Valanto réunit tout : biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse, hébergé en Suisse.",
+    "lead": "Vous connaissez la situation : un outil pour l'estimation, un autre pour la commercialisation – et vous saisissez les données deux fois. Valanto réunit tout : biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse.",
     "cta1": "Essai gratuit",
     "cta2": "Réserver une démo",
-    "trust": "Sans carte de crédit · 1 estimation offerte · Hébergement suisse"
+    "trust": "Sans carte de crédit · 1 estimation offerte · Conforme à la nLPD"
   },
   "dossier": {
     "label": "DOSSIER D'ESTIMATION",
@@ -29,11 +29,11 @@
     "r3": "Finitions",
     "footer": "Estimation n° 2043 · Page 1 / 18",
     "pdf": "Export PDF",
-    "hosted": "Hébergé en Suisse"
+    "hosted": "Conçu en Suisse"
   },
   "trust": {
     "line": "Né de la pratique immobilière suisse – pour les courtiers, les évaluateurs et les gérants.",
-    "b1": "Hébergé en Suisse",
+    "b1": "Conforme à la nLPD",
     "b2": "Proche du SIV",
     "b3": "Logos partenaires à venir"
   },
@@ -71,7 +71,7 @@
         "name": "ÉVALUATEUR",
         "price": "CHF 50.–",
         "per": "/ mois",
-        "features": ["Estimations avec dossier", "Données de base des biens", "Hébergement suisse"]
+        "features": ["Estimations avec dossier", "Données de base des biens", "Conforme à la nLPD"]
       },
       {
         "name": "COURTIER",
@@ -92,7 +92,7 @@
     "h2": "Ancré dans la pratique suisse",
     "text": "Valanto naît du travail quotidien d'estimation et de l'échange avec l'association suisse des évaluateurs SIV. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [
-      { "t": "Hébergement suisse", "d": "Vos données restent dans le pays." },
+      { "t": "Conforme à la nLPD", "d": "Nous traitons vos données conformément au droit suisse de la protection des données." },
       { "t": "Sûr & stable", "d": "Bâti sur une infrastructure fiable." },
       { "t": "Issu de la pratique", "d": "Par des professionnels, pour des professionnels." }
     ]
@@ -103,7 +103,7 @@
   },
   "footer": {
     "claim": "Estimer, commercialiser, gérer – dans un seul outil.",
-    "madein": "Conçu & hébergé en Suisse",
+    "madein": "Conçu en Suisse",
     "c1": "PRODUIT",
     "c2": "ENTREPRISE",
     "c3": "MENTIONS LÉGALES",

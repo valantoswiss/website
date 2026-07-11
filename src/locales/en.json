@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Valanto – Real estate software from Switzerland",
-    "description": "Value, market, manage – finally in one tool. Built and hosted in Switzerland."
+    "description": "Value, market, manage – finally in one tool. Built in Switzerland."
   },
   "nav": {
     "features": "Features",
@@ -15,10 +15,10 @@
   "hero": {
     "eyebrow": "REAL ESTATE SOFTWARE FROM SWITZERLAND",
     "h1": "Value, market, manage – finally in one tool.",
-    "lead": "You know the drill: one tool for the valuation, another for the marketing – and you keep the same data in both. Valanto brings it all together: properties, valuations with dossier and marketing in one place. Built from Swiss real-estate practice, hosted in Switzerland.",
+    "lead": "You know the drill: one tool for the valuation, another for the marketing – and you keep the same data in both. Valanto brings it all together: properties, valuations with dossier and marketing in one place. Built from Swiss real-estate practice.",
     "cta1": "Try for free",
     "cta2": "Book a demo",
-    "trust": "No credit card required · 1 free valuation · Swiss hosting"
+    "trust": "No credit card required · 1 free valuation · Data privacy compliant (Swiss FADP)"
   },
   "dossier": {
     "label": "VALUATION DOSSIER",
@@ -29,11 +29,11 @@
     "r3": "Fit-out",
     "footer": "Valuation no. 2043 · Page 1 / 18",
     "pdf": "PDF export",
-    "hosted": "Hosted in Switzerland"
+    "hosted": "Made in Switzerland"
   },
   "trust": {
     "line": "Born from Swiss real-estate practice – for brokers, valuers and property managers.",
-    "b1": "Hosted in Switzerland",
+    "b1": "Data privacy compliant (Swiss FADP)",
     "b2": "Close to SIV",
     "b3": "Partner logos coming"
   },
@@ -71,7 +71,7 @@
         "name": "VALUER",
         "price": "CHF 50.–",
         "per": "/ month",
-        "features": ["Valuations with dossier", "Property base data", "Swiss hosting"]
+        "features": ["Valuations with dossier", "Property base data", "Data privacy compliant (Swiss FADP)"]
       },
       {
         "name": "BROKER",
@@ -92,7 +92,7 @@
     "h2": "Rooted in Swiss practice",
     "text": "Valanto grows out of the daily work of valuation and the exchange with the Swiss valuers' association SIV. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
     "points": [
-      { "t": "Swiss hosting", "d": "Your data stays in the country." },
+      { "t": "Data privacy compliant (Swiss FADP)", "d": "We handle your data in accordance with Swiss data protection law." },
       { "t": "Secure & stable", "d": "Built on reliable infrastructure." },
       { "t": "From practice", "d": "By real estate professionals, for real estate professionals." }
     ]
@@ -103,7 +103,7 @@
   },
   "footer": {
     "claim": "Value, market, manage – in one tool.",
-    "madein": "Made & hosted in Switzerland",
+    "madein": "Made in Switzerland",
     "c1": "PRODUCT",
     "c2": "COMPANY",
     "c3": "LEGAL",
