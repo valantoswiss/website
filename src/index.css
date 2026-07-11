@@ -136,6 +136,9 @@ button:focus-visible,
   background: none;
   transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
   text-align: center;
+  /* CTAs sind verlinkte <a>-Elemente — Anchor-Defaults neutralisieren */
+  display: inline-block;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -967,15 +970,25 @@ button:focus-visible,
   letter-spacing: 0.12em;
   color: var(--footer-label);
 }
-.footer__col a {
+.footer__col a,
+.footer__col .footer__linkbtn {
   font-size: 13.5px;
   color: var(--footer-text);
   text-decoration: none;
   cursor: pointer;
   transition: color 0.18s ease;
 }
-.footer__col a:hover {
+.footer__col a:hover,
+.footer__col .footer__linkbtn:hover {
   color: #fff;
+}
+/* Aktions-"Link" (Cookie-Einstellungen) — semantisch ein Button, kein href="#" */
+.footer__linkbtn {
+  font-family: var(--sans);
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
 }
 .footer__copy {
   font-size: 12px;

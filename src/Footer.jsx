@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import { Brand, SwissCross } from './Brand.jsx'
-import { placeholderClick } from './Nav.jsx'
 import { resetConsent } from './consent.js'
 
 export default function Footer() {
@@ -20,7 +19,7 @@ export default function Footer() {
             <span className="footer__label">{t('footer.c1')}</span>
             <a href="/#features">{t('nav.features')}</a>
             <a href="/#pricing">{t('nav.pricing')}</a>
-            <a href="#" onClick={placeholderClick}>{t('nav.login')}</a>
+            {/* "Login" kehrt zurück, sobald die App öffentlich erreichbar ist. */}
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c2')}</span>
@@ -34,15 +33,13 @@ export default function Footer() {
             <a href="/datenschutz">{t('footer.privacy')}</a>
             {/* AGB-Link folgt erst zum Verkaufsstart (footer.terms bleibt in
                 den Locales für die Wiederverwendung). */}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault()
-                resetConsent()
-              }}
+            <button
+              type="button"
+              className="footer__linkbtn"
+              onClick={() => resetConsent()}
             >
               {t('footer.cookieSettings')}
-            </a>
+            </button>
           </div>
         </div>
         <div className="footer__copy">{t('footer.copy')}</div>
