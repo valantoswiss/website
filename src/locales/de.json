@@ -111,6 +111,14 @@
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "terms": "AGB",
+    "cookieSettings": "Cookie-Einstellungen",
     "copy": "© 2026 Valanto / Felsberg Consulting GmbH. Alle Rechte vorbehalten."
+  },
+  "cookies": {
+    "title": "Cookie-Hinweis",
+    "text": "Wir verwenden Cookies zur Analyse der Website-Nutzung.",
+    "link": "Mehr dazu in der Datenschutzerklärung",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
   }
 }

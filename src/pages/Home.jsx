@@ -1,21 +1,6 @@
-import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { SwissCross } from '../Brand.jsx'
 
-const LANGS = ['de', 'fr', 'en']
-const LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English' }
-
-// Placeholder links (Login, legal, contact) have no destination yet in this
-// prototype — prevent the bare "#" href from jumping the page to the top.
-const placeholderClick = (e) => e.preventDefault()
-
-/* Angular inline-SVG icons (Valanto style) — replace all emoji */
-const SwissCross = ({ size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 14 14" aria-hidden="true" style={{ flex: 'none' }}>
-    <rect width="14" height="14" fill="#23808F" />
-    <rect x="5.9" y="2.8" width="2.2" height="8.4" fill="#fff" />
-    <rect x="2.8" y="5.9" width="8.4" height="2.2" fill="#fff" />
-  </svg>
-)
 const IconLock = () => (
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
     <rect x="4" y="10.5" width="16" height="10.5" /><path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3" />
@@ -38,124 +23,6 @@ const DOSSIER = {
     { key: 'r2', width: 70, val: '4.0' },
     { key: 'r3', width: 64, val: '3.5', light: true },
   ],
-}
-
-/* Wortmarke "valanto" mit Petrol-Giebeldach überm "v" (brand/logo-valanto-*.svg,
-   inline damit sie die Textfarbe/Grösse per CSS erbt; Archivo ist via
-   @fontsource geladen). variant="light" für dunkle Flächen (Footer). */
-function Brand({ className, variant = 'dark' }) {
-  const ink = variant === 'light' ? '#FAF7F2' : '#23262D'
-  const roof = variant === 'light' ? '#3FB0C0' : '#23808F'
-  return (
-    <div className={`brand ${className || ''}`}>
-      <svg
-        viewBox="0 0 250 96"
-        role="img"
-        aria-label="valanto"
-        className="brand__logo"
-      >
-        <text
-          x="0"
-          y="78"
-          fontFamily="Archivo, system-ui, sans-serif"
-          fontSize="72"
-          fontWeight="700"
-          fill={ink}
-          letterSpacing="-2"
-        >
-          valanto
-        </text>
-        <path
-          d="M1 33 L19 18 L37 33"
-          fill="none"
-          stroke={roof}
-          strokeWidth="8"
-          strokeLinejoin="miter"
-          strokeLinecap="butt"
-        />
-      </svg>
-    </div>
-  )
-}
-
-function LangSwitch() {
-  const { i18n } = useTranslation()
-  return (
-    <div className="langswitch" role="group" aria-label="Sprache / Language">
-      {LANGS.map((lng) => (
-        <button
-          key={lng}
-          className={i18n.language === lng ? 'is-active' : ''}
-          onClick={() => {
-            localStorage.setItem('valanto_lang', lng)
-            i18n.changeLanguage(lng)
-          }}
-          aria-pressed={i18n.language === lng}
-          aria-label={LANG_NAMES[lng]}
-        >
-          {lng.toUpperCase()}
-        </button>
-      ))}
-    </div>
-  )
-}
-
-function Nav() {
-  const { t } = useTranslation()
-  const [open, setOpen] = useState(false)
-  const links = [
-    { href: '#features', label: t('nav.features') },
-    { href: '#audience', label: t('nav.forwho') },
-    { href: '#pricing', label: t('nav.pricing') },
-    { href: '#siv', label: t('nav.about') },
-  ]
-  return (
-    <div className="header">
-      <header className="nav">
-        <Brand />
-        <nav className="nav__links">
-          {links.map((l) => (
-            <a key={l.href} href={l.href}>
-              {l.label}
-            </a>
-          ))}
-        </nav>
-        <div className="nav__right">
-          <LangSwitch />
-          <a className="nav__login" href="#" onClick={placeholderClick}>
-            {t('nav.login')}
-          </a>
-          <button className="btn nav__try">{t('nav.try')}</button>
-          <button
-            className="burger"
-            aria-label={t('nav.menu')}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-      </header>
-      <nav className={`mobile-menu ${open ? 'is-open' : ''}`}>
-        {links.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
-            {l.label}
-          </a>
-        ))}
-        <a
-          href="#"
-          onClick={(e) => {
-            placeholderClick(e)
-            setOpen(false)
-          }}
-        >
-          {t('nav.login')}
-        </a>
-      </nav>
-    </div>
-  )
 }
 
 function Dossier() {
@@ -389,148 +256,16 @@ function ClosingCta() {
   )
 }
 
-function ImpressumModal({ onClose }) {
-  useEffect(() => {
-    const onKey = (e) => e.key === 'Escape' && onClose()
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
-
-  return (
-    <div className="legal-overlay" onClick={onClose}>
-      <div className="legal-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="legal-modal__close" onClick={onClose} aria-label="Schliessen">
-          ×
-        </button>
-        <h2>Impressum</h2>
-
-        <h3>Betreiberin dieser Website</h3>
-        <p>
-          Felsberg Consulting GmbH
-          <br />
-          Felsbergstrasse 2
-          <br />
-          8625 Gossau ZH
-          <br />
-          Schweiz
-        </p>
-
-        <h3>Kontakt</h3>
-        <p>E-Mail: <a href="mailto:info@valanto.ch">info@valanto.ch</a></p>
-
-        <h3>Handelsregister</h3>
-        <p>
-          Eingetragen im Handelsregister des Kantons Zürich
-          <br />
-          UID: CHE-172.827.128
-        </p>
-
-        <h3>Vertretungsberechtigte Person</h3>
-        <p>Jürg Artho, Geschäftsführer</p>
-
-        <h3>Mehrwertsteuer</h3>
-        <p>CHE-172.827.128 MWST</p>
-
-        <h3>Haftungsausschluss</h3>
-        <p>
-          Die Inhalte dieser Website wurden mit grösstmöglicher Sorgfalt erstellt. Die
-          Betreiberin übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit
-          und Aktualität der bereitgestellten Inhalte. Haftungsansprüche wegen Schäden
-          materieller oder immaterieller Art, die aus der Nutzung der angebotenen
-          Informationen entstehen, sind ausgeschlossen, soweit gesetzlich zulässig.
-          <br />
-          Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres
-          Verantwortungsbereichs. Der Zugriff und die Nutzung solcher Webseiten erfolgen
-          auf eigene Gefahr.
-        </p>
-
-        <h3>Urheberrecht</h3>
-        <p>
-          Die Urheber- und alle anderen Rechte an Inhalten, Bildern und Dateien auf
-          dieser Website gehören ausschliesslich der Felsberg Consulting GmbH oder den
-          speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist
-          die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
-        </p>
-      </div>
-    </div>
-  )
-}
-
-function Footer({ onOpenImpressum }) {
-  const { t } = useTranslation()
-  return (
-    <footer className="footer">
-      <div className="inner">
-        <div className="footer__grid">
-          <div className="footer__brand">
-            <Brand variant="light" />
-            <p className="footer__claim">{t('footer.claim')}</p>
-            <span className="footer__madein">
-              <SwissCross /> {t('footer.madein')}
-            </span>
-          </div>
-          <div className="footer__col">
-            <span className="footer__label">{t('footer.c1')}</span>
-            <a href="#features">{t('nav.features')}</a>
-            <a href="#pricing">{t('nav.pricing')}</a>
-            <a href="#" onClick={placeholderClick}>{t('nav.login')}</a>
-          </div>
-          <div className="footer__col">
-            <span className="footer__label">{t('footer.c2')}</span>
-            <a href="#siv">{t('nav.about')}</a>
-            <a href="#" onClick={placeholderClick}>{t('footer.contact')}</a>
-            <a href="#siv">SIV</a>
-          </div>
-          <div className="footer__col">
-            <span className="footer__label">{t('footer.c3')}</span>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault()
-                onOpenImpressum()
-              }}
-            >
-              {t('footer.imprint')}
-            </a>
-            <a href="#" onClick={placeholderClick}>{t('footer.privacy')}</a>
-            <a href="#" onClick={placeholderClick}>{t('footer.terms')}</a>
-          </div>
-        </div>
-        <div className="footer__copy">{t('footer.copy')}</div>
-      </div>
-    </footer>
-  )
-}
-
-export default function App() {
-  const { i18n } = useTranslation()
-  const [impressumOpen, setImpressumOpen] = useState(false)
-
-  // Restore the saved language AFTER hydration only — initial render must stay
-  // 'de' to match the statically prerendered HTML (no hydration mismatch).
-  useEffect(() => {
-    const saved = localStorage.getItem('valanto_lang')
-    if (saved && saved !== i18n.language) i18n.changeLanguage(saved)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
+export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#home">
-        Zum Inhalt
-      </a>
-      <Nav />
-      <main>
-        <Hero />
-        <TrustBar />
-        <Features />
-        <Audience />
-        <Pricing />
-        <Siv />
-        <ClosingCta />
-      </main>
-      <Footer onOpenImpressum={() => setImpressumOpen(true)} />
-      {impressumOpen && <ImpressumModal onClose={() => setImpressumOpen(false)} />}
+      <Hero />
+      <TrustBar />
+      <Features />
+      <Audience />
+      <Pricing />
+      <Siv />
+      <ClosingCta />
     </>
   )
 }

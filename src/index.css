@@ -1128,72 +1128,115 @@ button:focus-visible,
 }
 
 /* ============================================================
-   LEGAL MODAL (Impressum / Datenschutz / AGB)
+   LEGAL PAGES (Impressum / Datenschutz)
    ============================================================ */
 
-.legal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(26, 28, 33, 0.6);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 6vh 20px;
-  z-index: 100;
-  overflow-y: auto;
+.legal-page {
+  padding: 56px var(--pad-x) 80px;
 }
-.legal-modal {
-  background: var(--bg);
-  color: var(--text);
-  width: 100%;
-  max-width: 640px;
-  border: 1px solid var(--ink);
-  box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.18);
-  padding: 40px clamp(24px, 4vw, 44px) 44px;
-  position: relative;
+.legal-page__inner {
+  max-width: 720px;
+  margin: 0 auto;
 }
-.legal-modal__close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid var(--ink);
-  background: transparent;
-  color: var(--ink);
-  font-size: 18px;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease;
-}
-.legal-modal__close:hover {
-  background: var(--ink);
-  color: var(--bg);
-}
-.legal-modal h2 {
-  font-size: 26px;
+.legal-page h1 {
+  font-size: clamp(30px, 4vw, 40px);
   font-weight: 800;
   color: var(--ink);
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
-.legal-modal h3 {
+.legal-page__stand {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.legal-page h2 {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--teal);
-  margin-top: 24px;
+  margin-top: 32px;
   margin-bottom: 8px;
 }
-.legal-modal h3:first-of-type {
+.legal-page h1 + h2 {
   margin-top: 0;
 }
-.legal-modal p {
-  font-size: 14.5px;
-  line-height: 1.65;
+.legal-page p {
+  font-size: 15px;
+  line-height: 1.7;
   color: var(--text);
+  margin-bottom: 12px;
 }
-.legal-modal a {
+.legal-page a {
   color: var(--teal);
+}
+
+/* ============================================================
+   COOKIE BANNER (Consent)
+   ============================================================ */
+
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: 1px solid var(--footer-line);
+}
+.cookie-banner__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px var(--pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.cookie-banner__text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--footer-text);
+  max-width: 640px;
+}
+.cookie-banner__text a {
+  color: #fff;
+  text-decoration: underline;
+}
+.cookie-banner__actions {
+  display: flex;
+  gap: 12px;
+  flex: none;
+}
+/* Both buttons share the exact same style/weight — accepting and declining
+   must be equally easy to spot and to click (no dark pattern). */
+.cookie-banner__btn {
+  border: 1.5px solid var(--on-dark-soft);
+  background: transparent;
+  color: var(--bg);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.cookie-banner__btn:hover {
+  background: var(--line-dark);
+  border-color: var(--bg);
+}
+
+@media (max-width: 560px) {
+  .cookie-banner__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-banner__actions {
+    width: 100%;
+  }
+  .cookie-banner__btn {
+    flex: 1;
+  }
 }
