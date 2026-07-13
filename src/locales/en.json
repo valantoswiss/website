@@ -9,14 +9,14 @@
     "pricing": "Pricing",
     "about": "About",
     "login": "Login",
-    "try": "Try for free",
+    "try": "Request access",
     "menu": "Menu"
   },
   "hero": {
     "eyebrow": "REAL ESTATE SOFTWARE FROM SWITZERLAND",
     "h1": "Value, market, manage – finally in one tool.",
     "lead": "You know the drill: one tool for the valuation, another for the marketing – and you keep the same data in both. Valanto brings it all together: properties, valuations with dossier and marketing in one place. Built from Swiss real-estate practice.",
-    "cta1": "Try for free",
+    "cta1": "Request access",
     "cta2": "Book a demo",
     "trust": "No credit card required · 1 free valuation · Data privacy compliant (Swiss FADP)"
   },
@@ -34,8 +34,7 @@
   "trust": {
     "line": "Born from Swiss real-estate practice – for brokers, valuers and property managers.",
     "b1": "Data privacy compliant (Swiss FADP)",
-    "b2": "Close to SIV",
-    "b3": "Partner logos coming"
+    "b2": "Close to SIV"
   },
   "features": {
     "eyebrow": "EVERYTHING IN ONE PLACE",
@@ -65,7 +64,7 @@
     "intro": "Cancel monthly, no hidden costs. And you create your first valuation for free.",
     "popular": "Popular",
     "note": "All prices excl. VAT · Custom solutions for teams on request.",
-    "test": "Try it",
+    "test": "Request access",
     "plans": [
       {
         "name": "VALUER",
@@ -123,6 +122,20 @@
   },
   "contactPage": {
     "h1": "Contact",
-    "text": "Do you have questions about Valanto? Write to us."
+    "text": "Do you have questions about Valanto? Write to us.",
+    "mailIntro": "Or directly by email:",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "firma": "Company (optional)",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending …",
+      "success": "Thank you for your message — we will get back to you as soon as possible.",
+      "error": "That didn't work, unfortunately. Please try again or write to info@valanto.ch.",
+      "unavailable": "The form is currently unavailable. Please write to info@valanto.ch.",
+      "privacy": "We use your details exclusively to answer your enquiry.",
+      "privacyLink": "More in the privacy policy."
+    }
   }
 }

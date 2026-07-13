@@ -9,14 +9,14 @@
     "pricing": "Tarifs",
     "about": "À propos",
     "login": "Connexion",
-    "try": "Essai gratuit",
+    "try": "Demander l'accès",
     "menu": "Menu"
   },
   "hero": {
     "eyebrow": "LOGICIEL IMMOBILIER SUISSE",
     "h1": "Estimer, commercialiser, gérer – enfin dans un seul outil.",
     "lead": "Vous connaissez la situation : un outil pour l'estimation, un autre pour la commercialisation – et vous saisissez les données deux fois. Valanto réunit tout : biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse.",
-    "cta1": "Essai gratuit",
+    "cta1": "Demander l'accès",
     "cta2": "Réserver une démo",
     "trust": "Sans carte de crédit · 1 estimation offerte · Conforme à la nLPD"
   },
@@ -34,8 +34,7 @@
   "trust": {
     "line": "Né de la pratique immobilière suisse – pour les courtiers, les évaluateurs et les gérants.",
     "b1": "Conforme à la nLPD",
-    "b2": "Proche du SIV",
-    "b3": "Logos partenaires à venir"
+    "b2": "Proche du SIV"
   },
   "features": {
     "eyebrow": "TOUT AU MÊME ENDROIT",
@@ -65,7 +64,7 @@
     "intro": "Résiliable chaque mois, sans frais cachés. Et votre première estimation, vous la créez gratuitement.",
     "popular": "Populaire",
     "note": "Tous les prix HT · Solutions sur mesure pour les équipes sur demande.",
-    "test": "Essayer",
+    "test": "Demander l'accès",
     "plans": [
       {
         "name": "ÉVALUATEUR",
@@ -123,6 +122,20 @@
   },
   "contactPage": {
     "h1": "Contact",
-    "text": "Vous avez des questions sur Valanto ? Écrivez-nous."
+    "text": "Vous avez des questions sur Valanto ? Écrivez-nous.",
+    "mailIntro": "Ou directement par e-mail :",
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "firma": "Entreprise (facultatif)",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours …",
+      "success": "Merci pour votre message — nous vous répondrons au plus vite.",
+      "error": "Cela n'a malheureusement pas fonctionné. Veuillez réessayer ou écrire à info@valanto.ch.",
+      "unavailable": "Le formulaire n'est pas disponible pour le moment. Veuillez écrire à info@valanto.ch.",
+      "privacy": "Nous utilisons vos données exclusivement pour répondre à votre demande.",
+      "privacyLink": "Plus d'informations dans la déclaration de protection des données."
+    }
   }
 }

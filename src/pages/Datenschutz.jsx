@@ -36,8 +36,9 @@ export default function Datenschutz() {
         </p>
         <p>
           Kontaktdaten: Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren,
-          bearbeiten wir die von Ihnen mitgeteilten Angaben (Name, E-Mail-Adresse,
-          Nachricht), um Ihre Anfrage zu beantworten.
+          bearbeiten wir die von Ihnen mitgeteilten Angaben (Name, allenfalls Firma,
+          E-Mail-Adresse, Nachricht), um Ihre Anfrage zu beantworten. Der Versand
+          erfolgt über unseren E-Mail-Server.
         </p>
         <p>
           Nutzungsdaten (Webanalyse): Informationen über Ihre Nutzung der Website

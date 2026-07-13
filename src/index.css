@@ -136,6 +136,9 @@ button:focus-visible,
   background: none;
   transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
   text-align: center;
+  /* CTAs sind verlinkte <a>-Elemente — Anchor-Defaults neutralisieren */
+  display: inline-block;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -967,15 +970,25 @@ button:focus-visible,
   letter-spacing: 0.12em;
   color: var(--footer-label);
 }
-.footer__col a {
+.footer__col a,
+.footer__col .footer__linkbtn {
   font-size: 13.5px;
   color: var(--footer-text);
   text-decoration: none;
   cursor: pointer;
   transition: color 0.18s ease;
 }
-.footer__col a:hover {
+.footer__col a:hover,
+.footer__col .footer__linkbtn:hover {
   color: #fff;
+}
+/* Aktions-"Link" (Cookie-Einstellungen) — semantisch ein Button, kein href="#" */
+.footer__linkbtn {
+  font-family: var(--sans);
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
 }
 .footer__copy {
   font-size: 12px;
@@ -1170,6 +1183,67 @@ button:focus-visible,
 }
 .legal-page a {
   color: var(--teal);
+}
+
+/* ---- Kontaktformular ---- */
+
+.contact-form {
+  margin: 28px 0 36px;
+  max-width: 560px;
+  display: grid;
+  gap: 16px;
+}
+.contact-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 10px 12px;
+}
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+.contact-form .btn {
+  justify-self: start;
+}
+.contact-form .btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+/* Honeypot: aus dem Sichtbereich, aber nicht display:none (Bots prüfen das) */
+.contact-form__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.contact-form__success {
+  border: 1px solid var(--teal);
+  padding: 14px 16px;
+  color: var(--ink);
+  margin: 28px 0 36px;
+  max-width: 560px;
+}
+.contact-form__error {
+  color: #a33a2a;
+  font-size: 14px;
+}
+.contact-form__privacy {
+  font-size: 12.5px;
+  color: var(--muted);
 }
 
 /* ============================================================

@@ -9,14 +9,14 @@
     "pricing": "Preise",
     "about": "Über uns",
     "login": "Login",
-    "try": "Kostenlos testen",
+    "try": "Zugang anfragen",
     "menu": "Menü"
   },
   "hero": {
     "eyebrow": "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",
     "h1": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug.",
     "lead": "Sie kennen das: für die Bewertung das eine Tool, für die Vermarktung das nächste – und die Daten pflegen Sie überall doppelt. Valanto bringt alles zusammen: Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Entwickelt aus der Schweizer Immobilienpraxis.",
-    "cta1": "Kostenlos testen",
+    "cta1": "Zugang anfragen",
     "cta2": "Demo buchen",
     "trust": "Keine Kreditkarte nötig · 1 Bewertung gratis · Datenschutzkonform (revDSG)"
   },
@@ -34,8 +34,7 @@
   "trust": {
     "line": "Aus der Schweizer Immobilienpraxis entstanden – für Makler, Bewerter und Verwalter.",
     "b1": "Datenschutzkonform (revDSG)",
-    "b2": "SIV-nah",
-    "b3": "Partner-Logos folgen"
+    "b2": "SIV-nah"
   },
   "features": {
     "eyebrow": "ALLES AN EINEM ORT",
@@ -65,7 +64,7 @@
     "intro": "Monatlich kündbar, keine versteckten Kosten. Und Ihre erste Bewertung erstellen Sie kostenlos.",
     "popular": "Beliebt",
     "note": "Alle Preise exkl. MwSt. · Individuelle Lösungen für Teams auf Anfrage.",
-    "test": "Testen",
+    "test": "Zugang anfragen",
     "plans": [
       {
         "name": "BEWERTER",
@@ -123,6 +122,20 @@
   },
   "contactPage": {
     "h1": "Kontakt",
-    "text": "Haben Sie Fragen zu Valanto? Schreiben Sie uns."
+    "text": "Haben Sie Fragen zu Valanto? Schreiben Sie uns.",
+    "mailIntro": "Oder direkt per E-Mail:",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "firma": "Firma (optional)",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet …",
+      "success": "Vielen Dank für Ihre Nachricht — wir melden uns so rasch wie möglich.",
+      "error": "Das hat leider nicht geklappt. Bitte versuchen Sie es erneut oder schreiben Sie an info@valanto.ch.",
+      "unavailable": "Das Formular ist im Moment nicht verfügbar. Bitte schreiben Sie an info@valanto.ch.",
+      "privacy": "Ihre Angaben verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage.",
+      "privacyLink": "Mehr in der Datenschutzerklärung."
+    }
   }
 }

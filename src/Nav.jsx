@@ -5,9 +5,14 @@ import { Brand } from './Brand.jsx'
 const LANGS = ['de', 'fr', 'en']
 const LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English' }
 
-// Placeholder links (Login) have no destination yet in this prototype —
-// prevent the bare "#" href from jumping the page to the top.
-export const placeholderClick = (e) => e.preventDefault()
+// FR/EN sind vorübergehend deaktiviert — die App läuft aktuell nur auf
+// Deutsch, darum zeigt auch die Website nur DE. Zum Reaktivieren dieses
+// Flag auf true setzen; die Locales (fr/en.json) bleiben gepflegt.
+const LANG_SWITCH_ENABLED = false
+
+// "Login" ist bewusst entfernt, bis die App öffentlich erreichbar ist —
+// ein toter Login signalisiert Baustelle (nav.login-Key bleibt in den
+// Locales für die Rückkehr).
 
 function LangSwitch() {
   const { i18n } = useTranslation()
@@ -57,11 +62,10 @@ export default function Nav() {
           ))}
         </nav>
         <div className="nav__right">
-          <LangSwitch />
-          <a className="nav__login" href="#" onClick={placeholderClick}>
-            {t('nav.login')}
+          {LANG_SWITCH_ENABLED && <LangSwitch />}
+          <a className="btn nav__try" href="/kontakt">
+            {t('nav.try')}
           </a>
-          <button className="btn nav__try">{t('nav.try')}</button>
           <button
             className="burger"
             aria-label={t('nav.menu')}
@@ -80,14 +84,8 @@ export default function Nav() {
             {l.label}
           </a>
         ))}
-        <a
-          href="#"
-          onClick={(e) => {
-            placeholderClick(e)
-            setOpen(false)
-          }}
-        >
-          {t('nav.login')}
+        <a href="/kontakt" onClick={() => setOpen(false)}>
+          {t('nav.try')}
         </a>
       </nav>
     </div>

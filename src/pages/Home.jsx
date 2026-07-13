@@ -77,8 +77,8 @@ function Hero() {
           <h1 className="hero__title">{t('hero.h1')}</h1>
           <p className="hero__lead">{t('hero.lead')}</p>
           <div className="hero__ctas">
-            <button className="btn btn-primary">{t('hero.cta1')}</button>
-            <button className="btn btn-ghost">{t('hero.cta2')}</button>
+            <a className="btn btn-primary" href="/kontakt">{t('hero.cta1')}</a>
+            <a className="btn btn-ghost" href="/kontakt">{t('hero.cta2')}</a>
           </div>
           <p className="hero__trust">{t('hero.trust')}</p>
         </div>
@@ -109,7 +109,6 @@ function TrustBar() {
             <SwissCross /> {t('trust.b1')}
           </span>
           <span className="badge">{t('trust.b2')}</span>
-          <span className="badge badge--soft">{t('trust.b3')}</span>
         </div>
       </div>
     </section>
@@ -201,11 +200,12 @@ function Pricing() {
                     </div>
                   ))}
                 </div>
-                <button
+                <a
                   className={`btn plan__cta ${popular ? 'plan__cta--fill' : 'plan__cta--ghost'}`}
+                  href="/kontakt"
                 >
                   {t('pricing.test')}
-                </button>
+                </a>
               </div>
             )
           })}
@@ -253,8 +253,8 @@ function ClosingCta() {
       <h2 className="closing__title">{t('cta.h2')}</h2>
       <p className="closing__text">{t('cta.text')}</p>
       <div className="closing__ctas">
-        <button className="btn btn-primary">{t('hero.cta1')}</button>
-        <button className="btn btn-ghost">{t('hero.cta2')}</button>
+        <a className="btn btn-primary" href="/kontakt">{t('hero.cta1')}</a>
+        <a className="btn btn-ghost" href="/kontakt">{t('hero.cta2')}</a>
       </div>
     </section>
   )
