@@ -1,5 +1,11 @@
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SwissCross } from '../Brand.jsx'
+import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
+import shotRaster1080 from '../assets/screenshots/bewertung-bauteil-raster-1080.webp'
+import shotRaster2160 from '../assets/screenshots/bewertung-bauteil-raster-2160.webp'
+import shotSummary1080 from '../assets/screenshots/bewertung-zusammenfassung-1080.webp'
+import shotSummary2160 from '../assets/screenshots/bewertung-zusammenfassung-2160.webp'
 
 const IconLock = () => (
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
@@ -14,53 +20,28 @@ const IconHouse = () => (
 const IconSwissBox = () => <SwissCross size={26} />
 const SIV_ICONS = [IconSwissBox, IconLock, IconHouse] // positionsbasiert
 
-/* Fixed (non-translated) sample data for the hero dossier visual */
-const DOSSIER = {
-  address: 'Seestrasse 14, 8703 Erlenbach',
-  value: "CHF 1'240'000",
-  ratings: [
-    { key: 'r1', width: 82, val: '4.5' },
-    { key: 'r2', width: 70, val: '4.0' },
-    { key: 'r3', width: 64, val: '3.5', light: true },
-  ],
-}
-
-function Dossier() {
+/* Lightbox ohne Dependency: natives <dialog>, ESC + Backdrop-Klick schliessen (Issue #5) */
+function Lightbox({ shot, onClose }) {
   const { t } = useTranslation()
+  const ref = useRef(null)
+  useEffect(() => {
+    if (shot) ref.current?.showModal()
+    else ref.current?.close()
+  }, [shot])
   return (
-    <div className="dossier">
-      <div className="dossier__top">
-        <span className="dossier__label">{t('dossier.label')}</span>
-        <span className="dossier__brand">Valanto</span>
-      </div>
-      <div className="dossier__rule" />
-      <div className="dossier__meta">
-        <span className="dossier__type">{t('dossier.type')}</span>
-        <span className="dossier__addr">{DOSSIER.address}</span>
-      </div>
-      <div className="dossier__value-wrap">
-        <span className="dossier__value-label">{t('dossier.mv')}</span>
-        <span className="dossier__value">{DOSSIER.value}</span>
-      </div>
-      <div className="dossier__ratings">
-        {DOSSIER.ratings.map((r) => (
-          <div className="rating" key={r.key}>
-            <span className="rating__label">{t(`dossier.${r.key}`)}</span>
-            <span className="rating__track">
-              <span
-                className={`rating__fill ${r.light ? 'rating__fill--light' : ''}`}
-                style={{ width: `${r.width}%` }}
-              />
-            </span>
-            <span className="rating__val">{r.val}</span>
-          </div>
-        ))}
-      </div>
-      <div className="dossier__foot">
-        <span className="dossier__foot-note">{t('dossier.footer')}</span>
-        <span className="dossier__foot-pdf">{t('dossier.pdf')}</span>
-      </div>
-    </div>
+    <dialog
+      ref={ref}
+      className="lightbox"
+      onClose={onClose}
+      onClick={(e) => {
+        if (e.target === ref.current) onClose()
+      }}
+    >
+      {shot && <img src={shot.large} alt={shot.alt} />}
+      <button type="button" className="lightbox__close" onClick={onClose} aria-label={t('shots.close')}>
+        ×
+      </button>
+    </dialog>
   )
 }
 
@@ -84,7 +65,16 @@ function Hero() {
         </div>
         <div className="hero__visual">
           <div className="dossier-back" />
-          <Dossier />
+          {/* Echtes Produkt statt Illustration (Issue #5): Deckblatt eines
+              Gutachtens aus der App, Demo-Mandant mit neutralisiertem Namen. */}
+          <img
+            className="hero__cover"
+            src={heroCover}
+            alt={t('hero.coverAlt')}
+            width="1588"
+            height="2244"
+            fetchPriority="high"
+          />
           {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' — betrifft
               die Keys dossier.hosted, trust.b1, hero.trust/lead, meta.description,
               pricing features und siv.points[0] in allen drei Locales sowie die
@@ -115,9 +105,16 @@ function TrustBar() {
   )
 }
 
+/* Echte Produkt-Screenshots zur Feature-Karte „Bewertungen mit Dossier" (Issue #5) */
+const PRODUCT_SHOTS = [
+  { key: 'raster', small: shotRaster1080, large: shotRaster2160 },
+  { key: 'summary', small: shotSummary1080, large: shotSummary2160 },
+]
+
 function Features() {
   const { t } = useTranslation()
   const items = t('features.items', { returnObjects: true })
+  const [lightboxShot, setLightboxShot] = useState(null)
   return (
     <section className="features" id="features">
       <div className="inner">
@@ -140,6 +137,33 @@ function Features() {
             </div>
           ))}
         </div>
+        <div className="features__shots">
+          {PRODUCT_SHOTS.map((s) => {
+            const alt = t(`shots.${s.key}.alt`)
+            return (
+              <figure className="shot" key={s.key}>
+                <button
+                  type="button"
+                  className="shot__zoom"
+                  onClick={() => setLightboxShot({ large: s.large, alt })}
+                  aria-label={t('shots.zoom')}
+                >
+                  <img
+                    src={s.small}
+                    srcSet={`${s.small} 1080w, ${s.large} 2160w`}
+                    sizes="(max-width: 760px) 92vw, 560px"
+                    alt={alt}
+                    width="1080"
+                    height="1250"
+                    loading="lazy"
+                  />
+                </button>
+                <figcaption className="shot__caption">{t(`shots.${s.key}.caption`)}</figcaption>
+              </figure>
+            )
+          })}
+        </div>
+        <Lightbox shot={lightboxShot} onClose={() => setLightboxShot(null)} />
       </div>
     </section>
   )

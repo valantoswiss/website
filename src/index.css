@@ -382,6 +382,19 @@ button:focus-visible,
   box-shadow: 0 12px 28px rgba(35, 38, 45, 0.25);
 }
 
+/* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
+.hero__cover {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  height: 490px;
+  width: auto;
+  display: block;
+  background: #fff;
+  border: 1px solid var(--ink);
+  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
+}
+
 /* the dossier card (shared) */
 .dossier {
   position: absolute;
@@ -604,6 +617,64 @@ button:focus-visible,
   letter-spacing: 0.08em;
   color: var(--teal);
 }
+/* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
+.features__shots {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+.shot {
+  margin: 0;
+}
+.shot__zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--ink);
+  background: #fff;
+  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
+  cursor: zoom-in;
+}
+.shot__zoom img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.shot__caption {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.lightbox {
+  border: 1px solid var(--ink);
+  padding: 0;
+  max-width: min(1200px, 92vw);
+  background: #fff;
+}
+.lightbox::backdrop {
+  background: rgba(35, 38, 45, 0.6);
+}
+.lightbox img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 88vh;
+  object-fit: contain;
+}
+.lightbox__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  background: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
 .feature__box {
   width: 22px;
   height: 22px;
@@ -1033,6 +1104,14 @@ button:focus-visible,
     height: auto;
     box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
   }
+  .hero__cover {
+    position: static;
+    width: 100%;
+    max-width: 384px;
+    height: auto;
+    margin: 0 auto;
+    box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
+  }
   .features__head {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -1054,6 +1133,10 @@ button:focus-visible,
 @media (max-width: 760px) {
   .features__grid {
     grid-template-columns: 1fr;
+  }
+  .features__shots {
+    grid-template-columns: 1fr;
+    gap: 44px;
   }
   .audience__grid {
     grid-template-columns: 1fr;

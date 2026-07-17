@@ -1,4 +1,16 @@
 {
+  "shots": {
+    "zoom": "Enlarge screenshot",
+    "close": "Close",
+    "raster": {
+      "alt": "Calculation step in the Valanto wizard: detailed age depreciation with component grid — shares, lifespans, depreciation rates and CHF deductions per component",
+      "caption": "Age depreciation in detail: component grid with rates and deductions per component."
+    },
+    "summary": {
+      "alt": "Summary step in the Valanto wizard with gross yield and the final market value",
+      "caption": "Summary with gross yield and final market value."
+    }
+  },
   "meta": {
     "title": "Valanto – Real estate software from Switzerland",
     "description": "Value, market, manage – finally in one tool. Built in Switzerland."
@@ -18,6 +30,7 @@
     "lead": "You know the drill: one tool for the valuation, another for the marketing – and you keep the same data in both. Valanto brings it all together: properties, valuations with dossier and marketing in one place. Built from Swiss real-estate practice.",
     "cta1": "Request access",
     "cta2": "Book a demo",
+    "coverAlt": "Cover page of a Valanto market value appraisal showing the property address and the assessed market value",
     "trust": "No credit card required · 1 free valuation · Data privacy compliant (Swiss FADP)"
   },
   "dossier": {
