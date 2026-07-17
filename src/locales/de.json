@@ -1,4 +1,16 @@
 {
+  "shots": {
+    "zoom": "Bildschirmfoto vergrössern",
+    "close": "Schliessen",
+    "raster": {
+      "alt": "Kalkulations-Schritt im Valanto-Wizard: Detail-Altersentwertung mit Bauteil-Raster — Anteile, Lebensdauern, Entwertungssätze und CHF-Abzüge je Bauteil",
+      "caption": "Altersentwertung im Detail: Bauteil-Raster mit Sätzen und Abzügen je Bauteil."
+    },
+    "summary": {
+      "alt": "Zusammenfassungs-Schritt im Valanto-Wizard mit Bruttorendite und final verwendetem Verkehrswert",
+      "caption": "Zusammenfassung mit Bruttorendite und finalem Verkehrswert."
+    }
+  },
   "meta": {
     "title": "Valanto – Immobiliensoftware aus der Schweiz",
     "description": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug. Entwickelt in der Schweiz."
@@ -18,6 +30,7 @@
     "lead": "Sie kennen das: für die Bewertung das eine Tool, für die Vermarktung das nächste – und die Daten pflegen Sie überall doppelt. Valanto bringt alles zusammen: Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Entwickelt aus der Schweizer Immobilienpraxis.",
     "cta1": "Zugang anfragen",
     "cta2": "Demo buchen",
+    "coverAlt": "Deckblatt eines Valanto-Verkehrswertgutachtens mit Objektadresse und ausgewiesenem Verkehrswert",
     "trust": "Keine Kreditkarte nötig · 1 Bewertung gratis · Datenschutzkonform (revDSG)"
   },
   "dossier": {

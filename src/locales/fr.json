@@ -1,4 +1,16 @@
 {
+  "shots": {
+    "zoom": "Agrandir la capture d'écran",
+    "close": "Fermer",
+    "raster": {
+      "alt": "Étape de calcul dans l'assistant Valanto : dépréciation détaillée par éléments de construction — parts, durées de vie, taux et déductions en CHF par élément",
+      "caption": "Dépréciation en détail : grille par éléments avec taux et déductions."
+    },
+    "summary": {
+      "alt": "Étape de synthèse dans l'assistant Valanto avec rendement brut et valeur vénale finale",
+      "caption": "Synthèse avec rendement brut et valeur vénale finale."
+    }
+  },
   "meta": {
     "title": "Valanto – Logiciel immobilier suisse",
     "description": "Estimer, commercialiser, gérer – enfin dans un seul outil. Conçu en Suisse."
@@ -18,6 +30,7 @@
     "lead": "Vous connaissez la situation : un outil pour l'estimation, un autre pour la commercialisation – et vous saisissez les données deux fois. Valanto réunit tout : biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse.",
     "cta1": "Demander l'accès",
     "cta2": "Réserver une démo",
+    "coverAlt": "Page de couverture d'une expertise de valeur vénale Valanto avec l'adresse du bien et la valeur retenue",
     "trust": "Sans carte de crédit · 1 estimation offerte · Conforme à la nLPD"
   },
   "dossier": {
