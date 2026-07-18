@@ -334,7 +334,7 @@ button:focus-visible,
   line-height: 1.08;
   color: var(--ink);
   letter-spacing: -0.03em;
-  text-wrap: pretty;
+  text-wrap: balance; /* verhindert "Bewerten," allein auf Zeile 1 (Review 17.07.) */
 }
 .hero__lead {
   font-size: 17px;
@@ -371,9 +371,11 @@ button:focus-visible,
   border: 1px solid #ded8cc;
 }
 .hosted-badge {
+  /* an der Cover-Kante verankert (Review 17.07., Wrapper): überlappt die
+     Kante leicht, schwebt nicht mehr frei in der breiteren Spalte */
   position: absolute;
   bottom: 22px;
-  right: 8px;
+  right: -14px;
   background: var(--ink);
   color: var(--bg);
   padding: 9px 18px;
@@ -383,10 +385,13 @@ button:focus-visible,
 }
 
 /* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
-.hero__cover {
+.hero__cover-wrap {
   position: absolute;
   top: 8px;
   left: 20px;
+}
+.hero__cover {
+  position: static;
   height: 490px;
   width: auto;
   display: block;
@@ -546,9 +551,13 @@ button:focus-visible,
   flex-wrap: wrap;
 }
 .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12.5px;
   font-weight: 600;
   color: var(--on-dark);
+  background: none;
   border: 1px solid var(--line-dark);
   padding: 7px 15px;
 }
@@ -647,32 +656,53 @@ button:focus-visible,
   color: var(--muted);
 }
 .lightbox {
-  border: 1px solid var(--ink);
-  padding: 0;
-  max-width: min(1200px, 92vw);
-  background: #fff;
+  position: fixed;
+  inset: 0;
+  z-index: 1000; /* ÜBER dem sticky .header (z-index 40) */
+  background: rgba(26, 28, 33, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 48px);
+  cursor: zoom-out;
 }
-.lightbox::backdrop {
-  background: rgba(35, 38, 45, 0.6);
+.lightbox figure {
+  cursor: default;
+  max-width: min(1280px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 .lightbox img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 88vh;
+  max-width: 100%;
+  max-height: calc(100vh - 120px); /* nie grösser als Viewport, zentriert */
   object-fit: contain;
-}
-.lightbox__close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
   border: 1px solid var(--ink);
   background: #fff;
-  font-size: 20px;
-  line-height: 1;
+}
+.lightbox figcaption {
+  color: var(--on-dark-soft);
+  font-size: 13px;
+  padding-top: 12px;
+  text-align: center;
+}
+.lightbox__close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px; /* eigener Platz, kollidiert nicht mit Bildinhalt */
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  font-size: 18px;
   cursor: pointer;
+  z-index: 1001;
+}
+.lightbox__close:hover {
+  background: var(--ink);
+  color: var(--bg);
 }
 
 .feature__box {
@@ -1095,21 +1125,29 @@ button:focus-visible,
   .dossier-back {
     display: none;
   }
-  .hosted-badge {
-    display: none;
-  }
   .dossier {
     position: static;
     width: 100%;
     height: auto;
     box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
   }
-  .hero__cover {
-    position: static;
-    width: 100%;
-    max-width: 384px;
-    height: auto;
+  /* Wrapper zentriert Cover + Badge gemeinsam — Badge bleibt mobil sichtbar
+     (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
+  .hero__cover-wrap {
+    /* relative statt static: bleibt im Fluss, verankert aber weiterhin
+       das absolute Badge an der Cover-Kante; top/left der Desktop-Regel
+       zurücksetzen, sonst schiebt der Offset das Badge aus dem Viewport */
+    position: relative;
+    top: 0;
+    left: 0;
     margin: 0 auto;
+    width: fit-content;
+    max-width: 384px;
+  }
+  .hero__cover {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
   }
   .features__head {
