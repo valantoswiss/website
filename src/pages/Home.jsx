@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { SwissCross } from '../Brand.jsx'
 import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
@@ -20,28 +21,30 @@ const IconHouse = () => (
 const IconSwissBox = () => <SwissCross size={26} />
 const SIV_ICONS = [IconSwissBox, IconLock, IconHouse] // positionsbasiert
 
-/* Lightbox ohne Dependency: natives <dialog>, ESC + Backdrop-Klick schliessen (Issue #5) */
-function Lightbox({ shot, onClose }) {
+/* Lightbox ohne Dependency (Review 17.07.): fixiertes Overlay über dem
+   sticky Header, Scroll-Lock, ESC/Backdrop/✕ schliessen. */
+function Lightbox({ src, alt, caption, onClose }) {
   const { t } = useTranslation()
-  const ref = useRef(null)
   useEffect(() => {
-    if (shot) ref.current?.showModal()
-    else ref.current?.close()
-  }, [shot])
-  return (
-    <dialog
-      ref={ref}
-      className="lightbox"
-      onClose={onClose}
-      onClick={(e) => {
-        if (e.target === ref.current) onClose()
-      }}
-    >
-      {shot && <img src={shot.large} alt={shot.alt} />}
-      <button type="button" className="lightbox__close" onClick={onClose} aria-label={t('shots.close')}>
-        ×
-      </button>
-    </dialog>
+    const onKey = (e) => e.key === 'Escape' && onClose()
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden' // Scroll-Lock
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+  // Portal an document.body: entkommt jedem Ancestor-Stacking-Context,
+  // sonst kann der sticky Header das Overlay trotz z-index 1000 überdecken.
+  return createPortal(
+    <div className="lightbox" role="dialog" aria-modal="true" aria-label={alt} onClick={onClose}>
+      <button className="lightbox__close" aria-label={t('shots.close')} onClick={onClose}>✕</button>
+      <figure onClick={(e) => e.stopPropagation()}>
+        <img src={src} alt={alt} />
+        {caption && <figcaption>{caption}</figcaption>}
+      </figure>
+    </div>,
+    document.body,
   )
 }
 
@@ -140,12 +143,13 @@ function Features() {
         <div className="features__shots">
           {PRODUCT_SHOTS.map((s) => {
             const alt = t(`shots.${s.key}.alt`)
+            const caption = t(`shots.${s.key}.caption`)
             return (
               <figure className="shot" key={s.key}>
                 <button
                   type="button"
                   className="shot__zoom"
-                  onClick={() => setLightboxShot({ large: s.large, alt })}
+                  onClick={() => setLightboxShot({ src: s.large, alt, caption })}
                   aria-label={t('shots.zoom')}
                 >
                   <img
@@ -158,12 +162,19 @@ function Features() {
                     loading="lazy"
                   />
                 </button>
-                <figcaption className="shot__caption">{t(`shots.${s.key}.caption`)}</figcaption>
+                <figcaption className="shot__caption">{caption}</figcaption>
               </figure>
             )
           })}
         </div>
-        <Lightbox shot={lightboxShot} onClose={() => setLightboxShot(null)} />
+        {lightboxShot && (
+          <Lightbox
+            src={lightboxShot.src}
+            alt={lightboxShot.alt}
+            caption={lightboxShot.caption}
+            onClose={() => setLightboxShot(null)}
+          />
+        )}
       </div>
     </section>
   )
