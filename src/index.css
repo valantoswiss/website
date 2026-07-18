@@ -361,15 +361,6 @@ button:focus-visible,
   position: relative;
   height: 520px;
 }
-.dossier-back {
-  position: absolute;
-  top: 34px;
-  left: 70px;
-  width: 352px;
-  height: 452px;
-  background: var(--panel);
-  border: 1px solid #ded8cc;
-}
 .hosted-badge {
   /* an der Cover-Kante verankert (Review 17.07., Wrapper): überlappt die
      Kante leicht, schwebt nicht mehr frei in der breiteren Spalte */
@@ -1121,9 +1112,6 @@ button:focus-visible,
   }
   .hero__visual {
     height: auto;
-  }
-  .dossier-back {
-    display: none;
   }
   .dossier {
     position: static;

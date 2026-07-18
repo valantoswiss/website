@@ -67,7 +67,6 @@ function Hero() {
           <p className="hero__trust">{t('hero.trust')}</p>
         </div>
         <div className="hero__visual">
-          <div className="dossier-back" />
           {/* Echtes Produkt statt Illustration (Issue #5): Deckblatt eines
               Gutachtens aus der App, Demo-Mandant mit neutralisiertem Namen.
               Wrapper (Review 17.07.): verankert das Badge an der Cover-Kante
