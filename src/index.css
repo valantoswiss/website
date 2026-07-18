@@ -371,11 +371,11 @@ button:focus-visible,
   border: 1px solid #ded8cc;
 }
 .hosted-badge {
-  /* ans Dossier-Visual verankert (Review 17.07.): leichte Überlappung
-     erlaubt, aber kein freies Schweben am Viewport-Rand */
+  /* an der Cover-Kante verankert (Review 17.07., Wrapper): überlappt die
+     Kante leicht, schwebt nicht mehr frei in der breiteren Spalte */
   position: absolute;
   bottom: 22px;
-  right: -12px;
+  right: -14px;
   background: var(--ink);
   color: var(--bg);
   padding: 9px 18px;
@@ -385,10 +385,13 @@ button:focus-visible,
 }
 
 /* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
-.hero__cover {
+.hero__cover-wrap {
   position: absolute;
   top: 8px;
   left: 20px;
+}
+.hero__cover {
+  position: static;
   height: 490px;
   width: auto;
   display: block;
@@ -1122,21 +1125,29 @@ button:focus-visible,
   .dossier-back {
     display: none;
   }
-  .hosted-badge {
-    display: none;
-  }
   .dossier {
     position: static;
     width: 100%;
     height: auto;
     box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
   }
-  .hero__cover {
-    position: static;
-    width: 100%;
-    max-width: 384px;
-    height: auto;
+  /* Wrapper zentriert Cover + Badge gemeinsam — Badge bleibt mobil sichtbar
+     (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
+  .hero__cover-wrap {
+    /* relative statt static: bleibt im Fluss, verankert aber weiterhin
+       das absolute Badge an der Cover-Kante; top/left der Desktop-Regel
+       zurücksetzen, sonst schiebt der Offset das Badge aus dem Viewport */
+    position: relative;
+    top: 0;
+    left: 0;
     margin: 0 auto;
+    width: fit-content;
+    max-width: 384px;
+  }
+  .hero__cover {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
   }
   .features__head {

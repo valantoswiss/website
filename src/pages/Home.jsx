@@ -69,21 +69,25 @@ function Hero() {
         <div className="hero__visual">
           <div className="dossier-back" />
           {/* Echtes Produkt statt Illustration (Issue #5): Deckblatt eines
-              Gutachtens aus der App, Demo-Mandant mit neutralisiertem Namen. */}
-          <img
-            className="hero__cover"
-            src={heroCover}
-            alt={t('hero.coverAlt')}
-            width="1588"
-            height="2244"
-            fetchPriority="high"
-          />
-          {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' — betrifft
-              die Keys dossier.hosted, trust.b1, hero.trust/lead, meta.description,
-              pricing features und siv.points[0] in allen drei Locales sowie die
-              index.html-Metas und das og-Bild (og-image-source.html). */}
-          <div className="hosted-badge">
-            <SwissCross /> {t('dossier.hosted')}
+              Gutachtens aus der App, Demo-Mandant mit neutralisiertem Namen.
+              Wrapper (Review 17.07.): verankert das Badge an der Cover-Kante
+              statt an der breiteren Spalte. */}
+          <div className="hero__cover-wrap">
+            <img
+              className="hero__cover"
+              src={heroCover}
+              alt={t('hero.coverAlt')}
+              width="1588"
+              height="2244"
+              fetchPriority="high"
+            />
+            {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' — betrifft
+                die Keys dossier.hosted, trust.b1, hero.trust/lead, meta.description,
+                pricing features und siv.points[0] in allen drei Locales sowie die
+                index.html-Metas und das og-Bild (og-image-source.html). */}
+            <div className="hosted-badge">
+              <SwissCross /> {t('dossier.hosted')}
+            </div>
           </div>
         </div>
       </div>
