@@ -80,7 +80,7 @@ function Hero() {
               height="2244"
               fetchPriority="high"
             />
-            {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' — betrifft
+            {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' – betrifft
                 die Keys dossier.hosted, trust.b1, hero.trust/lead, meta.description,
                 pricing features und siv.points[0] in allen drei Locales sowie die
                 index.html-Metas und das og-Bild (og-image-source.html). */}

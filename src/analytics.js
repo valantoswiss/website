@@ -1,8 +1,8 @@
-// GA4 loader — only ever called after the visitor clicks "Akzeptieren".
+// GA4 loader – only ever called after the visitor clicks "Akzeptieren".
 // Nothing here runs at import time, so no request to Google fires on its own.
 //
 // Measurement ID: set VITE_GA_MEASUREMENT_ID in .env (see .env.example).
-// Until a real "G-XXXXXXXXXX" ID is set, loadAnalytics() is a no-op — this
+// Until a real "G-XXXXXXXXXX" ID is set, loadAnalytics() is a no-op – this
 // keeps test/staging deploys from sending traffic to a placeholder property.
 export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'
 

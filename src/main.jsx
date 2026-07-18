@@ -1,6 +1,6 @@
 import { ViteReactSSG } from 'vite-react-ssg'
-// Self-hosted fonts (no external Google Fonts requests — privacy / DSGVO).
-// Redesign v2: EINE Schrift — Archivo (Display 800 bis Body 400), keine Serife mehr.
+// Self-hosted fonts (no external Google Fonts requests – privacy / DSGVO).
+// Redesign v2: EINE Schrift – Archivo (Display 800 bis Body 400), keine Serife mehr.
 import '@fontsource/archivo/400.css'
 import '@fontsource/archivo/500.css'
 import '@fontsource/archivo/600.css'

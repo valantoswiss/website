@@ -3,7 +3,7 @@
     "zoom": "Agrandir la capture d'écran",
     "close": "Fermer",
     "raster": {
-      "alt": "Étape de calcul dans l'assistant Valanto : dépréciation détaillée par éléments de construction — parts, durées de vie, taux et déductions en CHF par élément",
+      "alt": "Étape de calcul dans l'assistant Valanto : dépréciation détaillée par éléments de construction – parts, durées de vie, taux et déductions en CHF par élément",
       "caption": "Dépréciation en détail : grille par éléments avec taux et déductions."
     },
     "summary": {
@@ -144,7 +144,7 @@
       "message": "Message",
       "submit": "Envoyer le message",
       "sending": "Envoi en cours …",
-      "success": "Merci pour votre message — nous vous répondrons au plus vite.",
+      "success": "Merci pour votre message – nous vous répondrons au plus vite.",
       "error": "Cela n'a malheureusement pas fonctionné. Veuillez réessayer ou écrire à info@valanto.ch.",
       "unavailable": "Le formulaire n'est pas disponible pour le moment. Veuillez écrire à info@valanto.ch.",
       "privacy": "Nous utilisons vos données exclusivement pour répondre à votre demande.",

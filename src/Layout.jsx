@@ -8,7 +8,7 @@ import CookieBanner from './CookieBanner.jsx'
 export default function Layout() {
   const { i18n } = useTranslation()
 
-  // Restore the saved language AFTER hydration only — initial render must stay
+  // Restore the saved language AFTER hydration only – initial render must stay
   // 'de' to match the statically prerendered HTML (no hydration mismatch).
   useEffect(() => {
     const saved = localStorage.getItem('valanto_lang')

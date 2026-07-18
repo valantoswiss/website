@@ -1,7 +1,7 @@
 /* ============================================================
-   Valanto — Design System
+   Valanto – Design System
    Style: "Dossier-Editorial, kantig" (angular, editorial)
-   Font: Archivo only — Display 800, H2/Preise 700, Body 400–600
+   Font: Archivo only – Display 800, H2/Preise 700, Body 400–600
    (Redesign v2: Source Serif 4 entfernt)
    ============================================================ */
 
@@ -136,7 +136,7 @@ button:focus-visible,
   background: none;
   transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
   text-align: center;
-  /* CTAs sind verlinkte <a>-Elemente — Anchor-Defaults neutralisieren */
+  /* CTAs sind verlinkte <a>-Elemente – Anchor-Defaults neutralisieren */
   display: inline-block;
   text-decoration: none;
 }
@@ -280,7 +280,7 @@ button:focus-visible,
   background: var(--ink);
 }
 
-/* mobile dropdown — lives inside the sticky .header, so it docks flush under
+/* mobile dropdown – lives inside the sticky .header, so it docks flush under
    the bar without a hardcoded offset */
 .mobile-menu {
   display: none;
@@ -1074,7 +1074,7 @@ button:focus-visible,
 .footer__col .footer__linkbtn:hover {
   color: #fff;
 }
-/* Aktions-"Link" (Cookie-Einstellungen) — semantisch ein Button, kein href="#" */
+/* Aktions-"Link" (Cookie-Einstellungen) – semantisch ein Button, kein href="#" */
 .footer__linkbtn {
   font-family: var(--sans);
   background: none;
@@ -1119,7 +1119,7 @@ button:focus-visible,
     height: auto;
     box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
   }
-  /* Wrapper zentriert Cover + Badge gemeinsam — Badge bleibt mobil sichtbar
+  /* Wrapper zentriert Cover + Badge gemeinsam – Badge bleibt mobil sichtbar
      (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
   .hero__cover-wrap {
     /* relative statt static: bleibt im Fluss, verankert aber weiterhin
@@ -1394,7 +1394,7 @@ button:focus-visible,
   gap: 12px;
   flex: none;
 }
-/* Both buttons share the exact same style/weight — accepting and declining
+/* Both buttons share the exact same style/weight – accepting and declining
    must be equally easy to spot and to click (no dark pattern). */
 .cookie-banner__btn {
   border: 1.5px solid var(--on-dark-soft);
