@@ -1,4 +1,4 @@
-// Cookie-consent storage — a single localStorage flag, no server round-trip.
+// Cookie-consent storage – a single localStorage flag, no server round-trip.
 // Values: 'accepted' | 'declined' | null (no decision yet, so the banner shows).
 export const CONSENT_KEY = 'valanto_cookie_consent'
 export const CONSENT_CHANGE_EVENT = 'valanto:consent-change'

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 export default function Impressum() {
-  // Cosmetic only (browser tab, post-hydration) — the prerendered HTML for
+  // Cosmetic only (browser tab, post-hydration) – the prerendered HTML for
   // /impressum keeps the shared index.html <title>/<meta description>, since
   // vite-react-ssg's Head appends rather than replaces them (would duplicate
   // the tags in the static output otherwise).

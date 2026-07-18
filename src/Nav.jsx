@@ -5,12 +5,12 @@ import { Brand } from './Brand.jsx'
 const LANGS = ['de', 'fr', 'en']
 const LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English' }
 
-// FR/EN sind vorübergehend deaktiviert — die App läuft aktuell nur auf
+// FR/EN sind vorübergehend deaktiviert – die App läuft aktuell nur auf
 // Deutsch, darum zeigt auch die Website nur DE. Zum Reaktivieren dieses
 // Flag auf true setzen; die Locales (fr/en.json) bleiben gepflegt.
 const LANG_SWITCH_ENABLED = false
 
-// "Login" ist bewusst entfernt, bis die App öffentlich erreichbar ist —
+// "Login" ist bewusst entfernt, bis die App öffentlich erreichbar ist –
 // ein toter Login signalisiert Baustelle (nav.login-Key bleibt in den
 // Locales für die Rückkehr).
 

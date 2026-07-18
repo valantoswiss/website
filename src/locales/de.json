@@ -3,7 +3,7 @@
     "zoom": "Bildschirmfoto vergrössern",
     "close": "Schliessen",
     "raster": {
-      "alt": "Kalkulations-Schritt im Valanto-Wizard: Detail-Altersentwertung mit Bauteil-Raster — Anteile, Lebensdauern, Entwertungssätze und CHF-Abzüge je Bauteil",
+      "alt": "Kalkulations-Schritt im Valanto-Wizard: Detail-Altersentwertung mit Bauteil-Raster – Anteile, Lebensdauern, Entwertungssätze und CHF-Abzüge je Bauteil",
       "caption": "Altersentwertung im Detail: Bauteil-Raster mit Sätzen und Abzügen je Bauteil."
     },
     "summary": {
@@ -144,7 +144,7 @@
       "message": "Nachricht",
       "submit": "Nachricht senden",
       "sending": "Wird gesendet …",
-      "success": "Vielen Dank für Ihre Nachricht — wir melden uns so rasch wie möglich.",
+      "success": "Vielen Dank für Ihre Nachricht – wir melden uns so rasch wie möglich.",
       "error": "Das hat leider nicht geklappt. Bitte versuchen Sie es erneut oder schreiben Sie an info@valanto.ch.",
       "unavailable": "Das Formular ist im Moment nicht verfügbar. Bitte schreiben Sie an info@valanto.ch.",
       "privacy": "Ihre Angaben verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage.",

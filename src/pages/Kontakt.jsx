@@ -5,7 +5,7 @@ export default function Kontakt() {
   const { t } = useTranslation()
   const [status, setStatus] = useState('idle') // idle | sending | success | error | unavailable
 
-  // Cosmetic only (browser tab, post-hydration) — see Impressum.jsx for why
+  // Cosmetic only (browser tab, post-hydration) – see Impressum.jsx for why
   // this isn't done via vite-react-ssg's Head. Static title is fine here
   // (no translation needed for the tab title).
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function Kontakt() {
               {t('contactPage.form.message')}
               <textarea name="nachricht" required rows={6} maxLength={5000} />
             </label>
-            {/* Honeypot — für Menschen unsichtbar, Bots füllen es aus. */}
+            {/* Honeypot – für Menschen unsichtbar, Bots füllen es aus. */}
             <label className="contact-form__hp" aria-hidden="true">
               Website
               <input name="website" type="text" tabIndex={-1} autoComplete="off" />

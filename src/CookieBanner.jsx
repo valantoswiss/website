@@ -12,7 +12,7 @@ export default function CookieBanner() {
   // localStorage access) and correct it in an effect after mount. Reading
   // getConsent() straight into useState() would make the client's first
   // render diverge from the server markup whenever consent is already
-  // stored — React's hydration doesn't reconcile that away, so a returning
+  // stored – React's hydration doesn't reconcile that away, so a returning
   // visitor with a real decision would still get a banner stuck on screen.
   const [consent, setConsentState] = useState(null)
 
@@ -24,7 +24,7 @@ export default function CookieBanner() {
   }, [])
 
   // Runs both right after "Akzeptieren" and on return visits where consent
-  // was already stored — loadAnalytics() itself is idempotent.
+  // was already stored – loadAnalytics() itself is idempotent.
   useEffect(() => {
     if (consent === 'accepted') loadAnalytics()
   }, [consent])
@@ -39,7 +39,7 @@ export default function CookieBanner() {
           <a href="/datenschutz">{t('cookies.link')}</a>
         </p>
         <div className="cookie-banner__actions">
-          {/* Same size/weight for both buttons on purpose — declining must be
+          {/* Same size/weight for both buttons on purpose – declining must be
               exactly as easy as accepting (no dark pattern). */}
           <button className="cookie-banner__btn" onClick={declineConsent}>
             {t('cookies.decline')}

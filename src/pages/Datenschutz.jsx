@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 export default function Datenschutz() {
-  // Cosmetic only (browser tab, post-hydration) — see Impressum.jsx for why
+  // Cosmetic only (browser tab, post-hydration) – see Impressum.jsx for why
   // this isn't done via vite-react-ssg's Head.
   useEffect(() => {
     document.title = 'Datenschutzerklärung – Valanto'
