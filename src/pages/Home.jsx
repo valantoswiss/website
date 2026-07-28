@@ -72,13 +72,15 @@ function Hero() {
               Wrapper (Review 17.07.): verankert das Badge an der Cover-Kante
               statt an der breiteren Spalte. */}
           <div className="hero__cover-wrap">
+            {/* fetchpriority klein geschrieben: React 18 kennt das camelCase-Prop
+                noch nicht und warnt darüber – erst React 19 mappt `fetchPriority`. */}
             <img
               className="hero__cover"
               src={heroCover}
               alt={t('hero.coverAlt')}
               width="1588"
               height="2244"
-              fetchPriority="high"
+              fetchpriority="high"
             />
             {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' – betrifft
                 die Keys dossier.hosted, trust.b1, hero.trust/lead, meta.description,
