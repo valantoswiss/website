@@ -21,17 +21,17 @@
     "pricing": "Preise",
     "about": "Über uns",
     "login": "Login",
-    "try": "Zugang anfragen",
+    "try": "Gratis-Konto erstellen",
     "menu": "Menü"
   },
   "hero": {
     "eyebrow": "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",
     "h1": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug.",
-    "lead": "Sie kennen das: für die Bewertung das eine Tool, für die Vermarktung das nächste – und die Daten pflegen Sie überall doppelt. Valanto bringt alles zusammen: Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Entwickelt aus der Schweizer Immobilienpraxis.",
-    "cta1": "Zugang anfragen",
-    "cta2": "Demo buchen",
+    "lead": "Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Aus der Schweizer Immobilienpraxis entstanden.",
+    "cta1": "Gratis-Konto erstellen",
+    "cta2": "oder Demo buchen",
     "coverAlt": "Deckblatt eines Valanto-Verkehrswertgutachtens mit Objektadresse und ausgewiesenem Verkehrswert",
-    "trust": "Keine Kreditkarte nötig · 1 Bewertung gratis · Datenschutzkonform (revDSG)"
+    "trust": "Keine Kreditkarte · Erster Sitzplatz dauerhaft gratis · revDSG"
   },
   "dossier": {
     "label": "BEWERTUNGS-DOSSIER",
@@ -58,9 +58,10 @@
       { "t": "Bewertungen mit Dossier", "d": "Erstellen Sie nachvollziehbare Bewertungen und geben Sie sie als sauberes Dossier aus – bereit für Ihre Kunden." },
       { "t": "Neubauprojekte", "d": "Legen Sie Projekte an, verwalten Sie Einheiten und behalten Sie den Verkaufsstand jederzeit im Blick." },
       { "t": "Landingpages", "d": "Für jedes Objekt eine eigene Vermarktungsseite – ganz ohne zweites Tool." },
-      { "t": "Verkäufer-Portal", "d": "Ein eigener, transparenter Zugang für Ihre Verkäufer und Partner." },
-      { "t": "CRM & Einstellungen", "d": "Kontakte und Interessenten an einem Ort – bald direkt in Valanto. (in Entwicklung)" }
-    ]
+      { "t": "Verkäufer-Portal", "d": "Ein eigener, transparenter Zugang für Ihre Verkäufer und Partner." }
+    ],
+    "nextLabel": "Als Nächstes:",
+    "next": "CRM und Interessentenverwaltung, direkt in Valanto."
   },
   "audience": {
     "eyebrow": "FÜR IHRE ARBEIT",
@@ -105,8 +106,7 @@
     "text": "Valanto entsteht aus der täglichen Bewertungsarbeit und im Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an dem, was Sie in der Praxis wirklich brauchen – statt an dem, was eine Software von der Stange bietet.",
     "points": [
       { "t": "Datenschutzkonform (revDSG)", "d": "Wir behandeln Ihre Daten nach Schweizer Datenschutzrecht." },
-      { "t": "Sicher & stabil", "d": "Auf verlässlicher Infrastruktur gebaut." },
-      { "t": "Aus der Praxis", "d": "Von Immobilienprofis für Immobilienprofis." }
+      { "t": "Aus der Praxis", "d": "Entstanden in der täglichen Bewertungsarbeit, nicht am Reissbrett." }
     ]
   },
   "cta": {

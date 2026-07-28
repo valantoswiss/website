@@ -21,17 +21,17 @@
     "pricing": "Pricing",
     "about": "About",
     "login": "Login",
-    "try": "Request access",
+    "try": "Create free account",
     "menu": "Menu"
   },
   "hero": {
     "eyebrow": "REAL ESTATE SOFTWARE FROM SWITZERLAND",
     "h1": "Value, market, manage – finally in one tool.",
-    "lead": "You know the drill: one tool for the valuation, another for the marketing – and you keep the same data in both. Valanto brings it all together: properties, valuations with dossier and marketing in one place. Built from Swiss real-estate practice.",
-    "cta1": "Request access",
-    "cta2": "Book a demo",
+    "lead": "Properties, valuations with dossier and marketing in one place. Born from Swiss real-estate practice.",
+    "cta1": "Create free account",
+    "cta2": "or book a demo",
     "coverAlt": "Cover page of a Valanto market value appraisal showing the property address and the assessed market value",
-    "trust": "No credit card required · 1 free valuation · Data privacy compliant (Swiss FADP)"
+    "trust": "No credit card · First seat free forever · Swiss FADP"
   },
   "dossier": {
     "label": "VALUATION DOSSIER",
@@ -58,9 +58,10 @@
       { "t": "Valuations with dossier", "d": "Create traceable valuations and export them as a clean dossier – ready for your clients." },
       { "t": "New-build projects", "d": "Set up projects, manage units and keep an eye on the sales status at any time." },
       { "t": "Landing pages", "d": "A dedicated marketing page for every property – with no second tool at all." },
-      { "t": "Seller portal", "d": "A dedicated, transparent access for your sellers and partners." },
-      { "t": "CRM & settings", "d": "Contacts and prospects in one place – soon directly in Valanto. (in development)" }
-    ]
+      { "t": "Seller portal", "d": "A dedicated, transparent access for your sellers and partners." }
+    ],
+    "nextLabel": "Coming next:",
+    "next": "CRM and prospect management, directly in Valanto."
   },
   "audience": {
     "eyebrow": "FOR YOUR WORK",
@@ -105,8 +106,7 @@
     "text": "Valanto grows out of the daily work of valuation and the exchange with the Swiss valuers' association SIV. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
     "points": [
       { "t": "Data privacy compliant (Swiss FADP)", "d": "We handle your data in accordance with Swiss data protection law." },
-      { "t": "Secure & stable", "d": "Built on reliable infrastructure." },
-      { "t": "From practice", "d": "By real estate professionals, for real estate professionals." }
+      { "t": "From practice", "d": "Born from daily valuation work, not from a drawing board." }
     ]
   },
   "cta": {

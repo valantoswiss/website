@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { SwissCross } from '../Brand.jsx'
+import { APP_REGISTER_URL, DEMO_CALENDAR_URL } from '../links.js'
 import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
 import shotRaster1080 from '../assets/screenshots/bewertung-bauteil-raster-1080.webp'
 import shotRaster2160 from '../assets/screenshots/bewertung-bauteil-raster-2160.webp'
@@ -18,8 +19,10 @@ const IconHouse = () => (
     <path d="M4 11 12 4l8 7" /><path d="M6 10.5V20h12v-9.5" />
   </svg>
 )
-const IconSwissBox = () => <SwissCross size={26} />
-const SIV_ICONS = [IconSwissBox, IconLock, IconHouse] // positionsbasiert
+// positionsbasiert zu siv.points: Schloss = Datenschutz, Haus = Praxis.
+// Das Schweizerkreuz ist hier raus – es sass an der gestrichenen Hosting-Karte,
+// und C3 verbietet Icon-Farbflächen.
+const SIV_ICONS = [IconLock, IconHouse]
 
 /* Lightbox ohne Dependency (Review 17.07.): fixiertes Overlay über dem
    sticky Header, Scroll-Lock, ESC/Backdrop/✕ schliessen. */
@@ -60,9 +63,9 @@ function Hero() {
           </div>
           <h1 className="hero__title">{t('hero.h1')}</h1>
           <p className="hero__lead">{t('hero.lead')}</p>
-          <div className="hero__ctas">
-            <a className="btn btn-primary" href="/kontakt">{t('hero.cta1')}</a>
-            <a className="btn btn-ghost" href="/kontakt">{t('hero.cta2')}</a>
+          <div className="hero__ctas cta-row">
+            <a className="btn btn-primary" href={APP_REGISTER_URL}>{t('hero.cta1')}</a>
+            <a className="cta-textlink" href={DEMO_CALENDAR_URL}>{t('hero.cta2')}</a>
           </div>
           <p className="hero__trust">{t('hero.trust')}</p>
         </div>
@@ -143,6 +146,9 @@ function Features() {
             </div>
           ))}
         </div>
+        <p className="features__next">
+          <b>{t('features.nextLabel')}</b> {t('features.next')}
+        </p>
         <div className="features__shots">
           {PRODUCT_SHOTS.map((s) => {
             const alt = t(`shots.${s.key}.alt`)
@@ -218,6 +224,9 @@ function Pricing() {
           <h2 className="h2 pricing__h2">{t('pricing.h2')}</h2>
           <p className="pricing__intro">{t('pricing.intro')}</p>
         </div>
+        {/* Die Preis-Sektion bleibt vorerst unveraendert: sie wird mit A3
+            als Ganzes auf "pro Benutzer" umgestellt und darf erst zusammen
+            mit dem Sitzplatz-Modell der App live gehen (Handout E3). */}
         <div className="pricing__grid">
           {plans.map((p, i) => {
             const popular = i === 1
@@ -290,9 +299,9 @@ function ClosingCta() {
     <section className="closing">
       <h2 className="closing__title">{t('cta.h2')}</h2>
       <p className="closing__text">{t('cta.text')}</p>
-      <div className="closing__ctas">
-        <a className="btn btn-primary" href="/kontakt">{t('hero.cta1')}</a>
-        <a className="btn btn-ghost" href="/kontakt">{t('hero.cta2')}</a>
+      <div className="closing__ctas cta-row">
+        <a className="btn btn-primary" href={APP_REGISTER_URL}>{t('hero.cta1')}</a>
+        <a className="cta-textlink" href={DEMO_CALENDAR_URL}>{t('hero.cta2')}</a>
       </div>
     </section>
   )

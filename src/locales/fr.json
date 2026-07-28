@@ -21,17 +21,17 @@
     "pricing": "Tarifs",
     "about": "À propos",
     "login": "Connexion",
-    "try": "Demander l'accès",
+    "try": "Créer un compte gratuit",
     "menu": "Menu"
   },
   "hero": {
     "eyebrow": "LOGICIEL IMMOBILIER SUISSE",
     "h1": "Estimer, commercialiser, gérer – enfin dans un seul outil.",
-    "lead": "Vous connaissez la situation : un outil pour l'estimation, un autre pour la commercialisation – et vous saisissez les données deux fois. Valanto réunit tout : biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse.",
-    "cta1": "Demander l'accès",
-    "cta2": "Réserver une démo",
+    "lead": "Biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse.",
+    "cta1": "Créer un compte gratuit",
+    "cta2": "ou réserver une démo",
     "coverAlt": "Page de couverture d'une expertise de valeur vénale Valanto avec l'adresse du bien et la valeur retenue",
-    "trust": "Sans carte de crédit · 1 estimation offerte · Conforme à la nLPD"
+    "trust": "Sans carte de crédit · Premier siège gratuit à vie · nLPD"
   },
   "dossier": {
     "label": "DOSSIER D'ESTIMATION",
@@ -58,9 +58,10 @@
       { "t": "Estimations avec dossier", "d": "Réalisez des estimations traçables et exportez-les sous forme de dossier soigné – prêtes pour vos clients." },
       { "t": "Projets de construction", "d": "Créez des projets, gérez les unités et gardez l'état des ventes à l'œil à tout moment." },
       { "t": "Landing pages", "d": "Une page de commercialisation dédiée pour chaque bien – sans aucun second outil." },
-      { "t": "Portail vendeurs", "d": "Un accès dédié et transparent pour vos vendeurs et partenaires." },
-      { "t": "CRM & réglages", "d": "Contacts et prospects au même endroit – bientôt directement dans Valanto. (en développement)" }
-    ]
+      { "t": "Portail vendeurs", "d": "Un accès dédié et transparent pour vos vendeurs et partenaires." }
+    ],
+    "nextLabel": "Prochainement :",
+    "next": "CRM et gestion des prospects, directement dans Valanto."
   },
   "audience": {
     "eyebrow": "POUR VOTRE TRAVAIL",
@@ -105,8 +106,7 @@
     "text": "Valanto naît du travail quotidien d'estimation et de l'échange avec l'association suisse des évaluateurs SIV. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [
       { "t": "Conforme à la nLPD", "d": "Nous traitons vos données conformément au droit suisse de la protection des données." },
-      { "t": "Sûr & stable", "d": "Bâti sur une infrastructure fiable." },
-      { "t": "Issu de la pratique", "d": "Par des professionnels, pour des professionnels." }
+      { "t": "Issu de la pratique", "d": "Né du travail quotidien d'estimation, pas d'une planche à dessin." }
     ]
   },
   "cta": {
