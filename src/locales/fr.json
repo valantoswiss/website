@@ -75,27 +75,37 @@
   "pricing": {
     "eyebrow": "TARIFS TRANSPARENTS",
     "h2": "Une offre pour votre rôle",
-    "intro": "Résiliable chaque mois, sans frais cachés. Et votre première estimation, vous la créez gratuitement.",
-    "popular": "Populaire",
-    "note": "Tous les prix HT · Solutions sur mesure pour les équipes sur demande.",
-    "test": "Demander l'accès",
+    "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Le premier siège de chaque entreprise est gratuit à vie – avec deux biens et un dossier complet.",
+    "popular": "LE PLUS CHOISI",
+    "note": "Tous les prix HT · Solutions sur mesure pour les grandes équipes sur demande.",
+    "test": "Démarrer gratuitement",
+    "boxes": [
+      {
+        "t": "Un compte par entreprise, une offre par utilisateur",
+        "d": "Vous créez l'entreprise et invitez vos collaborateurs un par un. Les offres peuvent être mélangées – deux courtiers et une évaluatrice ne sont pas un cas particulier."
+      },
+      {
+        "t": "Exemple",
+        "d": "3 personnes : 1 × Courtier gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les sièges peuvent être ajoutés ou retirés à tout moment."
+      }
+    ],
     "plans": [
       {
         "name": "ÉVALUATEUR",
         "price": "CHF 50.–",
-        "per": "/ mois",
+        "per": "par utilisateur / mois",
         "features": ["Estimations avec dossier", "Données de base des biens", "Conforme à la nLPD"]
       },
       {
         "name": "COURTIER",
         "price": "CHF 80.–",
-        "per": "/ mois",
+        "per": "par utilisateur / mois",
         "features": ["Biens & dossier", "Projets de construction", "Landing pages", "Portail vendeurs"]
       },
       {
         "name": "SPÉCIALISTE",
         "price": "CHF 120.–",
-        "per": "/ mois",
+        "per": "par utilisateur / mois",
         "features": ["Tout de Courtier", "Plus : estimations avec dossier", "Pour ceux qui estiment et commercialisent"]
       }
     ]
