@@ -1,5 +1,5 @@
 /* Zentrale Ziele für die Primär-CTAs.
-   Konten entstehen ausschliesslich in der App (Handout B0) — die Website
+   Konten entstehen ausschliesslich in der App (Handout B0) – die Website
    sammelt keine Registrierungsdaten und übergibt nichts. Der optionale
    ?ref=<token> trägt nur die Herkunft mit und wird in der App am Konto
    gespeichert. */

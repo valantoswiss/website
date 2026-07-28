@@ -246,11 +246,14 @@ function Pricing() {
                     </div>
                   ))}
                 </div>
+                {/* Der einzige gefüllte CTA der Preis-Sektion trägt das
+                    Primär-Versprechen (A1); «Gratis starten» gehört den
+                    Textlinks der Seitenspalten (A3). */}
                 <a
                   className={popular ? 'btn plan__cta--fill' : 'plan__cta--link'}
                   href={APP_REGISTER_URL}
                 >
-                  {t('pricing.test')}
+                  {t(popular ? 'hero.cta1' : 'pricing.test')}
                 </a>
               </div>
             )

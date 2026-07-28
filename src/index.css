@@ -183,7 +183,9 @@ button:focus-visible,
   font-family: var(--sans);
   font-size: 15.5px;
   font-weight: 600;
-  color: var(--ink);
+  /* Fliesstext-Grau, nicht Anthrazit: der Link soll neben dem CTA leise
+     bleiben (A1) – Unterstreichung und Hover tragen die Affordanz. */
+  color: var(--text);
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color 0.18s ease;
@@ -1099,7 +1101,8 @@ button:focus-visible,
   margin-top: 8px;
   justify-content: center;
 }
-/* spec 2a: closing button is slightly wider (32px) than the hero button (30px) */
+/* Abschluss-Button minim schmaler (32px) als der Hero-Button (34px) – der
+   dunkle Grund macht die Fläche optisch schwerer, das gleicht es aus. */
 .closing__ctas .btn-primary {
   padding-left: 32px;
   padding-right: 32px;
