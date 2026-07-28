@@ -11,12 +11,14 @@ export function registerUrl(ref) {
   return ref ? `${APP_REGISTER_URL}?ref=${encodeURIComponent(ref)}` : APP_REGISTER_URL
 }
 
-/* „oder Demo buchen" zeigt laut Handout A1 auf einen Kalender (Calendly o. ä.)
-   und bewusst NICHT auf /kontakt. Der Kalender-Link ist noch ein offener
-   Entscheid — bis er da ist, fällt der Link auf /kontakt zurück, damit hier
-   kein toter Link steht. Sobald die URL feststeht: in Vercel (Production und
-   Preview) VITE_DEMO_CALENDAR_URL setzen, sonst ist keine Code-Änderung nötig. */
-export const DEMO_CALENDAR_URL = import.meta.env.VITE_DEMO_CALENDAR_URL || '/kontakt'
+/* „oder Demo buchen" zeigt auf /kontakt.
 
-/** true, sobald ein echter Kalender-Link konfiguriert ist. */
-export const HAS_DEMO_CALENDAR = Boolean(import.meta.env.VITE_DEMO_CALENDAR_URL)
+   Das Handout A1 verlangte hier einen Kalender (Calendly o. ä.) und schloss
+   /kontakt ausdrücklich aus. Jürg hat das am 28.07.2026 anders entschieden:
+   keine Kalenderanbindung. Das Produkt soll selbsterklärend genug sein, dass
+   niemand eine Demo braucht – und wer doch eine will, schreibt uns. Ein
+   Buchungs-Slot wäre Infrastruktur für einen Fall, den wir gar nicht wollen.
+
+   Der Schalter bleibt: sollte später doch ein Kalender kommen, genügt
+   VITE_DEMO_CALENDAR_URL in Vercel (Production und Preview), ohne Code-Änderung. */
+export const DEMO_CALENDAR_URL = import.meta.env.VITE_DEMO_CALENDAR_URL || '/kontakt'
