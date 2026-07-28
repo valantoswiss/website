@@ -224,16 +224,15 @@ function Pricing() {
           <h2 className="h2 pricing__h2">{t('pricing.h2')}</h2>
           <p className="pricing__intro">{t('pricing.intro')}</p>
         </div>
-        {/* Die Preis-Sektion bleibt vorerst unveraendert: sie wird mit A3
-            als Ganzes auf "pro Benutzer" umgestellt und darf erst zusammen
-            mit dem Sitzplatz-Modell der App live gehen (Handout E3). */}
         <div className="pricing__grid">
           {plans.map((p, i) => {
             const popular = i === 1
             return (
               <div className={`plan ${popular ? 'plan--popular' : ''}`} key={i}>
-                {popular && <div className="plan__badge">{t('pricing.popular')}</div>}
-                <span className="plan__name">{p.name}</span>
+                <div className="plan__head">
+                  <span className="plan__name">{p.name}</span>
+                  {popular && <span className="plan__badge">{t('pricing.popular')}</span>}
+                </div>
                 <div className="plan__price-row">
                   <span className="plan__price">{p.price}</span>
                   <span className="plan__per">{p.per}</span>
@@ -242,20 +241,28 @@ function Pricing() {
                 <div className="plan__features">
                   {p.features.map((feat, j) => (
                     <div className="plan__feat" key={j}>
-                      <span className="check">✓</span>
+                      <span className="check" aria-hidden="true">✓</span>
                       <span>{feat}</span>
                     </div>
                   ))}
                 </div>
                 <a
-                  className={`btn plan__cta ${popular ? 'plan__cta--fill' : 'plan__cta--ghost'}`}
-                  href="/kontakt"
+                  className={popular ? 'btn plan__cta--fill' : 'plan__cta--link'}
+                  href={APP_REGISTER_URL}
                 >
                   {t('pricing.test')}
                 </a>
               </div>
             )
           })}
+        </div>
+        <div className="pricing__notes">
+          {t('pricing.boxes', { returnObjects: true }).map((b, i) => (
+            <div className="pricing__note-box" key={i}>
+              <div className="pricing__note-title">{b.t}</div>
+              <p className="pricing__note-text">{b.d}</p>
+            </div>
+          ))}
         </div>
         <p className="pricing__note">{t('pricing.note')}</p>
       </div>

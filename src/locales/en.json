@@ -75,27 +75,37 @@
   "pricing": {
     "eyebrow": "TRANSPARENT PRICING",
     "h2": "A plan for your role",
-    "intro": "Cancel monthly, no hidden costs. And you create your first valuation for free.",
-    "popular": "Popular",
-    "note": "All prices excl. VAT · Custom solutions for teams on request.",
-    "test": "Request access",
+    "intro": "Price per user and month, cancel monthly. The first seat of every company is free forever – with two properties and one complete dossier.",
+    "popular": "MOST CHOSEN",
+    "note": "All prices excl. VAT · Custom solutions for larger teams on request.",
+    "test": "Start for free",
+    "boxes": [
+      {
+        "t": "One account per company, one plan per user",
+        "d": "You set up the company and invite your people one by one. Plans may be mixed – two brokers and one valuer are not a special case."
+      },
+      {
+        "t": "Example",
+        "d": "3 people: 1 × Broker free, plus 1 × Broker and 1 × Valuer = CHF 130.– per month, excl. VAT. Seats can be added or removed at any time."
+      }
+    ],
     "plans": [
       {
         "name": "VALUER",
         "price": "CHF 50.–",
-        "per": "/ month",
+        "per": "per user / mo.",
         "features": ["Valuations with dossier", "Property base data", "Data privacy compliant (Swiss FADP)"]
       },
       {
         "name": "BROKER",
         "price": "CHF 80.–",
-        "per": "/ month",
+        "per": "per user / mo.",
         "features": ["Properties & dossier", "New-build projects", "Landing pages", "Seller portal"]
       },
       {
         "name": "SPECIALIST",
         "price": "CHF 120.–",
-        "per": "/ month",
+        "per": "per user / mo.",
         "features": ["Everything in Broker", "Plus: valuations with dossier", "For those who value and market"]
       }
     ]

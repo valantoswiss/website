@@ -75,28 +75,38 @@
   "pricing": {
     "eyebrow": "TRANSPARENTE PREISE",
     "h2": "Ein Paket für Ihre Rolle",
-    "intro": "Monatlich kündbar, keine versteckten Kosten. Und Ihre erste Bewertung erstellen Sie kostenlos.",
-    "popular": "Beliebt",
-    "note": "Alle Preise exkl. MwSt. · Individuelle Lösungen für Teams auf Anfrage.",
-    "test": "Zugang anfragen",
+    "intro": "Preis pro Benutzer und Monat, monatlich kündbar. Der erste Sitzplatz jeder Firma ist dauerhaft gratis – mit zwei Liegenschaften und einem vollständigen Dossier.",
+    "popular": "AM MEISTEN GEWÄHLT",
+    "note": "Alle Preise exkl. MwSt. · Individuelle Lösungen für grössere Teams auf Anfrage.",
+    "test": "Gratis starten",
+    "boxes": [
+      {
+        "t": "Ein Konto pro Firma, ein Paket pro Benutzer",
+        "d": "Sie legen die Firma an und laden Ihre Leute einzeln ein. Pakete dürfen gemischt sein – zwei Makler und eine Bewerterin sind kein Sonderfall."
+      },
+      {
+        "t": "Beispiel",
+        "d": "3 Personen: 1 × Makler gratis, dazu 1 × Makler und 1 × Bewerter = CHF 130.– pro Monat, exkl. MwSt. Sitzplätze lassen sich jederzeit hinzufügen oder entfernen."
+      }
+    ],
     "plans": [
       {
         "name": "BEWERTER",
         "price": "CHF 50.–",
-        "per": "/ Monat",
+        "per": "pro Benutzer / Mt.",
         "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Datenschutzkonform (revDSG)"]
       },
       {
         "name": "MAKLER",
         "price": "CHF 80.–",
-        "per": "/ Monat",
+        "per": "pro Benutzer / Mt.",
         "features": ["Liegenschaften & Dossier", "Neubauprojekte", "Landingpages", "Verkäufer-Portal"]
       },
       {
         "name": "SPEZIALIST",
         "price": "CHF 120.–",
-        "per": "/ Monat",
-        "features": ["Alles aus Makler", "Plus: Bewertungen mit Dossier", "Für alle, die bewerten und vermarkten"]
+        "per": "pro Benutzer / Mt.",
+        "features": ["Alles aus Makler", "Plus: Bewertungen mit Dossier", "Für alle, die beides machen"]
       }
     ]
   },
