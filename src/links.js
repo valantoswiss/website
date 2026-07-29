@@ -6,11 +6,6 @@
 
 export const APP_REGISTER_URL = 'https://app.valanto.ch/registrieren'
 
-/** Registrierungslink, optional mit Herkunfts-Token (Kampagne, SIV-Termin …). */
-export function registerUrl(ref) {
-  return ref ? `${APP_REGISTER_URL}?ref=${encodeURIComponent(ref)}` : APP_REGISTER_URL
-}
-
 /* „oder Demo buchen" zeigt auf /kontakt.
 
    Das Handout A1 verlangte hier einen Kalender (Calendly o. ä.) und schloss

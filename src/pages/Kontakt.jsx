@@ -70,7 +70,7 @@ export default function Kontakt() {
               <input name="website" type="text" tabIndex={-1} autoComplete="off" />
             </label>
 
-            <button className="btn btn-primary" type="submit" disabled={status === 'sending'}>
+            <button className="btn btn-form" type="submit" disabled={status === 'sending'}>
               {status === 'sending' ? t('contactPage.form.sending') : t('contactPage.form.submit')}
             </button>
 

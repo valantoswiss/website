@@ -11,7 +11,6 @@
   --ink: #23262d;
   --ink-deep: #1a1c21;
   --teal: #23808f;
-  --teal-hover: #2e9db0;
   /* Petrol hell aus dem Markenhandbuch – trägt auf dunklem Grund, wo das
      gedämpfte --teal-light zu wenig Kontrast hätte. */
   --teal-bright: #3fb0c0;
@@ -30,10 +29,8 @@
   /* abgedunkelt von #a6a296 auf ~5:1 (WCAG AA) gegen Papier/Weiss, warmer Ton bleibt */
   --muted: #6f6a5c;
   --track: #f0ebe1;
-  /* Innenlinien hell / Rahmen mittel / Hinweisfläche (Handout C1, D4) */
+  /* Innenlinien hell (Handout C1, D4) */
   --line-soft: #d8d2c6;
-  --border-mid: #c9c2b4;
-  --notice: #f7f2e9;
 
   /* on dark backgrounds */
   --on-dark: #ede8de;
@@ -168,6 +165,20 @@ button:focus-visible,
 }
 .btn-primary:hover {
   background: var(--accent-hover);
+}
+
+/* Formular-Absenden (z. B. /kontakt): Petrol statt Terracotta. Die
+   Terracotta-Fläche ist dem einen Primär-CTA «Gratis-Konto erstellen»
+   vorbehalten (Handout C1) – der Kontakt-Button zog beim globalen
+   .btn-primary-Umbau nur versehentlich mit. */
+.btn-form {
+  padding: 15px 30px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 15.5px;
+}
+.btn-form:hover {
+  background: var(--ink);
 }
 
 /* Handout A1: genau ein gefüllter CTA, daneben ein Textlink im Fliesstext-Grau.
@@ -1280,8 +1291,11 @@ button:focus-visible,
   .features__grid {
     grid-template-columns: 1fr;
   }
+  /* :nth-last-child(-n + 2) hebt die 1080er-Regel gleicher Spezifität wieder
+     auf – mit .feature allein verlor Modul 04 im Einspalter seine Linie. */
   .feature,
-  .feature:nth-child(3n) {
+  .feature:nth-child(3n),
+  .feature:nth-last-child(-n + 2) {
     border-right: none;
     border-bottom: 1px solid var(--line-soft);
   }
