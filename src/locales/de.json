@@ -75,7 +75,7 @@
   "pricing": {
     "eyebrow": "TRANSPARENTE PREISE",
     "h2": "Ein Paket für Ihre Rolle",
-    "intro": "Preis pro Benutzer und Monat, monatlich kündbar. Der erste Sitzplatz jeder Firma ist dauerhaft gratis – mit zwei Liegenschaften und einem vollständigen Dossier.",
+    "intro": "Preis pro Benutzer und Monat, monatlich kündbar. Der erste Sitzplatz jeder Firma ist dauerhaft gratis – mit einer Liegenschaft, einer Bewertung und einem Neubauprojekt.",
     "popular": "AM MEISTEN GEWÄHLT",
     "note": "Alle Preise exkl. MwSt. · Individuelle Lösungen für grössere Teams auf Anfrage.",
     "test": "Gratis starten",
@@ -121,7 +121,7 @@
   },
   "cta": {
     "h2": "Probieren Sie es in Ruhe aus.",
-    "text": "Erstellen Sie Ihre erste Bewertung kostenlos – oder lassen Sie sich Valanto in einer persönlichen Demo zeigen."
+    "text": "Ihr Gratis-Konto enthält eine Liegenschaft, eine Bewertung mit Dossier und ein Neubauprojekt – dauerhaft. Oder lassen Sie sich Valanto in einer persönlichen Demo zeigen."
   },
   "footer": {
     "claim": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",

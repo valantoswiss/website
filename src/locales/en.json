@@ -75,8 +75,8 @@
   "pricing": {
     "eyebrow": "TRANSPARENT PRICING",
     "h2": "A plan for your role",
-    "intro": "Price per user and month, cancel monthly. The first seat of every company is free forever – with two properties and one complete dossier.",
-    "popular": "MOST CHOSEN",
+    "intro": "Price per user, per month, cancel any month. The first seat of every company is free forever – with one property, one valuation and one new-build project.",
+    "popular": "MOST POPULAR",
     "note": "All prices excl. VAT · Custom solutions for larger teams on request.",
     "test": "Start for free",
     "boxes": [
@@ -121,7 +121,7 @@
   },
   "cta": {
     "h2": "Try it out at your own pace.",
-    "text": "Create your first valuation for free – or let us show you Valanto in a personal demo."
+    "text": "Your free account includes one property, one valuation with dossier and one new-build project – for good. Or let us show you Valanto in a personal demo."
   },
   "footer": {
     "claim": "Value, market, manage – in one tool.",

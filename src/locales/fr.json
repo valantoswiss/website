@@ -31,7 +31,7 @@
     "cta1": "Créer un compte gratuit",
     "cta2": "ou réserver une démo",
     "coverAlt": "Page de couverture d'une expertise de valeur vénale Valanto avec l'adresse du bien et la valeur retenue",
-    "trust": "Sans carte de crédit · Premier siège gratuit à vie · nLPD"
+    "trust": "Sans carte de crédit · Premier poste gratuit à vie · nLPD"
   },
   "dossier": {
     "label": "DOSSIER D'ESTIMATION",
@@ -75,7 +75,7 @@
   "pricing": {
     "eyebrow": "TARIFS TRANSPARENTS",
     "h2": "Une offre pour votre rôle",
-    "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Le premier siège de chaque entreprise est gratuit à vie – avec deux biens et un dossier complet.",
+    "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Le premier poste de chaque entreprise est gratuit à vie – avec un bien, une estimation et un projet de construction.",
     "popular": "LE PLUS CHOISI",
     "note": "Tous les prix HT · Solutions sur mesure pour les grandes équipes sur demande.",
     "test": "Démarrer gratuitement",
@@ -86,7 +86,7 @@
       },
       {
         "t": "Exemple",
-        "d": "3 personnes : 1 × Courtier gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les sièges peuvent être ajoutés ou retirés à tout moment."
+        "d": "3 personnes : 1 × Courtier gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les postes peuvent être ajoutés ou retirés à tout moment."
       }
     ],
     "plans": [
@@ -121,7 +121,7 @@
   },
   "cta": {
     "h2": "Essayez-le tranquillement.",
-    "text": "Créez votre première estimation gratuitement – ou découvrez Valanto lors d'une démo personnalisée."
+    "text": "Votre compte gratuit comprend un bien immobilier, une estimation avec dossier et un projet de construction – sans limite de durée. Ou découvrez Valanto lors d'une démo personnalisée."
   },
   "footer": {
     "claim": "Estimer, commercialiser, gérer – dans un seul outil.",
