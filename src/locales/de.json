@@ -150,5 +150,22 @@
       "privacy": "Ihre Angaben verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage.",
       "privacyLink": "Mehr in der Datenschutzerklärung."
     }
+  },
+  "aboutPage": {
+    "h1": "Über Valanto",
+    "origin": {
+      "h2": "Aus der Bewertungspraxis entstanden",
+      "p1": "Valanto ist kein Software-Projekt vom Reissbrett. Das Werkzeug ist über Jahre in der täglichen Arbeit eines Schweizer Immobilienbewerters entstanden – aus dem Bedürfnis, Bewertungen strukturiert, nachvollziehbar und effizient zu erstellen, statt in Tabellen und Insellösungen zu arbeiten.",
+      "p2": "Was als internes Werkzeug begann, machen wir nun als Valanto für Bewerterinnen, Makler und Immobilienprofis in der ganzen Schweiz zugänglich."
+    },
+    "team": {
+      "h2": "Wer dahintersteht",
+      "p1": "Hinter Valanto steht ein kleines Schweizer Team, das Bewertungs-Fachwissen und moderne Softwareentwicklung verbindet."
+    },
+    "practice": {
+      "h2": "Nah an der Praxis, im Austausch mit der Branche",
+      "p1": "Wir entwickeln Valanto im Dialog mit Anwenderinnen und Anwendern – und im fachlichen Austausch mit Berufsverbänden wie dem SIV."
+    },
+    "contact": "Fragen? Wir sind erreichbar:"
   }
 }

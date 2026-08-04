@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c2')}</span>
-            <a href="/#siv">{t('nav.about')}</a>
+            <a href="/ueber-uns">{t('nav.about')}</a>
             <a href="/kontakt">{t('footer.contact')}</a>
             <a href="/#siv">SIV</a>
           </div>
