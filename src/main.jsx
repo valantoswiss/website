@@ -13,6 +13,7 @@ import Home from './pages/Home.jsx'
 import Impressum from './pages/Impressum.jsx'
 import Datenschutz from './pages/Datenschutz.jsx'
 import Kontakt from './pages/Kontakt.jsx'
+import UeberUns from './pages/UeberUns.jsx'
 
 // Static Site Generation: each route below is pre-rendered to real HTML at
 // build time (good for SEO / crawlers / no-JS reload of /impressum etc.) and
@@ -28,6 +29,7 @@ export const createRoot = ViteReactSSG({
         { path: 'impressum', element: <Impressum /> },
         { path: 'datenschutz', element: <Datenschutz /> },
         { path: 'kontakt', element: <Kontakt /> },
+        { path: 'ueber-uns', element: <UeberUns /> },
       ],
     },
   ],

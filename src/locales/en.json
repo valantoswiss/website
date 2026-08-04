@@ -150,5 +150,22 @@
       "privacy": "We use your details exclusively to answer your enquiry.",
       "privacyLink": "More in the privacy policy."
     }
+  },
+  "aboutPage": {
+    "h1": "About Valanto",
+    "origin": {
+      "h2": "Born out of valuation practice",
+      "p1": "Valanto is not a software project drawn up at a desk. The tool grew over years out of the daily work of a Swiss real estate appraiser – out of the need to produce valuations in a structured, traceable and efficient way instead of juggling spreadsheets and isolated tools.",
+      "p2": "What began as an in-house tool is now available as Valanto to appraisers, brokers and property professionals across Switzerland."
+    },
+    "team": {
+      "h2": "Who is behind it",
+      "p1": "Valanto is built by a small Swiss team that combines valuation expertise with modern software development."
+    },
+    "practice": {
+      "h2": "Close to practice, in dialogue with the industry",
+      "p1": "We develop Valanto together with the people who use it – and in professional exchange with industry associations such as the SIV."
+    },
+    "contact": "Questions? You can reach us at:"
   }
 }
