@@ -46,8 +46,7 @@
   },
   "trust": {
     "line": "Aus der Schweizer Immobilienpraxis entstanden – für Makler, Bewerter und Verwalter.",
-    "b1": "Datenschutzkonform (revDSG)",
-    "b2": "SIV-nah"
+    "b1": "Datenschutzkonform (revDSG)"
   },
   "features": {
     "eyebrow": "ALLES AN EINEM ORT",
@@ -102,7 +101,7 @@
   "siv": {
     "eyebrow": "VERANKERT IM SCHWEIZER MARKT",
     "h2": "In der Schweizer Praxis verankert",
-    "text": "Valanto entsteht aus der täglichen Bewertungsarbeit und im Austausch mit dem Schweizer Schätzerverband SIV. So bleibt die Plattform nah an dem, was Sie in der Praxis wirklich brauchen – statt an dem, was eine Software von der Stange bietet.",
+    "text": "Valanto entsteht aus der täglichen Bewertungsarbeit. So bleibt die Plattform nah an dem, was Sie in der Praxis wirklich brauchen – statt an dem, was eine Software von der Stange bietet.",
     "points": [
       { "t": "Datenschutzkonform (revDSG)", "d": "Wir behandeln Ihre Daten nach Schweizer Datenschutzrecht." },
       { "t": "Sicher & stabil", "d": "Auf verlässlicher Infrastruktur gebaut." },
@@ -164,7 +163,7 @@
     },
     "practice": {
       "h2": "Nah an der Praxis, im Austausch mit der Branche",
-      "p1": "Wir entwickeln Valanto im Dialog mit Anwenderinnen und Anwendern – und im fachlichen Austausch mit Berufsverbänden wie dem SIV."
+      "p1": "Wir entwickeln Valanto im Dialog mit Anwenderinnen und Anwendern – und im fachlichen Austausch mit Berufsverbänden."
     },
     "contact": "Fragen? Wir sind erreichbar:"
   }

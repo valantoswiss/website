@@ -16,7 +16,7 @@ export default function Datenschutz() {
         <h2>1. Verantwortliche</h2>
         <p>Verantwortlich für die Datenbearbeitung auf dieser Website ist:</p>
         <p>
-          Felsberg Consulting GmbH
+          Valanto
           <br />
           Felsbergstrasse 2
           <br />

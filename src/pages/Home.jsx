@@ -106,7 +106,6 @@ function TrustBar() {
           <span className="badge">
             <SwissCross /> {t('trust.b1')}
           </span>
-          <span className="badge">{t('trust.b2')}</span>
         </div>
       </div>
     </section>

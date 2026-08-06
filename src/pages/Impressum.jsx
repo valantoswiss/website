@@ -16,7 +16,7 @@ export default function Impressum() {
 
         <h2>Betreiberin dieser Website</h2>
         <p>
-          Felsberg Consulting GmbH
+          Valanto
           <br />
           Felsbergstrasse 2
           <br />

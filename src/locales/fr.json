@@ -46,8 +46,7 @@
   },
   "trust": {
     "line": "Né de la pratique immobilière suisse – pour les courtiers, les évaluateurs et les gérants.",
-    "b1": "Conforme à la nLPD",
-    "b2": "Proche du SIV"
+    "b1": "Conforme à la nLPD"
   },
   "features": {
     "eyebrow": "TOUT AU MÊME ENDROIT",
@@ -102,7 +101,7 @@
   "siv": {
     "eyebrow": "ANCRÉ DANS LE MARCHÉ SUISSE",
     "h2": "Ancré dans la pratique suisse",
-    "text": "Valanto naît du travail quotidien d'estimation et de l'échange avec l'association suisse des évaluateurs SIV. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
+    "text": "Valanto naît du travail quotidien d'estimation. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [
       { "t": "Conforme à la nLPD", "d": "Nous traitons vos données conformément au droit suisse de la protection des données." },
       { "t": "Sûr & stable", "d": "Bâti sur une infrastructure fiable." },
@@ -164,7 +163,7 @@
     },
     "practice": {
       "h2": "Proche de la pratique, en dialogue avec la branche",
-      "p1": "Nous développons Valanto en dialogue avec celles et ceux qui l'utilisent – et en échange professionnel avec des associations telles que la SIV."
+      "p1": "Nous développons Valanto en dialogue avec celles et ceux qui l'utilisent – et en échange professionnel avec des associations de la branche."
     },
     "contact": "Des questions ? Vous pouvez nous joindre :"
   }

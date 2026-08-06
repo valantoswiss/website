@@ -98,7 +98,7 @@ export default function Kontakt() {
         </p>
 
         <p>
-          Felsberg Consulting GmbH
+          Valanto
           <br />
           Felsbergstrasse 2
           <br />

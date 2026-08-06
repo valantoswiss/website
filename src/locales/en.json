@@ -46,8 +46,7 @@
   },
   "trust": {
     "line": "Born from Swiss real-estate practice – for brokers, valuers and property managers.",
-    "b1": "Data privacy compliant (Swiss FADP)",
-    "b2": "Close to SIV"
+    "b1": "Data privacy compliant (Swiss FADP)"
   },
   "features": {
     "eyebrow": "EVERYTHING IN ONE PLACE",
@@ -102,7 +101,7 @@
   "siv": {
     "eyebrow": "ROOTED IN THE SWISS MARKET",
     "h2": "Rooted in Swiss practice",
-    "text": "Valanto grows out of the daily work of valuation and the exchange with the Swiss valuers' association SIV. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
+    "text": "Valanto grows out of the daily work of valuation. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
     "points": [
       { "t": "Data privacy compliant (Swiss FADP)", "d": "We handle your data in accordance with Swiss data protection law." },
       { "t": "Secure & stable", "d": "Built on reliable infrastructure." },
@@ -164,7 +163,7 @@
     },
     "practice": {
       "h2": "Close to practice, in dialogue with the industry",
-      "p1": "We develop Valanto together with the people who use it – and in professional exchange with industry associations such as the SIV."
+      "p1": "We develop Valanto together with the people who use it – and in professional exchange with industry associations."
     },
     "contact": "Questions? You can reach us at:"
   }
