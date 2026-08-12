@@ -87,10 +87,10 @@ function Hero() {
               height="2244"
               fetchpriority="high"
             />
-            {/* TODO: nach Server-Umzug CH zurück auf 'Schweizer Hosting' – betrifft
-                die Keys dossier.hosted, trust.b1, hero.trust/lead, meta.description,
-                pricing features und siv.points[0] in allen drei Locales sowie die
-                index.html-Metas und das og-Bild (og-image-source.html). */}
+            {/* Hosting-Claims aktiv seit dem Umzug auf Infomaniak (CH, 12.08.2026):
+                dossier.hosted, meta.description, pricing.note und siv.points[0]
+                nennen Schweizer Hosting; das og-Bild sagt weiterhin nur
+                «Made in Switzerland» und brauchte keine Änderung. */}
             <div className="hosted-badge">
               <SwissCross /> {t('dossier.hosted')}
             </div>

@@ -13,7 +13,7 @@
   },
   "meta": {
     "title": "Valanto – Real Estate Software Switzerland: value, market, manage",
-    "description": "Value, market, manage in one tool – for brokers and valuers. Built in Switzerland. Free seat to try it out."
+    "description": "Value, market, manage in one tool – for brokers and valuers. Built and hosted in Switzerland. Free seat to try it out."
   },
   "nav": {
     "features": "Features",
@@ -42,7 +42,7 @@
     "r3": "Fit-out",
     "footer": "Valuation no. 2043 · Page 1 / 18",
     "pdf": "PDF export",
-    "hosted": "Made in Switzerland"
+    "hosted": "Hosted in Switzerland"
   },
   "trust": {
     "line": "Born from Swiss real-estate practice – for brokers and valuers.",
@@ -76,7 +76,7 @@
     "h2": "A plan for your role",
     "intro": "Price per user, per month, cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
     "popular": "OUR RECOMMENDATION",
-    "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG). · Custom solutions for larger teams on request.",
+    "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Custom solutions for larger teams on request.",
     "boxes": [
       {
         "t": "One account per company, one plan per user",
@@ -113,7 +113,7 @@
     "h2": "Rooted in Swiss practice",
     "text": "Valanto grows out of the daily work of valuation. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
     "points": [
-      { "t": "Data privacy compliant (Swiss FADP)", "d": "We handle your data in accordance with Swiss data protection law." },
+      { "t": "Data privacy compliant (Swiss FADP)", "d": "We handle your data in accordance with Swiss data protection law – hosted in Switzerland with Infomaniak (Geneva)." },
       { "t": "Direct lines", "d": "Your feedback goes straight into development. We're a small team, not a ticketing system." }
     ]
   },

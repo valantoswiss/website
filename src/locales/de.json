@@ -13,7 +13,7 @@
   },
   "meta": {
     "title": "Valanto – Immobiliensoftware Schweiz: bewerten, vermarkten, verwalten",
-    "description": "Bewerten, vermarkten, verwalten in einem Werkzeug – für Makler und Bewerter. Entwickelt in der Schweiz. Gratis-Sitzplatz zum Ausprobieren."
+    "description": "Bewerten, vermarkten, verwalten in einem Werkzeug – für Makler und Bewerter. Entwickelt und gehostet in der Schweiz. Gratis-Sitzplatz zum Ausprobieren."
   },
   "nav": {
     "features": "Funktionen",
@@ -42,7 +42,7 @@
     "r3": "Ausbau",
     "footer": "Bewertung Nr. 2043 · Seite 1 / 18",
     "pdf": "PDF-Export",
-    "hosted": "Made in Switzerland"
+    "hosted": "Schweizer Hosting"
   },
   "trust": {
     "line": "Aus der Schweizer Immobilienpraxis entstanden – für Makler und Bewerter.",
@@ -76,7 +76,7 @@
     "h2": "Ein Paket für Ihre Rolle",
     "intro": "Preis pro Benutzer und Monat, monatlich kündbar. Zum Ausprobieren erhält jede Firma einen Gratis-Sitzplatz mit je einer Liegenschaft, einer Bewertung und einem Neubauprojekt – ohne Zeitlimit.",
     "popular": "UNSER VORSCHLAG",
-    "note": "Alle Preise exkl. MwSt. · Alle Pakete datenschutzkonform nach revDSG. · Individuelle Lösungen für grössere Teams auf Anfrage.",
+    "note": "Alle Preise exkl. MwSt. · Alle Pakete datenschutzkonform nach revDSG, gehostet in der Schweiz. · Individuelle Lösungen für grössere Teams auf Anfrage.",
     "boxes": [
       {
         "t": "Ein Konto pro Firma, ein Paket pro Benutzer",
@@ -113,7 +113,7 @@
     "h2": "In der Schweizer Praxis verankert",
     "text": "Valanto entsteht aus der täglichen Bewertungsarbeit. So bleibt die Plattform nah an dem, was Sie in der Praxis wirklich brauchen – statt an dem, was eine Software von der Stange bietet.",
     "points": [
-      { "t": "Datenschutzkonform (revDSG)", "d": "Wir behandeln Ihre Daten nach Schweizer Datenschutzrecht." },
+      { "t": "Datenschutzkonform (revDSG)", "d": "Wir behandeln Ihre Daten nach Schweizer Datenschutzrecht – gehostet in der Schweiz bei Infomaniak (Genf)." },
       { "t": "Kurze Wege", "d": "Ihr Feedback fliesst direkt in die Entwicklung ein. Wir sind ein kleines Team, kein Ticketsystem." }
     ]
   },
