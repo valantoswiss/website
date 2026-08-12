@@ -29,9 +29,9 @@
     "h1": "Value, market, manage – finally in one tool.",
     "lead": "Properties, valuations with dossier and marketing in one place. Born from Swiss real-estate practice.",
     "cta1": "Create free account",
-    "cta2": "or book a demo",
+    "cta2": "See examples",
     "coverAlt": "Cover page of a Valanto market value appraisal showing the property address and the assessed market value",
-    "trust": "No credit card · First seat free forever · Swiss FADP"
+    "trust": "No credit card · Free seat to try it out · Swiss FADP"
   },
   "dossier": {
     "label": "VALUATION DOSSIER",
@@ -74,14 +74,13 @@
   "pricing": {
     "eyebrow": "TRANSPARENT PRICING",
     "h2": "A plan for your role",
-    "intro": "Price per user, per month, cancel any month. The first seat of every company is free forever – with one property, one valuation and one new-build project.",
+    "intro": "Price per user, per month, cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
     "popular": "MOST POPULAR",
     "note": "All prices excl. VAT · Custom solutions for larger teams on request.",
-    "test": "Start for free",
     "boxes": [
       {
         "t": "One account per company, one plan per user",
-        "d": "You set up the company and invite your people one by one. Plans may be mixed – two brokers and one valuer are not a special case."
+        "d": "You set up the company and invite your employees one by one. Plans may be mixed – two brokers and one valuer are not a special case."
       },
       {
         "t": "Example",
@@ -120,7 +119,7 @@
   },
   "cta": {
     "h2": "Try it out at your own pace.",
-    "text": "Your free account includes one property, one valuation with dossier and one new-build project – for good. Or let us show you Valanto in a personal demo."
+    "text": "Your free account starts with sample data to look around and has room for one property, one valuation with dossier and one new-build project of your own – no time limit."
   },
   "footer": {
     "claim": "Value, market, manage – in one tool.",

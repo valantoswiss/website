@@ -6,14 +6,6 @@
 
 export const APP_REGISTER_URL = 'https://app.valanto.ch/registrieren'
 
-/* „oder Demo buchen" zeigt auf /kontakt.
-
-   Das Handout A1 verlangte hier einen Kalender (Calendly o. ä.) und schloss
-   /kontakt ausdrücklich aus. Jürg hat das am 28.07.2026 anders entschieden:
-   keine Kalenderanbindung. Das Produkt soll selbsterklärend genug sein, dass
-   niemand eine Demo braucht – und wer doch eine will, schreibt uns. Ein
-   Buchungs-Slot wäre Infrastruktur für einen Fall, den wir gar nicht wollen.
-
-   Der Schalter bleibt: sollte später doch ein Kalender kommen, genügt
-   VITE_DEMO_CALENDAR_URL in Vercel (Production und Preview), ohne Code-Änderung. */
-export const DEMO_CALENDAR_URL = import.meta.env.VITE_DEMO_CALENDAR_URL || '/kontakt'
+/* Kein Demo-Angebot mehr (Fabian 12.08.2026, nach Jürgs Nein zum Kalender
+   vom 28.07.): Der Sekundär-CTA zeigt auf die Produkt-Beispiele (#features),
+   später auf Erklär-Tutorials. Wer eine Demo will, schreibt uns via /kontakt. */
