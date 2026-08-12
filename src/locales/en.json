@@ -12,8 +12,8 @@
     }
   },
   "meta": {
-    "title": "Valanto – Real estate software from Switzerland",
-    "description": "Value, market, manage – finally in one tool. Built in Switzerland."
+    "title": "Valanto – Real Estate Software Switzerland: value, market, manage",
+    "description": "Value, market, manage in one tool – for brokers and valuers. Built in Switzerland. Free seat to try it out."
   },
   "nav": {
     "features": "Features",
@@ -27,11 +27,11 @@
   "hero": {
     "eyebrow": "REAL ESTATE SOFTWARE FROM SWITZERLAND",
     "h1": "Value, market, manage – finally in one tool.",
-    "lead": "Properties, valuations with dossier and marketing in one place. Born from Swiss real-estate practice.",
+    "lead": "Properties, valuations and marketing in one workflow – instead of Excel, Word templates and isolated tools.",
     "cta1": "Create free account",
     "cta2": "See examples",
     "coverAlt": "Cover page of a Valanto market value appraisal showing the property address and the assessed market value",
-    "trust": "No credit card · Free seat to try it out · Swiss FADP"
+    "trust": "No credit card · Free seat to try it out · Swiss FADP compliant"
   },
   "dossier": {
     "label": "VALUATION DOSSIER",
@@ -45,7 +45,7 @@
     "hosted": "Made in Switzerland"
   },
   "trust": {
-    "line": "Born from Swiss real-estate practice – for brokers, valuers and property managers.",
+    "line": "Born from Swiss real-estate practice – for brokers and valuers.",
     "b1": "Data privacy compliant (Swiss FADP)"
   },
   "features": {
@@ -56,14 +56,14 @@
       { "t": "Capture properties", "d": "All your properties in one place – each with a complete dossier. You'll find everything again when you need it." },
       { "t": "Valuations with dossier", "d": "Create traceable valuations and export them as a clean dossier – ready for your clients." },
       { "t": "New-build projects", "d": "Set up projects, manage units and keep an eye on the sales status at any time." },
-      { "t": "Landing pages", "d": "A dedicated marketing page for every property – with no second tool at all." },
-      { "t": "Seller portal", "d": "A dedicated, transparent access for your sellers and partners." }
+      { "t": "Landing pages", "d": "A dedicated marketing page for every property – no extra software, no web agency needed." },
+      { "t": "Seller portal", "d": "Your sellers can check the status themselves at any time – fewer questions, fewer status emails for you." }
     ],
     "nextLabel": "Coming next:",
     "next": "CRM and prospect management, directly in Valanto."
   },
   "audience": {
-    "eyebrow": "FOR YOUR WORK",
+    "eyebrow": "WHO IT'S FOR",
     "h2": "Built for your work",
     "items": [
       { "role": "Broker", "text": "Manage, market, steer projects – without constantly switching programs." },
@@ -75,8 +75,8 @@
     "eyebrow": "TRANSPARENT PRICING",
     "h2": "A plan for your role",
     "intro": "Price per user, per month, cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
-    "popular": "MOST POPULAR",
-    "note": "All prices excl. VAT · Custom solutions for larger teams on request.",
+    "popular": "OUR RECOMMENDATION",
+    "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG). · Custom solutions for larger teams on request.",
     "boxes": [
       {
         "t": "One account per company, one plan per user",
@@ -84,7 +84,7 @@
       },
       {
         "t": "Example",
-        "d": "3 people: 1 × Broker free, plus 1 × Broker and 1 × Valuer = CHF 130.– per month, excl. VAT. Seats can be added or removed at any time."
+        "d": "3 people: 1 × free seat, plus 1 × Broker and 1 × Valuer = CHF 130.– per month, excl. VAT. Seats can be added or removed at any time."
       }
     ],
     "plans": [
@@ -92,7 +92,7 @@
         "name": "VALUER",
         "price": "CHF 50.–",
         "per": "per user / mo.",
-        "features": ["Valuations with dossier", "Property base data", "Data privacy compliant (Swiss FADP)"]
+        "features": ["Valuations with dossier", "Property base data", "Appraisal dossier as PDF"]
       },
       {
         "name": "BROKER",
@@ -109,17 +109,17 @@
     ]
   },
   "siv": {
-    "eyebrow": "ROOTED IN THE SWISS MARKET",
+    "eyebrow": "FROM PRACTICE",
     "h2": "Rooted in Swiss practice",
     "text": "Valanto grows out of the daily work of valuation. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
     "points": [
       { "t": "Data privacy compliant (Swiss FADP)", "d": "We handle your data in accordance with Swiss data protection law." },
-      { "t": "From practice", "d": "Born from daily valuation work, not from a drawing board." }
+      { "t": "Direct lines", "d": "Your feedback goes straight into development. We're a small team, not a ticketing system." }
     ]
   },
   "cta": {
     "h2": "Try it out at your own pace.",
-    "text": "Your free account starts with sample data to look around and has room for one property, one valuation with dossier and one new-build project of your own – no time limit."
+    "text": "Your free account starts with sample data to look around and has room for one property, one valuation with dossier and one new-build project of your own – no time limit. No credit card, no notice period."
   },
   "footer": {
     "claim": "Value, market, manage – in one tool.",
@@ -163,7 +163,7 @@
     "h1": "About Valanto",
     "origin": {
       "h2": "Born out of valuation practice",
-      "p1": "Valanto is not a software project drawn up at a desk. The tool grew over years out of the daily work of a Swiss real estate appraiser – out of the need to produce valuations in a structured, traceable and efficient way instead of juggling spreadsheets and isolated tools.",
+      "p1": "Valanto grew over years out of the daily work of a Swiss real estate appraiser – out of the need to produce valuations in a structured, traceable and efficient way instead of juggling spreadsheets and isolated tools.",
       "p2": "What began as an in-house tool is now available as Valanto to appraisers, brokers and property professionals across Switzerland."
     },
     "team": {
@@ -172,7 +172,7 @@
     },
     "practice": {
       "h2": "Close to practice, in dialogue with the industry",
-      "p1": "We develop Valanto together with the people who use it – and in professional exchange with industry associations."
+      "p1": "We develop Valanto together with the people who use it."
     },
     "contact": "Questions? You can reach us at:"
   }

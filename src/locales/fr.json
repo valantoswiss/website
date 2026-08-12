@@ -12,8 +12,8 @@
     }
   },
   "meta": {
-    "title": "Valanto – Logiciel immobilier suisse",
-    "description": "Estimer, commercialiser, gérer – enfin dans un seul outil. Conçu en Suisse."
+    "title": "Valanto – Logiciel immobilier suisse : estimer, commercialiser, gérer",
+    "description": "Estimer, commercialiser, gérer dans un seul outil – pour les courtiers et les évaluateurs. Conçu en Suisse. Poste gratuit pour essayer."
   },
   "nav": {
     "features": "Fonctions",
@@ -27,11 +27,11 @@
   "hero": {
     "eyebrow": "LOGICIEL IMMOBILIER SUISSE",
     "h1": "Estimer, commercialiser, gérer – enfin dans un seul outil.",
-    "lead": "Biens, estimations avec dossier et commercialisation au même endroit. Né de la pratique immobilière suisse.",
+    "lead": "Biens, estimations et commercialisation dans un seul flux – plutôt que dans Excel, des modèles Word et des solutions isolées.",
     "cta1": "Créer un compte gratuit",
     "cta2": "Voir des exemples",
     "coverAlt": "Page de couverture d'une expertise de valeur vénale Valanto avec l'adresse du bien et la valeur retenue",
-    "trust": "Sans carte de crédit · Un poste gratuit pour essayer · nLPD"
+    "trust": "Sans carte de crédit · Un poste gratuit pour essayer · Conforme à la nLPD"
   },
   "dossier": {
     "label": "DOSSIER D'ESTIMATION",
@@ -45,7 +45,7 @@
     "hosted": "Conçu en Suisse"
   },
   "trust": {
-    "line": "Né de la pratique immobilière suisse – pour les courtiers, les évaluateurs et les gérants.",
+    "line": "Né de la pratique immobilière suisse – pour les courtiers et les évaluateurs.",
     "b1": "Conforme à la nLPD"
   },
   "features": {
@@ -56,14 +56,14 @@
       { "t": "Saisir les biens", "d": "Tous vos biens au même endroit – chacun avec un dossier complet. Vous retrouvez tout quand vous en avez besoin." },
       { "t": "Estimations avec dossier", "d": "Réalisez des estimations traçables et exportez-les sous forme de dossier soigné – prêtes pour vos clients." },
       { "t": "Projets de construction", "d": "Créez des projets, gérez les unités et gardez l'état des ventes à l'œil à tout moment." },
-      { "t": "Landing pages", "d": "Une page de commercialisation dédiée pour chaque bien – sans aucun second outil." },
-      { "t": "Portail vendeurs", "d": "Un accès dédié et transparent pour vos vendeurs et partenaires." }
+      { "t": "Landing pages", "d": "Une page de commercialisation dédiée pour chaque bien – sans logiciel supplémentaire, sans agence web." },
+      { "t": "Portail vendeurs", "d": "Vos vendeurs consultent l'état d'avancement eux-mêmes à tout moment – moins de questions, moins d'e-mails de suivi pour vous." }
     ],
     "nextLabel": "Prochainement :",
     "next": "CRM et gestion des prospects, directement dans Valanto."
   },
   "audience": {
-    "eyebrow": "POUR VOTRE TRAVAIL",
+    "eyebrow": "POUR QUI",
     "h2": "Conçu pour votre travail",
     "items": [
       { "role": "Courtier", "text": "Gérer, commercialiser, piloter des projets – sans changer sans cesse de logiciel." },
@@ -75,8 +75,8 @@
     "eyebrow": "TARIFS TRANSPARENTS",
     "h2": "Une offre pour votre rôle",
     "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Pour essayer, chaque entreprise dispose d'un poste gratuit avec un bien, une estimation et un projet de construction – sans limite de durée.",
-    "popular": "LE PLUS CHOISI",
-    "note": "Tous les prix HT · Solutions sur mesure pour les grandes équipes sur demande.",
+    "popular": "NOTRE RECOMMANDATION",
+    "note": "Tous les prix HT · Toutes les offres conformes à la nLPD. · Solutions sur mesure pour les grandes équipes sur demande.",
     "boxes": [
       {
         "t": "Un compte par entreprise, une offre par utilisateur",
@@ -84,7 +84,7 @@
       },
       {
         "t": "Exemple",
-        "d": "3 personnes : 1 × Courtier gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les postes peuvent être ajoutés ou retirés à tout moment."
+        "d": "3 personnes : 1 × poste gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les postes peuvent être ajoutés ou retirés à tout moment."
       }
     ],
     "plans": [
@@ -92,7 +92,7 @@
         "name": "ÉVALUATEUR",
         "price": "CHF 50.–",
         "per": "par utilisateur / mois",
-        "features": ["Estimations avec dossier", "Données de base des biens", "Conforme à la nLPD"]
+        "features": ["Estimations avec dossier", "Données de base des biens", "Dossier d'expertise en PDF"]
       },
       {
         "name": "COURTIER",
@@ -109,17 +109,17 @@
     ]
   },
   "siv": {
-    "eyebrow": "ANCRÉ DANS LE MARCHÉ SUISSE",
+    "eyebrow": "ISSU DE LA PRATIQUE",
     "h2": "Ancré dans la pratique suisse",
     "text": "Valanto naît du travail quotidien d'estimation. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [
       { "t": "Conforme à la nLPD", "d": "Nous traitons vos données conformément au droit suisse de la protection des données." },
-      { "t": "Issu de la pratique", "d": "Né du travail quotidien d'estimation, pas d'une planche à dessin." }
+      { "t": "Circuits courts", "d": "Vos retours influencent directement le développement. Nous sommes une petite équipe, pas un système de tickets." }
     ]
   },
   "cta": {
     "h2": "Essayez-le tranquillement.",
-    "text": "Votre compte gratuit démarre avec des données d'exemple et offre de la place pour un bien immobilier, une estimation avec dossier et un projet de construction – sans limite de durée."
+    "text": "Votre compte gratuit démarre avec des données d'exemple et offre de la place pour un bien immobilier, une estimation avec dossier et un projet de construction – sans limite de durée. Sans carte de crédit, sans délai de résiliation."
   },
   "footer": {
     "claim": "Estimer, commercialiser, gérer – dans un seul outil.",
@@ -163,7 +163,7 @@
     "h1": "À propos de Valanto",
     "origin": {
       "h2": "Né de la pratique de l'évaluation",
-      "p1": "Valanto n'est pas un projet logiciel conçu sur le papier. L'outil est né au fil des années du travail quotidien d'un évaluateur immobilier suisse – du besoin d'établir des évaluations structurées, traçables et efficaces plutôt que de jongler avec des tableaux et des solutions isolées.",
+      "p1": "Valanto est né au fil des années du travail quotidien d'un évaluateur immobilier suisse – du besoin d'établir des évaluations structurées, traçables et efficaces plutôt que de jongler avec des tableaux et des solutions isolées.",
       "p2": "Ce qui a commencé comme un outil interne est aujourd'hui accessible sous le nom de Valanto aux évaluatrices, courtiers et professionnels de l'immobilier dans toute la Suisse."
     },
     "team": {
@@ -172,7 +172,7 @@
     },
     "practice": {
       "h2": "Proche de la pratique, en dialogue avec la branche",
-      "p1": "Nous développons Valanto en dialogue avec celles et ceux qui l'utilisent – et en échange professionnel avec des associations de la branche."
+      "p1": "Nous développons Valanto en dialogue avec celles et ceux qui l'utilisent."
     },
     "contact": "Des questions ? Vous pouvez nous joindre :"
   }

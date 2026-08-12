@@ -12,8 +12,8 @@
     }
   },
   "meta": {
-    "title": "Valanto – Immobiliensoftware aus der Schweiz",
-    "description": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug. Entwickelt in der Schweiz."
+    "title": "Valanto – Immobiliensoftware Schweiz: bewerten, vermarkten, verwalten",
+    "description": "Bewerten, vermarkten, verwalten in einem Werkzeug – für Makler und Bewerter. Entwickelt in der Schweiz. Gratis-Sitzplatz zum Ausprobieren."
   },
   "nav": {
     "features": "Funktionen",
@@ -27,11 +27,11 @@
   "hero": {
     "eyebrow": "IMMOBILIENSOFTWARE AUS DER SCHWEIZ",
     "h1": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug.",
-    "lead": "Liegenschaften, Bewertungen mit Dossier und Vermarktung an einem Ort. Aus der Schweizer Immobilienpraxis entstanden.",
+    "lead": "Liegenschaften, Bewertungen und Vermarktung in einem Ablauf – statt in Excel, Word-Vorlagen und Insellösungen.",
     "cta1": "Gratis-Konto erstellen",
     "cta2": "Beispiele ansehen",
     "coverAlt": "Deckblatt eines Valanto-Verkehrswertgutachtens mit Objektadresse und ausgewiesenem Verkehrswert",
-    "trust": "Keine Kreditkarte · Gratis-Sitzplatz zum Ausprobieren · revDSG"
+    "trust": "Keine Kreditkarte · Gratis-Sitzplatz zum Ausprobieren · revDSG-konform"
   },
   "dossier": {
     "label": "BEWERTUNGS-DOSSIER",
@@ -45,25 +45,25 @@
     "hosted": "Made in Switzerland"
   },
   "trust": {
-    "line": "Aus der Schweizer Immobilienpraxis entstanden – für Makler, Bewerter und Verwalter.",
+    "line": "Aus der Schweizer Immobilienpraxis entstanden – für Makler und Bewerter.",
     "b1": "Datenschutzkonform (revDSG)"
   },
   "features": {
     "eyebrow": "ALLES AN EINEM ORT",
     "h2": "Ein Werkzeug für Ihren ganzen Arbeitstag",
-    "intro": "Statt drei Programme und doppelter Datenpflege: Mit Valanto arbeiten Sie durchgehend an einem Ort – von der ersten Bewertung bis zur fertigen Vermarktung.",
+    "intro": "Statt drei Programmen und doppelter Datenpflege: Mit Valanto arbeiten Sie durchgehend an einem Ort – von der ersten Bewertung bis zur fertigen Vermarktung.",
     "items": [
       { "t": "Liegenschaften erfassen", "d": "Alle Ihre Objekte an einem Ort – jedes mit vollständigem Dossier. Sie finden alles wieder, wenn Sie es brauchen." },
       { "t": "Bewertungen mit Dossier", "d": "Erstellen Sie nachvollziehbare Bewertungen und geben Sie sie als sauberes Dossier aus – bereit für Ihre Kunden." },
       { "t": "Neubauprojekte", "d": "Legen Sie Projekte an, verwalten Sie Einheiten und behalten Sie den Verkaufsstand jederzeit im Blick." },
-      { "t": "Landingpages", "d": "Für jedes Objekt eine eigene Vermarktungsseite – ganz ohne zweites Tool." },
-      { "t": "Verkäufer-Portal", "d": "Ein eigener, transparenter Zugang für Ihre Verkäufer und Partner." }
+      { "t": "Landingpages", "d": "Für jedes Objekt eine eigene Vermarktungsseite – ohne zusätzliches Programm, ohne Webagentur." },
+      { "t": "Verkäufer-Portal", "d": "Ihre Verkäufer sehen den Stand jederzeit selbst – weniger Rückfragen, weniger Status-Mails für Sie." }
     ],
     "nextLabel": "Als Nächstes:",
     "next": "CRM und Interessentenverwaltung, direkt in Valanto."
   },
   "audience": {
-    "eyebrow": "FÜR IHRE ARBEIT",
+    "eyebrow": "FÜR WEN",
     "h2": "Gemacht für Ihre Arbeit",
     "items": [
       { "role": "Makler", "text": "Verwalten, vermarkten, Projekte steuern – ohne ständig das Programm zu wechseln." },
@@ -75,8 +75,8 @@
     "eyebrow": "TRANSPARENTE PREISE",
     "h2": "Ein Paket für Ihre Rolle",
     "intro": "Preis pro Benutzer und Monat, monatlich kündbar. Zum Ausprobieren erhält jede Firma einen Gratis-Sitzplatz mit je einer Liegenschaft, einer Bewertung und einem Neubauprojekt – ohne Zeitlimit.",
-    "popular": "AM MEISTEN GEWÄHLT",
-    "note": "Alle Preise exkl. MwSt. · Individuelle Lösungen für grössere Teams auf Anfrage.",
+    "popular": "UNSER VORSCHLAG",
+    "note": "Alle Preise exkl. MwSt. · Alle Pakete datenschutzkonform nach revDSG. · Individuelle Lösungen für grössere Teams auf Anfrage.",
     "boxes": [
       {
         "t": "Ein Konto pro Firma, ein Paket pro Benutzer",
@@ -84,7 +84,7 @@
       },
       {
         "t": "Beispiel",
-        "d": "3 Personen: 1 × Makler gratis, dazu 1 × Makler und 1 × Bewerter = CHF 130.– pro Monat, exkl. MwSt. Sitzplätze lassen sich jederzeit hinzufügen oder entfernen."
+        "d": "3 Personen: 1 × Gratis-Sitzplatz, dazu 1 × Makler und 1 × Bewerter = CHF 130.– pro Monat, exkl. MwSt. Sitzplätze lassen sich jederzeit hinzufügen oder entfernen."
       }
     ],
     "plans": [
@@ -92,7 +92,7 @@
         "name": "BEWERTER",
         "price": "CHF 50.–",
         "per": "pro Benutzer / Mt.",
-        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Datenschutzkonform (revDSG)"]
+        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Gutachten-Dossier als PDF"]
       },
       {
         "name": "MAKLER",
@@ -109,17 +109,17 @@
     ]
   },
   "siv": {
-    "eyebrow": "VERANKERT IM SCHWEIZER MARKT",
+    "eyebrow": "AUS DER PRAXIS",
     "h2": "In der Schweizer Praxis verankert",
     "text": "Valanto entsteht aus der täglichen Bewertungsarbeit. So bleibt die Plattform nah an dem, was Sie in der Praxis wirklich brauchen – statt an dem, was eine Software von der Stange bietet.",
     "points": [
       { "t": "Datenschutzkonform (revDSG)", "d": "Wir behandeln Ihre Daten nach Schweizer Datenschutzrecht." },
-      { "t": "Aus der Praxis", "d": "Entstanden in der täglichen Bewertungsarbeit, nicht am Reissbrett." }
+      { "t": "Kurze Wege", "d": "Ihr Feedback fliesst direkt in die Entwicklung ein. Wir sind ein kleines Team, kein Ticketsystem." }
     ]
   },
   "cta": {
     "h2": "Probieren Sie es in Ruhe aus.",
-    "text": "Ihr Gratis-Konto startet mit Beispieldaten zum Reinschauen und hat Platz für je eine eigene Liegenschaft, Bewertung mit Dossier und ein Neubauprojekt – ohne Zeitlimit."
+    "text": "Ihr Gratis-Konto startet mit Beispieldaten zum Reinschauen und hat Platz für je eine eigene Liegenschaft, Bewertung mit Dossier und ein Neubauprojekt – ohne Zeitlimit. Keine Kreditkarte, keine Kündigungsfrist."
   },
   "footer": {
     "claim": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",
@@ -163,7 +163,7 @@
     "h1": "Über Valanto",
     "origin": {
       "h2": "Aus der Bewertungspraxis entstanden",
-      "p1": "Valanto ist kein Software-Projekt vom Reissbrett. Das Werkzeug ist über Jahre in der täglichen Arbeit eines Schweizer Immobilienbewerters entstanden – aus dem Bedürfnis, Bewertungen strukturiert, nachvollziehbar und effizient zu erstellen, statt in Tabellen und Insellösungen zu arbeiten.",
+      "p1": "Valanto ist über Jahre in der täglichen Arbeit eines Schweizer Immobilienbewerters gewachsen – aus dem Bedürfnis, Bewertungen strukturiert, nachvollziehbar und effizient zu erstellen, statt in Tabellen und Insellösungen zu arbeiten.",
       "p2": "Was als internes Werkzeug begann, machen wir nun als Valanto für Bewerterinnen, Makler und Immobilienprofis in der ganzen Schweiz zugänglich."
     },
     "team": {
@@ -172,7 +172,7 @@
     },
     "practice": {
       "h2": "Nah an der Praxis, im Austausch mit der Branche",
-      "p1": "Wir entwickeln Valanto im Dialog mit Anwenderinnen und Anwendern – und im fachlichen Austausch mit Berufsverbänden."
+      "p1": "Wir entwickeln Valanto im Dialog mit Anwenderinnen und Anwendern."
     },
     "contact": "Fragen? Wir sind erreichbar:"
   }
