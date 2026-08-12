@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { SwissCross } from '../Brand.jsx'
-import { APP_REGISTER_URL, DEMO_CALENDAR_URL } from '../links.js'
+import { APP_REGISTER_URL } from '../links.js'
 import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
 import shotRaster1080 from '../assets/screenshots/bewertung-bauteil-raster-1080.webp'
 import shotRaster2160 from '../assets/screenshots/bewertung-bauteil-raster-2160.webp'
@@ -65,7 +65,9 @@ function Hero() {
           <p className="hero__lead">{t('hero.lead')}</p>
           <div className="hero__ctas cta-row">
             <a className="btn btn-primary" href={APP_REGISTER_URL}>{t('hero.cta1')}</a>
-            <a className="cta-textlink" href={DEMO_CALENDAR_URL}>{t('hero.cta2')}</a>
+            {/* Kein Demo-Angebot (Fabian 12.08.2026): Sekundär-Link zeigt auf die
+                echten Produkt-Screenshots; später sollen hier Erklär-Tutorials hin. */}
+            <a className="cta-textlink" href="#features">{t('hero.cta2')}</a>
           </div>
           <p className="hero__trust">{t('hero.trust')}</p>
         </div>
@@ -247,14 +249,15 @@ function Pricing() {
                     </div>
                   ))}
                 </div>
-                {/* Der einzige gefüllte CTA der Preis-Sektion trägt das
-                    Primär-Versprechen (A1); «Gratis starten» gehört den
-                    Textlinks der Seitenspalten (A3). */}
+                {/* Alle drei CTAs führen zur selben Registrierung und tragen
+                    darum dieselbe Beschriftung (Fabian 12.08.2026) – nur die
+                    Gewichtung unterscheidet sich: gefüllt in der Mitte,
+                    Textlink in den Seitenspalten. */}
                 <a
                   className={popular ? 'btn plan__cta--fill' : 'plan__cta--link'}
                   href={APP_REGISTER_URL}
                 >
-                  {t(popular ? 'hero.cta1' : 'pricing.test')}
+                  {t('hero.cta1')}
                 </a>
               </div>
             )
@@ -310,9 +313,10 @@ function ClosingCta() {
     <section className="closing">
       <h2 className="closing__title">{t('cta.h2')}</h2>
       <p className="closing__text">{t('cta.text')}</p>
+      {/* Kein Sekundär-Link am Seitenende: die Beispiele liegen weiter oben,
+          und der Text nennt die Beispieldaten im Gratis-Konto. */}
       <div className="closing__ctas cta-row">
         <a className="btn btn-primary" href={APP_REGISTER_URL}>{t('hero.cta1')}</a>
-        <a className="cta-textlink" href={DEMO_CALENDAR_URL}>{t('hero.cta2')}</a>
       </div>
     </section>
   )
