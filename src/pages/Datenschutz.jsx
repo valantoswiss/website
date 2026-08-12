@@ -11,7 +11,7 @@ export default function Datenschutz() {
     <section className="legal-page">
       <div className="inner legal-page__inner">
         <h1>Datenschutzerklärung</h1>
-        <p className="legal-page__stand">Stand: Juli 2026</p>
+        <p className="legal-page__stand">Stand: August 2026</p>
 
         <h2>1. Verantwortliche</h2>
         <p>Verantwortlich für die Datenbearbeitung auf dieser Website ist:</p>
@@ -58,14 +58,17 @@ export default function Datenschutz() {
 
         <h2>4. Hosting und Datenübermittlung ins Ausland</h2>
         <p>
-          Diese Website wird über Infrastruktur-Dienstleister betrieben, die ihren
-          Sitz teilweise ausserhalb der Schweiz haben, insbesondere Cloudflare Inc.
-          (USA) als Content-Delivery- und Sicherheitsdienst. Dabei können
-          Personendaten, insbesondere Server-Logdaten (IP-Adresse, Zugriffszeitpunkt),
-          in die USA übermittelt werden. Die Übermittlung stützt sich auf anerkannte
-          Garantien, insbesondere das Swiss-U.S. Data Privacy Framework bzw.
-          Standardvertragsklauseln. Wir sind bestrebt, die Datenbearbeitung soweit
-          möglich in der Schweiz durchzuführen.
+          Diese Website wird bei der Infomaniak SA mit Sitz in Genf (Schweiz)
+          betrieben. Die beim Besuch anfallenden Server-Logdaten werden auf Servern
+          in der Schweiz bearbeitet und gespeichert.
+        </p>
+        <p>
+          Für einzelne technische Dienste setzen wir Anbieter mit Sitz im Ausland
+          ein, insbesondere Cloudflare Inc. (USA) für die Namensauflösung (DNS)
+          sowie Google für die Webanalyse (siehe Ziffer 6). Dabei können einzelne
+          technische Daten ins Ausland übermittelt werden. Solche Übermittlungen
+          stützen sich auf anerkannte Garantien, insbesondere das Swiss-U.S. Data
+          Privacy Framework bzw. Standardvertragsklauseln.
         </p>
 
         <h2>5. Cookies</h2>

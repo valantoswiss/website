@@ -13,7 +13,7 @@
   },
   "meta": {
     "title": "Valanto – Logiciel immobilier suisse : estimer, commercialiser, gérer",
-    "description": "Estimer, commercialiser, gérer dans un seul outil – pour les courtiers et les évaluateurs. Conçu en Suisse. Poste gratuit pour essayer."
+    "description": "Estimer, commercialiser, gérer dans un seul outil – pour les courtiers et les évaluateurs. Conçu et hébergé en Suisse. Poste gratuit pour essayer."
   },
   "nav": {
     "features": "Fonctions",
@@ -42,7 +42,7 @@
     "r3": "Finitions",
     "footer": "Estimation n° 2043 · Page 1 / 18",
     "pdf": "Export PDF",
-    "hosted": "Conçu en Suisse"
+    "hosted": "Hébergé en Suisse"
   },
   "trust": {
     "line": "Né de la pratique immobilière suisse – pour les courtiers et les évaluateurs.",
@@ -76,7 +76,7 @@
     "h2": "Une offre pour votre rôle",
     "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Pour essayer, chaque entreprise dispose d'un poste gratuit avec un bien, une estimation et un projet de construction – sans limite de durée.",
     "popular": "NOTRE RECOMMANDATION",
-    "note": "Tous les prix HT · Toutes les offres conformes à la nLPD. · Solutions sur mesure pour les grandes équipes sur demande.",
+    "note": "Tous les prix HT · Toutes les offres conformes à la nLPD, hébergées en Suisse. · Solutions sur mesure pour les grandes équipes sur demande.",
     "boxes": [
       {
         "t": "Un compte par entreprise, une offre par utilisateur",
@@ -113,7 +113,7 @@
     "h2": "Ancré dans la pratique suisse",
     "text": "Valanto naît du travail quotidien d'estimation. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [
-      { "t": "Conforme à la nLPD", "d": "Nous traitons vos données conformément au droit suisse de la protection des données." },
+      { "t": "Conforme à la nLPD", "d": "Nous traitons vos données conformément au droit suisse de la protection des données – hébergement en Suisse chez Infomaniak (Genève)." },
       { "t": "Circuits courts", "d": "Vos retours influencent directement le développement. Nous sommes une petite équipe, pas un système de tickets." }
     ]
   },
