@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Brand } from './Brand.jsx'
+import { APP_REGISTER_URL } from './links.js'
 
 const LANGS = ['de', 'fr', 'en']
 const LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English' }
@@ -63,7 +64,7 @@ export default function Nav() {
         </nav>
         <div className="nav__right">
           {LANG_SWITCH_ENABLED && <LangSwitch />}
-          <a className="btn nav__try" href="/kontakt">
+          <a className="btn nav__try" href={APP_REGISTER_URL}>
             {t('nav.try')}
           </a>
           <button
@@ -84,7 +85,7 @@ export default function Nav() {
             {l.label}
           </a>
         ))}
-        <a href="/kontakt" onClick={() => setOpen(false)}>
+        <a href={APP_REGISTER_URL} onClick={() => setOpen(false)}>
           {t('nav.try')}
         </a>
       </nav>

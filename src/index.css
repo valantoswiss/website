@@ -13,11 +13,24 @@
   --teal: #23808f;
   --teal-hover: #2e9db0;
   --teal-light: #8fbfc8;
+  /* Terracotta = ausschliesslich Primär-CTA (Handout C1, 10-%-Anteil).
+     Nie in Icons, Überschriften, Eyebrows, Rahmen oder Statusfarben – sobald
+     die Farbe anderswo auftaucht, verliert der CTA seine Sonderstellung.
+     Weiss auf --accent ergibt 3.78:1: AA nur als Grosstext, darum die harte
+     Regel CTA-Label >= 19px/700. Kleine Terracotta-Texte und Pfeil-Links
+     nehmen --accent-deep (5.55:1 auf Papier). */
+  --accent: #e35336;
+  --accent-hover: #c8421f;
+  --accent-deep: #b33a1c;
   --text: #3c3f47;
   --text-soft: #55585f;
   /* abgedunkelt von #a6a296 auf ~5:1 (WCAG AA) gegen Papier/Weiss, warmer Ton bleibt */
   --muted: #6f6a5c;
   --track: #f0ebe1;
+  /* Innenlinien hell / Rahmen mittel / Hinweisfläche (Handout C1, D4) */
+  --line-soft: #d8d2c6;
+  --border-mid: #c9c2b4;
+  --notice: #f7f2e9;
 
   /* on dark backgrounds */
   --on-dark: #ede8de;
@@ -141,26 +154,39 @@ button:focus-visible,
   text-decoration: none;
 }
 
+/* 19px/700 ist keine Geschmacksfrage: erst als Grosstext erfüllt Weiss auf
+   Terracotta WCAG AA (3.78:1). Grösse und Gewicht hier nicht senken. */
 .btn-primary {
-  padding: 15px 30px;
-  background: var(--teal);
+  padding: 18px 34px;
+  background: var(--accent);
   color: #fff;
-  font-size: 15.5px;
+  font-size: 19px;
+  font-weight: 700;
 }
 .btn-primary:hover {
-  background: var(--ink);
+  background: var(--accent-hover);
 }
 
-.btn-ghost {
-  padding: 15px 30px;
-  border: 1.5px solid var(--ink);
-  color: var(--ink);
-  font-size: 15.5px;
-  background: transparent;
+/* Handout A1: genau ein gefüllter CTA, daneben ein Textlink im Fliesstext-Grau.
+   Outline-Buttons entfallen auf der ganzen Seite – zwei gleich laute Ziele
+   kosten nur Entscheidungszeit. */
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
 }
-.btn-ghost:hover {
-  background: var(--ink);
-  color: var(--bg);
+.cta-textlink {
+  font-family: var(--sans);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.18s ease;
+}
+.cta-textlink:hover {
+  color: var(--accent-deep);
 }
 
 /* ============================================================
@@ -331,24 +357,21 @@ button:focus-visible,
 .hero__title {
   font-size: clamp(34px, 5.2vw, 54px);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.06;
   color: var(--ink);
   letter-spacing: -0.03em;
   text-wrap: balance; /* verhindert "Bewerten," allein auf Zeile 1 (Review 17.07.) */
 }
+/* Handout A2: Lead auf Scanlänge – 17.5px, engere Zeilen, 44ch statt 520px */
 .hero__lead {
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 17.5px;
+  line-height: 1.5;
   color: var(--text-soft);
-  max-width: 520px;
+  max-width: 44ch;
   text-wrap: pretty;
 }
 .hero__ctas {
-  display: flex;
-  margin-top: 6px;
-}
-.hero__ctas .btn-ghost {
-  border-left: none;
+  margin-top: 32px;
 }
 .hero__trust {
   font-size: 13px;
@@ -586,22 +609,26 @@ button:focus-visible,
   text-wrap: pretty;
   padding-bottom: 4px;
 }
+/* Handout A4: fünf echte Module in einem 1px-Rahmen. Aussenrahmen Anthrazit,
+   Innenlinien hell (--line-soft) – bei fünf schmalen Spalten wirkt ein volles
+   Anthrazit-Gitter wie ein Formular. */
 .features__grid {
-  border-top: 1px solid var(--ink);
-  border-left: 1px solid var(--ink);
+  border: 1px solid var(--ink);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .feature {
-  border-right: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  padding: 28px 26px;
+  border-right: 1px solid var(--line-soft);
+  padding: 28px 22px;
   background: var(--bg);
   display: flex;
   flex-direction: column;
   gap: 12px;
   min-height: 150px;
   transition: background 0.18s ease;
+}
+.feature:last-child {
+  border-right: none;
 }
 .feature:hover {
   background: #fff;
@@ -612,10 +639,22 @@ button:focus-visible,
   justify-content: space-between;
 }
 .feature__no {
-  font-size: 15px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--teal);
+}
+/* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
+   ein Platzhalter zwischen fertigen Funktionen zieht das ganze Set runter. */
+.features__next {
+  margin-top: 18px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.features__next b {
+  font-weight: 700;
+  color: var(--ink);
 }
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
@@ -933,21 +972,22 @@ button:focus-visible,
   max-width: 480px;
   text-wrap: pretty;
 }
+/* Handout A5: eigenständige Karten mit hartem 1px-Rahmen statt einer
+   durchgehenden Box. Die Karte „Sicher & stabil" ist entfallen – sie sagte
+   nichts. „Daten in der Schweiz" bleibt draussen, solange der Server nicht in
+   der Schweiz steht: streichen, nicht abschwächen. */
 .siv__points {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--ink);
-  background: #fff;
+  display: grid;
+  gap: 16px;
+  align-content: start;
 }
 .sivrow {
   display: flex;
   gap: 16px;
   align-items: flex-start;
   padding: 22px 26px;
-  border-bottom: 1px solid var(--ink);
-}
-.sivrow:last-child {
-  border-bottom: none;
+  background: #fff;
+  border: 1px solid var(--ink);
 }
 .sivrow__icon {
   font-size: 19px;
@@ -992,27 +1032,22 @@ button:focus-visible,
   max-width: 480px;
 }
 .closing__ctas {
-  display: flex;
   margin-top: 8px;
+  justify-content: center;
 }
-/* spec 2a: closing buttons are slightly wider (32px) than the hero buttons (30px) */
-.closing__ctas .btn-primary,
-.closing__ctas .btn-ghost {
+/* spec 2a: closing button is slightly wider (32px) than the hero button (30px) */
+.closing__ctas .btn-primary {
   padding-left: 32px;
   padding-right: 32px;
 }
-.closing__ctas .btn-primary:hover {
-  background: var(--teal-hover);
-}
-.closing__ctas .btn-ghost {
-  border: 1.5px solid var(--line-dark);
-  border-left: none;
+/* Auf dem Anthrazit-Band ist Papier das Gegenstück zum Anthrazit des Heros –
+   gleiche Stärke, invertiert. Ein gedämpfter Ton wäre hier der falsche Zug:
+   der Link ist das zweite Ziel, nicht eine Fussnote. */
+.closing__ctas .cta-textlink {
   color: var(--bg);
 }
-.closing__ctas .btn-ghost:hover {
-  background: transparent;
-  border-color: var(--bg);
-  color: var(--bg);
+.closing__ctas .cta-textlink:hover {
+  color: var(--on-dark-soft);
 }
 
 /* ============================================================
@@ -1156,9 +1191,35 @@ button:focus-visible,
   }
 }
 
+/* Fünf Spalten tragen nur auf dem Desktop; darunter stufenweise umbrechen.
+   Zellen brauchen dann wieder eine untere Trennlinie. */
+@media (max-width: 1080px) {
+  .features__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .feature {
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .feature:nth-child(3n),
+  .feature:last-child {
+    border-right: none;
+  }
+  .feature:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+}
+
 @media (max-width: 760px) {
   .features__grid {
     grid-template-columns: 1fr;
+  }
+  .feature,
+  .feature:nth-child(3n) {
+    border-right: none;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .feature:last-child {
+    border-bottom: none;
   }
   .features__shots {
     grid-template-columns: 1fr;
@@ -1173,6 +1234,9 @@ button:focus-visible,
     border-top: 1px solid var(--ink);
     border-bottom: 1px solid var(--ink);
   }
+  /* Handout A3, mobil: einspaltig, Makler zuerst. Der Überstand entfällt –
+     die Führung übernimmt die dunkle Fläche allein. Der Rahmen bleibt ein
+     durchgehender Kasten, getrennt wird über `border-top`. */
   .pricing__grid {
     grid-template-columns: 1fr;
   }
@@ -1186,24 +1250,15 @@ button:focus-visible,
   .plan--popular {
     padding-top: 44px;
   }
-  .hero__ctas,
-  .closing__ctas {
+  /* Mobil: CTA full-width, Textlink zentriert darunter – Abstand bleibt 26px */
+  .cta-row {
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    text-align: center;
   }
-  .hero__ctas .btn-primary,
-  .hero__ctas .btn-ghost,
-  .closing__ctas .btn-primary,
-  .closing__ctas .btn-ghost {
+  .cta-row .btn-primary {
     width: 100%;
-  }
-  .hero__ctas .btn-ghost {
-    border-left: 1.5px solid var(--ink);
-    border-top: none;
-  }
-  .closing__ctas .btn-ghost {
-    border: 1.5px solid var(--line-dark);
-    border-top: none;
   }
   /* spec 3a: trust bar becomes a vertical stack of full-width, connected badges */
   .trustbar .inner {
