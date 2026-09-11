@@ -7,8 +7,9 @@ import en from './locales/en.json'
 
 // DE is the default and only fully-final language. FR / EN are drafted but
 // currently DEACTIVATED (switcher hidden via LANG_SWITCH_ENABLED in Nav.jsx),
-// weil die App selbst nur auf Deutsch läuft. Init ist fest 'de' – eine früher
-// gespeicherte Sprachwahl (valanto_lang) hat dadurch keinen Effekt.
+// weil die App selbst nur auf Deutsch läuft. Init ist fest 'de'; Layout.jsx stellt
+// eine gespeicherte Sprachwahl (valanto_lang) nur wieder her, solange der
+// Umschalter aktiv ist.
 i18n.use(initReactI18next).init({
   resources: {
     de: { translation: de },

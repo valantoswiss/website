@@ -36,6 +36,11 @@ export const website = {
   publisher: { '@id': organization['@id'] },
 }
 
+/* `price`/`priceCurrency` direkt am Offer sind Googles Pflichtfelder für
+   SoftwareApplication; die UnitPriceSpecification trägt zusätzlich den
+   Bezug «pro Benutzer und Monat» und «exkl. MwSt.». Ein Software-Rich-Result
+   zeigt Google erst mit `review` oder `aggregateRating` – die gibt es (noch)
+   nicht auf der Website, und erfunden werden sie nicht. */
 function plan(name, price, description) {
   return {
     '@type': 'Offer',
@@ -43,6 +48,8 @@ function plan(name, price, description) {
     description,
     url: `${SITE_URL}/#pricing`,
     availability: 'https://schema.org/InStock',
+    price,
+    priceCurrency: 'CHF',
     priceSpecification: {
       '@type': 'UnitPriceSpecification',
       price,
