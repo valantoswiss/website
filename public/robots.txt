@@ -1,4 +1,13 @@
+# Alle Crawler sind willkommen – ausdrücklich auch die der KI-Suchsysteme
+# (GPTBot/OAI-SearchBot, ClaudeBot/Claude-SearchBot, Google-Extended,
+# Bingbot/Copilot, PerplexityBot). Die Website soll in deren Antworten
+# auffindbar sein; eine Kurzfassung für Sprachmodelle liegt unter /llms.txt.
+#
+# Bewusst nur eine Wildcard-Gruppe: Eigene Gruppen pro Crawler erben die
+# Wildcard-Regeln nicht und brächten hier keinen zusätzlichen Zugriff. Erst
+# anlegen, wenn ein Crawler tatsächlich andere Regeln bekommen soll.
+
 User-agent: *
 Allow: /
 
-Sitemap: https://www.valanto.ch/sitemap.xml
+Sitemap: https://valanto.ch/sitemap.xml

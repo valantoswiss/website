@@ -143,6 +143,8 @@
   },
   "contactPage": {
     "h1": "Contact",
+    "metaTitle": "Contact – Valanto",
+    "metaDescription": "Questions about Valanto? Write to us via the contact form or at info@valanto.ch. Valanto, Felsbergstrasse 2, 8625 Gossau ZH, Switzerland.",
     "text": "Do you have questions about Valanto? Write to us.",
     "mailIntro": "Or directly by email:",
     "form": {
@@ -161,6 +163,8 @@
   },
   "aboutPage": {
     "h1": "About Valanto",
+    "metaTitle": "About Valanto – Real Estate Software from Swiss Valuation Practice",
+    "metaDescription": "Valanto grew over years out of the daily work of a Swiss real estate appraiser – today it is software for valuers, brokers and real estate professionals across Switzerland.",
     "origin": {
       "h2": "Born out of valuation practice",
       "p1": "Valanto grew over years out of the daily work of a Swiss real estate appraiser – out of the need to produce valuations in a structured, traceable and efficient way instead of juggling spreadsheets and isolated tools.",

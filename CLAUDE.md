@@ -1,6 +1,8 @@
 # Valanto Website – Arbeitsregeln
 
-Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). **Achtung: `main` deployt via Vercel direkt live auf www.valanto.ch** – nie direkt auf `main` arbeiten, immer Branch → PR → Merge nach Freigabe.
+Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). Hosting seit 12.08.2026 auf Infomaniak/Ploi: `main` deployt automatisch auf staging.valanto.ch, Produktion (valanto.ch, ohne www) ist ein separater Schritt. Nie direkt auf `main` arbeiten, immer Branch → PR → Merge.
+
+- Kanonische Domain ist `https://valanto.ch` (www leitet um), Unterseiten werden mit Schrägstrich ausgeliefert (`/kontakt/`). Canonicals, Sitemap, llms.txt und interne Links verwenden genau diese Form, damit nichts über eine Umleitung läuft.
 
 ## Typografie (verbindlich, Vorgabe Fabian 18.07.2026)
 
@@ -13,6 +15,12 @@ Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). **Achtung: `main` de
 - Nur eine Schrift (Archivo); Farb-Tokens aus `:root` in `src/index.css` verwenden.
 - Der globale Reset `* { margin: 0 }` killt UA-Defaults (z. B. `margin: auto` von `<dialog>`) – bei nativen Elementen daran denken.
 - Overlays (Lightbox etc.) per React-Portal an `document.body` rendern, sonst können Ancestor-Stacking-Contexts den sticky Header darüberlegen.
+
+## SEO / KI-Lesbarkeit
+
+- Jede Seite unter `src/pages/` rendert genau ein `<Seo>` (`src/Seo.jsx`) mit Titel, Beschreibung und Pfad – daraus entstehen beim Build title, description, canonical, Open Graph und JSON-LD im vorgerenderten HTML. Diese Tags gehören nicht in `index.html`.
+- Strukturierte Daten liegen in `src/structuredData.js`; ändern sich Preise oder Funktionen in den Locales, dort und in `public/llms.txt` nachziehen.
+- Neue Route: auch in `public/sitemap.xml` und `public/llms.txt` eintragen.
 
 ## Inhalte
 

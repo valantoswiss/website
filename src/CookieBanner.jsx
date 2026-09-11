@@ -36,7 +36,7 @@ export default function CookieBanner() {
       <div className="cookie-banner__inner">
         <p className="cookie-banner__text">
           {t('cookies.text')}{' '}
-          <a href="/datenschutz">{t('cookies.link')}</a>
+          <a href="/datenschutz/">{t('cookies.link')}</a>
         </p>
         <div className="cookie-banner__actions">
           {/* Same size/weight for both buttons on purpose – declining must be

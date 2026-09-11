@@ -7,8 +7,9 @@ import en from './locales/en.json'
 
 // DE is the default and only fully-final language. FR / EN are drafted but
 // currently DEACTIVATED (switcher hidden via LANG_SWITCH_ENABLED in Nav.jsx),
-// weil die App selbst nur auf Deutsch läuft. Init ist fest 'de' – eine früher
-// gespeicherte Sprachwahl (valanto_lang) hat dadurch keinen Effekt.
+// weil die App selbst nur auf Deutsch läuft. Init ist fest 'de'; Layout.jsx stellt
+// eine gespeicherte Sprachwahl (valanto_lang) nur wieder her, solange der
+// Umschalter aktiv ist.
 i18n.use(initReactI18next).init({
   resources: {
     de: { translation: de },
@@ -21,16 +22,12 @@ i18n.use(initReactI18next).init({
   returnObjects: true,
 })
 
-// Keep the document's language, title and meta description in sync with the
-// active locale – important for screen readers, SEO and browser translation.
+// Keep the document's language in sync with the active locale – important for
+// screen readers and browser translation. Title and meta description are
+// owned by <Seo> (src/Seo.jsx) per page and re-render on language change.
 function syncDocument(lng) {
   if (typeof document === 'undefined') return
   document.documentElement.lang = lng
-  const title = i18n.t('meta.title')
-  if (title) document.title = title
-  const desc = i18n.t('meta.description')
-  const metaDesc = document.querySelector('meta[name="description"]')
-  if (metaDesc && desc) metaDesc.setAttribute('content', desc)
 }
 
 i18n.on('languageChanged', syncDocument)

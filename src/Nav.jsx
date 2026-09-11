@@ -9,7 +9,7 @@ const LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English' }
 // FR/EN sind vorübergehend deaktiviert – die App läuft aktuell nur auf
 // Deutsch, darum zeigt auch die Website nur DE. Zum Reaktivieren dieses
 // Flag auf true setzen; die Locales (fr/en.json) bleiben gepflegt.
-const LANG_SWITCH_ENABLED = false
+export const LANG_SWITCH_ENABLED = false
 
 // "Login" ist bewusst entfernt, bis die App öffentlich erreichbar ist –
 // ein toter Login signalisiert Baustelle (nav.login-Key bleibt in den
@@ -47,7 +47,7 @@ export default function Nav() {
     { href: '/#features', label: t('nav.features') },
     { href: '/#audience', label: t('nav.forwho') },
     { href: '/#pricing', label: t('nav.pricing') },
-    { href: '/ueber-uns', label: t('nav.about') },
+    { href: '/ueber-uns/', label: t('nav.about') },
   ]
   return (
     <div className="header">

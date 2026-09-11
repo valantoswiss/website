@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { SwissCross } from '../Brand.jsx'
+import Seo from '../Seo.jsx'
 import { APP_REGISTER_URL } from '../links.js'
+import { softwareApplication } from '../structuredData.js'
 import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
 import shotRaster1080 from '../assets/screenshots/bewertung-bauteil-raster-1080.webp'
 import shotRaster2160 from '../assets/screenshots/bewertung-bauteil-raster-2160.webp'
@@ -323,8 +325,17 @@ function ClosingCta() {
 }
 
 export default function Home() {
+  const { t } = useTranslation()
   return (
     <>
+      {/* Nur die Startseite trägt das SoftwareApplication-Schema (Funktionen,
+          Preise) – Organisation und WebSite kommen auf jeder Seite über <Seo>. */}
+      <Seo
+        title={t('meta.title')}
+        description={t('meta.description')}
+        path="/"
+        jsonLd={[softwareApplication]}
+      />
       <Hero />
       <TrustBar />
       <Features />

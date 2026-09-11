@@ -143,6 +143,8 @@
   },
   "contactPage": {
     "h1": "Kontakt",
+    "metaTitle": "Kontakt – Valanto",
+    "metaDescription": "Fragen zu Valanto? Schreiben Sie uns über das Kontaktformular oder an info@valanto.ch. Valanto, Felsbergstrasse 2, 8625 Gossau ZH.",
     "text": "Haben Sie Fragen zu Valanto? Schreiben Sie uns.",
     "mailIntro": "Oder direkt per E-Mail:",
     "form": {
@@ -161,6 +163,8 @@
   },
   "aboutPage": {
     "h1": "Über Valanto",
+    "metaTitle": "Über Valanto – Immobiliensoftware aus der Schweizer Bewertungspraxis",
+    "metaDescription": "Valanto ist über Jahre in der täglichen Arbeit eines Schweizer Immobilienbewerters gewachsen – heute als Software für Bewerter, Makler und Immobilienprofis in der ganzen Schweiz.",
     "origin": {
       "h2": "Aus der Bewertungspraxis entstanden",
       "p1": "Valanto ist über Jahre in der täglichen Arbeit eines Schweizer Immobilienbewerters gewachsen – aus dem Bedürfnis, Bewertungen strukturiert, nachvollziehbar und effizient zu erstellen, statt in Tabellen und Insellösungen zu arbeiten.",
