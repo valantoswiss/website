@@ -3,6 +3,8 @@
 Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). Hosting seit 12.08.2026 auf Infomaniak/Ploi: `main` deployt automatisch auf staging.valanto.ch, Produktion (valanto.ch, ohne www) ist ein separater Schritt. Nie direkt auf `main` arbeiten, immer Branch → PR → Merge.
 
 - Kanonische Domain ist `https://valanto.ch` (www leitet um), Unterseiten werden mit Schrägstrich ausgeliefert (`/kontakt/`). Canonicals, Sitemap, llms.txt und interne Links verwenden genau diese Form, damit nichts über eine Umleitung läuft.
+- Die committete `.env` nie ändern (nur Standardwerte). Serverspezifische Werte gehören auf dem Server in `.env.local` (gitignored, überschreibt `.env`) – sonst bricht Plois `git pull` mit «local changes would be overwritten» ab und der alte Stand bleibt online (Lehre vom 11.09.2026).
+- KI-Sichtbarkeit wird monatlich mit zehn festen Fragen gemessen, Protokolle unter `docs/ki-sichtbarkeit/`.
 
 ## Typografie (verbindlich, Vorgabe Fabian 18.07.2026)
 
