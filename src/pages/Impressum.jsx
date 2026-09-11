@@ -6,7 +6,7 @@ export default function Impressum() {
       <Seo
         title="Impressum – Valanto"
         description="Impressum von Valanto: Betreiberin Felsberg Consulting GmbH, Gossau ZH, Handelsregister, UID und Kontakt."
-        path="/impressum"
+        path="/impressum/"
       />
       <div className="inner legal-page__inner">
         <h1>Impressum</h1>

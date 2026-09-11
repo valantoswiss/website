@@ -16,7 +16,7 @@ export default function UeberUns() {
       <Seo
         title={t('aboutPage.metaTitle')}
         description={t('aboutPage.metaDescription')}
-        path="/ueber-uns"
+        path="/ueber-uns/"
       />
       <div className="inner legal-page__inner">
         <h1>{t('aboutPage.h1')}</h1>

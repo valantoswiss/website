@@ -6,7 +6,7 @@ export default function Datenschutz() {
       <Seo
         title="Datenschutzerklärung – Valanto"
         description="Datenschutzerklärung der Website valanto.ch: welche Daten wir bearbeiten, Hosting in der Schweiz, Cookies und Ihre Rechte nach revDSG."
-        path="/datenschutz"
+        path="/datenschutz/"
       />
       <div className="inner legal-page__inner">
         <h1>Datenschutzerklärung</h1>

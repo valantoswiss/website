@@ -1,7 +1,7 @@
 import { Head } from 'vite-react-ssg'
 import { organization, website } from './structuredData.js'
 
-const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://www.valanto.ch').replace(/\/$/, '')
+const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://valanto.ch').replace(/\/$/, '')
 
 /**
  * Seitenspezifischer <head>: Titel, Beschreibung, Canonical, Open Graph und
@@ -17,11 +17,15 @@ const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://www.valanto.ch').rep
  * @param {object} props
  * @param {string} props.title        vollständiger Seitentitel («… – Valanto»)
  * @param {string} props.description  Meta-Beschreibung, 1–2 Sätze
- * @param {string} [props.path]       Pfad der Seite, z. B. '/kontakt'
+ * @param {string} [props.path]       Pfad der Seite, z. B. '/kontakt/' – mit
+ *                                    Schrägstrich, weil Nginx auf Staging und
+ *                                    Live '/kontakt' dorthin umleitet und
+ *                                    Canonicals nie auf eine Umleitung zeigen
+ *                                    sollen (wird notfalls ergänzt)
  * @param {object[]} [props.jsonLd]   zusätzliche schema.org-Knoten für diese Seite
  */
 export default function Seo({ title, description, path = '/', jsonLd = [] }) {
-  const url = `${SITE_URL}${path}`
+  const url = `${SITE_URL}${path.endsWith('/') ? path : `${path}/`}`
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [organization, website, ...jsonLd],

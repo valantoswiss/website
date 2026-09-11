@@ -1,6 +1,8 @@
 # Valanto Website – Arbeitsregeln
 
-Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). **Achtung: `main` deployt via Vercel direkt live auf www.valanto.ch** – nie direkt auf `main` arbeiten, immer Branch → PR → Merge nach Freigabe.
+Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). Hosting seit 12.08.2026 auf Infomaniak/Ploi: `main` deployt automatisch auf staging.valanto.ch, Produktion (valanto.ch, ohne www) ist ein separater Schritt. Nie direkt auf `main` arbeiten, immer Branch → PR → Merge.
+
+- Kanonische Domain ist `https://valanto.ch` (www leitet um), Unterseiten werden mit Schrägstrich ausgeliefert (`/kontakt/`). Canonicals, Sitemap, llms.txt und interne Links verwenden genau diese Form, damit nichts über eine Umleitung läuft.
 
 ## Typografie (verbindlich, Vorgabe Fabian 18.07.2026)
 

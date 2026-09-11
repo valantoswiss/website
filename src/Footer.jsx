@@ -23,13 +23,15 @@ export default function Footer() {
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c2')}</span>
-            <a href="/ueber-uns">{t('nav.about')}</a>
-            <a href="/kontakt">{t('footer.contact')}</a>
+            {/* Interne Links mit Schrägstrich: so liefert Nginx die Seite
+                direkt aus statt erst auf /kontakt/ umzuleiten. */}
+            <a href="/ueber-uns/">{t('nav.about')}</a>
+            <a href="/kontakt/">{t('footer.contact')}</a>
           </div>
           <div className="footer__col">
             <span className="footer__label">{t('footer.c3')}</span>
-            <a href="/impressum">{t('footer.imprint')}</a>
-            <a href="/datenschutz">{t('footer.privacy')}</a>
+            <a href="/impressum/">{t('footer.imprint')}</a>
+            <a href="/datenschutz/">{t('footer.privacy')}</a>
             {/* AGB-Link folgt erst zum Verkaufsstart (footer.terms bleibt in
                 den Locales für die Wiederverwendung). */}
             <button

@@ -47,7 +47,7 @@ export default function Nav() {
     { href: '/#features', label: t('nav.features') },
     { href: '/#audience', label: t('nav.forwho') },
     { href: '/#pricing', label: t('nav.pricing') },
-    { href: '/ueber-uns', label: t('nav.about') },
+    { href: '/ueber-uns/', label: t('nav.about') },
   ]
   return (
     <div className="header">

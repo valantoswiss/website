@@ -25,4 +25,4 @@ User-agent: meta-externalagent
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.valanto.ch/sitemap.xml
+Sitemap: https://valanto.ch/sitemap.xml

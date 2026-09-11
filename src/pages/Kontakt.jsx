@@ -37,7 +37,7 @@ export default function Kontakt() {
       <Seo
         title={t('contactPage.metaTitle')}
         description={t('contactPage.metaDescription')}
-        path="/kontakt"
+        path="/kontakt/"
       />
       <div className="inner legal-page__inner">
         <h1>{t('contactPage.h1')}</h1>
@@ -86,7 +86,7 @@ export default function Kontakt() {
 
             <p className="contact-form__privacy">
               {t('contactPage.form.privacy')}{' '}
-              <a href="/datenschutz">{t('contactPage.form.privacyLink')}</a>
+              <a href="/datenschutz/">{t('contactPage.form.privacyLink')}</a>
             </p>
           </form>
         )}

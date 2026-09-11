@@ -5,7 +5,7 @@
    Funktionen und Preise aus src/locales/de.json (pricing.plans, features.items).
    Ändern sich Preise oder Pakete dort, hier nachziehen. */
 
-const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://www.valanto.ch').replace(/\/$/, '')
+const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://valanto.ch').replace(/\/$/, '')
 
 export const organization = {
   '@type': 'Organization',

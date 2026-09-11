@@ -30,8 +30,8 @@ Preis pro Benutzer und Monat, exkl. MwSt., monatlich kündbar. Ein Konto pro Fir
 
 ## Seiten
 
-- [Startseite](https://www.valanto.ch/): Funktionen, Zielgruppen und Preise
-- [Über Valanto](https://www.valanto.ch/ueber-uns): Herkunft aus der Schweizer Bewertungspraxis
-- [Kontakt](https://www.valanto.ch/kontakt): Kontaktformular und Adresse
-- [Impressum](https://www.valanto.ch/impressum): Betreiberin, Handelsregister, UID
-- [Datenschutzerklärung](https://www.valanto.ch/datenschutz): Datenbearbeitung nach revDSG
+- [Startseite](https://valanto.ch/): Funktionen, Zielgruppen und Preise
+- [Über Valanto](https://valanto.ch/ueber-uns/): Herkunft aus der Schweizer Bewertungspraxis
+- [Kontakt](https://valanto.ch/kontakt/): Kontaktformular und Adresse
+- [Impressum](https://valanto.ch/impressum/): Betreiberin, Handelsregister, UID
+- [Datenschutzerklärung](https://valanto.ch/datenschutz/): Datenbearbeitung nach revDSG
