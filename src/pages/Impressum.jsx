@@ -1,16 +1,13 @@
-import { useEffect } from 'react'
+import Seo from '../Seo.jsx'
 
 export default function Impressum() {
-  // Cosmetic only (browser tab, post-hydration) – the prerendered HTML for
-  // /impressum keeps the shared index.html <title>/<meta description>, since
-  // vite-react-ssg's Head appends rather than replaces them (would duplicate
-  // the tags in the static output otherwise).
-  useEffect(() => {
-    document.title = 'Impressum – Valanto'
-  }, [])
-
   return (
     <section className="legal-page">
+      <Seo
+        title="Impressum – Valanto"
+        description="Impressum von Valanto: Betreiberin Felsberg Consulting GmbH, Gossau ZH, Handelsregister, UID und Kontakt."
+        path="/impressum"
+      />
       <div className="inner legal-page__inner">
         <h1>Impressum</h1>
 

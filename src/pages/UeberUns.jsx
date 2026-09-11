@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import Seo from '../Seo.jsx'
 
 /**
  * «Über uns» – von Jürg am 4.8.2026 gegengelesen und freigegeben.
@@ -11,14 +11,13 @@ import { useTranslation } from 'react-i18next'
 export default function UeberUns() {
   const { t } = useTranslation()
 
-  // Cosmetic only (browser tab, post-hydration) – wie in Impressum.jsx: der
-  // vorgerenderte HTML behält den geteilten <title> aus index.html.
-  useEffect(() => {
-    document.title = `${t('aboutPage.h1')} – Valanto`
-  }, [t])
-
   return (
     <section className="legal-page">
+      <Seo
+        title={t('aboutPage.metaTitle')}
+        description={t('aboutPage.metaDescription')}
+        path="/ueber-uns"
+      />
       <div className="inner legal-page__inner">
         <h1>{t('aboutPage.h1')}</h1>
 

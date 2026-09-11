@@ -14,6 +14,12 @@ Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). **Achtung: `main` de
 - Der globale Reset `* { margin: 0 }` killt UA-Defaults (z. B. `margin: auto` von `<dialog>`) – bei nativen Elementen daran denken.
 - Overlays (Lightbox etc.) per React-Portal an `document.body` rendern, sonst können Ancestor-Stacking-Contexts den sticky Header darüberlegen.
 
+## SEO / KI-Lesbarkeit
+
+- Jede Seite unter `src/pages/` rendert genau ein `<Seo>` (`src/Seo.jsx`) mit Titel, Beschreibung und Pfad – daraus entstehen beim Build title, description, canonical, Open Graph und JSON-LD im vorgerenderten HTML. Diese Tags gehören nicht in `index.html`.
+- Strukturierte Daten liegen in `src/structuredData.js`; ändern sich Preise oder Funktionen in den Locales, dort und in `public/llms.txt` nachziehen.
+- Neue Route: auch in `public/sitemap.xml` und `public/llms.txt` eintragen.
+
 ## Inhalte
 
 - Produkt-Screenshots: Rohlinge liegen bei Fabian in `Desktop/valanto-screenshots/`; Demo-Mandant, Gutachter-Block im Gutachten-Deckblatt neutralisiert («Muster Immobilien AG»). Keine Demo-E-Mail (`test@example.com`) und kein «Valanto Demo AG» in Bildern.

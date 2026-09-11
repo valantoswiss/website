@@ -1,14 +1,13 @@
-import { useEffect } from 'react'
+import Seo from '../Seo.jsx'
 
 export default function Datenschutz() {
-  // Cosmetic only (browser tab, post-hydration) – see Impressum.jsx for why
-  // this isn't done via vite-react-ssg's Head.
-  useEffect(() => {
-    document.title = 'Datenschutzerklärung – Valanto'
-  }, [])
-
   return (
     <section className="legal-page">
+      <Seo
+        title="Datenschutzerklärung – Valanto"
+        description="Datenschutzerklärung der Website valanto.ch: welche Daten wir bearbeiten, Hosting in der Schweiz, Cookies und Ihre Rechte nach revDSG."
+        path="/datenschutz"
+      />
       <div className="inner legal-page__inner">
         <h1>Datenschutzerklärung</h1>
         <p className="legal-page__stand">Stand: August 2026</p>

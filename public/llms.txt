@@ -1,0 +1,37 @@
+# Valanto
+
+> Valanto ist eine Schweizer Immobiliensoftware für Makler und Bewerter: Liegenschaften erfassen, Bewertungen mit Gutachten-Dossier erstellen, Neubauprojekte steuern, Landingpages und Verkäufer-Portal – alles in einem Werkzeug. Entwickelt und gehostet in der Schweiz (Infomaniak, Genf), datenschutzkonform nach revDSG.
+
+Betreiberin: Felsberg Consulting GmbH, Felsbergstrasse 2, 8625 Gossau ZH, Schweiz. Kontakt: info@valanto.ch. Die Anwendung läuft unter https://app.valanto.ch und ist auf Deutsch verfügbar. Valanto ist aus der täglichen Arbeit eines Schweizer Immobilienbewerters entstanden.
+
+## Funktionen
+
+- Liegenschaften erfassen: alle Objekte mit vollständigem Dossier an einem Ort.
+- Bewertungen mit Dossier: nachvollziehbare Verkehrswert-Bewertungen, ausgegeben als Gutachten-Dossier im PDF-Format.
+- Neubauprojekte: Projekte anlegen, Einheiten verwalten, Verkaufsstand im Blick behalten.
+- Landingpages: für jedes Objekt eine eigene Vermarktungsseite, ohne Webagentur.
+- Verkäufer-Portal: Verkäufer sehen den Stand ihres Verkaufs jederzeit selbst.
+- In Planung: CRM und Interessentenverwaltung.
+
+## Zielgruppen
+
+- Makler: verwalten, vermarkten, Projekte steuern.
+- Bewerter: nachvollziehbare Bewertungen mit professionellem Dossier.
+- Spezialisten, die beides machen: alle Module in einer Plattform.
+
+## Preise
+
+Preis pro Benutzer und Monat, exkl. MwSt., monatlich kündbar. Ein Konto pro Firma, ein Paket pro Benutzer; Pakete dürfen gemischt werden.
+
+- Gratis-Sitzplatz: CHF 0 – ein Sitzplatz pro Firma mit je einer Liegenschaft, einer Bewertung und einem Neubauprojekt, ohne Zeitlimit und ohne Kreditkarte.
+- Bewerter: CHF 50 – Bewertungen mit Dossier, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF.
+- Makler: CHF 80 – Liegenschaften und Dossier, Neubauprojekte, Landingpages, Verkäufer-Portal.
+- Spezialist: CHF 120 – alles aus Makler plus Bewertungen mit Dossier.
+
+## Seiten
+
+- [Startseite](https://www.valanto.ch/): Funktionen, Zielgruppen und Preise
+- [Über Valanto](https://www.valanto.ch/ueber-uns): Herkunft aus der Schweizer Bewertungspraxis
+- [Kontakt](https://www.valanto.ch/kontakt): Kontaktformular und Adresse
+- [Impressum](https://www.valanto.ch/impressum): Betreiberin, Handelsregister, UID
+- [Datenschutzerklärung](https://www.valanto.ch/datenschutz): Datenbearbeitung nach revDSG

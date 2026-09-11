@@ -1,16 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import Seo from '../Seo.jsx'
 
 export default function Kontakt() {
   const { t } = useTranslation()
   const [status, setStatus] = useState('idle') // idle | sending | success | error | unavailable
-
-  // Cosmetic only (browser tab, post-hydration) – see Impressum.jsx for why
-  // this isn't done via vite-react-ssg's Head. Static title is fine here
-  // (no translation needed for the tab title).
-  useEffect(() => {
-    document.title = 'Kontakt – Valanto'
-  }, [])
 
   async function submit(event) {
     event.preventDefault()
@@ -40,6 +34,11 @@ export default function Kontakt() {
 
   return (
     <section className="legal-page">
+      <Seo
+        title={t('contactPage.metaTitle')}
+        description={t('contactPage.metaDescription')}
+        path="/kontakt"
+      />
       <div className="inner legal-page__inner">
         <h1>{t('contactPage.h1')}</h1>
         <p>{t('contactPage.text')}</p>
