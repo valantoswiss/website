@@ -123,10 +123,13 @@ button:focus-visible,
   width: 100%;
 }
 
+/* Nie Versalien (Vorgabe Fabian 27.09.2026): die Dachzeile steht in normaler
+   Schreibweise und hebt sich über Petrol und Gewicht ab – die weite
+   Laufweite war nur für Grossbuchstaben gedacht und entfällt. */
 .eyebrow {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.01em;
   color: var(--teal);
 }
 
@@ -1114,9 +1117,8 @@ button:focus-visible,
   gap: 12px;
 }
 .footer__label {
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: 700;
-  letter-spacing: 0.12em;
   color: var(--footer-label);
 }
 .footer__col a,
@@ -1357,10 +1359,9 @@ button:focus-visible,
   margin-bottom: 32px;
 }
 .legal-page h2 {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
   color: var(--teal);
   margin-top: 32px;
   margin-bottom: 8px;
