@@ -840,13 +840,13 @@ button:focus-visible,
   max-width: 66ch;
   text-wrap: pretty;
 }
-/* Handout A3: EIN Rahmen um alle drei Spalten, keine Lücken, keine eigenen
-   Rahmen je Karte. Die Makler-Spalte trennt sich über ihre Fläche, nicht über
-   Linien – und ragt über `box-shadow` oben aus dem Raster heraus. */
+/* Handout A3: EIN Rahmen um alle drei Spalten, keine Lücken. Seit
+   App-Feedback #473 sind die drei Spalten gleichwertig – Bewerter und Makler
+   sind zwei Zielgruppen, Spezialist die Kombination. Getrennt wird nur über
+   Innenlinien, keine Spalte trägt eine eigene Fläche. */
 .pricing__grid {
   display: grid;
-  grid-template-columns: 1fr 1.18fr 1fr;
-  align-items: end;
+  grid-template-columns: repeat(3, 1fr);
   max-width: 1000px;
   margin: 42px auto 0;
   border: 1px solid var(--ink);
@@ -855,80 +855,45 @@ button:focus-visible,
   display: flex;
   flex-direction: column;
   background: var(--bg);
-  padding: 34px 28px 30px;
+  padding: 34px 30px 30px;
 }
-.plan--popular {
-  background: var(--ink);
-  color: var(--on-dark);
-  padding: 44px 32px 38px;
+.plan + .plan {
   border-left: 1px solid var(--ink);
-  border-right: 1px solid var(--ink);
-  /* Kein Schatten, sondern eine Verlängerung der Fläche um 10px nach oben:
-     die Spalte steht aus dem Raster heraus, ohne dass das Raster selbst
-     asymmetrisch wird. */
-  box-shadow: 0 -10px 0 var(--ink);
 }
-.plan__badge {
-  background: var(--teal-bright);
-  color: #12333a;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 4px 9px;
-}
-.plan__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
+/* Paketname in normaler Schreibweise (nie Versalien, Vorgabe Fabian
+   27.09.2026) – die Hierarchie tragen Grösse und Gewicht. */
 .plan__name {
-  font-size: 11.5px;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--muted);
-}
-.plan--popular .plan__name {
-  font-size: 12.5px;
-  color: var(--teal-light);
-}
-.plan__price-row {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-top: 14px;
-}
-.plan__price {
-  font-size: 34px;
-  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
-.plan--popular .plan__price-row {
-  gap: 7px;
-  margin-top: 16px;
+/* Einheit immer unter dem Preis, in allen drei Spalten gleich: nebeneinander
+   passte «CHF 120.–» plus «pro Benutzer / Mt.» nicht in die Spalte, der Preis
+   brach in zwei Zeilen und die Einheit quetschte sich daneben (#473). Der
+   Preis selbst bricht nie um. */
+.plan__price-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 12px;
 }
-.plan--popular .plan__price {
-  font-size: clamp(38px, 3.6vw, 48px);
+.plan__price {
+  font-size: clamp(30px, 3.2vw, 36px);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--bg);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
 }
 .plan__per {
   font-size: 13.5px;
   color: var(--muted);
-}
-.plan--popular .plan__per {
-  font-size: 14.5px;
-  color: #b9bcc2;
+  white-space: nowrap;
 }
 .plan__rule {
   height: 1px;
   background: var(--line-soft);
   margin: 22px 0;
-}
-.plan--popular .plan__rule {
-  background: var(--line-dark);
-  margin: 24px 0;
 }
 .plan__features {
   display: flex;
@@ -940,53 +905,32 @@ button:focus-visible,
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.4;
   color: #4a4e57;
 }
-.plan--popular .plan__features {
-  gap: 12px;
-}
-.plan--popular .plan__feat {
-  gap: 10px;
-  font-size: 15px;
-  color: var(--on-dark);
-}
-/* Häkchen als Glyphe in Petrol, nicht mehr als Vollquadrat: das Raster ist
-   ruhiger geworden, ein gefüllter Block je Zeile wäre jetzt zu laut. */
+/* Häkchen als Glyphe in Petrol, nicht als Vollquadrat: ein gefüllter Block
+   je Zeile wäre im ruhigen Raster zu laut. */
 .check {
   flex: none;
   color: var(--teal);
   font-weight: 700;
 }
-.plan--popular .check {
-  color: var(--teal-bright);
-}
-/* Seitenspalten führen mit einem Textlink, nur die Makler-Spalte trägt den
-   gefüllten CTA – zwei gefüllte Buttons nebeneinander sind ausgeschlossen. */
-.plan__cta--link {
+/* Alle drei Spalten führen mit demselben Textlink – ein gefüllter Button in
+   nur einer Spalte würde wieder eine Rangfolge behaupten. Die Terracotta-Fläche
+   bleibt dem Primär-CTA in Hero und Abschluss vorbehalten (Handout A1). */
+.plan__cta {
   margin-top: 26px;
   align-self: flex-start;
-  font-size: 14.5px;
+  font-size: 15.5px;
   font-weight: 700;
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 4px;
+  transition: color 0.18s ease;
 }
-.plan__cta--link:hover {
+.plan__cta:hover {
   color: var(--accent-deep);
-}
-.plan__cta--fill {
-  margin-top: 28px;
-  padding: 16px 26px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 19px;
-  font-weight: 700;
-  text-align: center;
-}
-.plan__cta--fill:hover {
-  background: var(--accent-hover);
 }
 /* Fuss desselben Blocks, darum ohne Abstand und ohne obere Kante. */
 .pricing__notes {
@@ -1315,25 +1259,16 @@ button:focus-visible,
     border-top: 1px solid var(--ink);
     border-bottom: 1px solid var(--ink);
   }
-  /* Handout A3, mobil: einspaltig, Makler zuerst. Der Überstand entfällt –
-     die Führung übernimmt die dunkle Fläche allein. Der Rahmen bleibt ein
-     durchgehender Kasten, getrennt wird über `border-top`. */
+  /* Handout A3, mobil: einspaltig in der Reihenfolge des Rasters. Der
+     Rahmen bleibt ein durchgehender Kasten, getrennt wird über `border-top`. */
   .pricing__grid {
     grid-template-columns: 1fr;
   }
-  .plan--popular {
-    order: -1;
-    box-shadow: none;
+  .plan + .plan {
     border-left: none;
-    border-right: none;
-  }
-  /* Nicht `.plan + .plan`: der Geschwister-Selektor folgt der DOM-Reihenfolge,
-     `order` aber nur der visuellen. Die Makler-Spalte steht oben und braucht
-     keine Kante, alle anderen trennen sich nach oben. */
-  .plan:not(.plan--popular) {
     border-top: 1px solid var(--ink);
   }
-  .plan__cta--link {
+  .plan__cta {
     align-self: stretch;
     text-align: center;
   }

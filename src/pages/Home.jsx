@@ -230,40 +230,33 @@ function Pricing() {
           <p className="pricing__intro">{t('pricing.intro')}</p>
         </div>
         <div className="pricing__grid">
-          {plans.map((p, i) => {
-            const popular = i === 1
-            return (
-              <div className={`plan ${popular ? 'plan--popular' : ''}`} key={i}>
-                <div className="plan__head">
-                  <span className="plan__name">{p.name}</span>
-                  {popular && <span className="plan__badge">{t('pricing.popular')}</span>}
-                </div>
-                <div className="plan__price-row">
-                  <span className="plan__price">{p.price}</span>
-                  <span className="plan__per">{p.per}</span>
-                </div>
-                <div className="plan__rule" />
-                <div className="plan__features">
-                  {p.features.map((feat, j) => (
-                    <div className="plan__feat" key={j}>
-                      <span className="check" aria-hidden="true">✓</span>
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-                {/* Alle drei CTAs führen zur selben Registrierung und tragen
-                    darum dieselbe Beschriftung (Fabian 12.08.2026) – nur die
-                    Gewichtung unterscheidet sich: gefüllt in der Mitte,
-                    Textlink in den Seitenspalten. */}
-                <a
-                  className={popular ? 'btn plan__cta--fill' : 'plan__cta--link'}
-                  href={APP_REGISTER_URL}
-                >
-                  {t('hero.cta1')}
-                </a>
+          {/* Drei gleichwertige Karten (App-Feedback #473): Bewerter und Makler
+              sind zwei Zielgruppen, keine Rangfolge – Spezialist ist die
+              Kombination aus beiden. Darum weder Badge noch hervorgehobene
+              Spalte, und alle drei CTAs in derselben Textlink-Variante. */}
+          {plans.map((p, i) => (
+            <div className="plan" key={i}>
+              <span className="plan__name">{p.name}</span>
+              <div className="plan__price-row">
+                <span className="plan__price">{p.price}</span>
+                <span className="plan__per">{p.per}</span>
               </div>
-            )
-          })}
+              <div className="plan__rule" />
+              <div className="plan__features">
+                {p.features.map((feat, j) => (
+                  <div className="plan__feat" key={j}>
+                    <span className="check" aria-hidden="true">✓</span>
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+              {/* Alle drei CTAs führen zur selben Registrierung und tragen
+                  darum dieselbe Beschriftung (Fabian 12.08.2026). */}
+              <a className="plan__cta" href={APP_REGISTER_URL}>
+                {t('hero.cta1')}
+              </a>
+            </div>
+          ))}
         </div>
         <div className="pricing__notes">
           {t('pricing.boxes', { returnObjects: true }).map((b, i) => (

@@ -75,7 +75,6 @@
     "eyebrow": "TRANSPARENT PRICING",
     "h2": "A plan for your role",
     "intro": "Price per user, per month, cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
-    "popular": "OUR RECOMMENDATION",
     "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Custom solutions for larger teams on request.",
     "boxes": [
       {
@@ -84,24 +83,24 @@
       },
       {
         "t": "Example",
-        "d": "3 people: 1 × free seat, plus 1 × Broker and 1 × Valuer = CHF 130.– per month, excl. VAT. Seats can be added or removed at any time."
+        "d": "3 people: 1 × free seat, plus 1 × Broker and 1 × Valuer = CHF 130.– per month, excl. VAT. Seats can be added or removed at any time."
       }
     ],
     "plans": [
       {
-        "name": "VALUER",
+        "name": "Valuer",
         "price": "CHF 50.–",
         "per": "per user / mo.",
         "features": ["Valuations with dossier", "Property base data", "Appraisal dossier as PDF"]
       },
       {
-        "name": "BROKER",
+        "name": "Broker",
         "price": "CHF 80.–",
         "per": "per user / mo.",
         "features": ["Properties & dossier", "New-build projects", "Landing pages", "Seller portal"]
       },
       {
-        "name": "SPECIALIST",
+        "name": "Specialist",
         "price": "CHF 120.–",
         "per": "per user / mo.",
         "features": ["Everything in Broker", "Plus: valuations with dossier", "For those who value and market"]
