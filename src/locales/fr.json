@@ -25,7 +25,7 @@
     "menu": "Menu"
   },
   "hero": {
-    "eyebrow": "LOGICIEL IMMOBILIER SUISSE",
+    "eyebrow": "Logiciel immobilier suisse",
     "h1": "Estimer, commercialiser, gérer – enfin dans un seul outil.",
     "lead": "Biens, estimations et commercialisation dans un seul flux – plutôt que dans Excel, des modèles Word et des solutions isolées.",
     "cta1": "Créer un compte gratuit",
@@ -34,9 +34,9 @@
     "trust": "Sans carte de crédit · Un poste gratuit pour essayer · Conforme à la nLPD"
   },
   "dossier": {
-    "label": "DOSSIER D'ESTIMATION",
+    "label": "Dossier d'estimation",
     "type": "Maison individuelle",
-    "mv": "VALEUR AU 03.07.2026",
+    "mv": "Valeur au 03.07.2026",
     "r1": "Situation",
     "r2": "État",
     "r3": "Finitions",
@@ -49,7 +49,7 @@
     "b1": "Conforme à la nLPD"
   },
   "features": {
-    "eyebrow": "TOUT AU MÊME ENDROIT",
+    "eyebrow": "Tout au même endroit",
     "h2": "Un outil pour toute votre journée de travail",
     "intro": "Plutôt que trois logiciels et une double saisie : avec Valanto, vous travaillez de bout en bout au même endroit – de la première estimation jusqu'à la commercialisation finale.",
     "items": [
@@ -63,7 +63,7 @@
     "next": "CRM et gestion des prospects, directement dans Valanto."
   },
   "audience": {
-    "eyebrow": "POUR QUI",
+    "eyebrow": "Pour qui",
     "h2": "Conçu pour votre travail",
     "items": [
       { "role": "Courtier", "text": "Gérer, commercialiser, piloter des projets – sans changer sans cesse de logiciel." },
@@ -72,10 +72,9 @@
     ]
   },
   "pricing": {
-    "eyebrow": "TARIFS TRANSPARENTS",
+    "eyebrow": "Tarifs transparents",
     "h2": "Une offre pour votre rôle",
     "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Pour essayer, chaque entreprise dispose d'un poste gratuit avec un bien, une estimation et un projet de construction – sans limite de durée.",
-    "popular": "NOTRE RECOMMANDATION",
     "note": "Tous les prix HT · Toutes les offres conformes à la nLPD, hébergées en Suisse. · Solutions sur mesure pour les grandes équipes sur demande.",
     "boxes": [
       {
@@ -84,24 +83,24 @@
       },
       {
         "t": "Exemple",
-        "d": "3 personnes : 1 × poste gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les postes peuvent être ajoutés ou retirés à tout moment."
+        "d": "3 personnes : 1 × poste gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les postes peuvent être ajoutés ou retirés à tout moment."
       }
     ],
     "plans": [
       {
-        "name": "ÉVALUATEUR",
+        "name": "Évaluateur",
         "price": "CHF 50.–",
         "per": "par utilisateur / mois",
         "features": ["Estimations avec dossier", "Données de base des biens", "Dossier d'expertise en PDF"]
       },
       {
-        "name": "COURTIER",
+        "name": "Courtier",
         "price": "CHF 80.–",
         "per": "par utilisateur / mois",
         "features": ["Biens & dossier", "Projets de construction", "Landing pages", "Portail vendeurs"]
       },
       {
-        "name": "SPÉCIALISTE",
+        "name": "Spécialiste",
         "price": "CHF 120.–",
         "per": "par utilisateur / mois",
         "features": ["Tout de Courtier", "Plus : estimations avec dossier", "Pour ceux qui estiment et commercialisent"]
@@ -109,7 +108,7 @@
     ]
   },
   "siv": {
-    "eyebrow": "ISSU DE LA PRATIQUE",
+    "eyebrow": "Issu de la pratique",
     "h2": "Ancré dans la pratique suisse",
     "text": "Valanto naît du travail quotidien d'estimation. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [
@@ -124,9 +123,9 @@
   "footer": {
     "claim": "Estimer, commercialiser, gérer – dans un seul outil.",
     "madein": "Conçu en Suisse",
-    "c1": "PRODUIT",
-    "c2": "ENTREPRISE",
-    "c3": "MENTIONS LÉGALES",
+    "c1": "Produit",
+    "c2": "Entreprise",
+    "c3": "Mentions légales",
     "contact": "Contact",
     "imprint": "Impressum",
     "privacy": "Confidentialité",
