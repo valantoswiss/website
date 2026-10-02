@@ -47,6 +47,7 @@ export default function Nav() {
     { href: '/#features', label: t('nav.features') },
     { href: '/#audience', label: t('nav.forwho') },
     { href: '/#pricing', label: t('nav.pricing') },
+    { href: '/wissen/', label: t('nav.knowledge') },
     { href: '/ueber-uns/', label: t('nav.about') },
   ]
   return (

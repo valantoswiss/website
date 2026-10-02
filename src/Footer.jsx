@@ -25,6 +25,7 @@ export default function Footer() {
             <span className="footer__label">{t('footer.c2')}</span>
             {/* Interne Links mit Schrägstrich: so liefert Nginx die Seite
                 direkt aus statt erst auf /kontakt/ umzuleiten. */}
+            <a href="/wissen/">{t('nav.knowledge')}</a>
             <a href="/ueber-uns/">{t('nav.about')}</a>
             <a href="/kontakt/">{t('footer.contact')}</a>
           </div>

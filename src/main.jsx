@@ -14,6 +14,9 @@ import Impressum from './pages/Impressum.jsx'
 import Datenschutz from './pages/Datenschutz.jsx'
 import Kontakt from './pages/Kontakt.jsx'
 import UeberUns from './pages/UeberUns.jsx'
+import Wissen from './pages/Wissen.jsx'
+import WissenArtikel from './pages/WissenArtikel.jsx'
+import { artikel } from './wissen/artikel.js'
 
 // Static Site Generation: each route below is pre-rendered to real HTML at
 // build time (good for SEO / crawlers / no-JS reload of /impressum etc.) and
@@ -30,6 +33,13 @@ export const createRoot = ViteReactSSG({
         { path: 'datenschutz', element: <Datenschutz /> },
         { path: 'kontakt', element: <Kontakt /> },
         { path: 'ueber-uns', element: <UeberUns /> },
+        { path: 'wissen', element: <Wissen /> },
+        // Eine statische Route je Artikel – so rendert vite-react-ssg jeden
+        // Fachartikel als eigenes HTML vor (keine dynamische :slug-Route).
+        ...artikel.map((eintrag) => ({
+          path: `wissen/${eintrag.slug}`,
+          element: <WissenArtikel eintrag={eintrag} />,
+        })),
       ],
     },
   ],
