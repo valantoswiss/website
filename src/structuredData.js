@@ -77,12 +77,9 @@ export const softwareApplication = {
     'in der Schweiz, datenschutzkonform nach revDSG.',
   featureList: [
     'Liegenschaften erfassen – alle Objekte mit vollständigem Dossier an einem Ort',
-    'Bewertungen mit Dossier – nachvollziehbare Verkehrswert-Bewertungen (Realwert, Ertragswert, DCF), Gutachten als PDF',
-    'Realwert mit Altersentwertung nach Bauteilen – Lebensdauer und Erneuerungsjahr je Bauteil',
-    'Lageklassen – klassische Methode oder Landwertanteil nach SIREA-Lageklassen 2024/25',
+    'Bewertungen mit Dossier – nachvollziehbare Verkehrswert-Bewertungen, Gutachten als PDF',
     'Neubauprojekte – Projekte anlegen, Einheiten verwalten, Verkaufsstand im Blick',
     'Landingpages – eigene Vermarktungsseite für jedes Objekt',
-    'Homepage-Einbindung – aktuelle Objekte, Neubauprojekte und Referenzen auf der eigenen Website',
     'Verkäufer-Portal – Verkäufer sehen den Stand jederzeit selbst',
   ],
   audience: {

@@ -6,17 +6,12 @@ Betreiberin: Felsberg Consulting GmbH, Felsbergstrasse 2, 8625 Gossau ZH, Schwei
 
 ## Funktionen
 
-- Liegenschaften erfassen: alle Objekte mit vollständigem Dossier an einem Ort, Verkaufsschritte (Journey), Aktiv/Archiv.
-- Bewertungen mit Dossier: nachvollziehbare Verkehrswert-Bewertungen mit Realwert, Ertragswert und DCF, gewichtet zum Verkehrswert, ausgegeben als Gutachten-Dossier im PDF-Format.
-- Realwert mit Altersentwertung nach Bauteilen: wahlweise gewichtete Alterstabelle (wirtschaftliches Alter) oder Bauteil-Raster mit Lebensdauer und Erneuerungsjahr je Bauteil; Ausstattungen (BKP 9) einzeln entwertet.
-- Lageklassen: klassische Lageklassenmethode oder Landwertanteil nach SIREA-Lageklassen 2024/25.
-- Neubauprojekte: Projekte anlegen, Häuser und Einheiten verwalten, Verkaufsstand (frei, reserviert, verkauft) im Blick behalten.
-- Landingpages und Exposés: für jedes Objekt und jedes Neubauprojekt eine eigene Vermarktungsseite im Erscheinungsbild der Firma, ohne Webagentur.
-- Vermarktungsstatus und Referenzen: Neu, Verfügbar, Reserviert, Verkauft, Vermietet; verkaufte und vermietete Objekte werden als Referenz vorgeschlagen.
-- Homepage-Einbindung: ein Einbettungscode zeigt die aktuellen Objekte, Neubauprojekte und Referenzen auf der eigenen Firmen-Website (WordPress, Wix, Jimdo u. a.), immer aktuell; dazu ein JSON-Datenfeed für Webagenturen.
+- Liegenschaften erfassen: alle Objekte mit vollständigem Dossier an einem Ort.
+- Bewertungen mit Dossier: nachvollziehbare Verkehrswert-Bewertungen, ausgegeben als Gutachten-Dossier im PDF-Format.
+- Neubauprojekte: Projekte anlegen, Einheiten verwalten, Verkaufsstand im Blick behalten.
+- Landingpages: für jedes Objekt eine eigene Vermarktungsseite, ohne Webagentur.
 - Verkäufer-Portal: Verkäufer sehen den Stand ihres Verkaufs jederzeit selbst.
-- Kontakte, Aufgaben, Notizen und Rechnungsstellung für das Team.
-- In Planung: Export an Immobilienportale.
+- In Planung: CRM und Interessentenverwaltung.
 
 ## Zielgruppen
 
@@ -36,12 +31,7 @@ Preis pro Benutzer und Monat, exkl. MwSt., monatlich kündbar. Ein Konto pro Fir
 ## Seiten
 
 - [Startseite](https://valanto.ch/): Funktionen, Zielgruppen und Preise
-- [Wissen](https://valanto.ch/wissen/): Fachartikel zur Immobilienbewertung in der Schweiz
 - [Über Valanto](https://valanto.ch/ueber-uns/): Herkunft aus der Schweizer Bewertungspraxis
 - [Kontakt](https://valanto.ch/kontakt/): Kontaktformular und Adresse
 - [Impressum](https://valanto.ch/impressum/): Betreiberin, Handelsregister, UID
 - [Datenschutzerklärung](https://valanto.ch/datenschutz/): Datenbearbeitung nach revDSG
-
-## Fachartikel
-
-- [Altersentwertung nach Bauteilen: So wird der Realwert nachvollziehbar](https://valanto.ch/wissen/altersentwertung-nach-bauteilen/): Altersentwertung im Realwert pauschal über das wirtschaftliche Alter oder nach Bauteilen mit Lebensdauer und Erneuerungsjahr; Richtwerte für Anteile und Lebensdauern, Rechenbeispiel Einfamilienhaus mit Teilrenovation
