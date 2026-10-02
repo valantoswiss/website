@@ -22,7 +22,7 @@ export const artikel = [
     beschreibung:
       'Wie die Altersentwertung im Realwert einer Schweizer Liegenschaft berechnet wird – pauschal über das wirtschaftliche Alter oder genauer nach Bauteilen mit Lebensdauer und Erneuerungsjahr. Mit Rechenbeispiel.',
     veroeffentlicht: '2026-10-02',
-    lesezeit: 7,
+    lesezeit: 8,
     themen: [
       { '@type': 'Thing', name: 'Realwert' },
       { '@type': 'Thing', name: 'Altersentwertung' },
@@ -43,7 +43,7 @@ export const artikel = [
           },
           {
             absatz:
-              'Die Altersentwertung betrifft vor allem das Gebäude selbst (BKP 2). Andere Positionen werden anders behandelt: Die Umgebung (BKP 4) erhält einen eigenen Abzug, Ausstattungen (BKP 9) werden je Position über Alter und Lebensdauer entwertet, Vorbereitungsarbeiten und Baunebenkosten bleiben in der Regel ohne Abzug.',
+              'Dieser Artikel behandelt die Altersentwertung des Gebäudes selbst (BKP 2) – den grössten und am meisten diskutierten Posten. Die Umgebung (BKP 4) mit Garten, Zufahrt und Einfriedung wird separat entwertet, typischerweise mit einer Lebensdauer um 30 Jahre. Besondere Ausstattungen (BKP 9) werden je Position über Alter und Lebensdauer entwertet.',
           },
         ],
       },
@@ -75,6 +75,10 @@ export const artikel = [
             ],
           },
           {
+            absatz:
+              'Die lineare Entwertung ist eine praxistaugliche Näherung. Die Schweizer Bewertungsstandards kennen auch nicht-lineare Ansätze, bei denen der Minderwert mit zunehmendem Alter stärker steigt, sowie die Barwertrelation. Die lineare Rechnung hat den Vorteil, dass jede Zahl im Gutachten ohne Tabellenwerk nachvollziehbar bleibt.',
+          },
+          {
             tabelle: {
               titel: 'Richtwerte für ein Wohngebäude (Anteile und Lebensdauer)',
               kopf: ['Gruppe', 'Anteil am Gebäude', 'Bauteile (Anteil in der Gruppe · Lebensdauer)'],
@@ -101,6 +105,10 @@ export const artikel = [
           {
             absatz:
               'Die Werte sind Richtwerte aus der Bewertungspraxis, keine Norm. Bei einem Gebäude mit besonders hochwertiger Hülle oder einfacher Installation passt man Anteile und Lebensdauern an – wichtig ist, dass die Anteile jeder Ebene zusammen 100 % ergeben und die Anpassung im Gutachten begründet ist.',
+          },
+          {
+            absatz:
+              'Innerhalb eines Bauteils können die Lebensdauern stark streuen: Küchengeräte halten oft nur 10 bis 15 Jahre, das Küchenmobiliar 20 bis 30. Malerarbeiten sind nach rund 8 bis 10 Jahren fällig, Plattenbeläge halten deutlich länger. Wer solche Unterschiede abbilden will, teilt das Bauteil auf.',
           },
         ],
       },
@@ -149,7 +157,8 @@ export const artikel = [
               'Erneuerungsjahr statt Baujahr: Für ein ersetztes Bauteil beginnt das Alter mit der Erneuerung neu. Eine Teilerneuerung (z. B. nur die Hälfte der Fenster) lässt sich über ein mittleres Erneuerungsjahr oder eine Aufteilung des Bauteils abbilden.',
               'Höchstens 100 %: Ein Bauteil, das älter ist als seine Lebensdauer, ist vollständig entwertet, aber nicht mehr. Das Gebäude als Ganzes behält den Wert der Teile, die noch nicht abgeschrieben sind – vor allem der Grundsubstanz.',
               'Stichtag beachten: Das Alter wird auf das Jahr des Bewertungsstichtags gerechnet, nicht auf das Datum, an dem das Gutachten geschrieben wird.',
-              'Nicht doppelt abziehen: Ein schlechter Zustand, der über die Altersentwertung hinausgeht (Schäden, Instandsetzungsbedarf), gehört als eigener Abzug ins Gutachten – nicht zusätzlich in die Lebensdauer.',
+              'Bauschäden separat abziehen: Akuter Sanierungsbedarf oder Bauschäden werden nicht über eine künstlich verkürzte Lebensdauer abgebildet, sondern als eigener Betrag (Sofortinvestition) vom Zeitwert abgezogen. So wird nichts doppelt gezählt und der Abzug bleibt begründbar.',
+              'Werterhaltend oder wertvermehrend: Eine werterhaltende Renovation (gleicher Standard, neu) setzt das Alter des Bauteils zurück und führt den Zeitwert wieder an den Neuwert heran. Eine wertvermehrende Investition (höherer Standard, mehr Fläche) erhöht dagegen den Neuwert selbst.',
               'Begründen, wo man abweicht: Richtwerte sind ein Startpunkt. Wer eine Lebensdauer verkürzt oder verlängert, sollte den Grund nennen (Material, Zustand, Nutzung).',
             ],
           },
@@ -160,7 +169,7 @@ export const artikel = [
       {
         frage: 'Wie lange hält welches Bauteil?',
         antwort:
-          'Als Richtwerte gelten für Wohngebäude etwa: Heizung (Wärmeerzeugung) 20 Jahre, Fenster, Beschattung und Küche 25 Jahre, Fassade und Bad 30 Jahre, Wasser- und Elektroleitungen 35 Jahre, Dach, Wärmeverteilung und Abwasserleitungen 40 Jahre, Grundsubstanz rund 100 Jahre. Im Einzelfall entscheidet der Zustand vor Ort.',
+          'Als Richtwerte gelten für Wohngebäude etwa: Heizung (Wärmeerzeugung) 20 Jahre, Fenster, Beschattung und Küche 25 Jahre, Fassade und Bad 30 Jahre, Wasser- und Elektroleitungen 35 Jahre, Dach, Wärmeverteilung und Abwasserleitungen 40 Jahre, Grundsubstanz rund 100 Jahre. Küchengeräte und Malerarbeiten halten deutlich kürzer, etwa 8 bis 15 Jahre. Im Einzelfall entscheidet der Zustand vor Ort.',
       },
       {
         frage: 'Was passiert mit der Altersentwertung nach einer Renovation?',
