@@ -68,7 +68,7 @@ function Hero() {
             <a className="btn btn-primary" href={APP_REGISTER_URL}>{t('hero.cta1')}</a>
             {/* Kein Demo-Angebot (Fabian 12.08.2026): Sekundär-Link zeigt auf die
                 echten Produkt-Screenshots; später sollen hier Erklär-Tutorials hin. */}
-            <a className="cta-textlink" href="#beispiele">{t('hero.cta2')}</a>
+            <a className="cta-textlink" href="#examples">{t('hero.cta2')}</a>
           </div>
           <p className="hero__trust">{t('hero.trust')}</p>
         </div>
@@ -124,7 +124,7 @@ function Features() {
         <p className="features__next">
           <b>{t('features.nextLabel')}</b> {t('features.next')}
         </p>
-        <div className="features__shots" id="beispiele">
+        <div className="features__shots" id="examples">
           {PRODUCT_SHOTS.map((s) => {
             const alt = t(`shots.${s.key}.alt`)
             const caption = t(`shots.${s.key}.caption`)

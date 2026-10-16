@@ -7,5 +7,5 @@
 export const APP_REGISTER_URL = 'https://app.valanto.ch/registrieren'
 
 /* Kein Demo-Angebot mehr (Fabian 12.08.2026, nach Jürgs Nein zum Kalender
-   vom 28.07.): Der Sekundär-CTA zeigt auf die Produkt-Beispiele (#features),
+   vom 28.07.): Der Sekundär-CTA zeigt auf die Produkt-Screens (#examples),
    später auf Erklär-Tutorials. Wer eine Demo will, schreibt uns via /kontakt. */

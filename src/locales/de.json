@@ -33,16 +33,6 @@
     "coverAlt": "Deckblatt eines Valanto-Verkehrswertgutachtens mit Objektadresse und ausgewiesenem Verkehrswert",
     "trust": "Keine Kreditkarte · Gratis-Sitzplatz zum Ausprobieren · revDSG-konform"
   },
-  "dossier": {
-    "label": "Bewertungs-Dossier",
-    "type": "Einfamilienhaus",
-    "mv": "Marktwert per 03.07.2026",
-    "r1": "Lage",
-    "r2": "Zustand",
-    "r3": "Ausbau",
-    "footer": "Bewertung Nr. 2043 · Seite 1 / 18",
-    "pdf": "PDF-Export"
-  },
   "features": {
     "h2": "Ein Werkzeug für Ihren ganzen Arbeitstag",
     "intro": "Statt drei Programmen und doppelter Datenpflege: Mit Valanto arbeiten Sie durchgehend an einem Ort – von der ersten Bewertung bis zur fertigen Vermarktung.",

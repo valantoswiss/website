@@ -33,16 +33,6 @@
     "coverAlt": "Cover page of a Valanto market value appraisal showing the property address and the assessed market value",
     "trust": "No credit card · Free seat to try it out · Swiss FADP compliant"
   },
-  "dossier": {
-    "label": "Valuation dossier",
-    "type": "Single-family house",
-    "mv": "Market value as of 03.07.2026",
-    "r1": "Location",
-    "r2": "Condition",
-    "r3": "Fit-out",
-    "footer": "Valuation no. 2043 · Page 1 / 18",
-    "pdf": "PDF export"
-  },
   "features": {
     "h2": "One tool for your entire working day",
     "intro": "Instead of three programs and duplicate data entry: with Valanto you work end to end in one place – from the first valuation to finished marketing.",
