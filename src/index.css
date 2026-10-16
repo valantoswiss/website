@@ -209,6 +209,11 @@ button:focus-visible,
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color 0.18s ease;
+  /* Trefferfläche 44 px hoch (WCAG 2.5.5), ohne das Layout zu verschieben:
+     das Polster wird über negative Ränder wieder ausgeglichen. */
+  display: inline-block;
+  padding-block: calc((44px - 1lh) / 2);
+  margin-block: calc((44px - 1lh) / -2);
 }
 .cta-textlink:hover {
   color: var(--accent-deep);
@@ -303,7 +308,7 @@ button:focus-visible,
 }
 
 .nav__try {
-  padding: calc(11px + var(--g) * 0.2) calc(24px + var(--g) * 0.6);
+  padding: calc(14.5px + var(--g) * 0.2) calc(24px + var(--g) * 0.6);
   background: var(--ink);
   color: var(--bg);
   font-weight: 600;
@@ -315,8 +320,8 @@ button:focus-visible,
 
 .burger {
   display: none;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--ink);
   background: transparent;
   flex-direction: column;
@@ -751,6 +756,11 @@ button:focus-visible,
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color 0.18s ease;
+  /* wie .cta-textlink: 44 px Trefferfläche ohne Layoutverschiebung; ohne
+     lh-Unterstützung greift das margin-top oben unverändert */
+  padding-block: calc((44px - 1lh) / 2);
+  margin-top: calc(26px + var(--g) - (44px - 1lh) / 2);
+  margin-bottom: calc((44px - 1lh) / -2);
 }
 .plan__cta:hover {
   color: var(--accent-deep);
@@ -1273,7 +1283,7 @@ button:focus-visible,
   color: var(--bg);
   font-size: 13.5px;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 13.5px 20px;
   cursor: pointer;
   transition: background 0.18s ease, border-color 0.18s ease;
 }
