@@ -542,17 +542,6 @@ button:focus-visible,
 .feature:hover {
   background: #fff;
 }
-.feature__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.feature__no {
-  font-size: calc(11.5px + var(--g) * 0.25);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--teal);
-}
 /* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
    ein Platzhalter zwischen fertigen Funktionen zieht das ganze Set runter. */
 .features__next {
@@ -644,16 +633,10 @@ button:focus-visible,
   color: var(--bg);
 }
 
-.feature__box {
-  width: calc(22px + var(--g) * 0.4);
-  height: calc(22px + var(--g) * 0.4);
-  border: 1px solid var(--ink);
-}
 .feature__title {
   font-size: calc(17px + var(--g) * 0.5);
   font-weight: 700;
   color: var(--ink);
-  margin-top: 4px;
 }
 .feature__desc {
   font-size: calc(13.5px + var(--g) * 0.3);

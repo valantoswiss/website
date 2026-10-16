@@ -142,10 +142,6 @@ function Features() {
         <div className="features__grid">
           {items.map((f, i) => (
             <div className="feature" key={i}>
-              <div className="feature__top">
-                <span className="feature__no">{String(i + 1).padStart(2, '0')}</span>
-                <span className="feature__box" />
-              </div>
               <h3 className="feature__title">{f.t}</h3>
               <p className="feature__desc">{f.d}</p>
             </div>
