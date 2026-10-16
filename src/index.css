@@ -63,6 +63,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* Anker (#features, #audience, #pricing, #examples) rasten unter dem
+     sticky Header ein – seit die Dachzeilen fehlen, sässe sonst die H2
+     darunter. Entspricht der Header-Höhe (85 px bei 1024, 94 px bei 1920). */
+  scroll-padding-top: calc(84px + var(--g) * 2);
 }
 
 body {
@@ -209,6 +213,11 @@ button:focus-visible,
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color 0.18s ease;
+  /* Trefferfläche 44 px hoch (WCAG 2.5.5), ohne das Layout zu verschieben:
+     das Polster wird über negative Ränder wieder ausgeglichen. */
+  display: inline-block;
+  padding-block: calc((44px - 1lh) / 2);
+  margin-block: calc((44px - 1lh) / -2);
 }
 .cta-textlink:hover {
   color: var(--accent-deep);
@@ -303,7 +312,8 @@ button:focus-visible,
 }
 
 .nav__try {
-  padding: calc(11px + var(--g) * 0.2) calc(24px + var(--g) * 0.6);
+  /* 15 px oben/unten: ergibt auf allen Breiten mindestens 44 px Höhe */
+  padding: calc(15px + var(--g) * 0.2) calc(24px + var(--g) * 0.6);
   background: var(--ink);
   color: var(--bg);
   font-weight: 600;
@@ -315,8 +325,8 @@ button:focus-visible,
 
 .burger {
   display: none;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--ink);
   background: transparent;
   flex-direction: column;
@@ -416,24 +426,10 @@ button:focus-visible,
   position: relative;
   padding: 8px calc(14px + var(--g)) calc(22px + var(--g)) 20px;
 }
-.hosted-badge {
-  /* an der Cover-Kante verankert (Review 17.07., Wrapper): überlappt die
-     Kante leicht, schwebt nicht mehr frei in der breiteren Spalte */
-  position: absolute;
-  bottom: calc(22px + var(--g) * 2);
-  right: calc(-14px - var(--g));
-  background: var(--ink);
-  color: var(--bg);
-  padding: calc(9px + var(--g) * 0.3) calc(18px + var(--g) * 0.6);
-  font-size: calc(12px + var(--g) * 0.3);
-  font-weight: 600;
-  box-shadow: 0 12px 28px rgba(35, 38, 45, 0.25);
-}
 
 /* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
 .hero__cover-wrap {
-  position: relative;
-  /* so breit wie das Deckblatt: das Badge verankert sich an dessen Kante */
+  /* so breit wie das Deckblatt */
   width: fit-content;
 }
 .hero__cover {
@@ -447,57 +443,13 @@ button:focus-visible,
 }
 
 /* ============================================================
-   TRUST BAR
-   ============================================================ */
-
-.trustbar {
-  padding: calc(18px + var(--g)) var(--pad-x);
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--on-dark);
-}
-.trustbar .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.trustbar__line {
-  font-size: calc(13px + var(--g) * 0.3);
-  color: var(--on-dark-soft);
-  font-weight: 500;
-}
-.trustbar__badges {
-  display: flex;
-  flex-wrap: wrap;
-}
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: calc(12.5px + var(--g) * 0.3);
-  font-weight: 600;
-  color: var(--on-dark);
-  background: none;
-  border: 1px solid var(--line-dark);
-  padding: calc(7px + var(--g) * 0.3) calc(15px + var(--g) * 0.5);
-}
-.badge + .badge {
-  border-left: none;
-}
-.badge--soft {
-  color: var(--footer-muted);
-  border-style: dashed;
-}
-
-/* ============================================================
    FEATURES
    ============================================================ */
 
+/* Oben knapper als die übrigen Sektionen: Ohne Trustbar schliesst Features
+   direkt an den Hero an, dessen unteres Polster den Abstand mitträgt. */
 .features {
-  padding: calc(80px + var(--g) * 4) var(--pad-x) calc(40px + var(--g) * 2);
+  padding: calc(32px + var(--g) * 2) var(--pad-x) calc(40px + var(--g) * 2);
 }
 .features__head {
   display: grid;
@@ -542,17 +494,6 @@ button:focus-visible,
 .feature:hover {
   background: #fff;
 }
-.feature__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.feature__no {
-  font-size: calc(11.5px + var(--g) * 0.25);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--teal);
-}
 /* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
    ein Platzhalter zwischen fertigen Funktionen zieht das ganze Set runter. */
 .features__next {
@@ -568,6 +509,8 @@ button:focus-visible,
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
   margin-top: calc(56px + var(--g) * 3);
+  /* Ziel von «Beispiele ansehen»: etwas Luft unter dem Header (scroll-padding) */
+  scroll-margin-top: calc(28px + var(--g));
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
@@ -644,21 +587,20 @@ button:focus-visible,
   color: var(--bg);
 }
 
-.feature__box {
-  width: calc(22px + var(--g) * 0.4);
-  height: calc(22px + var(--g) * 0.4);
-  border: 1px solid var(--ink);
-}
 .feature__title {
   font-size: calc(17px + var(--g) * 0.5);
   font-weight: 700;
   color: var(--ink);
-  margin-top: 4px;
 }
+/* Fliesstext in Modul-, Rollen- und Praxis-Zellen: 16 px in --text, damit
+   er neben den fetten Titeln nicht zur Fussnote wird. 60ch begrenzt die
+   Zeile, wo die Zelle einspaltig breit wird (ab 1281 px gelten die
+   engeren Werte im Block «VOLLE BREITE»). */
 .feature__desc {
-  font-size: calc(13.5px + var(--g) * 0.3);
+  font-size: calc(16px + var(--g) * 0.3);
   line-height: 1.6;
-  color: var(--text-soft);
+  color: var(--text);
+  max-width: 60ch;
   text-wrap: pretty;
 }
 
@@ -701,9 +643,10 @@ button:focus-visible,
   margin: 16px 0 18px;
 }
 .aud__text {
-  font-size: calc(14.5px + var(--g) * 0.35);
-  line-height: 1.7;
-  color: var(--text-soft);
+  font-size: calc(16px + var(--g) * 0.35);
+  line-height: 1.65;
+  color: var(--text);
+  max-width: 60ch;
   text-wrap: pretty;
 }
 
@@ -729,7 +672,7 @@ button:focus-visible,
 .pricing__intro {
   font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.5;
-  color: #4a4e57;
+  color: var(--text);
   max-width: 66ch;
   text-wrap: pretty;
 }
@@ -799,7 +742,7 @@ button:focus-visible,
   gap: 9px;
   font-size: calc(14.5px + var(--g) * 0.35);
   line-height: 1.4;
-  color: #4a4e57;
+  color: var(--text);
 }
 /* Häkchen als Glyphe in Petrol, nicht als Vollquadrat: ein gefüllter Block
    je Zeile wäre im ruhigen Raster zu laut. */
@@ -820,6 +763,16 @@ button:focus-visible,
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color 0.18s ease;
+}
+/* wie .cta-textlink: 44 px Trefferfläche ohne Layoutverschiebung. In
+   @supports, weil margin-top var() enthält: Ohne lh-Unterstützung fiele die
+   Deklaration sonst auf 0 statt auf den Wert oben zurück. */
+@supports (height: 1lh) {
+  .plan__cta {
+    padding-block: calc((44px - 1lh) / 2);
+    margin-top: calc(26px + var(--g) - (44px - 1lh) / 2);
+    margin-bottom: calc((44px - 1lh) / -2);
+  }
 }
 .plan__cta:hover {
   color: var(--accent-deep);
@@ -846,7 +799,7 @@ button:focus-visible,
 .pricing__note-text {
   font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.55;
-  color: #4a4e57;
+  color: var(--text);
   margin-top: 7px;
 }
 .pricing__note {
@@ -901,19 +854,23 @@ button:focus-visible,
   border: 1px solid var(--ink);
 }
 .sivrow__icon {
+  color: var(--ink);
   font-size: 19px;
   width: 30px;
   flex: none;
 }
+/* 17 px wie .feature__title: der Text darunter steht seit dem Entschlacken
+   auf 16 px, ein kleinerer Titel kehrte die Hierarchie um. */
 .sivrow__title {
-  font-size: calc(15px + var(--g) * 0.4);
+  font-size: calc(17px + var(--g) * 0.5);
   font-weight: 700;
   color: var(--ink);
 }
 .sivrow__desc {
-  font-size: calc(13.5px + var(--g) * 0.3);
+  font-size: calc(16px + var(--g) * 0.3);
   line-height: 1.55;
-  color: var(--text-soft);
+  color: var(--text);
+  max-width: 60ch;
   margin-top: 3px;
 }
 
@@ -939,7 +896,7 @@ button:focus-visible,
 .closing__text {
   font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.6;
-  color: #b9bcc2;
+  color: var(--on-dark-soft);
   max-width: 480px;
 }
 .closing__ctas {
@@ -1027,6 +984,10 @@ button:focus-visible,
   border: none;
   padding: 0;
   text-align: left;
+  /* 44 px Trefferfläche wie .cta-textlink, die negativen Ränder halten das
+     Footer-Layout unverändert (ohne lh-Unterstützung entfallen beide). */
+  padding-block: calc((44px - 1lh) / 2);
+  margin-block: calc((44px - 1lh) / -2);
 }
 .footer__copy {
   font-size: calc(12px + var(--g) * 0.3);
@@ -1059,13 +1020,8 @@ button:focus-visible,
   .hero__visual {
     padding: 0;
   }
-  /* Wrapper zentriert Cover + Badge gemeinsam – Badge bleibt mobil sichtbar
-     (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
+  /* Wrapper zentriert das Deckblatt */
   .hero__cover-wrap {
-    /* relative statt static: bleibt im Fluss, verankert aber weiterhin
-       das absolute Badge an der Cover-Kante; top/left der Desktop-Regel
-       zurücksetzen, sonst schiebt der Offset das Badge aus dem Viewport */
-    position: relative;
     margin: 0 auto;
     width: fit-content;
     max-width: 384px;
@@ -1170,20 +1126,6 @@ button:focus-visible,
   .cta-row .btn-primary {
     width: 100%;
   }
-  /* spec 3a: trust bar becomes a vertical stack of full-width, connected badges */
-  .trustbar .inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-  .trustbar__badges {
-    flex-direction: column;
-  }
-  .badge + .badge {
-    border-left: 1px solid var(--line-dark);
-    border-top: none;
-  }
-
   /* spec 3a: tighter vertical rhythm on phones than the desktop comp */
   .hero {
     padding: 40px var(--pad-x) 36px;
@@ -1359,7 +1301,7 @@ button:focus-visible,
   color: var(--bg);
   font-size: 13.5px;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 13.5px 20px;
   cursor: pointer;
   transition: background 0.18s ease, border-color 0.18s ease;
 }

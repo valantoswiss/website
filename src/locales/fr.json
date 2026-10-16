@@ -33,23 +33,7 @@
     "coverAlt": "Page de couverture d'une expertise de valeur vénale Valanto avec l'adresse du bien et la valeur retenue",
     "trust": "Sans carte de crédit · Un poste gratuit pour essayer · Conforme à la nLPD"
   },
-  "dossier": {
-    "label": "Dossier d'estimation",
-    "type": "Maison individuelle",
-    "mv": "Valeur au 03.07.2026",
-    "r1": "Situation",
-    "r2": "État",
-    "r3": "Finitions",
-    "footer": "Estimation n° 2043 · Page 1 / 18",
-    "pdf": "Export PDF",
-    "hosted": "Hébergé en Suisse"
-  },
-  "trust": {
-    "line": "Né de la pratique immobilière suisse – pour les courtiers et les évaluateurs.",
-    "b1": "Conforme à la nLPD"
-  },
   "features": {
-    "eyebrow": "Tout au même endroit",
     "h2": "Un outil pour toute votre journée de travail",
     "intro": "Plutôt que trois logiciels et une double saisie : avec Valanto, vous travaillez de bout en bout au même endroit – de la première estimation jusqu'à la commercialisation finale.",
     "items": [
@@ -63,7 +47,6 @@
     "next": "CRM et gestion des prospects, directement dans Valanto."
   },
   "audience": {
-    "eyebrow": "Pour qui",
     "h2": "Conçu pour votre travail",
     "items": [
       { "role": "Courtier", "text": "Gérer, commercialiser, piloter des projets – sans changer sans cesse de logiciel." },
@@ -72,7 +55,6 @@
     ]
   },
   "pricing": {
-    "eyebrow": "Tarifs transparents",
     "h2": "Une offre pour votre rôle",
     "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Pour essayer, chaque entreprise dispose d'un poste gratuit avec un bien, une estimation et un projet de construction – sans limite de durée.",
     "note": "Tous les prix HT · Toutes les offres conformes à la nLPD, hébergées en Suisse. · Solutions sur mesure pour les grandes équipes sur demande.",
@@ -108,7 +90,6 @@
     ]
   },
   "siv": {
-    "eyebrow": "Issu de la pratique",
     "h2": "Ancré dans la pratique suisse",
     "text": "Valanto naît du travail quotidien d'estimation. La plateforme reste ainsi proche de ce dont vous avez vraiment besoin en pratique – plutôt que de ce qu'offre un logiciel standard.",
     "points": [

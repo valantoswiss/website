@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
-import { SwissCross } from '../Brand.jsx'
 import Seo from '../Seo.jsx'
 import { APP_REGISTER_URL } from '../links.js'
 import { softwareApplication } from '../structuredData.js'
@@ -12,12 +11,12 @@ import shotSummary1080 from '../assets/screenshots/bewertung-zusammenfassung-108
 import shotSummary2160 from '../assets/screenshots/bewertung-zusammenfassung-2160.webp'
 
 const IconLock = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
     <rect x="4" y="10.5" width="16" height="10.5" /><path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3" />
   </svg>
 )
 const IconHouse = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
     <path d="M4 11 12 4l8 7" /><path d="M6 10.5V20h12v-9.5" />
   </svg>
 )
@@ -69,15 +68,14 @@ function Hero() {
             <a className="btn btn-primary" href={APP_REGISTER_URL}>{t('hero.cta1')}</a>
             {/* Kein Demo-Angebot (Fabian 12.08.2026): Sekundär-Link zeigt auf die
                 echten Produkt-Screenshots; später sollen hier Erklär-Tutorials hin. */}
-            <a className="cta-textlink" href="#features">{t('hero.cta2')}</a>
+            <a className="cta-textlink" href="#examples">{t('hero.cta2')}</a>
           </div>
           <p className="hero__trust">{t('hero.trust')}</p>
         </div>
         <div className="hero__visual">
           {/* Echtes Produkt statt Illustration (Issue #5): Deckblatt eines
               Gutachtens aus der App, Demo-Mandant mit neutralisiertem Namen.
-              Wrapper (Review 17.07.): verankert das Badge an der Cover-Kante
-              statt an der breiteren Spalte. */}
+              Der Wrapper hält Breite und Zentrierung des Deckblatts. */}
           <div className="hero__cover-wrap">
             {/* fetchpriority klein geschrieben: React 18 kennt das camelCase-Prop
                 noch nicht und warnt darüber – erst React 19 mappt `fetchPriority`. */}
@@ -89,30 +87,7 @@ function Hero() {
               height="2244"
               fetchpriority="high"
             />
-            {/* Hosting-Claims aktiv seit dem Umzug auf Infomaniak (CH, 12.08.2026):
-                dossier.hosted, meta.description, pricing.note und siv.points[0]
-                nennen Schweizer Hosting; das og-Bild sagt weiterhin nur
-                «Made in Switzerland» und brauchte keine Änderung. */}
-            <div className="hosted-badge">
-              <SwissCross /> {t('dossier.hosted')}
-            </div>
           </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TrustBar() {
-  const { t } = useTranslation()
-  return (
-    <section className="trustbar">
-      <div className="inner">
-        <span className="trustbar__line">{t('trust.line')}</span>
-        <div className="trustbar__badges">
-          <span className="badge">
-            <SwissCross /> {t('trust.b1')}
-          </span>
         </div>
       </div>
     </section>
@@ -134,7 +109,6 @@ function Features() {
       <div className="inner">
         <div className="features__head">
           <div className="features__head-left">
-            <span className="eyebrow">{t('features.eyebrow')}</span>
             <h2 className="h2">{t('features.h2')}</h2>
           </div>
           <p className="features__intro">{t('features.intro')}</p>
@@ -142,10 +116,6 @@ function Features() {
         <div className="features__grid">
           {items.map((f, i) => (
             <div className="feature" key={i}>
-              <div className="feature__top">
-                <span className="feature__no">{String(i + 1).padStart(2, '0')}</span>
-                <span className="feature__box" />
-              </div>
               <h3 className="feature__title">{f.t}</h3>
               <p className="feature__desc">{f.d}</p>
             </div>
@@ -154,7 +124,7 @@ function Features() {
         <p className="features__next">
           <b>{t('features.nextLabel')}</b> {t('features.next')}
         </p>
-        <div className="features__shots">
+        <div className="features__shots" id="examples">
           {PRODUCT_SHOTS.map((s) => {
             const alt = t(`shots.${s.key}.alt`)
             const caption = t(`shots.${s.key}.caption`)
@@ -201,7 +171,6 @@ function Audience() {
     <section className="audience" id="audience">
       <div className="inner">
         <div className="audience__head">
-          <span className="eyebrow">{t('audience.eyebrow')}</span>
           <h2 className="h2">{t('audience.h2')}</h2>
         </div>
         <div className="audience__grid">
@@ -225,7 +194,6 @@ function Pricing() {
     <section className="pricing" id="pricing">
       <div className="inner">
         <div className="pricing__head">
-          <span className="eyebrow">{t('pricing.eyebrow')}</span>
           <h2 className="h2 pricing__h2">{t('pricing.h2')}</h2>
           <p className="pricing__intro">{t('pricing.intro')}</p>
         </div>
@@ -279,7 +247,6 @@ function Siv() {
     <section className="siv" id="siv">
       <div className="inner">
         <div className="siv__copy">
-          <span className="eyebrow">{t('siv.eyebrow')}</span>
           <h2 className="h2">{t('siv.h2')}</h2>
           <p className="siv__text">{t('siv.text')}</p>
         </div>
@@ -330,7 +297,6 @@ export default function Home() {
         jsonLd={[softwareApplication]}
       />
       <Hero />
-      <TrustBar />
       <Features />
       <Audience />
       <Pricing />
