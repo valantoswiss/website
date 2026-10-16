@@ -45,11 +45,10 @@
 
   --sans: 'Archivo', system-ui, -apple-system, sans-serif;
 
-  /* Volle Breite statt Mittelstreifen: Seitenrand und Inhalt wachsen mit dem
-     Viewport. --maxw greift erst auf Ultrawide-Schirmen (über ~2650 px), damit
-     Zeilen dort nicht zerfallen. Lesebreiten bleiben je Textblock in ch. */
-  --pad-x: clamp(20px, 5vw, 128px);
-  --maxw: 2400px;
+  /* Bis 1280 px gelten Rand und Inhaltsbreite wie bisher; darüber wachsen
+     beide mit dem Viewport (Block «VOLLE BREITE» am Dateiende). */
+  --pad-x: clamp(20px, 4vw, 52px);
+  --maxw: 1176px;
   /* Wachstumsmass ab 1280 px: 0 bis 1280, 5px bei 1920, 10px ab 2560.
      Schriftgrade und Abstände rechnen damit ihren Zuschlag (calc(15px +
      var(--g) * 0.3) = 18px bei 2560) – darunter bleibt alles wie bisher. */
@@ -145,10 +144,8 @@ button:focus-visible,
   color: var(--ink);
   letter-spacing: -0.02em;
   line-height: 1.15;
-  /* balance statt pretty: In breiten Spalten blieb sonst ein Einzelwort
-     («Arbeitstag») auf der zweiten Zeile stehen. */
-  text-wrap: balance;
-  font-size: clamp(28px, 2.2vw + 10px, 60px);
+  text-wrap: pretty;
+  font-size: clamp(28px, 3.6vw, 38px);
 }
 
 /* ---- buttons ---- */
@@ -363,11 +360,10 @@ button:focus-visible,
 }
 .hero .inner {
   display: grid;
-  /* Bildspalte so breit wie das Deckblatt: Es schliesst rechts mit der
-     Inhaltskante ab (wie der CTA in der Navigation), der Text nimmt den Rest.
-     Eine halbe Spalte liesse bei 1920+ px eine Lücke zwischen Text und Bild. */
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(48px, 5vw, 160px);
+  /* minmax(0, …): das Deckblatt steht im Fluss, darf die Spalte aber wie
+     früher als absolutes Element nicht aufweiten. */
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 48px;
   align-items: center;
 }
 .hero__copy {
@@ -386,10 +382,7 @@ button:focus-visible,
   background: var(--teal);
 }
 .hero__title {
-  font-size: clamp(34px, 3.6vw + 8px, 104px);
-  /* drei Zeilen wie auf dem Laptop: In der breiten Spalte würde der Titel
-     sonst zweizeilig und der Halbgeviertstrich rutschte an den Zeilenanfang */
-  max-width: 12em;
+  font-size: clamp(34px, 5.2vw, 54px);
   font-weight: 800;
   line-height: 1.06;
   color: var(--ink);
@@ -415,8 +408,8 @@ button:focus-visible,
 
 /* hero visual */
 /* Bildspalte im Fluss statt mit fester Höhe: Das Deckblatt wächst über
-   seine Höhe mit dem Viewport (490 px bis 1280, dann bis 900 px bei 2560)
-   und bestimmt die Spaltenbreite. Die Quelle hat 2244 px Höhe, bleibt also
+   seine Höhe mit dem Viewport (490 px bis 1280, dann bis 900 px bei 2560).
+   Polster plus Bild ergeben bis 1280 px die frühere Höhe von 520 px. Die Quelle hat 2244 px Höhe, bleibt also
    auch auf 2x-Schirmen scharf. Polster oben/links und unten fangen
    Versatz und Schattenkante ab. */
 .hero__visual {
@@ -440,6 +433,8 @@ button:focus-visible,
 /* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
 .hero__cover-wrap {
   position: relative;
+  /* so breit wie das Deckblatt: das Badge verankert sich an dessen Kante */
+  width: fit-content;
 }
 .hero__cover {
   position: static;
@@ -507,7 +502,7 @@ button:focus-visible,
 .features__head {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 4vw, 112px);
+  gap: 40px;
   align-items: end;
   margin-bottom: calc(44px + var(--g) * 2);
 }
@@ -519,7 +514,6 @@ button:focus-visible,
 .features__intro {
   font-size: calc(15px + var(--g) * 0.3);
   line-height: 1.7;
-  max-width: 64ch;
   color: var(--text-soft);
   text-wrap: pretty;
   padding-bottom: 4px;
@@ -576,7 +570,7 @@ button:focus-visible,
   margin-top: calc(56px + var(--g) * 3);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(36px, 4vw, 112px);
+  gap: 36px;
 }
 .shot {
   margin: 0;
@@ -665,7 +659,6 @@ button:focus-visible,
   font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--text-soft);
-  max-width: 40ch;
   text-wrap: pretty;
 }
 
@@ -711,7 +704,6 @@ button:focus-visible,
   font-size: calc(14.5px + var(--g) * 0.35);
   line-height: 1.7;
   color: var(--text-soft);
-  max-width: 52ch;
   text-wrap: pretty;
 }
 
@@ -730,7 +722,7 @@ button:focus-visible,
   text-align: center;
 }
 .pricing__h2 {
-  font-size: clamp(28px, 2.2vw + 10px, 60px);
+  font-size: clamp(28px, 3.8vw, 38px);
   font-weight: 800;
   letter-spacing: -0.028em;
 }
@@ -779,7 +771,7 @@ button:focus-visible,
   margin-top: 12px;
 }
 .plan__price {
-  font-size: clamp(30px, 1.6vw + 16px, 56px);
+  font-size: clamp(30px, 3.2vw, 36px);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -855,7 +847,6 @@ button:focus-visible,
   font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.55;
   color: #4a4e57;
-  max-width: 72ch;
   margin-top: 7px;
 }
 .pricing__note {
@@ -877,7 +868,7 @@ button:focus-visible,
 .siv .inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(56px, 4vw, 112px);
+  gap: 56px;
   align-items: start;
 }
 .siv__copy {
@@ -889,7 +880,7 @@ button:focus-visible,
   font-size: calc(15.5px + var(--g) * 0.3);
   line-height: 1.75;
   color: var(--text-soft);
-  max-width: 54ch;
+  max-width: 480px;
   text-wrap: pretty;
 }
 /* Handout A5: eigenständige Karten mit hartem 1px-Rahmen statt einer
@@ -940,7 +931,7 @@ button:focus-visible,
   text-align: center;
 }
 .closing__title {
-  font-size: clamp(26px, 2vw + 10px, 56px);
+  font-size: clamp(26px, 3.4vw, 36px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--bg);
@@ -949,7 +940,7 @@ button:focus-visible,
   font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.6;
   color: #b9bcc2;
-  max-width: 50ch;
+  max-width: 480px;
 }
 .closing__ctas {
   margin-top: 8px;
@@ -983,7 +974,7 @@ button:focus-visible,
 .footer__grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: clamp(40px, 4vw, 112px);
+  gap: 40px;
   padding-bottom: calc(40px + var(--g) * 2);
   border-bottom: 1px solid var(--footer-line);
 }
@@ -999,8 +990,7 @@ button:focus-visible,
   font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--footer-muted);
-  max-width: 34ch;
-  text-wrap: balance;
+  max-width: 280px;
 }
 .footer__madein {
   font-size: calc(12.5px + var(--g) * 0.3);
@@ -1229,7 +1219,7 @@ button:focus-visible,
   margin: 0 auto;
 }
 .legal-page h1 {
-  font-size: clamp(30px, 2vw + 14px, 52px);
+  font-size: clamp(30px, 4vw, 40px);
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 8px;
@@ -1388,5 +1378,89 @@ button:focus-visible,
   }
   .cookie-banner__btn {
     flex: 1;
+  }
+}
+
+/* ============================================================
+   VOLLE BREITE (ab 1281 px)
+   Bis 1280 px rendert die Seite wie vor dem Umbau. Darüber wachsen Rand,
+   Raster, Abstände und Schriftgrade mit (--g, siehe :root); Fliesstexte
+   behalten ihre Lesebreite in ch. Die vw-Formeln schliessen bei 1281 px
+   an die bisherigen Höchstwerte an.
+   ============================================================ */
+
+@media (min-width: 1281px) {
+  :root {
+    --pad-x: calc(52px + var(--g) * 7.6);
+    /* greift erst auf Ultrawide-Schirmen, damit Zeilen nicht zerfallen */
+    --maxw: 2400px;
+  }
+
+  /* balance statt pretty: In breiten Spalten blieb sonst ein Einzelwort
+     («Arbeitstag») auf der zweiten Zeile stehen. */
+  .h2 {
+    text-wrap: balance;
+    font-size: clamp(38px, 2.2vw + 10px, 60px);
+  }
+  .pricing__h2 {
+    font-size: clamp(38px, 2.2vw + 10px, 60px);
+  }
+
+  /* Bildspalte so breit wie das Deckblatt: Es schliesst rechts mit der
+     Inhaltskante ab (wie der CTA in der Navigation), der Text nimmt den Rest.
+     Eine halbe Spalte liesse ab 1920 px eine Lücke zwischen Text und Bild. */
+  .hero .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: calc(48px + var(--g) * 11);
+  }
+  /* Drei Zeilen wie auf dem Laptop: In der breiten Spalte würde der Titel
+     sonst zweizeilig und der Halbgeviertstrich rutschte an den Zeilenanfang. */
+  .hero__title {
+    font-size: clamp(54px, 3.6vw + 8px, 104px);
+    max-width: 12em;
+  }
+
+  .features__head {
+    gap: calc(40px + var(--g) * 7);
+  }
+  .features__intro {
+    max-width: 64ch;
+  }
+  .feature__desc {
+    max-width: 40ch;
+  }
+  .features__shots {
+    gap: calc(36px + var(--g) * 7.6);
+  }
+  .aud__text {
+    max-width: 52ch;
+  }
+  .plan__price {
+    font-size: clamp(36px, 1.6vw + 16px, 56px);
+  }
+  .pricing__note-text {
+    max-width: 72ch;
+  }
+  .siv .inner {
+    gap: calc(56px + var(--g) * 5.6);
+  }
+  .siv__text {
+    max-width: 54ch;
+  }
+  .closing__title {
+    font-size: clamp(36px, 2vw + 10px, 56px);
+  }
+  .closing__text {
+    max-width: 50ch;
+  }
+  .footer__grid {
+    gap: calc(40px + var(--g) * 7);
+  }
+  .footer__claim {
+    max-width: 34ch;
+    text-wrap: balance;
+  }
+  .legal-page h1 {
+    font-size: clamp(40px, 2vw + 14px, 52px);
   }
 }
