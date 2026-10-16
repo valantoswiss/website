@@ -63,6 +63,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* Anker (#features, #audience, #pricing, #beispiele) rasten unter dem
+     sticky Header ein – seit die Dachzeilen fehlen, sässe sonst die H2
+     darunter. Entspricht der Header-Höhe (85 px bei 1024, 94 px bei 1920). */
+  scroll-padding-top: calc(84px + var(--g) * 2);
 }
 
 body {
@@ -441,8 +445,10 @@ button:focus-visible,
    FEATURES
    ============================================================ */
 
+/* Oben knapper als die übrigen Sektionen: Ohne Trustbar schliesst Features
+   direkt an den Hero an, dessen unteres Polster den Abstand mitträgt. */
 .features {
-  padding: calc(80px + var(--g) * 4) var(--pad-x) calc(40px + var(--g) * 2);
+  padding: calc(32px + var(--g) * 2) var(--pad-x) calc(40px + var(--g) * 2);
 }
 .features__head {
   display: grid;
@@ -502,8 +508,8 @@ button:focus-visible,
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
   margin-top: calc(56px + var(--g) * 3);
-  /* Ziel von «Beispiele ansehen»: unter dem sticky Header einrasten */
-  scroll-margin-top: calc(112px + var(--g) * 2);
+  /* Ziel von «Beispiele ansehen»: etwas Luft unter dem Header (scroll-padding) */
+  scroll-margin-top: calc(28px + var(--g));
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
@@ -847,8 +853,10 @@ button:focus-visible,
   width: 30px;
   flex: none;
 }
+/* 17 px wie .feature__title: der Text darunter steht seit dem Entschlacken
+   auf 16 px, ein kleinerer Titel kehrte die Hierarchie um. */
 .sivrow__title {
-  font-size: calc(15px + var(--g) * 0.4);
+  font-size: calc(17px + var(--g) * 0.5);
   font-weight: 700;
   color: var(--ink);
 }
