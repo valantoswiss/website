@@ -658,7 +658,7 @@ button:focus-visible,
 .pricing__intro {
   font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.5;
-  color: #4a4e57;
+  color: var(--text);
   max-width: 66ch;
   text-wrap: pretty;
 }
@@ -728,7 +728,7 @@ button:focus-visible,
   gap: 9px;
   font-size: calc(14.5px + var(--g) * 0.35);
   line-height: 1.4;
-  color: #4a4e57;
+  color: var(--text);
 }
 /* Häkchen als Glyphe in Petrol, nicht als Vollquadrat: ein gefüllter Block
    je Zeile wäre im ruhigen Raster zu laut. */
@@ -775,7 +775,7 @@ button:focus-visible,
 .pricing__note-text {
   font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.55;
-  color: #4a4e57;
+  color: var(--text);
   margin-top: 7px;
 }
 .pricing__note {
@@ -830,6 +830,7 @@ button:focus-visible,
   border: 1px solid var(--ink);
 }
 .sivrow__icon {
+  color: var(--ink);
   font-size: 19px;
   width: 30px;
   flex: none;
@@ -869,7 +870,7 @@ button:focus-visible,
 .closing__text {
   font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.6;
-  color: #b9bcc2;
+  color: var(--on-dark-soft);
   max-width: 480px;
 }
 .closing__ctas {

@@ -11,12 +11,12 @@ import shotSummary1080 from '../assets/screenshots/bewertung-zusammenfassung-108
 import shotSummary2160 from '../assets/screenshots/bewertung-zusammenfassung-2160.webp'
 
 const IconLock = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
     <rect x="4" y="10.5" width="16" height="10.5" /><path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3" />
   </svg>
 )
 const IconHouse = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23262D" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
     <path d="M4 11 12 4l8 7" /><path d="M6 10.5V20h12v-9.5" />
   </svg>
 )
