@@ -578,10 +578,15 @@ button:focus-visible,
   font-weight: 700;
   color: var(--ink);
 }
+/* Fliesstext in Modul-, Rollen- und Praxis-Zellen: 16 px in --text, damit
+   er neben den fetten Titeln nicht zur Fussnote wird. 60ch begrenzt die
+   Zeile, wo die Zelle einspaltig breit wird (ab 1281 px gelten die
+   engeren Werte im Block «VOLLE BREITE»). */
 .feature__desc {
-  font-size: calc(13.5px + var(--g) * 0.3);
+  font-size: calc(16px + var(--g) * 0.3);
   line-height: 1.6;
-  color: var(--text-soft);
+  color: var(--text);
+  max-width: 60ch;
   text-wrap: pretty;
 }
 
@@ -624,9 +629,10 @@ button:focus-visible,
   margin: 16px 0 18px;
 }
 .aud__text {
-  font-size: calc(14.5px + var(--g) * 0.35);
-  line-height: 1.7;
-  color: var(--text-soft);
+  font-size: calc(16px + var(--g) * 0.35);
+  line-height: 1.65;
+  color: var(--text);
+  max-width: 60ch;
   text-wrap: pretty;
 }
 
@@ -834,9 +840,10 @@ button:focus-visible,
   color: var(--ink);
 }
 .sivrow__desc {
-  font-size: calc(13.5px + var(--g) * 0.3);
+  font-size: calc(16px + var(--g) * 0.3);
   line-height: 1.55;
-  color: var(--text-soft);
+  color: var(--text);
+  max-width: 60ch;
   margin-top: 3px;
 }
 
