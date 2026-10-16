@@ -416,24 +416,10 @@ button:focus-visible,
   position: relative;
   padding: 8px calc(14px + var(--g)) calc(22px + var(--g)) 20px;
 }
-.hosted-badge {
-  /* an der Cover-Kante verankert (Review 17.07., Wrapper): überlappt die
-     Kante leicht, schwebt nicht mehr frei in der breiteren Spalte */
-  position: absolute;
-  bottom: calc(22px + var(--g) * 2);
-  right: calc(-14px - var(--g));
-  background: var(--ink);
-  color: var(--bg);
-  padding: calc(9px + var(--g) * 0.3) calc(18px + var(--g) * 0.6);
-  font-size: calc(12px + var(--g) * 0.3);
-  font-weight: 600;
-  box-shadow: 0 12px 28px rgba(35, 38, 45, 0.25);
-}
 
 /* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
 .hero__cover-wrap {
-  position: relative;
-  /* so breit wie das Deckblatt: das Badge verankert sich an dessen Kante */
+  /* so breit wie das Deckblatt */
   width: fit-content;
 }
 .hero__cover {
@@ -444,52 +430,6 @@ button:focus-visible,
   background: #fff;
   border: 1px solid var(--ink);
   box-shadow: calc(14px + var(--g)) calc(14px + var(--g)) 0 rgba(35, 38, 45, 0.08);
-}
-
-/* ============================================================
-   TRUST BAR
-   ============================================================ */
-
-.trustbar {
-  padding: calc(18px + var(--g)) var(--pad-x);
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--on-dark);
-}
-.trustbar .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.trustbar__line {
-  font-size: calc(13px + var(--g) * 0.3);
-  color: var(--on-dark-soft);
-  font-weight: 500;
-}
-.trustbar__badges {
-  display: flex;
-  flex-wrap: wrap;
-}
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: calc(12.5px + var(--g) * 0.3);
-  font-weight: 600;
-  color: var(--on-dark);
-  background: none;
-  border: 1px solid var(--line-dark);
-  padding: calc(7px + var(--g) * 0.3) calc(15px + var(--g) * 0.5);
-}
-.badge + .badge {
-  border-left: none;
-}
-.badge--soft {
-  color: var(--footer-muted);
-  border-style: dashed;
 }
 
 /* ============================================================
@@ -1042,13 +982,8 @@ button:focus-visible,
   .hero__visual {
     padding: 0;
   }
-  /* Wrapper zentriert Cover + Badge gemeinsam – Badge bleibt mobil sichtbar
-     (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
+  /* Wrapper zentriert das Deckblatt */
   .hero__cover-wrap {
-    /* relative statt static: bleibt im Fluss, verankert aber weiterhin
-       das absolute Badge an der Cover-Kante; top/left der Desktop-Regel
-       zurücksetzen, sonst schiebt der Offset das Badge aus dem Viewport */
-    position: relative;
     margin: 0 auto;
     width: fit-content;
     max-width: 384px;
@@ -1153,20 +1088,6 @@ button:focus-visible,
   .cta-row .btn-primary {
     width: 100%;
   }
-  /* spec 3a: trust bar becomes a vertical stack of full-width, connected badges */
-  .trustbar .inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-  .trustbar__badges {
-    flex-direction: column;
-  }
-  .badge + .badge {
-    border-left: 1px solid var(--line-dark);
-    border-top: none;
-  }
-
   /* spec 3a: tighter vertical rhythm on phones than the desktop comp */
   .hero {
     padding: 40px var(--pad-x) 36px;

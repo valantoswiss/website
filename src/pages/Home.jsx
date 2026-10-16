@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
-import { SwissCross } from '../Brand.jsx'
 import Seo from '../Seo.jsx'
 import { APP_REGISTER_URL } from '../links.js'
 import { softwareApplication } from '../structuredData.js'
@@ -76,8 +75,7 @@ function Hero() {
         <div className="hero__visual">
           {/* Echtes Produkt statt Illustration (Issue #5): Deckblatt eines
               Gutachtens aus der App, Demo-Mandant mit neutralisiertem Namen.
-              Wrapper (Review 17.07.): verankert das Badge an der Cover-Kante
-              statt an der breiteren Spalte. */}
+              Der Wrapper hält Breite und Zentrierung des Deckblatts. */}
           <div className="hero__cover-wrap">
             {/* fetchpriority klein geschrieben: React 18 kennt das camelCase-Prop
                 noch nicht und warnt darüber – erst React 19 mappt `fetchPriority`. */}
@@ -89,30 +87,7 @@ function Hero() {
               height="2244"
               fetchpriority="high"
             />
-            {/* Hosting-Claims aktiv seit dem Umzug auf Infomaniak (CH, 12.08.2026):
-                dossier.hosted, meta.description, pricing.note und siv.points[0]
-                nennen Schweizer Hosting; das og-Bild sagt weiterhin nur
-                «Made in Switzerland» und brauchte keine Änderung. */}
-            <div className="hosted-badge">
-              <SwissCross /> {t('dossier.hosted')}
-            </div>
           </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TrustBar() {
-  const { t } = useTranslation()
-  return (
-    <section className="trustbar">
-      <div className="inner">
-        <span className="trustbar__line">{t('trust.line')}</span>
-        <div className="trustbar__badges">
-          <span className="badge">
-            <SwissCross /> {t('trust.b1')}
-          </span>
         </div>
       </div>
     </section>
@@ -322,7 +297,6 @@ export default function Home() {
         jsonLd={[softwareApplication]}
       />
       <Hero />
-      <TrustBar />
       <Features />
       <Audience />
       <Pricing />
