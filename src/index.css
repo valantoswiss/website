@@ -497,6 +497,8 @@ button:focus-visible,
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
   margin-top: calc(56px + var(--g) * 3);
+  /* Ziel von «Beispiele ansehen»: unter dem sticky Header einrasten */
+  scroll-margin-top: calc(112px + var(--g) * 2);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
