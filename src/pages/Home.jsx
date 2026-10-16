@@ -134,7 +134,6 @@ function Features() {
       <div className="inner">
         <div className="features__head">
           <div className="features__head-left">
-            <span className="eyebrow">{t('features.eyebrow')}</span>
             <h2 className="h2">{t('features.h2')}</h2>
           </div>
           <p className="features__intro">{t('features.intro')}</p>
@@ -197,7 +196,6 @@ function Audience() {
     <section className="audience" id="audience">
       <div className="inner">
         <div className="audience__head">
-          <span className="eyebrow">{t('audience.eyebrow')}</span>
           <h2 className="h2">{t('audience.h2')}</h2>
         </div>
         <div className="audience__grid">
@@ -221,7 +219,6 @@ function Pricing() {
     <section className="pricing" id="pricing">
       <div className="inner">
         <div className="pricing__head">
-          <span className="eyebrow">{t('pricing.eyebrow')}</span>
           <h2 className="h2 pricing__h2">{t('pricing.h2')}</h2>
           <p className="pricing__intro">{t('pricing.intro')}</p>
         </div>
@@ -275,7 +272,6 @@ function Siv() {
     <section className="siv" id="siv">
       <div className="inner">
         <div className="siv__copy">
-          <span className="eyebrow">{t('siv.eyebrow')}</span>
           <h2 className="h2">{t('siv.h2')}</h2>
           <p className="siv__text">{t('siv.text')}</p>
         </div>

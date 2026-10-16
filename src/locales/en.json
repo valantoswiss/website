@@ -49,7 +49,6 @@
     "b1": "Data privacy compliant (Swiss FADP)"
   },
   "features": {
-    "eyebrow": "Everything in one place",
     "h2": "One tool for your entire working day",
     "intro": "Instead of three programs and duplicate data entry: with Valanto you work end to end in one place – from the first valuation to finished marketing.",
     "items": [
@@ -63,7 +62,6 @@
     "next": "CRM and prospect management, directly in Valanto."
   },
   "audience": {
-    "eyebrow": "Who it's for",
     "h2": "Built for your work",
     "items": [
       { "role": "Broker", "text": "Manage, market, steer projects – without constantly switching programs." },
@@ -72,7 +70,6 @@
     ]
   },
   "pricing": {
-    "eyebrow": "Transparent pricing",
     "h2": "A plan for your role",
     "intro": "Price per user, per month, cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
     "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Custom solutions for larger teams on request.",
@@ -108,7 +105,6 @@
     ]
   },
   "siv": {
-    "eyebrow": "From practice",
     "h2": "Rooted in Swiss practice",
     "text": "Valanto grows out of the daily work of valuation. That keeps the platform close to what you really need in practice – rather than what off-the-shelf software offers.",
     "points": [
