@@ -45,8 +45,14 @@
 
   --sans: 'Archivo', system-ui, -apple-system, sans-serif;
 
+  /* Bis 1280 px gelten Rand und Inhaltsbreite wie bisher; darüber wachsen
+     beide mit dem Viewport (Block «VOLLE BREITE» am Dateiende). */
   --pad-x: clamp(20px, 4vw, 52px);
   --maxw: 1176px;
+  /* Wachstumsmass ab 1280 px: 0 bis 1280, 5px bei 1920, 10px ab 2560.
+     Schriftgrade und Abstände rechnen damit ihren Zuschlag (calc(15px +
+     var(--g) * 0.3) = 18px bei 2560) – darunter bleibt alles wie bisher. */
+  --g: clamp(0px, (100vw - 1280px) / 128, 10px);
 }
 
 * {
@@ -127,7 +133,7 @@ button:focus-visible,
    Schreibweise und hebt sich über Petrol und Gewicht ab – die weite
    Laufweite war nur für Grossbuchstaben gedacht und entfällt. */
 .eyebrow {
-  font-size: 14px;
+  font-size: calc(14px + var(--g) * 0.25);
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--teal);
@@ -160,10 +166,10 @@ button:focus-visible,
 /* 19px/700 ist keine Geschmacksfrage: erst als Grosstext erfüllt Weiss auf
    Terracotta WCAG AA (3.78:1). Grösse und Gewicht hier nicht senken. */
 .btn-primary {
-  padding: 18px 34px;
+  padding: calc(18px + var(--g) * 0.4) calc(34px + var(--g) * 0.8);
   background: var(--accent);
   color: #fff;
-  font-size: 19px;
+  font-size: calc(19px + var(--g) * 0.2);
   font-weight: 700;
 }
 .btn-primary:hover {
@@ -175,10 +181,10 @@ button:focus-visible,
    vorbehalten (Handout C1) – der Kontakt-Button zog beim globalen
    .btn-primary-Umbau nur versehentlich mit. */
 .btn-form {
-  padding: 15px 30px;
+  padding: calc(15px + var(--g) * 0.2) calc(30px + var(--g) * 0.6);
   background: var(--teal);
   color: #fff;
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.2);
 }
 .btn-form:hover {
   background: var(--ink);
@@ -195,7 +201,7 @@ button:focus-visible,
 }
 .cta-textlink {
   font-family: var(--sans);
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.25);
   font-weight: 600;
   /* Fliesstext-Grau, nicht Anthrazit: der Link soll neben dem CTA leise
      bleiben (A1) – Unterstreichung und Hover tragen die Affordanz. */
@@ -222,7 +228,7 @@ button:focus-visible,
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 20px var(--pad-x);
+  padding: calc(20px + var(--g) * 0.6) var(--pad-x);
   border-bottom: 1px solid var(--ink);
   background: rgba(250, 247, 242, 0.92);
   backdrop-filter: blur(8px);
@@ -234,7 +240,7 @@ button:focus-visible,
 }
 /* Wortmarke als inline-SVG (Handoff: Höhe ~44px im Header, kein Icon daneben) */
 .brand__logo {
-  height: 44px;
+  height: calc(44px + var(--g) * 0.6);
   width: auto;
   display: block;
 }
@@ -242,8 +248,8 @@ button:focus-visible,
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 30px;
-  font-size: 14.5px;
+  gap: calc(30px + var(--g) * 1.6);
+  font-size: calc(14.5px + var(--g) * 0.2);
   font-weight: 500;
   color: var(--text-soft);
 }
@@ -297,11 +303,11 @@ button:focus-visible,
 }
 
 .nav__try {
-  padding: 11px 24px;
+  padding: calc(11px + var(--g) * 0.2) calc(24px + var(--g) * 0.6);
   background: var(--ink);
   color: var(--bg);
   font-weight: 600;
-  font-size: 14px;
+  font-size: calc(14px + var(--g) * 0.2);
 }
 .nav__try:hover {
   background: var(--teal);
@@ -350,18 +356,20 @@ button:focus-visible,
    ============================================================ */
 
 .hero {
-  padding: 72px var(--pad-x) 60px;
+  padding: calc(72px + var(--g) * 4) var(--pad-x) calc(60px + var(--g) * 4);
 }
 .hero .inner {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  /* minmax(0, …): das Deckblatt steht im Fluss, darf die Spalte aber wie
+     früher als absolutes Element nicht aufweiten. */
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 48px;
   align-items: center;
 }
 .hero__copy {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: calc(24px + var(--g) * 1.2);
 }
 .hero__eyebrow {
   display: flex;
@@ -369,7 +377,7 @@ button:focus-visible,
   gap: 12px;
 }
 .hero__eyebrow-line {
-  width: 26px;
+  width: calc(26px + var(--g));
   height: 2px;
   background: var(--teal);
 }
@@ -383,177 +391,59 @@ button:focus-visible,
 }
 /* Handout A2: Lead auf Scanlänge – 17.5px, engere Zeilen, 44ch statt 520px */
 .hero__lead {
-  font-size: 17.5px;
+  font-size: calc(17.5px + var(--g) * 0.35);
   line-height: 1.5;
   color: var(--text-soft);
   max-width: 44ch;
   text-wrap: pretty;
 }
 .hero__ctas {
-  margin-top: 32px;
+  margin-top: calc(32px + var(--g) * 1.2);
 }
 .hero__trust {
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.2);
   color: var(--muted);
   font-weight: 500;
 }
 
 /* hero visual */
+/* Bildspalte im Fluss statt mit fester Höhe: Das Deckblatt wächst über
+   seine Höhe mit dem Viewport (490 px bis 1280, dann bis 900 px bei 2560).
+   Polster plus Bild ergeben bis 1280 px die frühere Höhe von 520 px. Die Quelle hat 2244 px Höhe, bleibt also
+   auch auf 2x-Schirmen scharf. Polster oben/links und unten fangen
+   Versatz und Schattenkante ab. */
 .hero__visual {
   position: relative;
-  height: 520px;
+  padding: 8px calc(14px + var(--g)) calc(22px + var(--g)) 20px;
 }
 .hosted-badge {
   /* an der Cover-Kante verankert (Review 17.07., Wrapper): überlappt die
      Kante leicht, schwebt nicht mehr frei in der breiteren Spalte */
   position: absolute;
-  bottom: 22px;
-  right: -14px;
+  bottom: calc(22px + var(--g) * 2);
+  right: calc(-14px - var(--g));
   background: var(--ink);
   color: var(--bg);
-  padding: 9px 18px;
-  font-size: 12px;
+  padding: calc(9px + var(--g) * 0.3) calc(18px + var(--g) * 0.6);
+  font-size: calc(12px + var(--g) * 0.3);
   font-weight: 600;
   box-shadow: 0 12px 28px rgba(35, 38, 45, 0.25);
 }
 
 /* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
 .hero__cover-wrap {
-  position: absolute;
-  top: 8px;
-  left: 20px;
+  position: relative;
+  /* so breit wie das Deckblatt: das Badge verankert sich an dessen Kante */
+  width: fit-content;
 }
 .hero__cover {
   position: static;
-  height: 490px;
+  height: calc(490px + var(--g) * 41);
   width: auto;
   display: block;
   background: #fff;
   border: 1px solid var(--ink);
-  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
-}
-
-/* the dossier card (shared) */
-.dossier {
-  position: absolute;
-  top: 8px;
-  left: 20px;
-  width: 384px;
-  max-width: 100%;
-  height: 490px;
-  background: #fff;
-  border: 1px solid var(--ink);
-  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
-  padding: 30px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.dossier__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dossier__label {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--teal);
-}
-.dossier__brand {
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--ink);
-}
-.dossier__rule {
-  height: 1px;
-  background: var(--ink);
-}
-.dossier__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.dossier__type {
-  font-size: 12px;
-  color: var(--muted);
-}
-.dossier__addr {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.dossier__value-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-top: 6px;
-}
-.dossier__value-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-}
-.dossier__value {
-  font-size: clamp(32px, 3vw, 38px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--teal);
-}
-.dossier__ratings {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
-}
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.rating__label {
-  width: 78px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-soft);
-}
-.rating__track {
-  flex: 1;
-  height: 8px;
-  background: var(--track);
-}
-.rating__fill {
-  height: 100%;
-  background: var(--teal);
-}
-.rating__fill--light {
-  background: var(--teal-light);
-}
-.rating__val {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--ink);
-  width: 26px;
-  text-align: right;
-}
-.dossier__foot {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--ink);
-  padding-top: 14px;
-}
-.dossier__foot-note {
-  font-size: 11px;
-  color: var(--muted);
-}
-.dossier__foot-pdf {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--teal);
+  box-shadow: calc(14px + var(--g)) calc(14px + var(--g)) 0 rgba(35, 38, 45, 0.08);
 }
 
 /* ============================================================
@@ -561,7 +451,7 @@ button:focus-visible,
    ============================================================ */
 
 .trustbar {
-  padding: 18px var(--pad-x);
+  padding: calc(18px + var(--g)) var(--pad-x);
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
   background: var(--ink);
@@ -575,7 +465,7 @@ button:focus-visible,
   flex-wrap: wrap;
 }
 .trustbar__line {
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.3);
   color: var(--on-dark-soft);
   font-weight: 500;
 }
@@ -587,12 +477,12 @@ button:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12.5px;
+  font-size: calc(12.5px + var(--g) * 0.3);
   font-weight: 600;
   color: var(--on-dark);
   background: none;
   border: 1px solid var(--line-dark);
-  padding: 7px 15px;
+  padding: calc(7px + var(--g) * 0.3) calc(15px + var(--g) * 0.5);
 }
 .badge + .badge {
   border-left: none;
@@ -607,14 +497,14 @@ button:focus-visible,
    ============================================================ */
 
 .features {
-  padding: 80px var(--pad-x) 40px;
+  padding: calc(80px + var(--g) * 4) var(--pad-x) calc(40px + var(--g) * 2);
 }
 .features__head {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: end;
-  margin-bottom: 44px;
+  margin-bottom: calc(44px + var(--g) * 2);
 }
 .features__head-left {
   display: flex;
@@ -622,7 +512,7 @@ button:focus-visible,
   gap: 16px;
 }
 .features__intro {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.3);
   line-height: 1.7;
   color: var(--text-soft);
   text-wrap: pretty;
@@ -638,11 +528,11 @@ button:focus-visible,
 }
 .feature {
   border-right: 1px solid var(--line-soft);
-  padding: 28px 22px;
+  padding: calc(28px + var(--g) * 1.6) calc(22px + var(--g) * 1.6);
   background: var(--bg);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(12px + var(--g) * 0.4);
   min-height: 150px;
   transition: background 0.18s ease;
 }
@@ -658,16 +548,16 @@ button:focus-visible,
   justify-content: space-between;
 }
 .feature__no {
-  font-size: 11.5px;
+  font-size: calc(11.5px + var(--g) * 0.25);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
   color: var(--teal);
 }
 /* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
    ein Platzhalter zwischen fertigen Funktionen zieht das ganze Set runter. */
 .features__next {
-  margin-top: 18px;
-  font-size: 13.5px;
+  margin-top: calc(18px + var(--g) * 0.6);
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--muted);
 }
@@ -677,7 +567,7 @@ button:focus-visible,
 }
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
-  margin-top: 56px;
+  margin-top: calc(56px + var(--g) * 3);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
@@ -691,7 +581,7 @@ button:focus-visible,
   padding: 0;
   border: 1px solid var(--ink);
   background: #fff;
-  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
+  box-shadow: calc(14px + var(--g)) calc(14px + var(--g)) 0 rgba(35, 38, 45, 0.08);
   cursor: zoom-in;
 }
 .shot__zoom img {
@@ -700,8 +590,8 @@ button:focus-visible,
   height: auto;
 }
 .shot__caption {
-  margin-top: 14px;
-  font-size: 13px;
+  margin-top: calc(14px + var(--g) * 0.4);
+  font-size: calc(13px + var(--g) * 0.3);
   color: var(--muted);
 }
 .lightbox {
@@ -755,18 +645,18 @@ button:focus-visible,
 }
 
 .feature__box {
-  width: 22px;
-  height: 22px;
+  width: calc(22px + var(--g) * 0.4);
+  height: calc(22px + var(--g) * 0.4);
   border: 1px solid var(--ink);
 }
 .feature__title {
-  font-size: 17px;
+  font-size: calc(17px + var(--g) * 0.5);
   font-weight: 700;
   color: var(--ink);
   margin-top: 4px;
 }
 .feature__desc {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--text-soft);
   text-wrap: pretty;
@@ -777,13 +667,13 @@ button:focus-visible,
    ============================================================ */
 
 .audience {
-  padding: 56px var(--pad-x) 40px;
+  padding: calc(56px + var(--g) * 3) var(--pad-x) calc(40px + var(--g) * 2);
 }
 .audience__head {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 36px;
+  gap: calc(14px + var(--g) * 0.4);
+  margin-bottom: calc(36px + var(--g) * 2);
 }
 .audience__grid {
   display: grid;
@@ -791,7 +681,7 @@ button:focus-visible,
   border: 1px solid var(--ink);
 }
 .aud {
-  padding: 32px 30px 34px;
+  padding: calc(32px + var(--g) * 2) calc(30px + var(--g) * 2) calc(34px + var(--g) * 2);
   background: var(--bg);
 }
 .aud--mid {
@@ -799,19 +689,19 @@ button:focus-visible,
   border-right: 1px solid var(--ink);
 }
 .aud__role {
-  font-size: 24px;
+  font-size: calc(24px + var(--g) * 0.8);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
 .aud__rule {
-  width: 34px;
+  width: calc(34px + var(--g));
   height: 2px;
   background: var(--teal);
   margin: 16px 0 18px;
 }
 .aud__text {
-  font-size: 14.5px;
+  font-size: calc(14.5px + var(--g) * 0.35);
   line-height: 1.7;
   color: var(--text-soft);
   text-wrap: pretty;
@@ -822,13 +712,13 @@ button:focus-visible,
    ============================================================ */
 
 .pricing {
-  padding: 60px var(--pad-x);
+  padding: calc(60px + var(--g) * 3) var(--pad-x);
 }
 .pricing__head {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: calc(12px + var(--g) * 0.4);
   text-align: center;
 }
 .pricing__h2 {
@@ -837,7 +727,7 @@ button:focus-visible,
   letter-spacing: -0.028em;
 }
 .pricing__intro {
-  font-size: 16px;
+  font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.5;
   color: #4a4e57;
   max-width: 66ch;
@@ -850,15 +740,14 @@ button:focus-visible,
 .pricing__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1000px;
-  margin: 42px auto 0;
+  margin: calc(42px + var(--g) * 2) 0 0;
   border: 1px solid var(--ink);
 }
 .plan {
   display: flex;
   flex-direction: column;
   background: var(--bg);
-  padding: 34px 30px 30px;
+  padding: calc(34px + var(--g) * 2) calc(30px + var(--g) * 2.4) calc(30px + var(--g) * 2);
 }
 .plan + .plan {
   border-left: 1px solid var(--ink);
@@ -866,7 +755,7 @@ button:focus-visible,
 /* Paketname in normaler Schreibweise (nie Versalien, Vorgabe Fabian
    27.09.2026) – die Hierarchie tragen Grösse und Gewicht. */
 .plan__name {
-  font-size: 22px;
+  font-size: calc(22px + var(--g) * 0.6);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -889,26 +778,26 @@ button:focus-visible,
   white-space: nowrap;
 }
 .plan__per {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   color: var(--muted);
   white-space: nowrap;
 }
 .plan__rule {
   height: 1px;
   background: var(--line-soft);
-  margin: 22px 0;
+  margin: calc(22px + var(--g)) 0;
 }
 .plan__features {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: calc(11px + var(--g) * 0.4);
   flex: 1;
 }
 .plan__feat {
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  font-size: 14.5px;
+  font-size: calc(14.5px + var(--g) * 0.35);
   line-height: 1.4;
   color: #4a4e57;
 }
@@ -923,9 +812,9 @@ button:focus-visible,
    nur einer Spalte würde wieder eine Rangfolge behaupten. Die Terracotta-Fläche
    bleibt dem Primär-CTA in Hero und Abschluss vorbehalten (Handout A1). */
 .plan__cta {
-  margin-top: 26px;
+  margin-top: calc(26px + var(--g));
   align-self: flex-start;
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.25);
   font-weight: 700;
   color: var(--ink);
   text-decoration: underline;
@@ -939,34 +828,32 @@ button:focus-visible,
 .pricing__notes {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1000px;
-  margin: 0 auto;
   border: 1px solid var(--ink);
   border-top: none;
   background: var(--panel);
 }
 .pricing__note-box {
-  padding: 20px 24px;
+  padding: calc(20px + var(--g)) calc(24px + var(--g) * 2.4);
 }
 .pricing__note-box:first-child {
   border-right: 1px solid var(--ink);
 }
 .pricing__note-title {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.3);
   font-weight: 700;
   color: var(--ink);
 }
 .pricing__note-text {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.55;
   color: #4a4e57;
   margin-top: 7px;
 }
 .pricing__note {
   text-align: center;
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.3);
   color: var(--muted);
-  margin-top: 22px;
+  margin-top: calc(22px + var(--g));
 }
 
 /* ============================================================
@@ -976,7 +863,7 @@ button:focus-visible,
 .siv {
   border-top: 1px solid var(--ink);
   background: var(--panel);
-  padding: 76px var(--pad-x);
+  padding: calc(76px + var(--g) * 4) var(--pad-x);
 }
 .siv .inner {
   display: grid;
@@ -987,10 +874,10 @@ button:focus-visible,
 .siv__copy {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: calc(18px + var(--g) * 0.6);
 }
 .siv__text {
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.3);
   line-height: 1.75;
   color: var(--text-soft);
   max-width: 480px;
@@ -1002,14 +889,14 @@ button:focus-visible,
    der Schweiz steht: streichen, nicht abschwächen. */
 .siv__points {
   display: grid;
-  gap: 16px;
+  gap: calc(16px + var(--g) * 0.8);
   align-content: start;
 }
 .sivrow {
   display: flex;
-  gap: 16px;
+  gap: calc(16px + var(--g));
   align-items: flex-start;
-  padding: 22px 26px;
+  padding: calc(22px + var(--g) * 1.6) calc(26px + var(--g) * 2);
   background: #fff;
   border: 1px solid var(--ink);
 }
@@ -1019,12 +906,12 @@ button:focus-visible,
   flex: none;
 }
 .sivrow__title {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.4);
   font-weight: 700;
   color: var(--ink);
 }
 .sivrow__desc {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.55;
   color: var(--text-soft);
   margin-top: 3px;
@@ -1036,11 +923,11 @@ button:focus-visible,
 
 .closing {
   background: var(--ink);
-  padding: 72px var(--pad-x);
+  padding: calc(72px + var(--g) * 4) var(--pad-x);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: calc(18px + var(--g) * 0.6);
   text-align: center;
 }
 .closing__title {
@@ -1050,7 +937,7 @@ button:focus-visible,
   color: var(--bg);
 }
 .closing__text {
-  font-size: 16px;
+  font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.6;
   color: #b9bcc2;
   max-width: 480px;
@@ -1062,8 +949,8 @@ button:focus-visible,
 /* Abschluss-Button minim schmaler (32px) als der Hero-Button (34px) – der
    dunkle Grund macht die Fläche optisch schwerer, das gleicht es aus. */
 .closing__ctas .btn-primary {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: calc(32px + var(--g) * 0.8);
+  padding-right: calc(32px + var(--g) * 0.8);
 }
 /* Auf dem Anthrazit-Band ist Papier das Gegenstück zum Anthrazit des Heros –
    gleiche Stärke, invertiert. Ein gedämpfter Ton wäre hier der falsche Zug:
@@ -1082,13 +969,13 @@ button:focus-visible,
 .footer {
   background: var(--footer-bg);
   color: var(--footer-text);
-  padding: 56px var(--pad-x) 28px;
+  padding: calc(56px + var(--g) * 3) var(--pad-x) calc(28px + var(--g));
 }
 .footer__grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: 40px;
-  padding-bottom: 40px;
+  padding-bottom: calc(40px + var(--g) * 2);
   border-bottom: 1px solid var(--footer-line);
 }
 .footer__brand {
@@ -1097,16 +984,16 @@ button:focus-visible,
   gap: 12px;
 }
 .footer__brand .brand__logo {
-  height: 38px;
+  height: calc(38px + var(--g) * 0.6);
 }
 .footer__claim {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--footer-muted);
   max-width: 280px;
 }
 .footer__madein {
-  font-size: 12.5px;
+  font-size: calc(12.5px + var(--g) * 0.3);
   font-weight: 600;
   color: var(--footer-text);
   margin-top: 4px;
@@ -1114,16 +1001,16 @@ button:focus-visible,
 .footer__col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(12px + var(--g) * 0.4);
 }
 .footer__label {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   font-weight: 700;
   color: var(--footer-label);
 }
 .footer__col a,
 .footer__col .footer__linkbtn {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   color: var(--footer-text);
   text-decoration: none;
   cursor: pointer;
@@ -1142,9 +1029,9 @@ button:focus-visible,
   text-align: left;
 }
 .footer__copy {
-  font-size: 12px;
+  font-size: calc(12px + var(--g) * 0.3);
   color: var(--footer-label);
-  padding-top: 20px;
+  padding-top: calc(20px + var(--g));
 }
 
 /* ============================================================
@@ -1170,13 +1057,7 @@ button:focus-visible,
     gap: 36px;
   }
   .hero__visual {
-    height: auto;
-  }
-  .dossier {
-    position: static;
-    width: 100%;
-    height: auto;
-    box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
+    padding: 0;
   }
   /* Wrapper zentriert Cover + Badge gemeinsam – Badge bleibt mobil sichtbar
      (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
@@ -1185,8 +1066,6 @@ button:focus-visible,
        das absolute Badge an der Cover-Kante; top/left der Desktop-Regel
        zurücksetzen, sonst schiebt der Offset das Badge aus dem Viewport */
     position: relative;
-    top: 0;
-    left: 0;
     margin: 0 auto;
     width: fit-content;
     max-width: 384px;
@@ -1326,24 +1205,17 @@ button:focus-visible,
   }
 }
 
-@media (max-width: 420px) {
-  .dossier {
-    padding: 24px 22px;
-  }
-  .dossier__addr {
-    font-size: 19px;
-  }
-}
-
 /* ============================================================
    LEGAL PAGES (Impressum / Datenschutz)
    ============================================================ */
 
 .legal-page {
-  padding: 56px var(--pad-x) 80px;
+  padding: calc(56px + var(--g) * 4) var(--pad-x) calc(80px + var(--g) * 4);
 }
+/* Lesebreite bleibt: Die Spalte wächst nur im Verhältnis zur Schrift
+   (720 px bei 15 px, 816 px bei 17 px) und steht mittig in der vollen Fläche. */
 .legal-page__inner {
-  max-width: 720px;
+  max-width: calc(720px + var(--g) * 9.6);
   margin: 0 auto;
 }
 .legal-page h1 {
@@ -1359,7 +1231,7 @@ button:focus-visible,
   margin-bottom: 32px;
 }
 .legal-page h2 {
-  font-size: 18px;
+  font-size: calc(18px + var(--g) * 0.3);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--teal);
@@ -1370,7 +1242,7 @@ button:focus-visible,
   margin-top: 0;
 }
 .legal-page p {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.2);
   line-height: 1.7;
   color: var(--text);
   margin-bottom: 12px;
@@ -1383,26 +1255,26 @@ button:focus-visible,
 
 .contact-form {
   margin: 28px 0 36px;
-  max-width: 560px;
+  max-width: calc(560px + var(--g) * 7.4);
   display: grid;
-  gap: 16px;
+  gap: calc(16px + var(--g) * 0.4);
 }
 .contact-form label {
   display: grid;
   gap: 6px;
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.2);
   font-weight: 600;
   color: var(--ink);
 }
 .contact-form input,
 .contact-form textarea {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.2);
   color: var(--ink);
   background: #fff;
   border: 1px solid var(--ink);
   border-radius: 0;
-  padding: 10px 12px;
+  padding: calc(10px + var(--g) * 0.2) 12px;
 }
 .contact-form input:focus-visible,
 .contact-form textarea:focus-visible {
@@ -1429,14 +1301,14 @@ button:focus-visible,
   padding: 14px 16px;
   color: var(--ink);
   margin: 28px 0 36px;
-  max-width: 560px;
+  max-width: calc(560px + var(--g) * 7.4);
 }
 .contact-form__error {
   color: #a33a2a;
   font-size: 14px;
 }
 .contact-form__privacy {
-  font-size: 12.5px;
+  font-size: calc(12.5px + var(--g) * 0.2);
   color: var(--muted);
 }
 
@@ -1506,5 +1378,89 @@ button:focus-visible,
   }
   .cookie-banner__btn {
     flex: 1;
+  }
+}
+
+/* ============================================================
+   VOLLE BREITE (ab 1281 px)
+   Bis 1280 px rendert die Seite wie vor dem Umbau. Darüber wachsen Rand,
+   Raster, Abstände und Schriftgrade mit (--g, siehe :root); Fliesstexte
+   behalten ihre Lesebreite in ch. Die vw-Formeln schliessen bei 1281 px
+   an die bisherigen Höchstwerte an.
+   ============================================================ */
+
+@media (min-width: 1281px) {
+  :root {
+    --pad-x: calc(52px + var(--g) * 7.6);
+    /* greift erst auf Ultrawide-Schirmen, damit Zeilen nicht zerfallen */
+    --maxw: 2400px;
+  }
+
+  /* balance statt pretty: In breiten Spalten blieb sonst ein Einzelwort
+     («Arbeitstag») auf der zweiten Zeile stehen. */
+  .h2 {
+    text-wrap: balance;
+    font-size: clamp(38px, 2.2vw + 10px, 60px);
+  }
+  .pricing__h2 {
+    font-size: clamp(38px, 2.2vw + 10px, 60px);
+  }
+
+  /* Bildspalte so breit wie das Deckblatt: Es schliesst rechts mit der
+     Inhaltskante ab (wie der CTA in der Navigation), der Text nimmt den Rest.
+     Eine halbe Spalte liesse ab 1920 px eine Lücke zwischen Text und Bild. */
+  .hero .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: calc(48px + var(--g) * 11);
+  }
+  /* Drei Zeilen wie auf dem Laptop: In der breiten Spalte würde der Titel
+     sonst zweizeilig und der Halbgeviertstrich rutschte an den Zeilenanfang. */
+  .hero__title {
+    font-size: clamp(54px, 3.6vw + 8px, 104px);
+    max-width: 12em;
+  }
+
+  .features__head {
+    gap: calc(40px + var(--g) * 7);
+  }
+  .features__intro {
+    max-width: 64ch;
+  }
+  .feature__desc {
+    max-width: 40ch;
+  }
+  .features__shots {
+    gap: calc(36px + var(--g) * 7.6);
+  }
+  .aud__text {
+    max-width: 52ch;
+  }
+  .plan__price {
+    font-size: clamp(36px, 1.6vw + 16px, 56px);
+  }
+  .pricing__note-text {
+    max-width: 72ch;
+  }
+  .siv .inner {
+    gap: calc(56px + var(--g) * 5.6);
+  }
+  .siv__text {
+    max-width: 54ch;
+  }
+  .closing__title {
+    font-size: clamp(36px, 2vw + 10px, 56px);
+  }
+  .closing__text {
+    max-width: 50ch;
+  }
+  .footer__grid {
+    gap: calc(40px + var(--g) * 7);
+  }
+  .footer__claim {
+    max-width: 34ch;
+    text-wrap: balance;
+  }
+  .legal-page h1 {
+    font-size: clamp(40px, 2vw + 14px, 52px);
   }
 }
