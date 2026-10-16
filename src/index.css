@@ -433,129 +433,6 @@ button:focus-visible,
   box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
 }
 
-/* the dossier card (shared) */
-.dossier {
-  position: absolute;
-  top: 8px;
-  left: 20px;
-  width: 384px;
-  max-width: 100%;
-  height: 490px;
-  background: #fff;
-  border: 1px solid var(--ink);
-  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
-  padding: 30px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.dossier__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dossier__label {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--teal);
-}
-.dossier__brand {
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--ink);
-}
-.dossier__rule {
-  height: 1px;
-  background: var(--ink);
-}
-.dossier__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.dossier__type {
-  font-size: 12px;
-  color: var(--muted);
-}
-.dossier__addr {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.dossier__value-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-top: 6px;
-}
-.dossier__value-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-}
-.dossier__value {
-  font-size: clamp(32px, 3vw, 38px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--teal);
-}
-.dossier__ratings {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
-}
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.rating__label {
-  width: 78px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-soft);
-}
-.rating__track {
-  flex: 1;
-  height: 8px;
-  background: var(--track);
-}
-.rating__fill {
-  height: 100%;
-  background: var(--teal);
-}
-.rating__fill--light {
-  background: var(--teal-light);
-}
-.rating__val {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--ink);
-  width: 26px;
-  text-align: right;
-}
-.dossier__foot {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--ink);
-  padding-top: 14px;
-}
-.dossier__foot-note {
-  font-size: 11px;
-  color: var(--muted);
-}
-.dossier__foot-pdf {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--teal);
-}
-
 /* ============================================================
    TRUST BAR
    ============================================================ */
@@ -660,7 +537,7 @@ button:focus-visible,
 .feature__no {
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
   color: var(--teal);
 }
 /* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
@@ -1172,12 +1049,6 @@ button:focus-visible,
   .hero__visual {
     height: auto;
   }
-  .dossier {
-    position: static;
-    width: 100%;
-    height: auto;
-    box-shadow: 10px 10px 0 rgba(35, 38, 45, 0.08);
-  }
   /* Wrapper zentriert Cover + Badge gemeinsam – Badge bleibt mobil sichtbar
      (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
   .hero__cover-wrap {
@@ -1323,15 +1194,6 @@ button:focus-visible,
   }
   .closing {
     padding: 48px 24px;
-  }
-}
-
-@media (max-width: 420px) {
-  .dossier {
-    padding: 24px 22px;
-  }
-  .dossier__addr {
-    font-size: 19px;
   }
 }
 
