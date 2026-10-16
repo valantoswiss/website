@@ -169,7 +169,7 @@ function Features() {
                   <img
                     src={s.small}
                     srcSet={`${s.small} 1080w, ${s.large} 2160w`}
-                    sizes="(max-width: 760px) 92vw, 560px"
+                    sizes="(max-width: 760px) 92vw, 45vw"
                     alt={alt}
                     width="1080"
                     height="1250"

@@ -45,8 +45,15 @@
 
   --sans: 'Archivo', system-ui, -apple-system, sans-serif;
 
-  --pad-x: clamp(20px, 4vw, 52px);
-  --maxw: 1176px;
+  /* Volle Breite statt Mittelstreifen: Seitenrand und Inhalt wachsen mit dem
+     Viewport. --maxw greift erst auf Ultrawide-Schirmen (über ~2650 px), damit
+     Zeilen dort nicht zerfallen. Lesebreiten bleiben je Textblock in ch. */
+  --pad-x: clamp(20px, 5vw, 128px);
+  --maxw: 2400px;
+  /* Wachstumsmass ab 1280 px: 0 bis 1280, 5px bei 1920, 10px ab 2560.
+     Schriftgrade und Abstände rechnen damit ihren Zuschlag (calc(15px +
+     var(--g) * 0.3) = 18px bei 2560) – darunter bleibt alles wie bisher. */
+  --g: clamp(0px, (100vw - 1280px) / 128, 10px);
 }
 
 * {
@@ -127,7 +134,7 @@ button:focus-visible,
    Schreibweise und hebt sich über Petrol und Gewicht ab – die weite
    Laufweite war nur für Grossbuchstaben gedacht und entfällt. */
 .eyebrow {
-  font-size: 14px;
+  font-size: calc(14px + var(--g) * 0.25);
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--teal);
@@ -138,8 +145,10 @@ button:focus-visible,
   color: var(--ink);
   letter-spacing: -0.02em;
   line-height: 1.15;
-  text-wrap: pretty;
-  font-size: clamp(28px, 3.6vw, 38px);
+  /* balance statt pretty: In breiten Spalten blieb sonst ein Einzelwort
+     («Arbeitstag») auf der zweiten Zeile stehen. */
+  text-wrap: balance;
+  font-size: clamp(28px, 2.2vw + 10px, 60px);
 }
 
 /* ---- buttons ---- */
@@ -160,10 +169,10 @@ button:focus-visible,
 /* 19px/700 ist keine Geschmacksfrage: erst als Grosstext erfüllt Weiss auf
    Terracotta WCAG AA (3.78:1). Grösse und Gewicht hier nicht senken. */
 .btn-primary {
-  padding: 18px 34px;
+  padding: calc(18px + var(--g) * 0.4) calc(34px + var(--g) * 0.8);
   background: var(--accent);
   color: #fff;
-  font-size: 19px;
+  font-size: calc(19px + var(--g) * 0.2);
   font-weight: 700;
 }
 .btn-primary:hover {
@@ -175,10 +184,10 @@ button:focus-visible,
    vorbehalten (Handout C1) – der Kontakt-Button zog beim globalen
    .btn-primary-Umbau nur versehentlich mit. */
 .btn-form {
-  padding: 15px 30px;
+  padding: calc(15px + var(--g) * 0.2) calc(30px + var(--g) * 0.6);
   background: var(--teal);
   color: #fff;
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.2);
 }
 .btn-form:hover {
   background: var(--ink);
@@ -195,7 +204,7 @@ button:focus-visible,
 }
 .cta-textlink {
   font-family: var(--sans);
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.25);
   font-weight: 600;
   /* Fliesstext-Grau, nicht Anthrazit: der Link soll neben dem CTA leise
      bleiben (A1) – Unterstreichung und Hover tragen die Affordanz. */
@@ -222,7 +231,7 @@ button:focus-visible,
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 20px var(--pad-x);
+  padding: calc(20px + var(--g) * 0.6) var(--pad-x);
   border-bottom: 1px solid var(--ink);
   background: rgba(250, 247, 242, 0.92);
   backdrop-filter: blur(8px);
@@ -234,7 +243,7 @@ button:focus-visible,
 }
 /* Wortmarke als inline-SVG (Handoff: Höhe ~44px im Header, kein Icon daneben) */
 .brand__logo {
-  height: 44px;
+  height: calc(44px + var(--g) * 0.6);
   width: auto;
   display: block;
 }
@@ -242,8 +251,8 @@ button:focus-visible,
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 30px;
-  font-size: 14.5px;
+  gap: calc(30px + var(--g) * 1.6);
+  font-size: calc(14.5px + var(--g) * 0.2);
   font-weight: 500;
   color: var(--text-soft);
 }
@@ -297,11 +306,11 @@ button:focus-visible,
 }
 
 .nav__try {
-  padding: 11px 24px;
+  padding: calc(11px + var(--g) * 0.2) calc(24px + var(--g) * 0.6);
   background: var(--ink);
   color: var(--bg);
   font-weight: 600;
-  font-size: 14px;
+  font-size: calc(14px + var(--g) * 0.2);
 }
 .nav__try:hover {
   background: var(--teal);
@@ -350,18 +359,21 @@ button:focus-visible,
    ============================================================ */
 
 .hero {
-  padding: 72px var(--pad-x) 60px;
+  padding: calc(72px + var(--g) * 4) var(--pad-x) calc(60px + var(--g) * 4);
 }
 .hero .inner {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 48px;
+  /* Bildspalte so breit wie das Deckblatt: Es schliesst rechts mit der
+     Inhaltskante ab (wie der CTA in der Navigation), der Text nimmt den Rest.
+     Eine halbe Spalte liesse bei 1920+ px eine Lücke zwischen Text und Bild. */
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(48px, 5vw, 160px);
   align-items: center;
 }
 .hero__copy {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: calc(24px + var(--g) * 1.2);
 }
 .hero__eyebrow {
   display: flex;
@@ -369,12 +381,15 @@ button:focus-visible,
   gap: 12px;
 }
 .hero__eyebrow-line {
-  width: 26px;
+  width: calc(26px + var(--g));
   height: 2px;
   background: var(--teal);
 }
 .hero__title {
-  font-size: clamp(34px, 5.2vw, 54px);
+  font-size: clamp(34px, 3.6vw + 8px, 104px);
+  /* drei Zeilen wie auf dem Laptop: In der breiten Spalte würde der Titel
+     sonst zweizeilig und der Halbgeviertstrich rutschte an den Zeilenanfang */
+  max-width: 12em;
   font-weight: 800;
   line-height: 1.06;
   color: var(--ink);
@@ -383,54 +398,57 @@ button:focus-visible,
 }
 /* Handout A2: Lead auf Scanlänge – 17.5px, engere Zeilen, 44ch statt 520px */
 .hero__lead {
-  font-size: 17.5px;
+  font-size: calc(17.5px + var(--g) * 0.35);
   line-height: 1.5;
   color: var(--text-soft);
   max-width: 44ch;
   text-wrap: pretty;
 }
 .hero__ctas {
-  margin-top: 32px;
+  margin-top: calc(32px + var(--g) * 1.2);
 }
 .hero__trust {
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.2);
   color: var(--muted);
   font-weight: 500;
 }
 
 /* hero visual */
+/* Bildspalte im Fluss statt mit fester Höhe: Das Deckblatt wächst über
+   seine Höhe mit dem Viewport (490 px bis 1280, dann bis 900 px bei 2560)
+   und bestimmt die Spaltenbreite. Die Quelle hat 2244 px Höhe, bleibt also
+   auch auf 2x-Schirmen scharf. Polster oben/links und unten fangen
+   Versatz und Schattenkante ab. */
 .hero__visual {
   position: relative;
-  height: 520px;
+  padding: 8px calc(14px + var(--g)) calc(22px + var(--g)) 20px;
 }
 .hosted-badge {
   /* an der Cover-Kante verankert (Review 17.07., Wrapper): überlappt die
      Kante leicht, schwebt nicht mehr frei in der breiteren Spalte */
   position: absolute;
-  bottom: 22px;
-  right: -14px;
+  bottom: calc(22px + var(--g) * 2);
+  right: calc(-14px - var(--g));
   background: var(--ink);
   color: var(--bg);
-  padding: 9px 18px;
-  font-size: 12px;
+  padding: calc(9px + var(--g) * 0.3) calc(18px + var(--g) * 0.6);
+  font-size: calc(12px + var(--g) * 0.3);
   font-weight: 600;
   box-shadow: 0 12px 28px rgba(35, 38, 45, 0.25);
 }
 
 /* echtes Gutachten-Deckblatt im Rahmen-Look der bisherigen Dossier-Karte (Issue #5) */
 .hero__cover-wrap {
-  position: absolute;
-  top: 8px;
-  left: 20px;
+  position: relative;
 }
 .hero__cover {
   position: static;
-  height: 490px;
+  height: calc(490px + var(--g) * 41);
   width: auto;
   display: block;
   background: #fff;
   border: 1px solid var(--ink);
-  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
+  box-shadow: calc(14px + var(--g)) calc(14px + var(--g)) 0 rgba(35, 38, 45, 0.08);
 }
 
 /* ============================================================
@@ -438,7 +456,7 @@ button:focus-visible,
    ============================================================ */
 
 .trustbar {
-  padding: 18px var(--pad-x);
+  padding: calc(18px + var(--g)) var(--pad-x);
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
   background: var(--ink);
@@ -452,7 +470,7 @@ button:focus-visible,
   flex-wrap: wrap;
 }
 .trustbar__line {
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.3);
   color: var(--on-dark-soft);
   font-weight: 500;
 }
@@ -464,12 +482,12 @@ button:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12.5px;
+  font-size: calc(12.5px + var(--g) * 0.3);
   font-weight: 600;
   color: var(--on-dark);
   background: none;
   border: 1px solid var(--line-dark);
-  padding: 7px 15px;
+  padding: calc(7px + var(--g) * 0.3) calc(15px + var(--g) * 0.5);
 }
 .badge + .badge {
   border-left: none;
@@ -484,14 +502,14 @@ button:focus-visible,
    ============================================================ */
 
 .features {
-  padding: 80px var(--pad-x) 40px;
+  padding: calc(80px + var(--g) * 4) var(--pad-x) calc(40px + var(--g) * 2);
 }
 .features__head {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: clamp(40px, 4vw, 112px);
   align-items: end;
-  margin-bottom: 44px;
+  margin-bottom: calc(44px + var(--g) * 2);
 }
 .features__head-left {
   display: flex;
@@ -499,8 +517,9 @@ button:focus-visible,
   gap: 16px;
 }
 .features__intro {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.3);
   line-height: 1.7;
+  max-width: 64ch;
   color: var(--text-soft);
   text-wrap: pretty;
   padding-bottom: 4px;
@@ -515,11 +534,11 @@ button:focus-visible,
 }
 .feature {
   border-right: 1px solid var(--line-soft);
-  padding: 28px 22px;
+  padding: calc(28px + var(--g) * 1.6) calc(22px + var(--g) * 1.6);
   background: var(--bg);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(12px + var(--g) * 0.4);
   min-height: 150px;
   transition: background 0.18s ease;
 }
@@ -535,7 +554,7 @@ button:focus-visible,
   justify-content: space-between;
 }
 .feature__no {
-  font-size: 11.5px;
+  font-size: calc(11.5px + var(--g) * 0.25);
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--teal);
@@ -543,8 +562,8 @@ button:focus-visible,
 /* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
    ein Platzhalter zwischen fertigen Funktionen zieht das ganze Set runter. */
 .features__next {
-  margin-top: 18px;
-  font-size: 13.5px;
+  margin-top: calc(18px + var(--g) * 0.6);
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--muted);
 }
@@ -554,10 +573,10 @@ button:focus-visible,
 }
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
-  margin-top: 56px;
+  margin-top: calc(56px + var(--g) * 3);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: clamp(36px, 4vw, 112px);
 }
 .shot {
   margin: 0;
@@ -568,7 +587,7 @@ button:focus-visible,
   padding: 0;
   border: 1px solid var(--ink);
   background: #fff;
-  box-shadow: 14px 14px 0 rgba(35, 38, 45, 0.08);
+  box-shadow: calc(14px + var(--g)) calc(14px + var(--g)) 0 rgba(35, 38, 45, 0.08);
   cursor: zoom-in;
 }
 .shot__zoom img {
@@ -577,8 +596,8 @@ button:focus-visible,
   height: auto;
 }
 .shot__caption {
-  margin-top: 14px;
-  font-size: 13px;
+  margin-top: calc(14px + var(--g) * 0.4);
+  font-size: calc(13px + var(--g) * 0.3);
   color: var(--muted);
 }
 .lightbox {
@@ -632,20 +651,21 @@ button:focus-visible,
 }
 
 .feature__box {
-  width: 22px;
-  height: 22px;
+  width: calc(22px + var(--g) * 0.4);
+  height: calc(22px + var(--g) * 0.4);
   border: 1px solid var(--ink);
 }
 .feature__title {
-  font-size: 17px;
+  font-size: calc(17px + var(--g) * 0.5);
   font-weight: 700;
   color: var(--ink);
   margin-top: 4px;
 }
 .feature__desc {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--text-soft);
+  max-width: 40ch;
   text-wrap: pretty;
 }
 
@@ -654,13 +674,13 @@ button:focus-visible,
    ============================================================ */
 
 .audience {
-  padding: 56px var(--pad-x) 40px;
+  padding: calc(56px + var(--g) * 3) var(--pad-x) calc(40px + var(--g) * 2);
 }
 .audience__head {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 36px;
+  gap: calc(14px + var(--g) * 0.4);
+  margin-bottom: calc(36px + var(--g) * 2);
 }
 .audience__grid {
   display: grid;
@@ -668,7 +688,7 @@ button:focus-visible,
   border: 1px solid var(--ink);
 }
 .aud {
-  padding: 32px 30px 34px;
+  padding: calc(32px + var(--g) * 2) calc(30px + var(--g) * 2) calc(34px + var(--g) * 2);
   background: var(--bg);
 }
 .aud--mid {
@@ -676,21 +696,22 @@ button:focus-visible,
   border-right: 1px solid var(--ink);
 }
 .aud__role {
-  font-size: 24px;
+  font-size: calc(24px + var(--g) * 0.8);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
 .aud__rule {
-  width: 34px;
+  width: calc(34px + var(--g));
   height: 2px;
   background: var(--teal);
   margin: 16px 0 18px;
 }
 .aud__text {
-  font-size: 14.5px;
+  font-size: calc(14.5px + var(--g) * 0.35);
   line-height: 1.7;
   color: var(--text-soft);
+  max-width: 52ch;
   text-wrap: pretty;
 }
 
@@ -699,22 +720,22 @@ button:focus-visible,
    ============================================================ */
 
 .pricing {
-  padding: 60px var(--pad-x);
+  padding: calc(60px + var(--g) * 3) var(--pad-x);
 }
 .pricing__head {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: calc(12px + var(--g) * 0.4);
   text-align: center;
 }
 .pricing__h2 {
-  font-size: clamp(28px, 3.8vw, 38px);
+  font-size: clamp(28px, 2.2vw + 10px, 60px);
   font-weight: 800;
   letter-spacing: -0.028em;
 }
 .pricing__intro {
-  font-size: 16px;
+  font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.5;
   color: #4a4e57;
   max-width: 66ch;
@@ -727,15 +748,14 @@ button:focus-visible,
 .pricing__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1000px;
-  margin: 42px auto 0;
+  margin: calc(42px + var(--g) * 2) 0 0;
   border: 1px solid var(--ink);
 }
 .plan {
   display: flex;
   flex-direction: column;
   background: var(--bg);
-  padding: 34px 30px 30px;
+  padding: calc(34px + var(--g) * 2) calc(30px + var(--g) * 2.4) calc(30px + var(--g) * 2);
 }
 .plan + .plan {
   border-left: 1px solid var(--ink);
@@ -743,7 +763,7 @@ button:focus-visible,
 /* Paketname in normaler Schreibweise (nie Versalien, Vorgabe Fabian
    27.09.2026) – die Hierarchie tragen Grösse und Gewicht. */
 .plan__name {
-  font-size: 22px;
+  font-size: calc(22px + var(--g) * 0.6);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -759,33 +779,33 @@ button:focus-visible,
   margin-top: 12px;
 }
 .plan__price {
-  font-size: clamp(30px, 3.2vw, 36px);
+  font-size: clamp(30px, 1.6vw + 16px, 56px);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ink);
   white-space: nowrap;
 }
 .plan__per {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   color: var(--muted);
   white-space: nowrap;
 }
 .plan__rule {
   height: 1px;
   background: var(--line-soft);
-  margin: 22px 0;
+  margin: calc(22px + var(--g)) 0;
 }
 .plan__features {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: calc(11px + var(--g) * 0.4);
   flex: 1;
 }
 .plan__feat {
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  font-size: 14.5px;
+  font-size: calc(14.5px + var(--g) * 0.35);
   line-height: 1.4;
   color: #4a4e57;
 }
@@ -800,9 +820,9 @@ button:focus-visible,
    nur einer Spalte würde wieder eine Rangfolge behaupten. Die Terracotta-Fläche
    bleibt dem Primär-CTA in Hero und Abschluss vorbehalten (Handout A1). */
 .plan__cta {
-  margin-top: 26px;
+  margin-top: calc(26px + var(--g));
   align-self: flex-start;
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.25);
   font-weight: 700;
   color: var(--ink);
   text-decoration: underline;
@@ -816,34 +836,33 @@ button:focus-visible,
 .pricing__notes {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1000px;
-  margin: 0 auto;
   border: 1px solid var(--ink);
   border-top: none;
   background: var(--panel);
 }
 .pricing__note-box {
-  padding: 20px 24px;
+  padding: calc(20px + var(--g)) calc(24px + var(--g) * 2.4);
 }
 .pricing__note-box:first-child {
   border-right: 1px solid var(--ink);
 }
 .pricing__note-title {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.3);
   font-weight: 700;
   color: var(--ink);
 }
 .pricing__note-text {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.55;
   color: #4a4e57;
+  max-width: 72ch;
   margin-top: 7px;
 }
 .pricing__note {
   text-align: center;
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.3);
   color: var(--muted);
-  margin-top: 22px;
+  margin-top: calc(22px + var(--g));
 }
 
 /* ============================================================
@@ -853,24 +872,24 @@ button:focus-visible,
 .siv {
   border-top: 1px solid var(--ink);
   background: var(--panel);
-  padding: 76px var(--pad-x);
+  padding: calc(76px + var(--g) * 4) var(--pad-x);
 }
 .siv .inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 56px;
+  gap: clamp(56px, 4vw, 112px);
   align-items: start;
 }
 .siv__copy {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: calc(18px + var(--g) * 0.6);
 }
 .siv__text {
-  font-size: 15.5px;
+  font-size: calc(15.5px + var(--g) * 0.3);
   line-height: 1.75;
   color: var(--text-soft);
-  max-width: 480px;
+  max-width: 54ch;
   text-wrap: pretty;
 }
 /* Handout A5: eigenständige Karten mit hartem 1px-Rahmen statt einer
@@ -879,14 +898,14 @@ button:focus-visible,
    der Schweiz steht: streichen, nicht abschwächen. */
 .siv__points {
   display: grid;
-  gap: 16px;
+  gap: calc(16px + var(--g) * 0.8);
   align-content: start;
 }
 .sivrow {
   display: flex;
-  gap: 16px;
+  gap: calc(16px + var(--g));
   align-items: flex-start;
-  padding: 22px 26px;
+  padding: calc(22px + var(--g) * 1.6) calc(26px + var(--g) * 2);
   background: #fff;
   border: 1px solid var(--ink);
 }
@@ -896,12 +915,12 @@ button:focus-visible,
   flex: none;
 }
 .sivrow__title {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.4);
   font-weight: 700;
   color: var(--ink);
 }
 .sivrow__desc {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.55;
   color: var(--text-soft);
   margin-top: 3px;
@@ -913,24 +932,24 @@ button:focus-visible,
 
 .closing {
   background: var(--ink);
-  padding: 72px var(--pad-x);
+  padding: calc(72px + var(--g) * 4) var(--pad-x);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: calc(18px + var(--g) * 0.6);
   text-align: center;
 }
 .closing__title {
-  font-size: clamp(26px, 3.4vw, 36px);
+  font-size: clamp(26px, 2vw + 10px, 56px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--bg);
 }
 .closing__text {
-  font-size: 16px;
+  font-size: calc(16px + var(--g) * 0.35);
   line-height: 1.6;
   color: #b9bcc2;
-  max-width: 480px;
+  max-width: 50ch;
 }
 .closing__ctas {
   margin-top: 8px;
@@ -939,8 +958,8 @@ button:focus-visible,
 /* Abschluss-Button minim schmaler (32px) als der Hero-Button (34px) – der
    dunkle Grund macht die Fläche optisch schwerer, das gleicht es aus. */
 .closing__ctas .btn-primary {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: calc(32px + var(--g) * 0.8);
+  padding-right: calc(32px + var(--g) * 0.8);
 }
 /* Auf dem Anthrazit-Band ist Papier das Gegenstück zum Anthrazit des Heros –
    gleiche Stärke, invertiert. Ein gedämpfter Ton wäre hier der falsche Zug:
@@ -959,13 +978,13 @@ button:focus-visible,
 .footer {
   background: var(--footer-bg);
   color: var(--footer-text);
-  padding: 56px var(--pad-x) 28px;
+  padding: calc(56px + var(--g) * 3) var(--pad-x) calc(28px + var(--g));
 }
 .footer__grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 40px;
+  gap: clamp(40px, 4vw, 112px);
+  padding-bottom: calc(40px + var(--g) * 2);
   border-bottom: 1px solid var(--footer-line);
 }
 .footer__brand {
@@ -974,16 +993,17 @@ button:focus-visible,
   gap: 12px;
 }
 .footer__brand .brand__logo {
-  height: 38px;
+  height: calc(38px + var(--g) * 0.6);
 }
 .footer__claim {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   line-height: 1.6;
   color: var(--footer-muted);
-  max-width: 280px;
+  max-width: 34ch;
+  text-wrap: balance;
 }
 .footer__madein {
-  font-size: 12.5px;
+  font-size: calc(12.5px + var(--g) * 0.3);
   font-weight: 600;
   color: var(--footer-text);
   margin-top: 4px;
@@ -991,16 +1011,16 @@ button:focus-visible,
 .footer__col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(12px + var(--g) * 0.4);
 }
 .footer__label {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   font-weight: 700;
   color: var(--footer-label);
 }
 .footer__col a,
 .footer__col .footer__linkbtn {
-  font-size: 13.5px;
+  font-size: calc(13.5px + var(--g) * 0.3);
   color: var(--footer-text);
   text-decoration: none;
   cursor: pointer;
@@ -1019,9 +1039,9 @@ button:focus-visible,
   text-align: left;
 }
 .footer__copy {
-  font-size: 12px;
+  font-size: calc(12px + var(--g) * 0.3);
   color: var(--footer-label);
-  padding-top: 20px;
+  padding-top: calc(20px + var(--g));
 }
 
 /* ============================================================
@@ -1047,7 +1067,7 @@ button:focus-visible,
     gap: 36px;
   }
   .hero__visual {
-    height: auto;
+    padding: 0;
   }
   /* Wrapper zentriert Cover + Badge gemeinsam – Badge bleibt mobil sichtbar
      (Review 17.07.); right:-14px bleibt dank Hero-Padding im Viewport */
@@ -1056,8 +1076,6 @@ button:focus-visible,
        das absolute Badge an der Cover-Kante; top/left der Desktop-Regel
        zurücksetzen, sonst schiebt der Offset das Badge aus dem Viewport */
     position: relative;
-    top: 0;
-    left: 0;
     margin: 0 auto;
     width: fit-content;
     max-width: 384px;
@@ -1202,14 +1220,16 @@ button:focus-visible,
    ============================================================ */
 
 .legal-page {
-  padding: 56px var(--pad-x) 80px;
+  padding: calc(56px + var(--g) * 4) var(--pad-x) calc(80px + var(--g) * 4);
 }
+/* Lesebreite bleibt: Die Spalte wächst nur im Verhältnis zur Schrift
+   (720 px bei 15 px, 816 px bei 17 px) und steht mittig in der vollen Fläche. */
 .legal-page__inner {
-  max-width: 720px;
+  max-width: calc(720px + var(--g) * 9.6);
   margin: 0 auto;
 }
 .legal-page h1 {
-  font-size: clamp(30px, 4vw, 40px);
+  font-size: clamp(30px, 2vw + 14px, 52px);
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 8px;
@@ -1221,7 +1241,7 @@ button:focus-visible,
   margin-bottom: 32px;
 }
 .legal-page h2 {
-  font-size: 18px;
+  font-size: calc(18px + var(--g) * 0.3);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--teal);
@@ -1232,7 +1252,7 @@ button:focus-visible,
   margin-top: 0;
 }
 .legal-page p {
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.2);
   line-height: 1.7;
   color: var(--text);
   margin-bottom: 12px;
@@ -1245,26 +1265,26 @@ button:focus-visible,
 
 .contact-form {
   margin: 28px 0 36px;
-  max-width: 560px;
+  max-width: calc(560px + var(--g) * 7.4);
   display: grid;
-  gap: 16px;
+  gap: calc(16px + var(--g) * 0.4);
 }
 .contact-form label {
   display: grid;
   gap: 6px;
-  font-size: 13px;
+  font-size: calc(13px + var(--g) * 0.2);
   font-weight: 600;
   color: var(--ink);
 }
 .contact-form input,
 .contact-form textarea {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: calc(15px + var(--g) * 0.2);
   color: var(--ink);
   background: #fff;
   border: 1px solid var(--ink);
   border-radius: 0;
-  padding: 10px 12px;
+  padding: calc(10px + var(--g) * 0.2) 12px;
 }
 .contact-form input:focus-visible,
 .contact-form textarea:focus-visible {
@@ -1291,14 +1311,14 @@ button:focus-visible,
   padding: 14px 16px;
   color: var(--ink);
   margin: 28px 0 36px;
-  max-width: 560px;
+  max-width: calc(560px + var(--g) * 7.4);
 }
 .contact-form__error {
   color: #a33a2a;
   font-size: 14px;
 }
 .contact-form__privacy {
-  font-size: 12.5px;
+  font-size: calc(12.5px + var(--g) * 0.2);
   color: var(--muted);
 }
 
