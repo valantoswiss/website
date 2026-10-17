@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import Seo from '../Seo.jsx'
@@ -25,29 +25,40 @@ const IconHouse = () => (
 // und C3 verbietet Icon-Farbflächen.
 const SIV_ICONS = [IconLock, IconHouse]
 
-/* Lightbox ohne Dependency (Review 17.07.): fixiertes Overlay über dem
-   sticky Header, Scroll-Lock, ESC/Backdrop/✕ schliessen. */
+/* Lightbox als natives <dialog> (Review 17.10.): showModal() setzt den Fokus in
+   den Dialog, sperrt den Hintergrund und gibt den Fokus beim Schliessen an den
+   auslösenden Button zurück; ESC schliesst nativ. Portal an document.body:
+   entkommt jedem Ancestor-Stacking-Context, sonst kann der sticky Header das
+   Overlay überdecken. Der Scroll-Lock bleibt, damit die Seite dahinter ruhig steht. */
 function Lightbox({ src, alt, caption, onClose }) {
   const { t } = useTranslation()
+  const dialogRef = useRef(null)
   useEffect(() => {
-    const onKey = (e) => e.key === 'Escape' && onClose()
-    document.addEventListener('keydown', onKey)
+    const dialog = dialogRef.current
+    if (!dialog.open) dialog.showModal()
     document.body.style.overflow = 'hidden' // Scroll-Lock
     return () => {
-      document.removeEventListener('keydown', onKey)
       document.body.style.overflow = ''
+      if (dialog.open) dialog.close()
     }
-  }, [onClose])
-  // Portal an document.body: entkommt jedem Ancestor-Stacking-Context,
-  // sonst kann der sticky Header das Overlay trotz z-index 1000 überdecken.
+  }, [])
+  // Alle Schliesswege laufen über dialog.close(), damit der Browser den Fokus
+  // zurückgibt; das close-Ereignis meldet das Ende an den Aufrufer.
+  const close = () => dialogRef.current?.close()
   return createPortal(
-    <div className="lightbox" role="dialog" aria-modal="true" aria-label={alt} onClick={onClose}>
-      <button className="lightbox__close" aria-label={t('shots.close')} onClick={onClose}>✕</button>
-      <figure onClick={(e) => e.stopPropagation()}>
+    <dialog
+      ref={dialogRef}
+      className="lightbox"
+      aria-label={alt}
+      onClose={onClose}
+      onClick={(e) => e.target === e.currentTarget && close()}
+    >
+      <button className="lightbox__close" aria-label={t('shots.close')} onClick={close}>✕</button>
+      <figure>
         <img src={src} alt={alt} />
         {caption && <figcaption>{caption}</figcaption>}
       </figure>
-    </div>,
+    </dialog>,
     document.body,
   )
 }
@@ -58,10 +69,6 @@ function Hero() {
     <section className="hero" id="home">
       <div className="inner">
         <div className="hero__copy">
-          <div className="hero__eyebrow">
-            <span className="hero__eyebrow-line" />
-            <span className="eyebrow">{t('hero.eyebrow')}</span>
-          </div>
           <h1 className="hero__title">{t('hero.h1')}</h1>
           <p className="hero__lead">{t('hero.lead')}</p>
           <div className="hero__ctas cta-row">
@@ -204,20 +211,20 @@ function Pricing() {
               Spalte, und alle drei CTAs in derselben Textlink-Variante. */}
           {plans.map((p, i) => (
             <div className="plan" key={i}>
-              <span className="plan__name">{p.name}</span>
+              <h3 className="plan__name">{p.name}</h3>
               <div className="plan__price-row">
                 <span className="plan__price">{p.price}</span>
                 <span className="plan__per">{p.per}</span>
               </div>
               <div className="plan__rule" />
-              <div className="plan__features">
+              <ul className="plan__features" role="list">
                 {p.features.map((feat, j) => (
-                  <div className="plan__feat" key={j}>
+                  <li className="plan__feat" key={j}>
                     <span className="check" aria-hidden="true">✓</span>
                     <span>{feat}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
               {/* Alle drei CTAs führen zur selben Registrierung und tragen
                   darum dieselbe Beschriftung (Fabian 12.08.2026). */}
               <a className="plan__cta" href={APP_REGISTER_URL}>

@@ -25,12 +25,15 @@ export default function Layout() {
       <a className="skip-link" href="#main">
         Zum Inhalt
       </a>
+      {/* Direkt nach dem Skip-Link: das Banner (fest am unteren Rand) ist so das
+          erste Tab-Ziel statt das letzte, und Tastaturnutzer beantworten es,
+          bevor es Inhalt verdeckt. */}
+      <CookieBanner />
       <Nav />
       <main id="main">
         <Outlet />
       </main>
       <Footer />
-      <CookieBanner />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CONSENT_CHANGE_EVENT, acceptConsent, declineConsent, getConsent } from './consent.js'
 import { loadAnalytics } from './analytics.js'
@@ -29,10 +29,27 @@ export default function CookieBanner() {
     if (consent === 'accepted') loadAnalytics()
   }, [consent])
 
+  // Höhe des festen Banners als --cookie-h, damit der Seitenschluss (Fusszeile,
+  // «Cookie-Einstellungen») nicht dahinter liegt, solange das Banner offen ist.
+  const bannerRef = useRef(null)
+  useEffect(() => {
+    const el = bannerRef.current
+    if (!el) return undefined
+    const root = document.documentElement
+    const update = () => root.style.setProperty('--cookie-h', el.offsetHeight + 'px')
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    return () => {
+      ro.disconnect()
+      root.style.removeProperty('--cookie-h')
+    }
+  }, [consent])
+
   if (consent) return null
 
   return (
-    <div className="cookie-banner" role="dialog" aria-live="polite" aria-label={t('cookies.title')}>
+    <div ref={bannerRef} className="cookie-banner" role="dialog" aria-live="polite" aria-label={t('cookies.title')}>
       <div className="cookie-banner__inner">
         <p className="cookie-banner__text">
           {t('cookies.text')}{' '}
