@@ -78,7 +78,7 @@ export const softwareApplication = {
   featureList: [
     'Liegenschaften erfassen – alle Objekte mit vollständigem Dossier an einem Ort',
     'Bewertungen mit Dossier – nachvollziehbare Verkehrswert-Bewertungen, Gutachten als PDF',
-    'Neubauprojekte – Projekte anlegen, Einheiten verwalten, Verkaufsstand im Blick',
+    'Neubauprojekte – Projekte anlegen, Einheiten erfassen, Verkaufsstand im Blick',
     'Landingpages – eigene Vermarktungsseite für jedes Objekt',
     'Verkäufer-Portal – Verkäufer sehen den Stand jederzeit selbst',
   ],
