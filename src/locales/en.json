@@ -12,8 +12,8 @@
     }
   },
   "meta": {
-    "title": "Valanto – Real Estate Software Switzerland: value, market, manage",
-    "description": "Value, market, manage in one tool – for brokers and valuers. Built and hosted in Switzerland. Free seat to try it out."
+    "title": "Valanto – Real Estate Software Switzerland: value and market",
+    "description": "Value and market in one tool – for brokers and valuers. Built and hosted in Switzerland. Free seat to try it out."
   },
   "nav": {
     "features": "Features",
@@ -25,7 +25,7 @@
     "menu": "Menu"
   },
   "hero": {
-    "h1": "Value, market, manage – finally in one tool.",
+    "h1": "Value and market – finally in one tool.",
     "lead": "Properties, valuations and marketing in one workflow – instead of Excel, Word templates and isolated tools.",
     "cta1": "Create free account",
     "cta2": "See examples",
@@ -38,17 +38,17 @@
     "items": [
       { "t": "Capture properties", "d": "All your properties in one place – each with a complete dossier. You'll find everything again when you need it." },
       { "t": "Valuations with dossier", "d": "Create traceable valuations and export them as a clean dossier – ready for your clients." },
-      { "t": "New-build projects", "d": "Set up projects, manage units and keep an eye on the sales status at any time." },
+      { "t": "New-build projects", "d": "Set up projects, capture units and keep an eye on the sales status at any time." },
       { "t": "Landing pages", "d": "A dedicated marketing page for every property – no extra software, no web agency needed." },
       { "t": "Seller portal", "d": "Your sellers can check the status themselves at any time – fewer questions, fewer status emails for you." }
     ],
     "nextLabel": "Coming next:",
-    "next": "CRM and prospect management, directly in Valanto."
+    "next": "CRM and prospects, directly in Valanto."
   },
   "audience": {
     "h2": "Built for your work",
     "items": [
-      { "role": "Broker", "text": "Manage, market, steer projects – without constantly switching programs." },
+      { "role": "Broker", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs." },
       { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported." },
       { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules." }
     ]
@@ -101,7 +101,7 @@
     "text": "Your free account starts with sample data to look around and has room for one property, one valuation with dossier and one new-build project of your own – no time limit. No credit card, no notice period."
   },
   "footer": {
-    "claim": "Value, market, manage – in one tool.",
+    "claim": "Value and market – in one tool.",
     "madein": "Made in Switzerland",
     "c1": "Product",
     "c2": "Company",

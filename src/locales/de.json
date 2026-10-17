@@ -12,8 +12,8 @@
     }
   },
   "meta": {
-    "title": "Valanto – Immobiliensoftware Schweiz: bewerten, vermarkten, verwalten",
-    "description": "Bewerten, vermarkten, verwalten in einem Werkzeug – für Makler und Bewerter. Entwickelt und gehostet in der Schweiz. Gratis-Sitzplatz zum Ausprobieren."
+    "title": "Valanto – Immobiliensoftware Schweiz: bewerten und vermarkten",
+    "description": "Bewerten und vermarkten in einem Werkzeug – für Makler und Bewerter. Entwickelt und gehostet in der Schweiz. Gratis-Sitzplatz zum Ausprobieren."
   },
   "nav": {
     "features": "Funktionen",
@@ -25,7 +25,7 @@
     "menu": "Menü"
   },
   "hero": {
-    "h1": "Bewerten, vermarkten, verwalten – endlich in einem Werkzeug.",
+    "h1": "Bewerten und vermarkten – endlich in einem Werkzeug.",
     "lead": "Liegenschaften, Bewertungen und Vermarktung in einem Ablauf – statt in Excel, Word-Vorlagen und Insellösungen.",
     "cta1": "Gratis-Konto erstellen",
     "cta2": "Beispiele ansehen",
@@ -38,17 +38,17 @@
     "items": [
       { "t": "Liegenschaften erfassen", "d": "Alle Ihre Objekte an einem Ort – jedes mit vollständigem Dossier. Sie finden alles wieder, wenn Sie es brauchen." },
       { "t": "Bewertungen mit Dossier", "d": "Erstellen Sie nachvollziehbare Bewertungen und geben Sie sie als sauberes Dossier aus – bereit für Ihre Kunden." },
-      { "t": "Neubauprojekte", "d": "Legen Sie Projekte an, verwalten Sie Einheiten und behalten Sie den Verkaufsstand jederzeit im Blick." },
+      { "t": "Neubauprojekte", "d": "Legen Sie Projekte an, erfassen Sie Einheiten und behalten Sie den Verkaufsstand jederzeit im Blick." },
       { "t": "Landingpages", "d": "Für jedes Objekt eine eigene Vermarktungsseite – ohne zusätzliches Programm, ohne Webagentur." },
       { "t": "Verkäufer-Portal", "d": "Ihre Verkäufer sehen den Stand jederzeit selbst – weniger Rückfragen, weniger Status-Mails für Sie." }
     ],
     "nextLabel": "Als Nächstes:",
-    "next": "CRM und Interessentenverwaltung, direkt in Valanto."
+    "next": "CRM und Interessenten, direkt in Valanto."
   },
   "audience": {
     "h2": "Gemacht für Ihre Arbeit",
     "items": [
-      { "role": "Makler", "text": "Verwalten, vermarkten, Projekte steuern – ohne ständig das Programm zu wechseln." },
+      { "role": "Makler", "text": "Vermarkten, Projekte steuern, Verkäufer auf dem Laufenden halten – ohne ständig das Programm zu wechseln." },
       { "role": "Bewerter", "text": "Nachvollziehbare Bewertungen mit professionellem Dossier. Schnell erstellt, sauber exportiert." },
       { "role": "Spezialist", "text": "Sie machen beides? Dann haben Sie mit Valanto alles in einer durchgängigen Plattform – mit allen Modulen." }
     ]
@@ -101,7 +101,7 @@
     "text": "Ihr Gratis-Konto startet mit Beispieldaten zum Reinschauen und hat Platz für je eine eigene Liegenschaft, Bewertung mit Dossier und ein Neubauprojekt – ohne Zeitlimit. Keine Kreditkarte, keine Kündigungsfrist."
   },
   "footer": {
-    "claim": "Bewerten, vermarkten, verwalten – in einem Werkzeug.",
+    "claim": "Bewerten und vermarkten – in einem Werkzeug.",
     "madein": "Made in Switzerland",
     "c1": "Produkt",
     "c2": "Unternehmen",

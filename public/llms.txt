@@ -8,14 +8,14 @@ Betreiberin: Felsberg Consulting GmbH, Felsbergstrasse 2, 8625 Gossau ZH, Schwei
 
 - Liegenschaften erfassen: alle Objekte mit vollständigem Dossier an einem Ort.
 - Bewertungen mit Dossier: nachvollziehbare Verkehrswert-Bewertungen, ausgegeben als Gutachten-Dossier im PDF-Format.
-- Neubauprojekte: Projekte anlegen, Einheiten verwalten, Verkaufsstand im Blick behalten.
+- Neubauprojekte: Projekte anlegen, Einheiten erfassen, Verkaufsstand im Blick behalten.
 - Landingpages: für jedes Objekt eine eigene Vermarktungsseite, ohne Webagentur.
 - Verkäufer-Portal: Verkäufer sehen den Stand ihres Verkaufs jederzeit selbst.
-- In Planung: CRM und Interessentenverwaltung.
+- In Planung: CRM und Interessenten.
 
 ## Zielgruppen
 
-- Makler: verwalten, vermarkten, Projekte steuern.
+- Makler: vermarkten, Projekte steuern, Verkäufer auf dem Laufenden halten.
 - Bewerter: nachvollziehbare Bewertungen mit professionellem Dossier.
 - Spezialisten, die beides machen: alle Module in einer Plattform.
 

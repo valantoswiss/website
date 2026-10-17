@@ -12,8 +12,8 @@
     }
   },
   "meta": {
-    "title": "Valanto – Logiciel immobilier suisse : estimer, commercialiser, gérer",
-    "description": "Estimer, commercialiser, gérer dans un seul outil – pour les courtiers et les évaluateurs. Conçu et hébergé en Suisse. Poste gratuit pour essayer."
+    "title": "Valanto – Logiciel immobilier suisse : estimer et commercialiser",
+    "description": "Estimer et commercialiser dans un seul outil – pour les courtiers et les évaluateurs. Conçu et hébergé en Suisse. Poste gratuit pour essayer."
   },
   "nav": {
     "features": "Fonctions",
@@ -25,7 +25,7 @@
     "menu": "Menu"
   },
   "hero": {
-    "h1": "Estimer, commercialiser, gérer – enfin dans un seul outil.",
+    "h1": "Estimer et commercialiser – enfin dans un seul outil.",
     "lead": "Biens, estimations et commercialisation dans un seul flux – plutôt que dans Excel, des modèles Word et des solutions isolées.",
     "cta1": "Créer un compte gratuit",
     "cta2": "Voir des exemples",
@@ -38,17 +38,17 @@
     "items": [
       { "t": "Saisir les biens", "d": "Tous vos biens au même endroit – chacun avec un dossier complet. Vous retrouvez tout quand vous en avez besoin." },
       { "t": "Estimations avec dossier", "d": "Réalisez des estimations traçables et exportez-les sous forme de dossier soigné – prêtes pour vos clients." },
-      { "t": "Projets de construction", "d": "Créez des projets, gérez les unités et gardez l'état des ventes à l'œil à tout moment." },
+      { "t": "Projets de construction", "d": "Créez des projets, saisissez les unités et gardez l'état des ventes à l'œil à tout moment." },
       { "t": "Landing pages", "d": "Une page de commercialisation dédiée pour chaque bien – sans logiciel supplémentaire, sans agence web." },
       { "t": "Portail vendeurs", "d": "Vos vendeurs consultent l'état d'avancement eux-mêmes à tout moment – moins de questions, moins d'e-mails de suivi pour vous." }
     ],
     "nextLabel": "Prochainement :",
-    "next": "CRM et gestion des prospects, directement dans Valanto."
+    "next": "CRM et prospects, directement dans Valanto."
   },
   "audience": {
     "h2": "Conçu pour votre travail",
     "items": [
-      { "role": "Courtier", "text": "Gérer, commercialiser, piloter des projets – sans changer sans cesse de logiciel." },
+      { "role": "Courtier", "text": "Commercialiser, piloter des projets, tenir les vendeurs informés – sans changer sans cesse de logiciel." },
       { "role": "Évaluateur", "text": "Des estimations traçables avec un dossier professionnel. Créées rapidement, exportées proprement." },
       { "role": "Spécialiste", "text": "Vous faites les deux ? Avec Valanto, vous avez tout sur une plateforme continue – avec tous les modules." }
     ]
@@ -101,7 +101,7 @@
     "text": "Votre compte gratuit démarre avec des données d'exemple et offre de la place pour un bien immobilier, une estimation avec dossier et un projet de construction – sans limite de durée. Sans carte de crédit, sans délai de résiliation."
   },
   "footer": {
-    "claim": "Estimer, commercialiser, gérer – dans un seul outil.",
+    "claim": "Estimer et commercialiser – dans un seul outil.",
     "madein": "Conçu en Suisse",
     "c1": "Produit",
     "c2": "Entreprise",
