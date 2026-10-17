@@ -69,18 +69,18 @@
     ],
     "plans": [
       {
-        "name": "Évaluateur",
-        "price": "CHF 90.–",
-        "per": "par utilisateur / mois",
-        "cap": "max. CHF 300.– par site de bureau",
-        "features": ["Estimations avec dossier", "Données de base des biens", "Dossier d'expertise en PDF"]
-      },
-      {
         "name": "Commercialisateur",
         "price": "CHF 70.–",
         "per": "par utilisateur / mois",
         "cap": "max. CHF 200.– par site de bureau",
         "features": ["Biens & dossier", "Projets de construction", "Landing pages", "Portail vendeurs"]
+      },
+      {
+        "name": "Évaluateur",
+        "price": "CHF 90.–",
+        "per": "par utilisateur / mois",
+        "cap": "max. CHF 300.– par site de bureau",
+        "features": ["Estimations avec dossier", "Données de base des biens", "Dossier d'expertise en PDF"]
       },
       {
         "name": "Spécialiste",
