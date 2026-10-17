@@ -205,7 +205,7 @@ function Pricing() {
           <p className="pricing__intro">{t('pricing.intro')}</p>
         </div>
         <div className="pricing__grid">
-          {/* Drei gleichwertige Karten (App-Feedback #473): Bewerter und Makler
+          {/* Drei gleichwertige Karten (App-Feedback #473): Bewerter und Vermarkter
               sind zwei Zielgruppen, keine Rangfolge – Spezialist ist die
               Kombination aus beiden. Darum weder Badge noch hervorgehobene
               Spalte, und alle drei CTAs in derselben Textlink-Variante. */}
@@ -215,6 +215,7 @@ function Pricing() {
               <div className="plan__price-row">
                 <span className="plan__price">{p.price}</span>
                 <span className="plan__per">{p.per}</span>
+                <span className="plan__cap">{p.cap}</span>
               </div>
               <div className="plan__rule" />
               <ul className="plan__features" role="list">

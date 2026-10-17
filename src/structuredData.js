@@ -3,7 +3,9 @@
 
    Die Angaben spiegeln die sichtbaren Inhalte: Organisation aus dem Impressum,
    Funktionen und Preise aus src/locales/de.json (pricing.plans, features.items).
-   Ändern sich Preise oder Pakete dort, hier nachziehen. */
+   Ändern sich Preise, Obergrenzen oder Pakete dort, hier und in public/llms.txt
+   nachziehen. Preise gelten pro Benutzer und Monat mit Obergrenze je Paket und
+   Bürostandort (Stand 17.10.2026). */
 
 const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://valanto.ch').replace(/\/$/, '')
 
@@ -71,7 +73,7 @@ export const softwareApplication = {
   inLanguage: 'de-CH',
   countriesSupported: 'CH',
   description:
-    'Schweizer Immobiliensoftware für Makler und Bewerter: Liegenschaften erfassen, ' +
+    'Schweizer Immobiliensoftware für Vermarkter und Bewerter: Liegenschaften erfassen, ' +
     'Verkehrswert-Bewertungen mit Gutachten-Dossier als PDF, Neubauprojekte, ' +
     'Landingpages und Verkäufer-Portal – in einem Werkzeug. Entwickelt und gehostet ' +
     'in der Schweiz, datenschutzkonform nach revDSG.',
@@ -84,7 +86,7 @@ export const softwareApplication = {
   ],
   audience: {
     '@type': 'BusinessAudience',
-    audienceType: 'Immobilienmakler und Immobilienbewerter in der Schweiz',
+    audienceType: 'Immobilienvermarkter (Makler) und Immobilienbewerter in der Schweiz',
   },
   publisher: { '@id': organization['@id'] },
   offers: [
@@ -94,8 +96,23 @@ export const softwareApplication = {
       'Ein Gratis-Sitzplatz pro Firma mit je einer Liegenschaft, einer Bewertung und ' +
         'einem Neubauprojekt – ohne Zeitlimit, ohne Kreditkarte.',
     ),
-    plan('Bewerter', 50, 'Bewertungen mit Dossier, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF.'),
-    plan('Makler', 80, 'Liegenschaften und Dossier, Neubauprojekte, Landingpages, Verkäufer-Portal.'),
-    plan('Spezialist', 120, 'Alles aus Makler plus Bewertungen mit Dossier – für alle, die beides machen.'),
+    plan(
+      'Bewerter',
+      90,
+      'Bewertungen mit Dossier, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF. ' +
+        'Max. CHF 300 pro Bürostandort und Monat.',
+    ),
+    plan(
+      'Vermarkter',
+      70,
+      'Liegenschaften und Dossier, Neubauprojekte, Landingpages, Verkäufer-Portal. ' +
+        'Max. CHF 200 pro Bürostandort und Monat.',
+    ),
+    plan(
+      'Spezialist',
+      140,
+      'Alles aus Vermarkter plus Bewertungen mit Dossier – für alle, die beides machen. ' +
+        'Max. CHF 450 pro Bürostandort und Monat.',
+    ),
   ],
 }

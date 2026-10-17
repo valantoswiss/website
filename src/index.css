@@ -698,7 +698,7 @@ button:focus-visible,
   text-wrap: pretty;
 }
 /* Handout A3: EIN Rahmen um alle drei Spalten, keine Lücken. Seit
-   App-Feedback #473 sind die drei Spalten gleichwertig – Bewerter und Makler
+   App-Feedback #473 sind die drei Spalten gleichwertig – Bewerter und Vermarkter
    sind zwei Zielgruppen, Spezialist die Kombination. Getrennt wird nur über
    Innenlinien, keine Spalte trägt eine eigene Fläche. */
 .pricing__grid {
@@ -725,7 +725,7 @@ button:focus-visible,
   color: var(--ink);
 }
 /* Einheit immer unter dem Preis, in allen drei Spalten gleich: nebeneinander
-   passte «CHF 120.–» plus «pro Benutzer / Mt.» nicht in die Spalte, der Preis
+   passte «CHF 140.–» plus «pro Benutzer / Mt.» nicht in die Spalte, der Preis
    brach in zwei Zeilen und die Einheit quetschte sich daneben (#473). Der
    Preis selbst bricht nie um. */
 .plan__price-row {
@@ -745,6 +745,15 @@ button:focus-visible,
   font-size: calc(13.5px + var(--g) * 0.3);
   color: var(--muted);
   white-space: nowrap;
+}
+/* Obergrenze pro Bürostandort: eigene Information unter «pro Benutzer / Mt.»,
+   darum etwas Abstand und kräftigeres Gewicht; Sekundärfarbe, darf umbrechen
+   (FR/EN sind länger). */
+.plan__cap {
+  margin-top: 2px;
+  font-size: calc(13px + var(--g) * 0.3);
+  font-weight: 600;
+  color: var(--muted);
 }
 .plan__rule {
   height: 1px;

@@ -13,7 +13,7 @@
   },
   "meta": {
     "title": "Valanto – Logiciel immobilier suisse : estimer et commercialiser",
-    "description": "Estimer et commercialiser dans un seul outil – pour les courtiers et les évaluateurs. Conçu et hébergé en Suisse. Poste gratuit pour essayer."
+    "description": "Estimer et commercialiser dans un seul outil – pour les commercialisateurs (courtiers) et les évaluateurs. Conçu et hébergé en Suisse. Poste gratuit pour essayer."
   },
   "nav": {
     "features": "Fonctions",
@@ -48,43 +48,46 @@
   "audience": {
     "h2": "Conçu pour votre travail",
     "items": [
-      { "role": "Courtier", "text": "Commercialiser, piloter des projets, tenir les vendeurs informés – sans changer sans cesse de logiciel." },
+      { "role": "Commercialisateur", "text": "Commercialiser, piloter des projets, tenir les vendeurs informés – sans changer sans cesse de logiciel." },
       { "role": "Évaluateur", "text": "Des estimations traçables avec un dossier professionnel. Créées rapidement, exportées proprement." },
       { "role": "Spécialiste", "text": "Vous faites les deux ? Avec Valanto, vous avez tout sur une plateforme continue – avec tous les modules." }
     ]
   },
   "pricing": {
     "h2": "Une offre pour votre rôle",
-    "intro": "Prix par utilisateur et par mois, résiliable chaque mois. Pour essayer, chaque entreprise dispose d'un poste gratuit avec un bien, une estimation et un projet de construction – sans limite de durée.",
-    "note": "Tous les prix HT · Toutes les offres conformes à la nLPD, hébergées en Suisse. · Solutions sur mesure pour les grandes équipes sur demande.",
+    "intro": "Prix par utilisateur et par mois, avec plafond par site de bureau et par offre – résiliable chaque mois. Pour essayer, chaque entreprise dispose d'un poste gratuit avec un bien, une estimation et un projet de construction – sans limite de durée.",
+    "note": "Tous les prix HT · Toutes les offres conformes à la nLPD, hébergées en Suisse. · Plusieurs sites, réseaux de succursales et autres modèles : forfait sur demande.",
     "boxes": [
       {
         "t": "Un compte par entreprise, une offre par utilisateur",
-        "d": "Vous créez l'entreprise et invitez vos collaborateurs un par un. Les offres peuvent être mélangées – deux courtiers et une évaluatrice ne sont pas un cas particulier."
+        "d": "Vous créez l'entreprise et invitez vos collaborateurs un par un. Les offres peuvent être mélangées – deux commercialisateurs et une évaluatrice ne sont pas un cas particulier."
       },
       {
         "t": "Exemple",
-        "d": "3 personnes : 1 × poste gratuit, plus 1 × Courtier et 1 × Évaluateur = CHF 130.– par mois, HT. Les postes peuvent être ajoutés ou retirés à tout moment."
+        "d": "3 personnes : 1 × poste gratuit, plus 1 × Commercialisateur et 1 × Évaluateur = CHF 160.– par mois, HT. Grâce au plafond, cinq évaluateurs sur un même site paient seulement CHF 300.– (au lieu de CHF 450.–). Les postes peuvent être ajoutés ou retirés à tout moment."
       }
     ],
     "plans": [
       {
         "name": "Évaluateur",
-        "price": "CHF 50.–",
+        "price": "CHF 90.–",
         "per": "par utilisateur / mois",
+        "cap": "max. CHF 300.– par site de bureau",
         "features": ["Estimations avec dossier", "Données de base des biens", "Dossier d'expertise en PDF"]
       },
       {
-        "name": "Courtier",
-        "price": "CHF 80.–",
+        "name": "Commercialisateur",
+        "price": "CHF 70.–",
         "per": "par utilisateur / mois",
+        "cap": "max. CHF 200.– par site de bureau",
         "features": ["Biens & dossier", "Projets de construction", "Landing pages", "Portail vendeurs"]
       },
       {
         "name": "Spécialiste",
-        "price": "CHF 120.–",
+        "price": "CHF 140.–",
         "per": "par utilisateur / mois",
-        "features": ["Tout de Courtier", "Plus : estimations avec dossier", "Pour ceux qui estiment et commercialisent"]
+        "cap": "max. CHF 450.– par site de bureau",
+        "features": ["Tout de Commercialisateur", "Plus : estimations avec dossier", "Pour ceux qui estiment et commercialisent"]
       }
     ]
   },
@@ -143,11 +146,11 @@
   "aboutPage": {
     "h1": "À propos de Valanto",
     "metaTitle": "À propos de Valanto – Logiciel immobilier issu de la pratique suisse de l’évaluation",
-    "metaDescription": "Valanto est né au fil des années du travail quotidien d’un évaluateur immobilier suisse – aujourd’hui un logiciel pour les évaluateurs, les courtiers et les professionnels de l’immobilier dans toute la Suisse.",
+    "metaDescription": "Valanto est né au fil des années du travail quotidien d’un évaluateur immobilier suisse – aujourd’hui un logiciel pour les évaluateurs, les commercialisateurs et les professionnels de l’immobilier dans toute la Suisse.",
     "origin": {
       "h2": "Né de la pratique de l'évaluation",
       "p1": "Valanto est né au fil des années du travail quotidien d'un évaluateur immobilier suisse – du besoin d'établir des évaluations structurées, traçables et efficaces plutôt que de jongler avec des tableaux et des solutions isolées.",
-      "p2": "Ce qui a commencé comme un outil interne est aujourd'hui accessible sous le nom de Valanto aux évaluatrices, courtiers et professionnels de l'immobilier dans toute la Suisse."
+      "p2": "Ce qui a commencé comme un outil interne est aujourd'hui accessible sous le nom de Valanto aux évaluatrices, commercialisateurs et professionnels de l'immobilier dans toute la Suisse."
     },
     "team": {
       "h2": "Qui est derrière",
