@@ -13,7 +13,7 @@
   },
   "meta": {
     "title": "Valanto – Real Estate Software Switzerland: value and market",
-    "description": "Value and market in one tool – for brokers and valuers. Built and hosted in Switzerland. Free seat to try it out."
+    "description": "Value and market in one tool – for marketers (brokers) and valuers. Built and hosted in Switzerland. Free seat to try it out."
   },
   "nav": {
     "features": "Features",
@@ -48,43 +48,46 @@
   "audience": {
     "h2": "Built for your work",
     "items": [
-      { "role": "Broker", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs." },
+      { "role": "Marketer", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs." },
       { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported." },
       { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules." }
     ]
   },
   "pricing": {
     "h2": "A plan for your role",
-    "intro": "Price per user, per month, cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
-    "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Custom solutions for larger teams on request.",
+    "intro": "Price per user, per month, capped per office location and plan – cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
+    "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Multiple locations, branch networks and other models: flat-rate solution on request.",
     "boxes": [
       {
         "t": "One account per company, one plan per user",
-        "d": "You set up the company and invite your employees one by one. Plans may be mixed – two brokers and one valuer are not a special case."
+        "d": "You set up the company and invite your employees one by one. Plans may be mixed – two marketers and one valuer are not a special case."
       },
       {
         "t": "Example",
-        "d": "3 people: 1 × free seat, plus 1 × Broker and 1 × Valuer = CHF 130.– per month, excl. VAT. Seats can be added or removed at any time."
+        "d": "3 people: 1 × free seat, plus 1 × Marketer and 1 × Valuer = CHF 160.– per month, excl. VAT. Thanks to the cap, five valuers at one location pay CHF 300.– instead of CHF 450.–. Seats can be added or removed at any time."
       }
     ],
     "plans": [
       {
         "name": "Valuer",
-        "price": "CHF 50.–",
+        "price": "CHF 90.–",
         "per": "per user / mo.",
+        "cap": "max. CHF 300.– per office location",
         "features": ["Valuations with dossier", "Property base data", "Appraisal dossier as PDF"]
       },
       {
-        "name": "Broker",
-        "price": "CHF 80.–",
+        "name": "Marketer",
+        "price": "CHF 70.–",
         "per": "per user / mo.",
+        "cap": "max. CHF 200.– per office location",
         "features": ["Properties & dossier", "New-build projects", "Landing pages", "Seller portal"]
       },
       {
         "name": "Specialist",
-        "price": "CHF 120.–",
+        "price": "CHF 140.–",
         "per": "per user / mo.",
-        "features": ["Everything in Broker", "Plus: valuations with dossier", "For those who value and market"]
+        "cap": "max. CHF 450.– per office location",
+        "features": ["Everything in Marketer", "Plus: valuations with dossier", "For those who value and market"]
       }
     ]
   },
@@ -143,11 +146,11 @@
   "aboutPage": {
     "h1": "About Valanto",
     "metaTitle": "About Valanto – Real Estate Software from Swiss Valuation Practice",
-    "metaDescription": "Valanto grew over years out of the daily work of a Swiss real estate appraiser – today it is software for valuers, brokers and real estate professionals across Switzerland.",
+    "metaDescription": "Valanto grew over years out of the daily work of a Swiss real estate appraiser – today it is software for valuers, marketers and real estate professionals across Switzerland.",
     "origin": {
       "h2": "Born out of valuation practice",
       "p1": "Valanto grew over years out of the daily work of a Swiss real estate appraiser – out of the need to produce valuations in a structured, traceable and efficient way instead of juggling spreadsheets and isolated tools.",
-      "p2": "What began as an in-house tool is now available as Valanto to appraisers, brokers and property professionals across Switzerland."
+      "p2": "What began as an in-house tool is now available as Valanto to appraisers, marketers and property professionals across Switzerland."
     },
     "team": {
       "h2": "Who is behind it",
