@@ -69,18 +69,18 @@
     ],
     "plans": [
       {
-        "name": "Bewerter",
-        "price": "CHF 90.–",
-        "per": "pro Benutzer / Mt.",
-        "cap": "max. CHF 300.– pro Bürostandort",
-        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Gutachten-Dossier als PDF"]
-      },
-      {
         "name": "Vermarkter",
         "price": "CHF 70.–",
         "per": "pro Benutzer / Mt.",
         "cap": "max. CHF 200.– pro Bürostandort",
         "features": ["Liegenschaften & Dossier", "Neubauprojekte", "Landingpages", "Verkäufer-Portal"]
+      },
+      {
+        "name": "Bewerter",
+        "price": "CHF 90.–",
+        "per": "pro Benutzer / Mt.",
+        "cap": "max. CHF 300.– pro Bürostandort",
+        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Gutachten-Dossier als PDF"]
       },
       {
         "name": "Spezialist",

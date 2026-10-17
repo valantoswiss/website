@@ -97,16 +97,16 @@ export const softwareApplication = {
         'einem Neubauprojekt – ohne Zeitlimit, ohne Kreditkarte.',
     ),
     plan(
-      'Bewerter',
-      90,
-      'Bewertungen mit Dossier, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF. ' +
-        'Max. CHF 300 pro Bürostandort und Monat.',
-    ),
-    plan(
       'Vermarkter',
       70,
       'Liegenschaften und Dossier, Neubauprojekte, Landingpages, Verkäufer-Portal. ' +
         'Max. CHF 200 pro Bürostandort und Monat.',
+    ),
+    plan(
+      'Bewerter',
+      90,
+      'Bewertungen mit Dossier, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF. ' +
+        'Max. CHF 300 pro Bürostandort und Monat.',
     ),
     plan(
       'Spezialist',

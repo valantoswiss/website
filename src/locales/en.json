@@ -69,18 +69,18 @@
     ],
     "plans": [
       {
-        "name": "Valuer",
-        "price": "CHF 90.–",
-        "per": "per user / mo.",
-        "cap": "max. CHF 300.– per office location",
-        "features": ["Valuations with dossier", "Property base data", "Appraisal dossier as PDF"]
-      },
-      {
         "name": "Marketer",
         "price": "CHF 70.–",
         "per": "per user / mo.",
         "cap": "max. CHF 200.– per office location",
         "features": ["Properties & dossier", "New-build projects", "Landing pages", "Seller portal"]
+      },
+      {
+        "name": "Valuer",
+        "price": "CHF 90.–",
+        "per": "per user / mo.",
+        "cap": "max. CHF 300.– per office location",
+        "features": ["Valuations with dossier", "Property base data", "Appraisal dossier as PDF"]
       },
       {
         "name": "Specialist",
