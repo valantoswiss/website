@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Brand, SwissCross } from './Brand.jsx'
 import { resetConsent } from './consent.js'
+import { APP_TERMS_URL } from './links.js'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -32,8 +33,7 @@ export default function Footer() {
             <span className="footer__label">{t('footer.c3')}</span>
             <a href="/impressum/">{t('footer.imprint')}</a>
             <a href="/datenschutz/">{t('footer.privacy')}</a>
-            {/* AGB-Link folgt erst zum Verkaufsstart (footer.terms bleibt in
-                den Locales für die Wiederverwendung). */}
+            <a href={APP_TERMS_URL}>{t('footer.terms')}</a>
             <button
               type="button"
               className="footer__linkbtn"
