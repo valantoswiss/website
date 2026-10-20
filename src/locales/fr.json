@@ -4,11 +4,13 @@
     "close": "Fermer",
     "raster": {
       "alt": "Étape de calcul dans l'assistant Valanto : dépréciation détaillée par éléments de construction – parts, durées de vie, taux et déductions en CHF par élément",
-      "caption": "Dépréciation en détail : grille par éléments avec taux et déductions."
+      "caption": "Dépréciation en détail : grille par éléments avec taux et déductions.",
+      "cropAlt": "Extrait de la grille par éléments : substance de base et enveloppe du bâtiment avec parts, durées de vie, taux de dépréciation et déductions en CHF"
     },
     "summary": {
       "alt": "Étape de synthèse dans l'assistant Valanto avec rendement brut et valeur vénale finale",
-      "caption": "Synthèse avec rendement brut et valeur vénale finale."
+      "caption": "Synthèse avec rendement brut et valeur vénale finale.",
+      "cropAlt": "Extrait de la synthèse : droit de superficie, valeur de marché automatique, valeur vénale retenue et rendement brut"
     }
   },
   "meta": {
@@ -48,9 +50,9 @@
   "audience": {
     "h2": "Conçu pour votre travail",
     "items": [
-      { "role": "Commercialisateur", "text": "Commercialiser, piloter des projets, tenir les vendeurs informés – sans changer sans cesse de logiciel." },
-      { "role": "Évaluateur", "text": "Des estimations traçables avec un dossier professionnel. Créées rapidement, exportées proprement." },
-      { "role": "Spécialiste", "text": "Vous faites les deux ? Avec Valanto, vous avez tout sur une plateforme continue – avec tous les modules." }
+      { "role": "Commercialisateur", "text": "Commercialiser, piloter des projets, tenir les vendeurs informés – sans changer sans cesse de logiciel.", "alt": "Page d'accueil d'un projet de construction neuve dans Valanto, avec illustration du bâtiment et affichage des appartements encore disponibles" },
+      { "role": "Évaluateur", "text": "Des estimations traçables avec un dossier professionnel. Créées rapidement, exportées proprement.", "alt": "Barre latérale d'une estimation dans Valanto avec valeur intrinsèque et valeur de rendement, détaillées par poste" },
+      { "role": "Spécialiste", "text": "Vous faites les deux ? Avec Valanto, vous avez tout sur une plateforme continue – avec tous les modules.", "alt": "Page de garde d'une documentation de vente Valanto avec photo de l'objet, titre et prix de vente", "alt2": "Extrait d'un exposé public avec type d'objet, état, année de construction et prix de vente" }
     ]
   },
   "pricing": {

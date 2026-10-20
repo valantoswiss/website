@@ -501,18 +501,48 @@ button:focus-visible,
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
+  /* Ausschnitte haben verschiedene Höhen: oben bündig statt gestreckt */
+  align-items: start;
 }
 .shot {
   margin: 0;
 }
+/* Petrol = Produkt: Jedes Produktbild steht in einem Petrol-Rahmen, die
+   Terracotta-Fläche bleibt den Knöpfen vorbehalten. Kein Schatten mehr –
+   der breite Rahmen trägt das Bild allein. */
 .shot__zoom {
+  --hint: calc(36px + var(--g) * 0.8);
+  position: relative;
   display: block;
   width: 100%;
   padding: 0;
-  border: 1px solid var(--ink);
+  border: calc(6px + var(--g) * 0.4) solid var(--teal);
+  /* unten eine Leiste im Rahmenton mit dem Vergrössern-Icon: die Lightbox
+     zeigt die ganze Ansicht. In der Leiste statt auf dem Bild, damit das
+     Icon keine Zahl im Ausschnitt verdeckt. */
+  border-bottom-width: var(--hint);
   background: #fff;
-  box-shadow: calc(14px + var(--g)) calc(14px + var(--g)) 0 rgba(35, 38, 45, 0.08);
   cursor: zoom-in;
+  transition: border-color 0.18s ease;
+}
+.shot__hint {
+  position: absolute;
+  right: 0;
+  bottom: calc(var(--hint) * -1);
+  width: var(--hint);
+  height: var(--hint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal);
+  color: #fff;
+  transition: background 0.18s ease;
+}
+.shot__zoom:hover {
+  border-color: var(--ink);
+}
+.shot__zoom:hover .shot__hint {
+  background: var(--ink);
 }
 .shot__zoom img {
   display: block;
@@ -629,46 +659,121 @@ button:focus-visible,
    AUDIENCE
    ============================================================ */
 
+/* Bühne statt drei gleicher Kästen: je Rolle ein Produktbild neben dem
+   Text, die Reihen wechseln Seite und Bildgrösse (gross links, klein rechts,
+   Kombination links). Die Rollennamen tragen den Grössenkontrast.
+   Zwei Fassungen zur Wahl über data-audience am <section>:
+   «hell» = Creme, Bilder im breiten Petrol-Rahmen wie die Beispiele;
+   «buehne» = Anthrazit wie der Abschluss, Bilder mit feinem Petrol-Rand.
+   Nach Fabians Entscheid fällt die andere Fassung samt Attribut weg. */
 .audience {
-  padding: calc(56px + var(--g) * 3) var(--pad-x) calc(40px + var(--g) * 2);
+  padding: calc(88px + var(--g) * 5) var(--pad-x) calc(96px + var(--g) * 5);
+  background: var(--bg);
+  /* Grund der Sektion, auch für die Aussparung um das Exposé-Bild */
+  --aud-bg: var(--bg);
 }
 .audience__head {
-  display: flex;
-  flex-direction: column;
-  gap: calc(14px + var(--g) * 0.4);
-  margin-bottom: calc(36px + var(--g) * 2);
+  margin-bottom: calc(56px + var(--g) * 3);
 }
-.audience__grid {
+.audience__rows {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--ink);
+  gap: calc(88px + var(--g) * 5);
 }
 .aud {
-  padding: calc(32px + var(--g) * 2) calc(30px + var(--g) * 2) calc(34px + var(--g) * 2);
-  background: var(--bg);
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  column-gap: calc(56px + var(--g) * 5);
+  align-items: center;
 }
-.aud--mid {
-  border-left: 1px solid var(--ink);
-  border-right: 1px solid var(--ink);
+/* Text steht im DOM vor dem Bild (Lesereihenfolge), das Raster stellt um */
+.aud__media {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+}
+.aud__copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+/* Bewerter: Text links, kleineres Bild rechts an der Inhaltskante. Die
+   Quelle ist 662 px breit, breiter würde sie unscharf. */
+.aud--narrow {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.aud--narrow .aud__copy {
+  grid-column: 1;
+}
+.aud--narrow .aud__media {
+  grid-column: 2;
+  width: min(calc(560px + var(--g) * 10), 42vw);
 }
 .aud__role {
-  font-size: calc(24px + var(--g) * 0.8);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: clamp(30px, 0.5rem + 3.4vw, 50px);
+  hyphens: auto;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
   color: var(--ink);
+  overflow-wrap: break-word;
 }
 .aud__rule {
-  width: calc(34px + var(--g));
-  height: 2px;
+  width: calc(48px + var(--g));
+  height: 3px;
   background: var(--teal);
-  margin: 16px 0 18px;
+  margin: calc(20px + var(--g) * 0.6) 0;
 }
 .aud__text {
-  font-size: calc(16px + var(--g) * 0.35);
-  line-height: 1.65;
+  font-size: calc(17px + var(--g) * 0.4);
+  line-height: 1.6;
   color: var(--text);
-  max-width: 60ch;
+  max-width: 40ch;
   text-wrap: pretty;
+}
+.aud__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: calc(6px + var(--g) * 0.4) solid var(--teal);
+}
+/* Spezialist = beides: Verkaufsdokumentation, oben rechts versetzt das
+   Exposé. Es liegt über dem Himmel des Fotos, Titel und Preis des
+   Deckblatts bleiben frei. Die Aussparung im Sektionsgrund (outline, kein
+   Schatten) trennt die beiden Bilder. */
+.aud__media--combo {
+  position: relative;
+}
+.aud__img--main {
+  width: 84%;
+  margin-top: 16%;
+}
+.aud__img--inset {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 58%;
+  outline: calc(8px + var(--g) * 0.4) solid var(--aud-bg);
+}
+
+/* Fassung B «buehne»: Anthrazit wie der Abschluss. Kontraste auf --ink:
+   --bg 14,2:1, --on-dark 12,4:1 (AA verlangt 4,5:1). Der Petrol-Rand ist
+   1 px fein, die weissen Bilder heben sich allein ab. */
+.audience[data-audience='buehne'] {
+  background: var(--ink);
+  --aud-bg: var(--ink);
+}
+.audience[data-audience='buehne'] .h2,
+.audience[data-audience='buehne'] .aud__role {
+  color: var(--bg);
+}
+.audience[data-audience='buehne'] .aud__text {
+  color: var(--on-dark);
+}
+.audience[data-audience='buehne'] .aud__rule {
+  background: var(--teal-bright);
+}
+.audience[data-audience='buehne'] .aud__img {
+  border: 1px solid var(--teal);
 }
 
 /* ============================================================
@@ -1092,6 +1197,14 @@ button:focus-visible,
 /* Fünf Spalten tragen nur auf dem Desktop; darunter stufenweise umbrechen.
    Zellen brauchen dann wieder eine untere Trennlinie. */
 @media (max-width: 1080px) {
+  /* Zielgruppen auf Tablet-Breite: halbe-halbe, damit lange Rollennamen
+     (FR «Commercialisateur») in der Textspalte Platz haben. */
+  .aud {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .aud--narrow {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
   .features__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1126,14 +1239,22 @@ button:focus-visible,
     grid-template-columns: 1fr;
     gap: 44px;
   }
-  .audience__grid {
-    grid-template-columns: 1fr;
+  /* Zielgruppen einspaltig: Rolle, Text, dann Bild */
+  .aud,
+  .aud--narrow {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
   }
-  .aud--mid {
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
+  .aud__copy,
+  .aud__media,
+  .aud--narrow .aud__copy,
+  .aud--narrow .aud__media {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .aud--narrow .aud__media {
+    width: 100%;
+    max-width: 480px;
   }
   /* Handout A3, mobil: einspaltig in der Reihenfolge des Rasters. Der
      Rahmen bleibt ein durchgehender Kasten, getrennt wird über `border-top`. */
@@ -1173,7 +1294,13 @@ button:focus-visible,
     padding: 44px var(--pad-x) 32px;
   }
   .audience {
-    padding: 40px var(--pad-x);
+    padding: 56px var(--pad-x) 64px;
+  }
+  .audience__head {
+    margin-bottom: 40px;
+  }
+  .audience__rows {
+    gap: 64px;
   }
   .pricing {
     padding: 40px var(--pad-x) 48px;
@@ -1417,8 +1544,11 @@ button:focus-visible,
   .features__shots {
     gap: calc(36px + var(--g) * 7.6);
   }
+  .aud__role {
+    font-size: clamp(50px, 3.4vw + 8px, 96px);
+  }
   .aud__text {
-    max-width: 52ch;
+    max-width: 44ch;
   }
   .plan__price {
     font-size: clamp(36px, 1.6vw + 16px, 56px);
