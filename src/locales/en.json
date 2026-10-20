@@ -67,7 +67,7 @@
   "pricing": {
     "h2": "A plan for your role",
     "intro": "Price per user, per month, capped per office location and plan – cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
-    "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Multiple locations, branch networks and other models: flat-rate solution on request.",
+    "note": "All prices excl. VAT · One office location equals one account. · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Multiple locations, branch networks and other models: flat-rate solution on request.",
     "boxes": [
       {
         "t": "One account per company, one plan per user",
