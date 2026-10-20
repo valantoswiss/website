@@ -5,6 +5,8 @@
 > keine Dachzeilen/Eyebrows, Zielgruppen als Bühne mit Produktbildern auf Anthrazit,
 > Produktbilder im Petrol-Rahmen statt durchgehendem Hairline-Raster. Preise und Claim
 > unten sind nachgeführt, die übrigen Gestaltungsangaben nicht.
+> Seit 20.10.2026 nennen Bewerter-Block und Preiskarte die Methoden Realwert, Ertragswert und
+> Residualwert, und vor dem Abschluss steht die Sektion «Fragen und Antworten» (#faq, FAQPage im JSON-LD).
 
 ## Overview
 Marketing-Website für **Valanto**, eine Schweizer SaaS-Plattform für Immobilienprofis
