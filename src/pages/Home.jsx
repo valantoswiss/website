@@ -14,8 +14,8 @@ import cropSummary1080 from '../assets/screenshots/bewertung-resultat-ausschnitt
 import cropSummary1320 from '../assets/screenshots/bewertung-resultat-ausschnitt-1320.webp'
 import audVermarkter1080 from '../assets/screenshots/zielgruppe-vermarkter-1080.webp'
 import audVermarkter1440 from '../assets/screenshots/zielgruppe-vermarkter-1440.webp'
-import audBewerter1080 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1080.webp'
-import audBewerter1585 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1585.webp'
+import audBewerter1080 from '../assets/screenshots/zielgruppe-bewerter-verkehrswert-1080.webp'
+import audBewerter1560 from '../assets/screenshots/zielgruppe-bewerter-verkehrswert-1560.webp'
 import audDossier1080 from '../assets/screenshots/zielgruppe-spezialist-dossier-1080.webp'
 import audDossier1300 from '../assets/screenshots/zielgruppe-spezialist-dossier-1300.webp'
 import audExpose800 from '../assets/screenshots/zielgruppe-spezialist-expose-800.webp'
@@ -297,7 +297,8 @@ function Features() {
 
 /* Je Zielgruppe ein Produktbild, positionsbasiert zu audience.items:
    Vermarkter = Neubauprojekt-Landingpage, Bewerter = Gutachten-Seite
-   «Berechnung Verkehrswert», Spezialist = Verkaufsdokumentation plus Exposé.
+   «Berechnung Verkehrswert» (Seestrasse 14, CHF 1'240'000 wie Hero, Dossier
+   und Exposé), Spezialist = Verkaufsdokumentation plus Exposé.
    Die Reihen wechseln die Bildseite, damit kein Kastenraster entsteht. */
 const AUDIENCE_MEDIA = [
   {
@@ -306,7 +307,7 @@ const AUDIENCE_MEDIA = [
   },
   {
     layout: 'flip',
-    imgs: [{ src: audBewerter1080, srcSet: `${audBewerter1080} 1080w, ${audBewerter1585} 1585w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1585, height: 420, altKey: 'alt', part: 'paper' }],
+    imgs: [{ src: audBewerter1080, srcSet: `${audBewerter1080} 1080w, ${audBewerter1560} 1560w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1560, height: 385, altKey: 'alt', part: 'paper' }],
   },
   {
     layout: 'combo',
