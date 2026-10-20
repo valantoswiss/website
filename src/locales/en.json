@@ -32,6 +32,14 @@
     "coverAlt": "Cover page of a Valanto market value appraisal showing the property address and the assessed market value",
     "trust": "No credit card · Free seat to try it out · Swiss FADP compliant"
   },
+  "video": {
+    "h2": "How Valanto works",
+    "intro": "One property, one flow: value it, issue the appraisal report, market it with the dossier – and your sellers follow progress in their own portal.",
+    "label": "Product video: a valuation in the Valanto wizard becomes an appraisal PDF, the same property a sales dossier, and the seller sees the status in the customer portal.",
+    "note": "Sample data",
+    "pause": "Pause video",
+    "play": "Play video"
+  },
   "features": {
     "h2": "One tool for your entire working day",
     "intro": "Instead of three programs and duplicate data entry: with Valanto you work end to end in one place – from the first valuation to finished marketing.",

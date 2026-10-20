@@ -32,6 +32,14 @@
     "coverAlt": "Page de couverture d'une expertise de valeur vénale Valanto avec l'adresse du bien et la valeur retenue",
     "trust": "Sans carte de crédit · Un poste gratuit pour essayer · Conforme à la nLPD"
   },
+  "video": {
+    "h2": "Comment fonctionne Valanto",
+    "intro": "Un bien, un seul flux : évaluer, établir le rapport d'expertise, commercialiser avec le dossier – et vos vendeurs suivent l'avancement dans leur propre portail.",
+    "label": "Vidéo produit : une évaluation dans l'assistant Valanto devient un rapport d'expertise en PDF, le même bien un dossier de vente, et le vendeur voit le statut dans le portail client.",
+    "note": "Données d'exemple",
+    "pause": "Mettre la vidéo en pause",
+    "play": "Lire la vidéo"
+  },
   "features": {
     "h2": "Un outil pour toute votre journée de travail",
     "intro": "Plutôt que trois logiciels et une double saisie : avec Valanto, vous travaillez de bout en bout au même endroit – de la première estimation jusqu'à la commercialisation finale.",

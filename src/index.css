@@ -430,6 +430,74 @@ button:focus-visible,
 }
 
 /* ============================================================
+   PRODUKTVIDEO
+   ============================================================ */
+
+/* Schliesst wie Features knapp an den Hero an. Rahmen und versetzter Schatten
+   wie bei den Produkt-Screenshots; eckig, keine Rundungen. */
+.video {
+  padding: calc(32px + var(--g) * 2) var(--pad-x) calc(40px + var(--g) * 2);
+}
+.video__h2 {
+  max-width: 24ch;
+}
+.video__intro {
+  margin-top: calc(16px + var(--g) * 0.6);
+  max-width: 64ch;
+  font-size: calc(15px + var(--g) * 0.3);
+  line-height: 1.7;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+.video__figure {
+  margin: calc(36px + var(--g) * 2) 0 0;
+  /* auf breiten Schirmen nicht über die ganze Inhaltsbreite – Video bleibt
+     ein Element der Seite, kein Vollbild */
+  max-width: calc(1176px + var(--g) * 60);
+}
+.video__frame {
+  position: relative;
+  border: 1px solid var(--ink);
+  background: var(--bg);
+  box-shadow: calc(14px + var(--g)) calc(14px + var(--g)) 0 rgba(35, 38, 45, 0.08);
+}
+.video__player {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--bg);
+}
+.video__toggle {
+  position: absolute;
+  right: calc(14px + var(--g) * 0.6);
+  bottom: calc(14px + var(--g) * 0.6);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.video__toggle:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+.video__toggle:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.video__note {
+  margin-top: calc(14px + var(--g) * 0.4);
+  font-size: calc(13px + var(--g) * 0.3);
+  color: var(--muted);
+}
+
+/* ============================================================
    FEATURES
    ============================================================ */
 
