@@ -394,7 +394,19 @@ button:focus-visible,
   line-height: 1.06;
   color: var(--ink);
   letter-spacing: -0.03em;
-  text-wrap: balance; /* verhindert "Bewerten," allein auf Zeile 1 (Review 17.07.) */
+  /* pretty als Rückfall für Browser ohne balance; balance verhindert
+     "Bewerten," allein auf Zeile 1 (Review 17.07.). Das geschützte Leerzeichen
+     vor dem Halbgeviertstrich im Locale hält ihn an «vermarkten». */
+  text-wrap: pretty;
+  text-wrap: balance;
+}
+/* Zweispaltiger Hero bis 1280 px: Die Textspalte ist hier nur 430–540 px breit,
+   bei der Fliessformel oben (53 px bei 1024) gäbe es vier Zeilen. 4,3 vw
+   hält die Überschrift dreizeilig und trifft bei 1280 px wieder den Höchstwert. */
+@media (min-width: 901px) and (max-width: 1280px) {
+  .hero__title {
+    font-size: clamp(36px, 4.3vw, 54px);
+  }
 }
 /* Handout A2: Lead auf Scanlänge – 17.5px, engere Zeilen, 44ch statt 520px */
 .hero__lead {
