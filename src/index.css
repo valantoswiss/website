@@ -66,7 +66,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Anker (#features, #audience, #pricing, #examples) rasten unter dem
+  /* Anker (#features, #video, #audience, #pricing, #examples) rasten unter dem
      sticky Header ein – seit die Dachzeilen fehlen, sässe sonst die H2
      darunter. Entspricht der Header-Höhe (85 px bei 1024, 94 px bei 1920). */
   scroll-padding-top: calc(84px + var(--g) * 2);
