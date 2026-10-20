@@ -60,7 +60,7 @@
     "h2": "Built for your work",
     "items": [
       { "role": "Marketer", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs.", "alt": "Building illustration of a new-build project with the note “3 of 12 flats still available”" },
-      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported.", "alt": "Valuation report page “Market value calculation” with intrinsic value, income value, weighted value and applied market value" },
+      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported. Real value with age depreciation by building component, income value and residual value – weighted in percent, transparently calculated, not estimated.", "alt": "Valuation report page “Market value calculation” with intrinsic value, income value, weighted value and applied market value" },
       { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules.", "alt": "Cover page of a Valanto sales brochure with property photo, title and asking price", "alt2": "Detail of a public exposé with property type, condition, year of construction and asking price" }
     ]
   },
@@ -91,7 +91,7 @@
         "price": "CHF 90.–",
         "per": "per user / mo.",
         "cap": "max. CHF 300.– per office location",
-        "features": ["Valuations with dossier", "Property base data", "Appraisal dossier as PDF"]
+        "features": ["Valuations using real value, income value and residual value", "Property base data", "Appraisal dossier as PDF"]
       },
       {
         "name": "Specialist",

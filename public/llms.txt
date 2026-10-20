@@ -7,7 +7,7 @@ Betreiberin: Felsberg Consulting GmbH, Felsbergstrasse 2, 8625 Gossau ZH, Schwei
 ## Funktionen
 
 - Liegenschaften erfassen: alle Objekte mit vollständigem Dossier an einem Ort.
-- Bewertungen mit Dossier: nachvollziehbare Verkehrswert-Bewertungen, ausgegeben als Gutachten-Dossier im PDF-Format.
+- Bewertungen mit Dossier: nachvollziehbare Verkehrswert-Bewertungen nach Realwert (mit Altersentwertung nach Bauteilen), Ertragswert und Residualwert, gewichtet in Prozent, ausgegeben als Gutachten-Dossier im PDF-Format.
 - Neubauprojekte: Projekte anlegen, Einheiten erfassen, Verkaufsstand im Blick behalten.
 - Landingpages: für jedes Objekt eine eigene Vermarktungsseite, ohne Webagentur.
 - Verkäufer-Portal: Verkäufer sehen den Stand ihres Verkaufs jederzeit selbst.
@@ -16,7 +16,7 @@ Betreiberin: Felsberg Consulting GmbH, Felsbergstrasse 2, 8625 Gossau ZH, Schwei
 ## Zielgruppen
 
 - Vermarkter: vermarkten, Projekte steuern, Verkäufer auf dem Laufenden halten.
-- Bewerter: nachvollziehbare Bewertungen mit professionellem Dossier.
+- Bewerter: nachvollziehbare Bewertungen mit professionellem Dossier. Realwert mit Altersentwertung nach Bauteilen, Ertragswert und Residualwert – gewichtet in Prozent, nachvollziehbar gerechnet, nicht geschätzt.
 - Spezialisten, die beides machen: alle Module in einer Plattform.
 
 ## Preise
@@ -25,7 +25,7 @@ Preis pro Benutzer und Monat, exkl. MwSt., mit Obergrenze pro Bürostandort und 
 
 - Gratis-Sitzplatz: CHF 0 – ein Sitzplatz pro Firma mit je einer Liegenschaft, einer Bewertung und einem Neubauprojekt, ohne Zeitlimit und ohne Kreditkarte.
 - Vermarkter: CHF 70 pro Benutzer und Monat, max. CHF 200 pro Bürostandort – Liegenschaften und Dossier, Neubauprojekte, Landingpages, Verkäufer-Portal.
-- Bewerter: CHF 90 pro Benutzer und Monat, max. CHF 300 pro Bürostandort – Bewertungen mit Dossier, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF.
+- Bewerter: CHF 90 pro Benutzer und Monat, max. CHF 300 pro Bürostandort – Bewertungen nach Realwert, Ertragswert und Residualwert, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF.
 - Spezialist: CHF 140 pro Benutzer und Monat, max. CHF 450 pro Bürostandort – alles aus Vermarkter plus Bewertungen mit Dossier.
 
 ## Seiten
