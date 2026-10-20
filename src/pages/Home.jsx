@@ -14,7 +14,8 @@ import cropSummary1080 from '../assets/screenshots/bewertung-resultat-ausschnitt
 import cropSummary1320 from '../assets/screenshots/bewertung-resultat-ausschnitt-1320.webp'
 import audVermarkter1080 from '../assets/screenshots/zielgruppe-vermarkter-1080.webp'
 import audVermarkter1440 from '../assets/screenshots/zielgruppe-vermarkter-1440.webp'
-import audBewerter662 from '../assets/screenshots/zielgruppe-bewerter-662.webp'
+import audBewerter1080 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1080.webp'
+import audBewerter1585 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1585.webp'
 import audDossier1080 from '../assets/screenshots/zielgruppe-spezialist-dossier-1080.webp'
 import audDossier1300 from '../assets/screenshots/zielgruppe-spezialist-dossier-1300.webp'
 import audExpose800 from '../assets/screenshots/zielgruppe-spezialist-expose-800.webp'
@@ -180,17 +181,17 @@ function Features() {
 }
 
 /* Je Zielgruppe ein Produktbild, positionsbasiert zu audience.items:
-   Vermarkter = Neubauprojekt-Landingpage, Bewerter = Realwert/Ertragswert
-   aus der Bewertung, Spezialist = Verkaufsdokumentation plus Exposé.
-   Die Reihen wechseln Seite und Bildgrösse, damit kein Kastenraster entsteht. */
+   Vermarkter = Neubauprojekt-Landingpage, Bewerter = Gutachten-Seite
+   «Berechnung Verkehrswert», Spezialist = Verkaufsdokumentation plus Exposé.
+   Die Reihen wechseln die Bildseite, damit kein Kastenraster entsteht. */
 const AUDIENCE_MEDIA = [
   {
     layout: 'wide',
     imgs: [{ src: audVermarkter1080, srcSet: `${audVermarkter1080} 1080w, ${audVermarkter1440} 1440w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1440, height: 610, altKey: 'alt' }],
   },
   {
-    layout: 'narrow',
-    imgs: [{ src: audBewerter662, width: 662, height: 670, altKey: 'alt' }],
+    layout: 'flip',
+    imgs: [{ src: audBewerter1080, srcSet: `${audBewerter1080} 1080w, ${audBewerter1585} 1585w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1585, height: 420, altKey: 'alt', part: 'paper' }],
   },
   {
     layout: 'combo',
@@ -201,14 +202,12 @@ const AUDIENCE_MEDIA = [
   },
 ]
 
-/* Zwei Fassungen zur Wahl (Fabian, nach Screenshots): data-audience="hell"
-   = Creme mit Petrol-Rahmen, "buehne" = Anthrazit wie der Abschluss. Die
-   unterlegene Fassung fliegt nach dem Entscheid samt Attribut raus. */
+/* Bühne auf Anthrazit wie der Abschluss (Entscheid Fabian 20.10.2026). */
 function Audience() {
   const { t } = useTranslation()
   const items = t('audience.items', { returnObjects: true })
   return (
-    <section className="audience" id="audience" data-audience="buehne">
+    <section className="audience" id="audience">
       <div className="inner">
         <div className="audience__head">
           <h2 className="h2">{t('audience.h2')}</h2>

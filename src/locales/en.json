@@ -51,7 +51,7 @@
     "h2": "Built for your work",
     "items": [
       { "role": "Marketer", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs.", "alt": "Landing page of a new-build project in Valanto with an illustration of the building and the number of flats still available" },
-      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported.", "alt": "Sidebar of a valuation in Valanto with intrinsic value and capitalised income value, broken down by item" },
+      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported.", "alt": "Valuation report page “Market value calculation” with intrinsic value, income value, weighted value and applied market value" },
       { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules.", "alt": "Cover page of a Valanto sales brochure with property photo, title and asking price", "alt2": "Detail of a public exposé with property type, condition, year of construction and asking price" }
     ]
   },
