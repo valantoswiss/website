@@ -22,6 +22,7 @@
     "examples": "Beispiele",
     "forwho": "Für wen",
     "pricing": "Preise",
+    "faq": "Fragen",
     "about": "Über uns",
     "login": "Login",
     "try": "Gratis-Konto erstellen",
@@ -60,7 +61,7 @@
     "h2": "Gemacht für Ihre Arbeit",
     "items": [
       { "role": "Vermarkter", "text": "Vermarkten, Projekte steuern, Verkäufer auf dem Laufenden halten – ohne ständig das Programm zu wechseln.", "alt": "Gebäude-Illustration eines Neubauprojekts mit dem Hinweis «Noch 3 von 12 Wohnungen frei»" },
-      { "role": "Bewerter", "text": "Nachvollziehbare Bewertungen mit professionellem Dossier. Schnell erstellt, sauber exportiert.", "alt": "Gutachten-Seite «Berechnung Verkehrswert» mit Realwert, Ertragswert, gewichtetem Zwischenwert und verwendetem Verkehrswert" },
+      { "role": "Bewerter", "text": "Nachvollziehbare Bewertungen mit professionellem Dossier. Schnell erstellt, sauber exportiert. Realwert mit Altersentwertung nach Bauteilen, Ertragswert und Residualwert – gewichtet in Prozent, nachvollziehbar gerechnet, nicht geschätzt.", "alt": "Gutachten-Seite «Berechnung Verkehrswert» mit Realwert und Ertragswert samt Gewichtung, gewichtetem Zwischenwert und verwendetem Verkehrswert von CHF 1'240'000" },
       { "role": "Spezialist", "text": "Sie machen beides? Dann haben Sie mit Valanto alles in einer durchgängigen Plattform – mit allen Modulen.", "alt": "Deckblatt einer Verkaufsdokumentation aus Valanto mit Objektfoto, Titel und Verkaufspreis", "alt2": "Ausschnitt eines öffentlichen Exposés mit Objektart, Zustand, Baujahr und Verkaufspreis" }
     ]
   },
@@ -91,7 +92,7 @@
         "price": "CHF 90.–",
         "per": "pro Benutzer / Mt.",
         "cap": "max. CHF 300.– pro Bürostandort",
-        "features": ["Bewertungen mit Dossier", "Liegenschaften-Grunddaten", "Gutachten-Dossier als PDF"]
+        "features": ["Bewertungen nach Realwert, Ertragswert und Residualwert", "Liegenschaften-Grunddaten", "Gutachten-Dossier als PDF"]
       },
       {
         "name": "Spezialist",
@@ -108,6 +109,19 @@
     "points": [
       { "t": "Datenschutzkonform (revDSG)", "d": "Wir behandeln Ihre Daten nach Schweizer Datenschutzrecht – gehostet in der Schweiz bei Infomaniak (Genf)." },
       { "t": "Kurze Wege", "d": "Ihr Feedback fliesst direkt in die Entwicklung ein. Wir sind ein kleines Team, kein Ticketsystem." }
+    ]
+  },
+  "faq": {
+    "h2": "Fragen und Antworten",
+    "items": [
+      { "q": "Welche Bewertungsmethoden bietet Valanto?", "a": "Realwert mit Altersentwertung nach Bauteilen, Ertragswert und Residualwert. Sie wählen die Methoden pro Bewertung und gewichten sie in Prozent. Ein DCF-Verfahren ist vorbereitet und wird fachlich geprüft. Ein Vergleichswertverfahren gibt es nicht." },
+      { "q": "Woher kommt der Verkehrswert?", "a": "Aus Ihren Eingaben: der gewichtete Mittelwert der gewählten Methoden, abzüglich Reparaturstau und Wohnrecht, jederzeit von Hand übersteuerbar. Keine externen Preismodelle, keine hedonischen Schätzungen, keine KI im Wert. Nachvollziehbar gerechnet, nicht geschätzt." },
+      { "q": "Was kann ich exportieren?", "a": "Das Gutachten als PDF (beim Abschluss archiviert), das Verkaufsdossier als PDF, das Exposé als öffentliche Seite mit Dossier-Fassung, Kontakte und Rechnungen als CSV. Word-Export gibt es nicht." },
+      { "q": "Kann ich bestehende Daten importieren?", "a": "Kontakte als CSV mit Vorlage. Anfragen von Ihrer Website kommen über eine Schnittstelle direkt in Valanto. Altdaten aus einem früheren System übernehmen wir auf Anfrage für Sie. Ein Import aus dem Gebäuderegister (GWR) ist geplant." },
+      { "q": "Erscheint mein Logo im Gutachten?", "a": "Ja. Logo und Akzentfarbe prägen Gutachten, Dossier, Exposé, Verkäufer-Portal, Rechnungen, Projektseite und Homepage-Widget. Dazu Kontaktfoto, Ansprechperson, Titel unter der Unterschrift und bis zu drei Verbandslogos im Dossier." },
+      { "q": "Was passiert mit meinen Daten, wenn ich kündige?", "a": "Das Abo ist monatlich kündbar. Ihre Daten erhalten Sie auf Anfrage innert 30 Tagen in einem gängigen Format, danach werden sie gelöscht, soweit keine Aufbewahrungspflicht besteht. Sie können Ihr Konto auch selbst löschen. Gehostet wird in der Schweiz bei Infomaniak in Genf, mit täglichen verschlüsselten Backups." },
+      { "q": "Was ist ein Bürostandort?", "a": "Ein Bürostandort entspricht einem Konto. Die Obergrenze pro Paket gilt für alle Benutzer dieses Kontos. Mehrere Standorte und Filialnetze: Pauschallösung auf Anfrage." },
+      { "q": "In welcher Sprache läuft Valanto?", "a": "Deutsch. Die Oberfläche lässt sich auch auf Englisch nutzen; Gutachten, Dossiers und Rechtstexte sind auf Deutsch." }
     ]
   },
   "cta": {

@@ -22,6 +22,7 @@
     "examples": "Examples",
     "forwho": "Who it's for",
     "pricing": "Pricing",
+    "faq": "FAQ",
     "about": "About",
     "login": "Login",
     "try": "Create free account",
@@ -60,7 +61,7 @@
     "h2": "Built for your work",
     "items": [
       { "role": "Marketer", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs.", "alt": "Building illustration of a new-build project with the note “3 of 12 flats still available”" },
-      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported.", "alt": "Valuation report page “Market value calculation” with intrinsic value, income value, weighted value and applied market value" },
+      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported. Real value with age depreciation by building component, income value and residual value – weighted in percent, transparently calculated, not estimated.", "alt": "Valuation report page “Market value calculation” with real value and income value and their weighting, weighted interim value and applied market value of CHF 1'240'000" },
       { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules.", "alt": "Cover page of a Valanto sales brochure with property photo, title and asking price", "alt2": "Detail of a public exposé with property type, condition, year of construction and asking price" }
     ]
   },
@@ -91,7 +92,7 @@
         "price": "CHF 90.–",
         "per": "per user / mo.",
         "cap": "max. CHF 300.– per office location",
-        "features": ["Valuations with dossier", "Property base data", "Appraisal dossier as PDF"]
+        "features": ["Valuations using real value, income value and residual value", "Property base data", "Appraisal dossier as PDF"]
       },
       {
         "name": "Specialist",
@@ -108,6 +109,19 @@
     "points": [
       { "t": "Data privacy compliant (Swiss FADP)", "d": "We handle your data in accordance with Swiss data protection law – hosted in Switzerland with Infomaniak (Geneva)." },
       { "t": "Direct lines", "d": "Your feedback goes straight into development. We're a small team, not a ticketing system." }
+    ]
+  },
+  "faq": {
+    "h2": "Questions and answers",
+    "items": [
+      { "q": "Which valuation methods does Valanto offer?", "a": "Real value with age depreciation by building component, income value and residual value. You choose the methods for each valuation and weight them in percent. A DCF method has been prepared and is under professional review. There is no sales comparison method." },
+      { "q": "Where does the market value come from?", "a": "From your inputs: the weighted average of the chosen methods, less deferred maintenance and right of residence, and you can override it manually at any time. No external pricing models, no hedonic estimates, no AI in the value. Transparently calculated, not estimated." },
+      { "q": "What can I export?", "a": "The appraisal report as PDF (archived on completion), the sales dossier as PDF, the exposé as a public page with a dossier version, contacts and invoices as CSV. There is no Word export." },
+      { "q": "Can I import existing data?", "a": "Contacts as CSV, using a template. Enquiries from your website arrive directly in Valanto via an interface. On request, we transfer legacy data from a previous system for you. An import from the Federal Register of Buildings and Dwellings (GWR) is planned." },
+      { "q": "Does my logo appear in the appraisal report?", "a": "Yes. Your logo and accent colour shape the appraisal report, dossier, exposé, seller portal, invoices, project page and website widget. Plus contact photo, contact person, title below the signature and up to three association logos in the dossier." },
+      { "q": "What happens to my data if I cancel?", "a": "The subscription can be cancelled monthly. On request, you receive your data within 30 days in a common format; after that it is deleted unless a retention obligation applies. You can also delete your account yourself. Hosting is in Switzerland with Infomaniak in Geneva, with daily encrypted backups." },
+      { "q": "What is an office location?", "a": "One office location equals one account. The cap per plan applies to all users of that account. Multiple locations and branch networks: flat-rate solution on request." },
+      { "q": "What language does Valanto run in?", "a": "German. The interface can also be used in English; appraisal reports, dossiers and legal texts are in German." }
     ]
   },
   "cta": {

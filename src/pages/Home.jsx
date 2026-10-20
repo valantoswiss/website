@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
-import { House, Lock, Maximize2 } from 'lucide-react'
+import { ChevronDown, House, Lock, Maximize2 } from 'lucide-react'
 import Seo from '../Seo.jsx'
 import { APP_REGISTER_URL } from '../links.js'
-import { softwareApplication } from '../structuredData.js'
+import { faqPage, softwareApplication } from '../structuredData.js'
 import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
 import shotRaster2160 from '../assets/screenshots/bewertung-bauteil-raster-2160.webp'
 import shotSummary2160 from '../assets/screenshots/bewertung-zusammenfassung-2160.webp'
@@ -14,8 +14,8 @@ import cropSummary1080 from '../assets/screenshots/bewertung-resultat-ausschnitt
 import cropSummary1320 from '../assets/screenshots/bewertung-resultat-ausschnitt-1320.webp'
 import audVermarkter1080 from '../assets/screenshots/zielgruppe-vermarkter-1080.webp'
 import audVermarkter1440 from '../assets/screenshots/zielgruppe-vermarkter-1440.webp'
-import audBewerter1080 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1080.webp'
-import audBewerter1585 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1585.webp'
+import audBewerter1080 from '../assets/screenshots/zielgruppe-bewerter-verkehrswert-1080.webp'
+import audBewerter1560 from '../assets/screenshots/zielgruppe-bewerter-verkehrswert-1560.webp'
 import audDossier1080 from '../assets/screenshots/zielgruppe-spezialist-dossier-1080.webp'
 import audDossier1300 from '../assets/screenshots/zielgruppe-spezialist-dossier-1300.webp'
 import audExpose800 from '../assets/screenshots/zielgruppe-spezialist-expose-800.webp'
@@ -297,7 +297,8 @@ function Features() {
 
 /* Je Zielgruppe ein Produktbild, positionsbasiert zu audience.items:
    Vermarkter = Neubauprojekt-Landingpage, Bewerter = Gutachten-Seite
-   «Berechnung Verkehrswert», Spezialist = Verkaufsdokumentation plus Exposé.
+   «Berechnung Verkehrswert» (Seestrasse 14, CHF 1'240'000 wie Hero, Dossier
+   und Exposé), Spezialist = Verkaufsdokumentation plus Exposé.
    Die Reihen wechseln die Bildseite, damit kein Kastenraster entsteht. */
 const AUDIENCE_MEDIA = [
   {
@@ -306,7 +307,7 @@ const AUDIENCE_MEDIA = [
   },
   {
     layout: 'flip',
-    imgs: [{ src: audBewerter1080, srcSet: `${audBewerter1080} 1080w, ${audBewerter1585} 1585w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1585, height: 420, altKey: 'alt', part: 'paper' }],
+    imgs: [{ src: audBewerter1080, srcSet: `${audBewerter1080} 1080w, ${audBewerter1560} 1560w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1560, height: 385, altKey: 'alt', part: 'paper' }],
   },
   {
     layout: 'combo',
@@ -446,6 +447,33 @@ function Siv() {
   )
 }
 
+/* Fragen und Antworten (Freigabe Fabian 20.10.2026): natives <details> ohne
+   JavaScript, die Antworten stehen damit im vorgerenderten HTML. Dieselben
+   Locale-Texte speisen das FAQPage-Schema in structuredData.js. Der Chevron
+   zeigt den Zustand an und dreht beim Öffnen. */
+function Faq() {
+  const { t } = useTranslation()
+  const items = t('faq.items', { returnObjects: true })
+  return (
+    <section className="faq" id="faq" aria-labelledby="faq-h2">
+      <div className="inner">
+        <h2 className="h2 faq__h2" id="faq-h2">{t('faq.h2')}</h2>
+        <div className="faq__list">
+          {items.map((f, i) => (
+            <details className="faq__item" key={i}>
+              <summary className="faq__q">
+                <span>{f.q}</span>
+                <ChevronDown className="faq__icon" size={22} strokeWidth={1.75} fill="none" aria-hidden="true" />
+              </summary>
+              <p className="faq__a">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ClosingCta() {
   const { t } = useTranslation()
   return (
@@ -466,12 +494,13 @@ export default function Home() {
   return (
     <>
       {/* Nur die Startseite trägt das SoftwareApplication-Schema (Funktionen,
-          Preise) – Organisation und WebSite kommen auf jeder Seite über <Seo>. */}
+          Preise) und die FAQPage (Fragen und Antworten) – Organisation und
+          WebSite kommen auf jeder Seite über <Seo>. */}
       <Seo
         title={t('meta.title')}
         description={t('meta.description')}
         path="/"
-        jsonLd={[softwareApplication]}
+        jsonLd={[softwareApplication, faqPage]}
       />
       <Hero />
       <ProductVideo />
@@ -479,6 +508,7 @@ export default function Home() {
       <Audience />
       <Pricing />
       <Siv />
+      <Faq />
       <ClosingCta />
     </>
   )

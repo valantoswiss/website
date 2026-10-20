@@ -7,6 +7,8 @@
    nachziehen. Preise gelten pro Benutzer und Monat mit Obergrenze je Paket und
    Bürostandort (Stand 17.10.2026). */
 
+import de from './locales/de.json'
+
 const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://valanto.ch').replace(/\/$/, '')
 
 export const organization = {
@@ -79,7 +81,8 @@ export const softwareApplication = {
     'in der Schweiz, datenschutzkonform nach revDSG.',
   featureList: [
     'Liegenschaften erfassen – alle Objekte mit vollständigem Dossier an einem Ort',
-    'Bewertungen mit Dossier – nachvollziehbare Verkehrswert-Bewertungen, Gutachten als PDF',
+    'Bewertungen mit Dossier – Verkehrswert nach Realwert mit Altersentwertung nach Bauteilen, ' +
+      'Ertragswert und Residualwert, gewichtet in Prozent; Gutachten als PDF',
     'Neubauprojekte – Projekte anlegen, Einheiten erfassen, Verkaufsstand im Blick',
     'Landingpages – eigene Vermarktungsseite für jedes Objekt',
     'Verkäufer-Portal – Verkäufer sehen den Stand jederzeit selbst',
@@ -105,7 +108,8 @@ export const softwareApplication = {
     plan(
       'Bewerter',
       90,
-      'Bewertungen mit Dossier, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF. ' +
+      'Bewertungen nach Realwert, Ertragswert und Residualwert, Liegenschaften-Grunddaten, ' +
+        'Gutachten-Dossier als PDF. ' +
         'Max. CHF 300 pro Bürostandort und Monat.',
     ),
     plan(
@@ -115,4 +119,20 @@ export const softwareApplication = {
         'Max. CHF 450 pro Bürostandort und Monat.',
     ),
   ],
+}
+
+/* FAQPage aus denselben Locale-Texten wie die Sektion «Fragen und Antworten»
+   (de.json, faq.items). Die Seite liefert DE aus, Fragen und Antworten sind
+   damit zeichengleich zur Seite. public/llms.txt führt dieselben acht Paare. */
+export const faqPage = {
+  '@type': 'FAQPage',
+  '@id': `${SITE_URL}/#faq`,
+  url: `${SITE_URL}/#faq`,
+  inLanguage: 'de-CH',
+  isPartOf: { '@id': website['@id'] },
+  mainEntity: de.faq.items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
