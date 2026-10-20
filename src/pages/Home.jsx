@@ -105,8 +105,9 @@ function Hero() {
 }
 
 /* Echte Produkt-Screenshots zur Feature-Karte „Bewertungen mit Dossier" (Issue #5).
-   Auf der Seite stehen lesbare Ausschnitte (Schrift bei 1440 px mindestens
-   11 px), die Lightbox zeigt weiterhin die ganze Ansicht. */
+   Auf der Seite stehen Ausschnitte statt Ganzseiten: Bei 1440 px liegt die
+   Tabellenschrift über 11 px, Hilfetext und %-Zeichen im Raster bei rund
+   10 px. Die Lightbox zeigt weiterhin die ganze Ansicht. */
 const PRODUCT_SHOTS = [
   { key: 'raster', small: cropRaster1080, large: cropRaster1320, width: 1320, height: 1385, full: shotRaster2160 },
   { key: 'summary', small: cropSummary1080, large: cropSummary1320, width: 1320, height: 1122, full: shotSummary2160 },

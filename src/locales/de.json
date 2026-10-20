@@ -50,7 +50,7 @@
   "audience": {
     "h2": "Gemacht für Ihre Arbeit",
     "items": [
-      { "role": "Vermarkter", "text": "Vermarkten, Projekte steuern, Verkäufer auf dem Laufenden halten – ohne ständig das Programm zu wechseln.", "alt": "Landingpage eines Neubauprojekts in Valanto mit Illustration des Gebäudes und der Anzeige der noch freien Wohnungen" },
+      { "role": "Vermarkter", "text": "Vermarkten, Projekte steuern, Verkäufer auf dem Laufenden halten – ohne ständig das Programm zu wechseln.", "alt": "Gebäude-Illustration eines Neubauprojekts mit dem Hinweis «Noch 3 von 12 Wohnungen frei»" },
       { "role": "Bewerter", "text": "Nachvollziehbare Bewertungen mit professionellem Dossier. Schnell erstellt, sauber exportiert.", "alt": "Gutachten-Seite «Berechnung Verkehrswert» mit Realwert, Ertragswert, gewichtetem Zwischenwert und verwendetem Verkehrswert" },
       { "role": "Spezialist", "text": "Sie machen beides? Dann haben Sie mit Valanto alles in einer durchgängigen Plattform – mit allen Modulen.", "alt": "Deckblatt einer Verkaufsdokumentation aus Valanto mit Objektfoto, Titel und Verkaufspreis", "alt2": "Ausschnitt eines öffentlichen Exposés mit Objektart, Zustand, Baujahr und Verkaufspreis" }
     ]

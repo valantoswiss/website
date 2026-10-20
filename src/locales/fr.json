@@ -50,7 +50,7 @@
   "audience": {
     "h2": "Conçu pour votre travail",
     "items": [
-      { "role": "Commercialisateur", "text": "Commercialiser, piloter des projets, tenir les vendeurs informés – sans changer sans cesse de logiciel.", "alt": "Page d'accueil d'un projet de construction neuve dans Valanto, avec illustration du bâtiment et affichage des appartements encore disponibles" },
+      { "role": "Commercialisateur", "text": "Commercialiser, piloter des projets, tenir les vendeurs informés – sans changer sans cesse de logiciel.", "alt": "Illustration du bâtiment d'un projet de construction neuve avec la mention « Encore 3 appartements libres sur 12 »" },
       { "role": "Évaluateur", "text": "Des estimations traçables avec un dossier professionnel. Créées rapidement, exportées proprement.", "alt": "Page d'expertise « Calcul de la valeur vénale » avec valeur intrinsèque, valeur de rendement, valeur pondérée et valeur vénale retenue" },
       { "role": "Spécialiste", "text": "Vous faites les deux ? Avec Valanto, vous avez tout sur une plateforme continue – avec tous les modules.", "alt": "Page de garde d'une documentation de vente Valanto avec photo de l'objet, titre et prix de vente", "alt2": "Extrait d'un exposé public avec type d'objet, état, année de construction et prix de vente" }
     ]

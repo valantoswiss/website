@@ -1,5 +1,11 @@
 # Handoff: Valanto – Marketing-Startseite (One-Pager)
 
+> **Veraltet, Stand Juli 2026.** Dieses Handoff beschreibt den ersten Entwurf. Heute
+> gelten `src/index.css` und `CLAUDE.md`: nur eine Schrift (Archivo, kein Source Serif 4),
+> keine Dachzeilen/Eyebrows, Zielgruppen als Bühne mit Produktbildern auf Anthrazit,
+> Produktbilder im Petrol-Rahmen statt durchgehendem Hairline-Raster. Preise und Claim
+> unten sind nachgeführt, die übrigen Gestaltungsangaben nicht.
+
 ## Overview
 Marketing-Website für **Valanto**, eine Schweizer SaaS-Plattform für Immobilienprofis
 (Liegenschaftsverwaltung, Bewertungen mit Dossier, Neubauprojekte, Landingpages,
@@ -37,14 +43,14 @@ echte Screenshots vorliegen, ersetzen.
 - **Alle Ecken sind eckig – `border-radius: 0` durchgängig.** Keine Pills, keine
   abgerundeten Karten. Buttons sind Rechtecke, oft als zusammenhängende Gruppe
   (geteilte Kante, kein Gap).
-- Editorial/Swiss-Grid-Ästhetik: **Hairline-Raster** (1px Linien in Anthrazit
+- (veraltet, Stand Juli 2026) Editorial/Swiss-Grid-Ästhetik: **Hairline-Raster** (1px Linien in Anthrazit
   `#23262D`) statt Schatten und Karten-Lift. Feature-, Preis- und Zielgruppen-Grids
   sind durch durchgehende 1px-Linien getrennt, nicht durch Gaps.
 - Signature-Motiv: das **Bewertungs-Dossier** als aufgefächertes Dokument im Hero
   (leicht rotierte Papierlage dahinter, harter Offset-Schatten `14px 14px 0`).
 - Warmer Papier-Hintergrund `#FAF7F2`; Anthrazit-Bänder für Trust-Bar / CTA / Footer.
 
-## Typography
+## Typography (veraltet, Stand Juli 2026 – heute nur Archivo, keine Eyebrows)
 - **Display / Headlines / Preise / Rollen-Titel:** `Source Serif 4` (Google Fonts),
   weight 600 (Headlines) / 700 (Preise, Labels), `letter-spacing: -0.01em` auf grossen
   Headlines.

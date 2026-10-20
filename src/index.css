@@ -261,6 +261,10 @@ button:focus-visible,
   color: inherit;
   text-decoration: none;
   transition: color 0.18s ease;
+  /* Trefferfläche auch in der Breite >= 44 px («Preise» ist sonst 42 px);
+     die negativen Ränder halten die Abstände unverändert. */
+  padding-inline: 8px;
+  margin-inline: -8px;
 }
 /* 44 px Trefferfläche wie .plan__cta, in @supports: ohne lh-Unterstützung
    bleiben Polster und Ränder bei 0 statt ungültig zu werden. */
