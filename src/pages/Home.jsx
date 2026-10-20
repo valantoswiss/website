@@ -101,6 +101,112 @@ function Hero() {
   )
 }
 
+/* Produktvideo (Entscheid Jürg/Fabian 20.10.2026): stumm, Schleife, selbst
+   gehostet unter public/video/ – keine Dritt-Cookies, kein Consent nötig.
+   Die Quellen hängen erst am <video>, wenn der Abschnitt in den Sichtbereich
+   kommt (preload="none" allein lädt in manchen Browsern trotzdem Metadaten).
+   Ausserhalb des Sichtbereichs pausiert es, bei «weniger Bewegung» bleibt es
+   beim Posterbild, bis jemand selbst auf Abspielen drückt. */
+const VIDEO_BASE = '/video/valanto-produktvideo'
+
+function ProductVideo() {
+  const { t } = useTranslation()
+  const videoRef = useRef(null)
+  const [loaded, setLoaded] = useState(false)
+  const [playing, setPlaying] = useState(false)
+  // Hat jemand selbst pausiert, startet das Video beim Zurückscrollen nicht neu.
+  const pausedByUser = useRef(false)
+
+  useEffect(() => {
+    const video = videoRef.current
+    // React setzt `muted` nicht verlässlich als Attribut – ohne stummes Video
+    // blockieren Browser das automatische Abspielen.
+    video.muted = true
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduceMotion || !('IntersectionObserver' in window)) return undefined
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoaded(true)
+          if (!pausedByUser.current) video.play().catch(() => {})
+        } else if (!video.paused) {
+          video.pause()
+        }
+      },
+      { threshold: 0.35 },
+    )
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
+  // Neue <source>-Elemente greifen erst nach load().
+  useEffect(() => {
+    if (!loaded) return
+    const video = videoRef.current
+    video.load()
+    if (!pausedByUser.current) video.play().catch(() => {})
+  }, [loaded])
+
+  const toggle = () => {
+    const video = videoRef.current
+    if (video.paused) {
+      pausedByUser.current = false
+      setLoaded(true)
+      video.play().catch(() => {})
+    } else {
+      pausedByUser.current = true
+      video.pause()
+    }
+  }
+
+  return (
+    <section className="video" id="video">
+      <div className="inner">
+        <h2 className="h2 video__h2">{t('video.h2')}</h2>
+        <p className="video__intro">{t('video.intro')}</p>
+        <figure className="video__figure">
+          <div className="video__frame">
+            <video
+              ref={videoRef}
+              className="video__player"
+              poster={`${VIDEO_BASE}-poster.jpg`}
+              width="1920"
+              height="1080"
+              muted
+              loop
+              playsInline
+              preload="none"
+              aria-label={t('video.label')}
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+            >
+              {loaded && <source src={`${VIDEO_BASE}.webm`} type="video/webm" />}
+              {loaded && <source src={`${VIDEO_BASE}.mp4`} type="video/mp4" />}
+            </video>
+            <button
+              type="button"
+              className="video__toggle"
+              onClick={toggle}
+              aria-label={playing ? t('video.pause') : t('video.play')}
+            >
+              {playing ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <rect x="6" y="5" width="4" height="14" /><rect x="14" y="5" width="4" height="14" />
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7 4.5v15l13-7.5z" />
+                </svg>
+              )}
+            </button>
+          </div>
+          <figcaption className="video__note">{t('video.note')}</figcaption>
+        </figure>
+      </div>
+    </section>
+  )
+}
+
 /* Echte Produkt-Screenshots zur Feature-Karte „Bewertungen mit Dossier" (Issue #5) */
 const PRODUCT_SHOTS = [
   { key: 'raster', small: shotRaster1080, large: shotRaster2160 },
@@ -305,6 +411,7 @@ export default function Home() {
         jsonLd={[softwareApplication]}
       />
       <Hero />
+      <ProductVideo />
       <Features />
       <Audience />
       <Pricing />

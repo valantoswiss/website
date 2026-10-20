@@ -32,6 +32,14 @@
     "coverAlt": "Deckblatt eines Valanto-Verkehrswertgutachtens mit Objektadresse und ausgewiesenem Verkehrswert",
     "trust": "Keine Kreditkarte · Gratis-Sitzplatz zum Ausprobieren · revDSG-konform"
   },
+  "video": {
+    "h2": "So funktioniert Valanto",
+    "intro": "Eine Liegenschaft, ein Ablauf: bewerten, das Gutachten ausgeben, mit dem Dossier vermarkten – und Ihre Verkäufer verfolgen den Stand im eigenen Portal.",
+    "label": "Produktvideo: Eine Bewertung im Valanto-Wizard wird zum Gutachten-PDF, dieselbe Liegenschaft zum Verkaufsdossier, und der Verkäufer sieht den Status im Kundenportal.",
+    "note": "Beispieldaten",
+    "pause": "Video anhalten",
+    "play": "Video abspielen"
+  },
   "features": {
     "h2": "Ein Werkzeug für Ihren ganzen Arbeitstag",
     "intro": "Statt drei Programmen und doppelter Datenpflege: Mit Valanto arbeiten Sie durchgehend an einem Ort – von der ersten Bewertung bis zur fertigen Vermarktung.",
