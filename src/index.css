@@ -488,7 +488,8 @@ button:focus-visible,
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  background: var(--bg);
+  /* Grundfläche, bis das Posterbild geladen ist */
+  background: var(--panel);
 }
 .video__toggle {
   position: absolute;
@@ -641,7 +642,9 @@ button:focus-visible,
      zeigt die ganze Ansicht. In der Leiste statt auf dem Bild, damit das
      Icon keine Zahl im Ausschnitt verdeckt. */
   border-bottom-width: var(--hint);
-  background: #fff;
+  /* Grundfläche, solange das lazy geladene Bild noch fehlt: Die Höhe ist über
+     width/height am <img> reserviert, die Fläche bleibt sichtbar statt leer. */
+  background: var(--panel);
   cursor: zoom-in;
   transition: border-color 0.18s ease;
 }
@@ -847,7 +850,9 @@ button:focus-visible,
   display: block;
   width: 100%;
   height: auto;
-  background: #fff;
+  /* Grundfläche in Bühnenfarbe, bis das lazy geladene Bild da ist (Höhe über
+     width/height am <img> reserviert); alle Bilder sind deckend. */
+  background: var(--ink-deep);
   /* Petrol = Produkt: feiner Rand, die weissen Bilder heben sich allein ab */
   border: 1px solid var(--teal);
 }
@@ -855,6 +860,8 @@ button:focus-visible,
    damit die Tabelle nicht am Petrol-Rand klebt. */
 .aud__img--paper {
   padding: calc(14px + var(--g) * 0.6) calc(16px + var(--g) * 0.8);
+  /* Rand bleibt weiss wie das Papier, die Fläche dahinter dunkel bis zum Laden */
+  background: linear-gradient(var(--ink-deep), var(--ink-deep)) content-box, #fff;
 }
 /* Spezialist = beides: Verkaufsdokumentation, oben rechts versetzt das
    Exposé. Es liegt über dem Himmel des Fotos, Titel und Preis des

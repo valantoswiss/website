@@ -249,7 +249,7 @@ function Features() {
           </div>
         </div>
         <div className="features__shots" id="examples">
-          {PRODUCT_SHOTS.map((s) => {
+          {PRODUCT_SHOTS.map((s, idx) => {
             const alt = t(`shots.${s.key}.alt`)
             const caption = t(`shots.${s.key}.caption`)
             return (
@@ -268,6 +268,9 @@ function Features() {
                     width={s.width}
                     height={s.height}
                     loading="lazy"
+                    // Nur das erste Beispiel-Bild bevorzugt laden (klein
+                    // geschrieben, siehe fetchpriority im Hero).
+                    fetchpriority={idx === 0 ? 'high' : undefined}
                   />
                   {/* Petrol-Ecke am Rahmen: zeigt, dass es die ganze Ansicht gibt */}
                   <span className="shot__hint" aria-hidden="true">
