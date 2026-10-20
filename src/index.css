@@ -506,6 +506,32 @@ button:focus-visible,
   font-size: calc(13px + var(--g) * 0.3);
   color: var(--muted);
 }
+/* Mobil (Review 20.10.2026): Das Video läuft bis an die Bildschirmränder, damit
+   die Oberfläche im Bild lesbar bleibt, und der Knopf liegt in der Zeile unter
+   dem Bild statt darauf – gleiche Position, nur ausserhalb der Bildfläche.
+   Die Zeile trägt Knopf (44 px) und Hinweis «Beispieldaten» nebeneinander. */
+@media (max-width: 560px) {
+  .video__figure {
+    margin-inline: calc(var(--pad-x) * -1);
+  }
+  .video__frame {
+    border-inline: none;
+    box-shadow: none;
+  }
+  .video__toggle {
+    top: 100%;
+    bottom: auto;
+    right: var(--pad-x);
+    margin-top: 6px;
+  }
+  .video__note {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    margin-top: 0;
+    padding: 6px calc(var(--pad-x) + 56px) 0 var(--pad-x);
+  }
+}
 
 /* ============================================================
    FEATURES

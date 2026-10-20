@@ -109,7 +109,8 @@ function Hero() {
    Die Quellen hängen erst am <video>, wenn der Abschnitt in den Sichtbereich
    kommt (preload="none" allein lädt in manchen Browsern trotzdem Metadaten).
    Ausserhalb des Sichtbereichs pausiert es, bei «weniger Bewegung» bleibt es
-   beim Posterbild, bis jemand selbst auf Abspielen drückt. */
+   beim Posterbild, bis jemand selbst auf Abspielen drückt. Auf dem Handy
+   sitzt der Knopf unter dem Bild (CSS), auf dem Desktop darauf. */
 const VIDEO_BASE = '/video/valanto-produktvideo'
 
 function ProductVideo() {
