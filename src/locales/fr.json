@@ -22,6 +22,7 @@
     "examples": "Exemples",
     "forwho": "Pour qui",
     "pricing": "Tarifs",
+    "faq": "Questions",
     "about": "À propos",
     "login": "Connexion",
     "try": "Créer un compte gratuit",
@@ -108,6 +109,19 @@
     "points": [
       { "t": "Conforme à la nLPD", "d": "Nous traitons vos données conformément au droit suisse de la protection des données – hébergement en Suisse chez Infomaniak (Genève)." },
       { "t": "Circuits courts", "d": "Vos retours influencent directement le développement. Nous sommes une petite équipe, pas un système de tickets." }
+    ]
+  },
+  "faq": {
+    "h2": "Questions et réponses",
+    "items": [
+      { "q": "Quelles méthodes d'évaluation Valanto propose-t-il ?", "a": "Valeur réelle avec dépréciation par éléments de construction, valeur de rendement et valeur résiduelle. Vous choisissez les méthodes pour chaque estimation et les pondérez en pourcentage. Une méthode DCF est préparée et fait l'objet d'un examen technique. Il n'existe pas de méthode comparative." },
+      { "q": "D'où vient la valeur vénale ?", "a": "De vos saisies : la moyenne pondérée des méthodes choisies, déduction faite du retard d'entretien et du droit d'habitation, modifiable à la main à tout moment. Pas de modèles de prix externes, pas d'estimations hédonistes, pas d'IA dans la valeur. Calculée de manière traçable, sans approximation." },
+      { "q": "Que puis-je exporter ?", "a": "Le rapport d'expertise en PDF (archivé à la clôture), le dossier de vente en PDF, l'exposé sous forme de page publique avec une version dossier, les contacts et les factures en CSV. Il n'y a pas d'export Word." },
+      { "q": "Puis-je importer des données existantes ?", "a": "Les contacts en CSV, avec un modèle. Les demandes provenant de votre site web arrivent directement dans Valanto via une interface. Sur demande, nous reprenons pour vous les données d'un ancien système. Un import depuis le Registre fédéral des bâtiments et des logements (RegBL) est prévu." },
+      { "q": "Mon logo figure-t-il dans le rapport d'expertise ?", "a": "Oui. Le logo et la couleur d'accent marquent le rapport d'expertise, le dossier, l'exposé, le portail vendeurs, les factures, la page de projet et le widget pour votre site web. S'y ajoutent la photo de contact, la personne de contact, le titre sous la signature et jusqu'à trois logos d'associations dans le dossier." },
+      { "q": "Qu'advient-il de mes données si je résilie ?", "a": "L'abonnement est résiliable chaque mois. Sur demande, vous recevez vos données dans un délai de 30 jours dans un format courant ; elles sont ensuite supprimées, sauf obligation de conservation. Vous pouvez aussi supprimer votre compte vous-même. L'hébergement se fait en Suisse chez Infomaniak à Genève, avec des sauvegardes quotidiennes chiffrées." },
+      { "q": "Qu'est-ce qu'un site ?", "a": "Un site correspond à un compte. Le plafond par offre s'applique à tous les utilisateurs de ce compte. Plusieurs sites et réseaux de succursales : forfait sur demande." },
+      { "q": "Dans quelle langue Valanto fonctionne-t-il ?", "a": "En allemand. L'interface peut aussi être utilisée en anglais ; les rapports d'expertise, les dossiers et les textes juridiques sont en allemand." }
     ]
   },
   "cta": {

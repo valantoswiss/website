@@ -66,7 +66,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Anker (#features, #video, #audience, #pricing, #examples) rasten unter dem
+  /* Anker (#features, #video, #audience, #pricing, #examples, #faq) rasten unter dem
      sticky Header ein – seit die Dachzeilen fehlen, sässe sonst die H2
      darunter. Entspricht der Header-Höhe (85 px bei 1024, 94 px bei 1920). */
   scroll-padding-top: calc(84px + var(--g) * 2);
@@ -1120,6 +1120,78 @@ button:focus-visible,
 }
 
 /* ============================================================
+   FAQ
+   ============================================================ */
+
+/* Papier statt Panel: Nach Praxis (Panel) und vor dem Abschluss (Anthrazit)
+   hält der Wechsel Panel – Papier – Anthrazit den Rhythmus, und die
+   Antworten lesen sich auf dem hellsten Grund am ruhigsten. Die Kante oben
+   trennt wie bei Praxis zwei helle Flächen. Aufbau wie Praxis: Titel links,
+   Liste rechts; einzelne Einträge nur durch Haarlinien getrennt, keine
+   Kästen. Natives <details>: kein JavaScript, Antworten im vorgerenderten HTML. */
+.faq {
+  border-top: 1px solid var(--ink);
+  padding: calc(76px + var(--g) * 4) var(--pad-x);
+}
+.faq .inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 56px;
+  align-items: start;
+}
+.faq__list {
+  border-bottom: 1px solid var(--line-soft);
+}
+.faq__item {
+  border-top: 1px solid var(--line-soft);
+}
+.faq__item:first-child {
+  border-top-color: var(--ink);
+}
+/* Ganze Zeile ist die Schaltfläche, mindestens 44 px hoch. Der native
+   Marker entfällt (beide Schreibweisen), der Chevron übernimmt. */
+.faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(20px + var(--g));
+  min-height: 44px;
+  padding: calc(18px + var(--g) * 0.6) 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: calc(17px + var(--g) * 0.5);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.faq__q::-webkit-details-marker {
+  display: none;
+}
+.faq__q:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.faq__icon {
+  flex: none;
+  color: var(--teal-text);
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+.faq__q:hover .faq__icon {
+  color: var(--ink);
+}
+.faq__item[open] > .faq__q .faq__icon {
+  transform: rotate(180deg);
+}
+.faq__a {
+  font-size: calc(16px + var(--g) * 0.3);
+  line-height: 1.65;
+  color: var(--text);
+  max-width: 70ch;
+  padding: 0 calc(42px + var(--g)) calc(24px + var(--g)) 0;
+  text-wrap: pretty;
+}
+
+/* ============================================================
    CLOSING CTA
    ============================================================ */
 
@@ -1295,7 +1367,8 @@ button:focus-visible,
     gap: 16px;
     align-items: start;
   }
-  .siv .inner {
+  .siv .inner,
+  .faq .inner {
     grid-template-columns: 1fr;
     gap: 32px;
   }
@@ -1649,7 +1722,8 @@ button:focus-visible,
   .pricing__note-text {
     max-width: 72ch;
   }
-  .siv .inner {
+  .siv .inner,
+  .faq .inner {
     gap: calc(56px + var(--g) * 5.6);
   }
   .siv__text {

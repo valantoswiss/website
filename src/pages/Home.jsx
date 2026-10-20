@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
-import { House, Lock, Maximize2 } from 'lucide-react'
+import { ChevronDown, House, Lock, Maximize2 } from 'lucide-react'
 import Seo from '../Seo.jsx'
 import { APP_REGISTER_URL } from '../links.js'
 import { softwareApplication } from '../structuredData.js'
@@ -446,6 +446,33 @@ function Siv() {
   )
 }
 
+/* Fragen und Antworten (Freigabe Fabian 20.10.2026): natives <details> ohne
+   JavaScript, die Antworten stehen damit im vorgerenderten HTML. Dieselben
+   Locale-Texte speisen das FAQPage-Schema in structuredData.js. Der Chevron
+   zeigt den Zustand an und dreht beim Öffnen. */
+function Faq() {
+  const { t } = useTranslation()
+  const items = t('faq.items', { returnObjects: true })
+  return (
+    <section className="faq" id="faq" aria-labelledby="faq-h2">
+      <div className="inner">
+        <h2 className="h2 faq__h2" id="faq-h2">{t('faq.h2')}</h2>
+        <div className="faq__list">
+          {items.map((f, i) => (
+            <details className="faq__item" key={i}>
+              <summary className="faq__q">
+                <span>{f.q}</span>
+                <ChevronDown className="faq__icon" size={22} strokeWidth={1.75} fill="none" aria-hidden="true" />
+              </summary>
+              <p className="faq__a">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ClosingCta() {
   const { t } = useTranslation()
   return (
@@ -479,6 +506,7 @@ export default function Home() {
       <Audience />
       <Pricing />
       <Siv />
+      <Faq />
       <ClosingCta />
     </>
   )
