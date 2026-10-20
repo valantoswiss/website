@@ -535,16 +535,19 @@ button:focus-visible,
   text-wrap: pretty;
   padding-bottom: 4px;
 }
-/* Handout A4: fünf echte Module in einem 1px-Rahmen. Aussenrahmen Anthrazit,
-   Innenlinien hell (--line-soft) – bei fünf schmalen Spalten wirkt ein volles
-   Anthrazit-Gitter wie ein Formular. */
+/* Handout A4: fünf echte Module plus Ausblick in einem 1px-Rahmen. Aussenrahmen Anthrazit,
+   Innenlinien hell (--line-soft) – ein volles Anthrazit-Gitter wirkt wie ein
+   Formular. Dreispaltig auf allen Breiten über 760 px (Review 20.10.2026):
+   sechs Zellen ergeben 3 × 2 ohne leeres Feld; sechs schmale Spalten hätten
+   bei 1440 px nur 175 px Textbreite und Zeilen mit Strich am Anfang gegeben. */
 .features__grid {
   border: 1px solid var(--ink);
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .feature {
   border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
   padding: calc(28px + var(--g) * 1.6) calc(22px + var(--g) * 1.6);
   background: var(--bg);
   display: flex;
@@ -553,23 +556,24 @@ button:focus-visible,
   min-height: 150px;
   transition: background 0.18s ease;
 }
-.feature:last-child {
+.feature:nth-child(3n) {
   border-right: none;
+}
+.feature:nth-last-child(-n + 3) {
+  border-bottom: none;
 }
 .feature:hover {
   background: #fff;
 }
-/* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
-   ein Platzhalter zwischen fertigen Funktionen zieht das ganze Set runter. */
-.features__next {
-  margin-top: calc(18px + var(--g) * 0.6);
-  font-size: calc(13.5px + var(--g) * 0.3);
-  line-height: 1.6;
-  color: var(--muted);
+/* „Als Nächstes" ist die sechste Zelle (Review 20.10.2026): Sie füllt das Raster
+   auf, statt dass auf Tablet-Breite ein Feld leer bleibt. Der Panel-Grund
+   setzt sie als Ausblick ab, der Titel steht im gedämpften Ton. */
+.feature--next,
+.feature--next:hover {
+  background: var(--panel);
 }
-.features__next b {
-  font-weight: 700;
-  color: var(--ink);
+.feature--next .feature__title {
+  color: var(--text-soft);
 }
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
@@ -1259,8 +1263,6 @@ button:focus-visible,
   }
 }
 
-/* Fünf Spalten tragen nur auf dem Desktop; darunter stufenweise umbrechen.
-   Zellen brauchen dann wieder eine untere Trennlinie. */
 @media (max-width: 1080px) {
   /* Zielgruppen auf Tablet-Breite: halbe-halbe, damit lange Rollennamen
      (FR «Commercialisateur») in der Textspalte Platz haben. */
@@ -1268,30 +1270,17 @@ button:focus-visible,
   .aud--flip {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
-  .features__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .feature {
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .feature:nth-child(3n),
-  .feature:last-child {
-    border-right: none;
-  }
-  .feature:nth-last-child(-n + 2) {
-    border-bottom: none;
-  }
 }
 
 @media (max-width: 760px) {
   .features__grid {
     grid-template-columns: 1fr;
   }
-  /* :nth-last-child(-n + 2) hebt die 1080er-Regel gleicher Spezifität wieder
-     auf – mit .feature allein verlor Modul 04 im Einspalter seine Linie. */
+  /* :nth-last-child(-n + 3) hebt die Regel gleicher Spezifität oben wieder
+     auf – mit .feature allein verlöre das vorletzte Modul im Einspalter seine Linie. */
   .feature,
   .feature:nth-child(3n),
-  .feature:nth-last-child(-n + 2) {
+  .feature:nth-last-child(-n + 3) {
     border-right: none;
     border-bottom: 1px solid var(--line-soft);
   }

@@ -239,10 +239,13 @@ function Features() {
               <p className="feature__desc">{f.d}</p>
             </div>
           ))}
+          {/* Ausblick als sechste Zelle: füllt das Raster auf, der Panel-Grund
+              setzt sie als noch nicht fertig ab. */}
+          <div className="feature feature--next">
+            <h3 className="feature__title">{t('features.nextLabel')}</h3>
+            <p className="feature__desc">{t('features.next')}</p>
+          </div>
         </div>
-        <p className="features__next">
-          <b>{t('features.nextLabel')}</b> {t('features.next')}
-        </p>
         <div className="features__shots" id="examples">
           {PRODUCT_SHOTS.map((s) => {
             const alt = t(`shots.${s.key}.alt`)

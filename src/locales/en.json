@@ -52,7 +52,7 @@
       { "t": "Landing pages", "d": "A dedicated marketing page for every property – no extra software, no web agency needed." },
       { "t": "Seller portal", "d": "Your sellers can check the status themselves at any time – fewer questions, fewer status emails for you." }
     ],
-    "nextLabel": "Coming next:",
+    "nextLabel": "Coming next",
     "next": "CRM and prospects, directly in Valanto."
   },
   "audience": {
