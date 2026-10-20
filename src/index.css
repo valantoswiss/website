@@ -261,8 +261,14 @@ button:focus-visible,
   color: inherit;
   text-decoration: none;
   transition: color 0.18s ease;
-  padding-block: calc((44px - 1lh) / 2);
-  margin-block: calc((44px - 1lh) / -2);
+}
+/* 44 px Trefferfläche wie .plan__cta, in @supports: ohne lh-Unterstützung
+   bleiben Polster und Ränder bei 0 statt ungültig zu werden. */
+@supports (height: 1lh) {
+  .nav__links a {
+    padding-block: calc((44px - 1lh) / 2);
+    margin-block: calc((44px - 1lh) / -2);
+  }
 }
 .nav__links a:hover {
   color: var(--ink);
@@ -1111,12 +1117,6 @@ button:focus-visible,
   cursor: pointer;
   transition: color 0.18s ease;
 }
-/* Trefferfläche 44 px hoch wie bei .cta-textlink; die negativen Ränder halten
-   den Abstand der Links unverändert. */
-.footer__col a {
-  padding-block: calc((44px - 1lh) / 2);
-  margin-block: calc((44px - 1lh) / -2);
-}
 .footer__col a:hover,
 .footer__col .footer__linkbtn:hover {
   color: #fff;
@@ -1128,10 +1128,21 @@ button:focus-visible,
   border: none;
   padding: 0;
   text-align: left;
-  /* 44 px Trefferfläche wie .cta-textlink, die negativen Ränder halten das
-     Footer-Layout unverändert (ohne lh-Unterstützung entfallen beide). */
-  padding-block: calc((44px - 1lh) / 2);
-  margin-block: calc((44px - 1lh) / -2);
+  line-height: inherit;
+}
+/* Trefferfläche 44 px hoch für Links und Cookie-Button. Früher hoben negative
+   Ränder das Polster auf – bei 12 px Abstand überlappten sich die Flächen
+   benachbarter Links um rund 15 px. Jetzt stehen die 44-px-Flächen ohne
+   Lücke untereinander; das Polster ersetzt den Spaltenabstand. In
+   @supports: ohne lh-Unterstützung bleibt der bisherige Abstand. */
+@supports (height: 1lh) {
+  .footer__col {
+    gap: 0;
+  }
+  .footer__col a,
+  .footer__col .footer__linkbtn {
+    padding-block: calc((44px - 1lh) / 2);
+  }
 }
 .footer__copy {
   font-size: calc(12px + var(--g) * 0.3);

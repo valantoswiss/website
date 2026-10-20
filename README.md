@@ -1,4 +1,4 @@
-# Handoff: Valanto — Marketing-Startseite (One-Pager)
+# Handoff: Valanto – Marketing-Startseite (One-Pager)
 
 ## Overview
 Marketing-Website für **Valanto**, eine Schweizer SaaS-Plattform für Immobilienprofis
@@ -6,11 +6,11 @@ Marketing-Website für **Valanto**, eine Schweizer SaaS-Plattform für Immobilie
 Verkäufer-Portal). Dieses Paket enthält die designte Startseite als One-Pager mit
 Ankern, fertige DE-Copy sowie FR/EN-Übersetzungen, und die komplette i18n-Struktur.
 
-Betreibergesellschaft: **Felsberg Consulting GmbH**. Verrechnung läuft über die GmbH —
+Betreibergesellschaft: **Felsberg Consulting GmbH**. Verrechnung läuft über die GmbH –
 im Impressum/Footer korrekt abbilden.
 
 ## About the Design Files
-Die Dateien in diesem Bundle sind **Design-Referenzen, erstellt in HTML** — ein
+Die Dateien in diesem Bundle sind **Design-Referenzen, erstellt in HTML** – ein
 Prototyp, der Look und Verhalten zeigt, **kein produktiver Code zum 1:1-Kopieren**.
 Aufgabe ist, dieses Design in der Zielumgebung **neu aufzubauen**. Stack steht fest:
 **Laravel + Inertia + React** (siehe Abschnitt „Umsetzung: Laravel + Inertia + React").
@@ -19,12 +19,12 @@ Sections als eigene React-Komponenten, i18n mit `react-i18next` (die JSON-Locale
 Laravel-Abschnitt.
 
 Der Design-Prototyp ist eine Design-Component (`.dc.html`) und läuft nur im
-Design-Tool. Nicht übernehmen — nur als visuelle Referenz lesen.
+Design-Tool. Nicht übernehmen – nur als visuelle Referenz lesen.
 
 ## Fidelity
 **High-fidelity.** Finale Farben, Typografie, Spacing und Interaktionen. Pixelgenau
 mit den Libraries/Patterns des Zielprojekts nachbauen. Ausnahme: die Produkt-UI im
-Hero-Mockup und die Dashboard-Tabelle sind **Platzhalter-Illustrationen** — sobald
+Hero-Mockup und die Dashboard-Tabelle sind **Platzhalter-Illustrationen** – sobald
 echte Screenshots vorliegen, ersetzen.
 
 ---
@@ -34,7 +34,7 @@ echte Screenshots vorliegen, ersetzen.
   „Responsive / Mobile-first").
 - Explizit **NICHT nach „Vibe-Coding-Default"** aussehen: kein lila Gradient, keine
   zentrierten Emoji-Card-Muster.
-- **Alle Ecken sind eckig — `border-radius: 0` durchgängig.** Keine Pills, keine
+- **Alle Ecken sind eckig – `border-radius: 0` durchgängig.** Keine Pills, keine
   abgerundeten Karten. Buttons sind Rechtecke, oft als zusammenhängende Gruppe
   (geteilte Kante, kein Gap).
 - Editorial/Swiss-Grid-Ästhetik: **Hairline-Raster** (1px Linien in Anthrazit
@@ -49,27 +49,27 @@ echte Screenshots vorliegen, ersetzen.
   weight 600 (Headlines) / 700 (Preise, Labels), `letter-spacing: -0.01em` auf grossen
   Headlines.
 - **UI / Body / Nav / Buttons:** `Archivo` (Google Fonts), weights 400/500/600/700.
-- Eyebrows: Archivo 12px, weight 700, `letter-spacing: 0.18em`, uppercase, Farbe Petrol.
+- Eyebrows: Archivo 12px, weight 700, `letter-spacing: 0.18em`, Farbe Petrol.
 - Body: 15–17px, `line-height: 1.7`, Farbe `#55585F`. `text-wrap: pretty` auf Fliesstext.
-- (Referenz aus Briefing war *M PLUS Rounded 1c* — für Valanto bewusst durch die
+- (Referenz aus Briefing war *M PLUS Rounded 1c* – für Valanto bewusst durch die
   eckigere Serif/Grotesk-Kombi ersetzt, passend zur „eckig"-Vorgabe.)
 
 ## Design Tokens
 Farben:
-- `--paper` **#FAF7F2** — Haupt-Hintergrund
-- `--paper-2` **#F1ECE2** — sekundärer Block-Hintergrund (SIV-Sektion, Dossier-Rücklage)
-- `--ink` **#23262D** — Anthrazit: Text, Linien, dunkle Bänder
-- `--ink-2` **#1A1C21** — Footer-Hintergrund (noch dunkler)
-- `--accent` **#23808F** — Petrol (Primäraktion, Akzente). *Abgewandelt vom
-  Felsberg-Cyan `#45B7C3` — eigenständiger, tiefer.*
-- `--accent-hover` **#2E9DB0** — Petrol Hover auf dunklem Grund
-- `--accent-soft` **#8FBFC8** — gedämpfter Petrol (Balken, sekundär)
-- `--text` **#55585F** — Fliesstext
-- `--muted` **#6E6A60** — gedämpfter Text, Hinweise, „per Monat" (auf Papier). *AA-korrigiert von #A6A296 (2.3:1) → #6E6A60 (~4.7:1 auf #FAF7F2).*
-- `--muted-warm` **#B4B0A5** / **#8E8B82** — Footer-Text (auf dunklem Grund). *Footer-Labels/Copyright AA-korrigiert von #6E6B64 (~3.1:1) → #8E8B82 (~4.8:1 auf #1A1C21).*
-- `--line` **#23262D** — Rasterlinien (voll) · `#DED8CC` (Hairline auf Papier, dezent)
-- `--line-dark` **#4A4E57** — Linien auf dunklem Grund
-- Weiss **#FFFFFF** — Dossier-Karte, „Beliebt"-Preiskarte, SIV-Punktebox
+- `--paper` **#FAF7F2** – Haupt-Hintergrund
+- `--paper-2` **#F1ECE2** – sekundärer Block-Hintergrund (SIV-Sektion, Dossier-Rücklage)
+- `--ink` **#23262D** – Anthrazit: Text, Linien, dunkle Bänder
+- `--ink-2` **#1A1C21** – Footer-Hintergrund (noch dunkler)
+- `--accent` **#23808F** – Petrol (Primäraktion, Akzente). *Abgewandelt vom
+  Felsberg-Cyan `#45B7C3` – eigenständiger, tiefer.*
+- `--accent-hover` **#2E9DB0** – Petrol Hover auf dunklem Grund
+- `--accent-soft` **#8FBFC8** – gedämpfter Petrol (Balken, sekundär)
+- `--text` **#55585F** – Fliesstext
+- `--muted` **#6E6A60** – gedämpfter Text, Hinweise, „per Monat" (auf Papier). *AA-korrigiert von #A6A296 (2.3:1) → #6E6A60 (~4.7:1 auf #FAF7F2).*
+- `--muted-warm` **#B4B0A5** / **#8E8B82** – Footer-Text (auf dunklem Grund). *Footer-Labels/Copyright AA-korrigiert von #6E6B64 (~3.1:1) → #8E8B82 (~4.8:1 auf #1A1C21).*
+- `--line` **#23262D** – Rasterlinien (voll) · `#DED8CC` (Hairline auf Papier, dezent)
+- `--line-dark` **#4A4E57** – Linien auf dunklem Grund
+- Weiss **#FFFFFF** – Dossier-Karte, „Beliebt"-Preiskarte, SIV-Punktebox
 
 Spacing (Section-Padding): horizontal **52px**, vertikal je Sektion 56–84px.
 Grid-Gaps: Content-Splits **40–56px**; Karten-/Feature-Grids **0** (durch Linien getrennt).
@@ -89,7 +89,7 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
 - Links: Wortmarke „Valanto" (Source Serif 4, 23px, 700) + 6×6px Petrol-Quadrat als
   Baseline-Punkt.
 - Mitte: Nav-Links `Funktionen · Für wen · Preise · Über uns` (Archivo 14.5px, 500,
-  `#55585F`) — Anker auf die Sektionen.
+  `#55585F`) – Anker auf die Sektionen.
 - Rechts: **Sprachumschalter** `DE / FR / EN` als 1px-umrandete Segmentgruppe (aktives
   Segment: Text `#23262D` auf `#ECE6DC`; inaktiv: `#6E6A60`, transparent) · Text-Link
   „Login" (Unterstrich) · Button „Kostenlos testen" (Vollquadrat, `#23262D` Bg, weiss;
@@ -118,7 +118,7 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
   gehostet" · „SIV-nah" · „Partner-Logos folgen" (letztes dashed, gedämpft).
 
 ### 4. Feature-Übersicht (Anker „Funktionen")
-- Kopf: Grid `1fr 1fr` — links Eyebrow „ALLES AN EINEM ORT" + H2 „Ein Werkzeug für den
+- Kopf: Grid `1fr 1fr` – links Eyebrow „ALLES AN EINEM ORT" + H2 „Ein Werkzeug für den
   ganzen Immobilien-Workflow"; rechts Intro-Satz.
 - Grid: **3 Spalten × 2 Zeilen, durch 1px-Linien getrennt** (`border-top`+`border-left`
   am Container, `border-right`+`border-bottom` je Zelle). Jede Zelle padding `28px 26px`,
@@ -142,7 +142,8 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
 - Karte: Paketname (Serif 14px, `letter-spacing:0.12em`) · Preis (Serif 42px) + „/ Monat"
   · 1px-Trennlinie · Feature-Liste mit 16px-Petrol-Quadrat-Häkchen · CTA-Button unten
   (Empfehlung = Petrol-Vollfläche „Testen"; sonst Outline).
-- Preise: Bewerter **CHF 50.–**, Makler **CHF 80.–** (Beliebt), Spezialist **CHF 120.–**.
+- Preise pro Benutzer und Monat: Bewerter **CHF 90.–**, Vermarkter **CHF 70.–**,
+  Spezialist **CHF 140.–**, mit Obergrenze pro Bürostandort (CHF 300.– / 200.– / 450.–).
 - Hinweiszeile: „Alle Preise exkl. MwSt. · Individuelle Lösungen für Teams auf Anfrage."
   Preise sind **Draft**.
 
@@ -173,7 +174,7 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
 
 ## Interactions & Behavior
 - **Sticky Header** mit Blur; Nav-Links scrollen zu den Sektions-Ankern (`Funktionen`,
-  `Für wen`, `Preise`, `Über uns`) — smooth scroll.
+  `Für wen`, `Preise`, `Über uns`) – smooth scroll.
 - **Sprachumschalter (funktional):** klick DE / FR / EN wechselt die gesamte Seiten-Copy.
   Default **DE**. Aktives Segment hervorgehoben. Im Prototyp State-basiert; in React über
   `react-i18next` (`i18n.changeLanguage`).
@@ -182,7 +183,7 @@ Eine Seite (`/`), scrollbar, mit sticky Header. Sektionen von oben nach unten:
 - CTAs „Kostenlos testen" → Testlogin-Ziel (noch offen, siehe unten). „Demo buchen" →
   Demo-/Kontaktformular.
 - **Mobile-first (verbindlich).** Es gibt eine ausgearbeitete Mobile-Ansicht (390px) im
-  Prototyp — siehe unten. Erst Mobile bauen, dann auf Desktop erweitern.
+  Prototyp – siehe unten. Erst Mobile bauen, dann auf Desktop erweitern.
 
 ## Responsive / Mobile-first (Layout „Valanto Mobile", 390px)
 Reihenfolge auf Mobile bewusst **Claim → CTA → Beweis**: Hero-Text und beide CTAs stehen
@@ -222,13 +223,13 @@ Hit-Targets durchgängig ≥ 44px. Buttons behalten `border-radius: 0`.
   Tastaturnavigation (z. B. 2px Petrol-Outline), `aria-current` am aktiven Sprach-Segment.
 
 ## State Management
-- `language: 'de' | 'fr' | 'en'` (Default `de`) — über i18n. Persistenz optional
+- `language: 'de' | 'fr' | 'en'` (Default `de`) – über i18n. Persistenz optional
   (localStorage / `<html lang>`).
 - Sonst statische Marketing-Seite, kein Daten-Fetching. Formulare (Test/Demo) später.
 
 ## i18n (verbindlich aus Briefing)
 - `react-i18next`, getrennte Sprachdateien `de.json` (final), `fr.json`, `en.json`.
-- **Alle drei Dateien liegen fertig befüllt in `locales/`** in diesem Bundle — DE ist
+- **Alle drei Dateien liegen fertig befüllt in `locales/`** in diesem Bundle – DE ist
   final, FR/EN sind bereits sinnvoll übersetzt (vor Go-Live von Muttersprachlern
   gegenlesen lassen).
 - Key-Schema: `nav.*`, `hero.*`, `dossier.*`, `trust.*`, `features[].*`, `audiences[].*`,
@@ -236,7 +237,7 @@ Hit-Targets durchgängig ≥ 44px. Buttons behalten `border-radius: 0`.
 - Sprachumschalter im Header, DE als Default.
 
 ## Assets
-- **Fonts:** Google Fonts — `Source Serif 4`, `Archivo`. (M PLUS Rounded 1c aus dem
+- **Fonts:** Google Fonts – `Source Serif 4`, `Archivo`. (M PLUS Rounded 1c aus dem
   Briefing wird NICHT verwendet.)
 - **Icons:** Alle Emoji wurden durch **eckige Inline-SVG-Icons** ersetzt (keine Emoji
   mehr im Design): Schweiz = Petrol-Quadrat mit weissem Kreuz (`#23808F` + `#fff`); SIV
@@ -244,7 +245,7 @@ Hit-Targets durchgängig ≥ 44px. Buttons behalten `border-radius: 0`.
   (`stroke:#23262D`, `stroke-width:1.8`, eckig). Beim Nachbau als eigene `<Icon>`-
   Komponenten übernehmen (z. B. Lucide `lock`/`home` + custom Swiss-Cross-SVG).
   Feature-Marker sind Ziffern „01–06", keine Icons.
-- **Produkt-Screenshots:** fehlen. Hero-Dossier und Dashboard sind HTML-Platzhalter —
+- **Produkt-Screenshots:** fehlen. Hero-Dossier und Dashboard sind HTML-Platzhalter –
   durch echte Screenshots des Tools ersetzen.
 - **Logo:** Wortmarke „Valanto" + Petrol-Quadrat (Text-basiert, kein Bild-Asset nötig;
   finales Logo später).
@@ -326,7 +327,7 @@ colors: {
   body: '#55585F', muted: '#6E6A60', // AA-korrigiert (war #A6A296)
   lineDark: '#4A4E57', lineFoot: '#34373E',
 },
-borderRadius: { none: '0' }, // radius durchgängig 0 — keine rounded-* utilities nutzen
+borderRadius: { none: '0' }, // radius durchgängig 0 – keine rounded-* utilities nutzen
 fontFamily: {
   serif: ['"Source Serif 4"', 'serif'],
   sans: ['Archivo', 'system-ui', 'sans-serif'],
@@ -343,13 +344,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // HomeController@index
 return Inertia::render('Home');
 ```
-Statische Seite — keine DB. Test-/Demo-Formulare später als eigene Inertia-Actions.
+Statische Seite – keine DB. Test-/Demo-Formulare später als eigene Inertia-Actions.
 
 ### SSR / „Content im HTML" & Social Meta (wichtig für SEO + Link-Vorschau)
 **Problem:** Ohne SSR liefert Laravel nur `<div id="app"></div>` aus; Inhalt kommt erst
 per JS. Schlecht für Google und für Scraper von LinkedIn/WhatsApp (die kein JS ausführen).
 
-**Empfohlener Weg — offizielle Inertia-SSR** (kein Vite-Prerender-Plugin, kein Next.js):
+**Empfohlener Weg – offizielle Inertia-SSR** (kein Vite-Prerender-Plugin, kein Next.js):
 1. `resources/js/ssr.jsx` anlegen (Inertia-SSR-Entry mit `createServer` +
    `createInertiaApp` aus `@inertiajs/react/server`); i18n dort ebenfalls importieren, damit
    die Übersetzungen serverseitig gerendert werden.
@@ -363,22 +364,22 @@ per JS. Schlecht für Google und für Scraper von LinkedIn/WhatsApp (die kein JS
 Danach steht Hero-Text, Preise und alle Section-Überschriften im ausgelieferten HTML.
 
 **Titel/Head pro Seite:** die `<Head>`-Komponente aus `@inertiajs/react` in `Home.jsx`
-verwenden (`<Head title="…"><meta … /></Head>`) — wird mit SSR ins `<head>` gerendert.
+verwenden (`<Head title="…"><meta … /></Head>`) – wird mit SSR ins `<head>` gerendert.
 
 **Open-Graph-Tags server-seitig ins Blade-Root** (`resources/views/app.blade.php`, im
-`<head>`) — so sind sie **immer** present, auch ohne laufenden SSR-Node-Prozess und für
+`<head>`) – so sind sie **immer** present, auch ohne laufenden SSR-Node-Prozess und für
 JS-lose Scraper. Statische Inhalte, daher hartkodierbar (oder pro Locale via Shared-Prop):
 ```blade
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Valanto">
 <meta property="og:title" content="Valanto – Immobiliensoftware aus der Schweiz">
-<meta property="og:description" content="Bewerten, vermarkten, verwalten – in einem Werkzeug. Für Makler, Bewerter und Spezialisten. Entwickelt und gehostet in der Schweiz.">
+<meta property="og:description" content="Bewerten und vermarkten – in einem Werkzeug. Für Vermarkter, Bewerter und Spezialisten. Entwickelt und gehostet in der Schweiz.">
 <meta property="og:url" content="https://valanto.ch/">
 <meta property="og:image" content="https://valanto.ch/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Bewerten, vermarkten, verwalten – in einem Werkzeug. Für Makler, Bewerter und Spezialisten. Gehostet in der Schweiz.">
+<meta name="description" content="Bewerten und vermarkten – in einem Werkzeug. Für Vermarkter, Bewerter und Spezialisten. Gehostet in der Schweiz.">
 ```
 Bei mehrsprachig: pro Locale eigene `og:title`/`description` + `og:locale`
 (`de_CH` / `fr_CH` / `en`) und `hreflang`-Alternates rendern.
@@ -389,16 +390,16 @@ bereits darauf. Editierbare Quelle: `og-image-source.html`.
 
 **Prüfen nach Umsetzung:**
 - Browser „View Source" (nicht DevTools-Inspector!) auf `https://valanto.test` bzw. der
-  Live-Domain: Hero-H1, die drei Preise (CHF 50/80/120) und die Section-Überschriften
-  müssen im rohen HTML stehen — nicht nur ein leeres root-div.
+  Live-Domain: Hero-H1, die drei Preise (CHF 90/70/140) und die Section-Überschriften
+  müssen im rohen HTML stehen – nicht nur ein leeres root-div.
 - `curl -s https://valanto.ch/ | grep -i "og:title"` → OG-Tags vorhanden.
 - Facebook Sharing Debugger / LinkedIn Post Inspector zur Vorschau-Kontrolle.
 
 ## Files
-- `Valanto Website.dc.html` — Design-Prototyp (Referenz, nur im Design-Tool lauffähig).
-- `og-image.png` — fertiges 1200×630 Social-Share-Bild → nach `public/og-image.png`.
-- `og-image-source.html` — editierbare Quelle des OG-Bilds.
-- `locales/de.json`, `locales/fr.json`, `locales/en.json` — react-i18next-Sprachdateien,
+- `Valanto Website.dc.html` – Design-Prototyp (Referenz, nur im Design-Tool lauffähig).
+- `og-image.png` – fertiges 1200×630 Social-Share-Bild → nach `public/og-image.png`.
+- `og-image-source.html` – editierbare Quelle des OG-Bilds.
+- `locales/de.json`, `locales/fr.json`, `locales/en.json` – react-i18next-Sprachdateien,
   1:1 nach `resources/js/locales/` übernehmen.
-- `screenshots/` — Desktop- und Mobile-Aufnahmen des Designs.
-- `Website-Briefing-Portal.md` — Original-Briefing mit Kontext & Positionierung.
+- `screenshots/` – Desktop- und Mobile-Aufnahmen des Designs.
+- `Website-Briefing-Portal.md` – Original-Briefing mit Kontext & Positionierung.
