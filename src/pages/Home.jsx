@@ -76,9 +76,10 @@ function Hero() {
           <p className="hero__lead">{t('hero.lead')}</p>
           <div className="hero__ctas cta-row">
             <a className="btn btn-primary" href={APP_REGISTER_URL}>{t('hero.cta1')}</a>
-            {/* Kein Demo-Angebot (Fabian 12.08.2026): Sekundär-Link zeigt auf die
-                echten Produkt-Screenshots; später sollen hier Erklär-Tutorials hin. */}
-            <a className="cta-textlink" href="#examples">{t('hero.cta2')}</a>
+            {/* Kein Demo-Angebot (Fabian 12.08.2026): Sekundär-Link zeigt auf das
+                Produktvideo (Review 20.10.2026); die Screenshots bleiben unter
+                #examples erreichbar, später sollen hier Erklär-Tutorials hin. */}
+            <a className="cta-textlink" href="#video">{t('hero.cta2')}</a>
           </div>
           <p className="hero__trust">{t('hero.trust')}</p>
         </div>
@@ -109,7 +110,8 @@ function Hero() {
    Die Quellen hängen erst am <video>, wenn der Abschnitt in den Sichtbereich
    kommt (preload="none" allein lädt in manchen Browsern trotzdem Metadaten).
    Ausserhalb des Sichtbereichs pausiert es, bei «weniger Bewegung» bleibt es
-   beim Posterbild, bis jemand selbst auf Abspielen drückt. */
+   beim Posterbild, bis jemand selbst auf Abspielen drückt. Auf dem Handy
+   sitzt der Knopf unter dem Bild (CSS), auf dem Desktop darauf. */
 const VIDEO_BASE = '/video/valanto-produktvideo'
 
 function ProductVideo() {
@@ -239,12 +241,15 @@ function Features() {
               <p className="feature__desc">{f.d}</p>
             </div>
           ))}
+          {/* Ausblick als sechste Zelle: füllt das Raster auf, der Panel-Grund
+              setzt sie als noch nicht fertig ab. */}
+          <div className="feature feature--next">
+            <h3 className="feature__title">{t('features.nextLabel')}</h3>
+            <p className="feature__desc">{t('features.next')}</p>
+          </div>
         </div>
-        <p className="features__next">
-          <b>{t('features.nextLabel')}</b> {t('features.next')}
-        </p>
         <div className="features__shots" id="examples">
-          {PRODUCT_SHOTS.map((s) => {
+          {PRODUCT_SHOTS.map((s, idx) => {
             const alt = t(`shots.${s.key}.alt`)
             const caption = t(`shots.${s.key}.caption`)
             return (
@@ -263,6 +268,9 @@ function Features() {
                     width={s.width}
                     height={s.height}
                     loading="lazy"
+                    // Nur das erste Beispiel-Bild bevorzugt laden (klein
+                    // geschrieben, siehe fetchpriority im Hero).
+                    fetchpriority={idx === 0 ? 'high' : undefined}
                   />
                   {/* Petrol-Ecke am Rahmen: zeigt, dass es die ganze Ansicht gibt */}
                   <span className="shot__hint" aria-hidden="true">

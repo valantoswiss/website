@@ -19,6 +19,7 @@
   },
   "nav": {
     "features": "Features",
+    "examples": "Examples",
     "forwho": "Who it's for",
     "pricing": "Pricing",
     "about": "About",
@@ -27,7 +28,7 @@
     "menu": "Menu"
   },
   "hero": {
-    "h1": "Value and market – finally in one tool.",
+    "h1": "Value and market – finally in one tool.",
     "lead": "Properties, valuations and marketing in one workflow – instead of Excel, Word templates and isolated tools.",
     "cta1": "Create free account",
     "cta2": "See examples",
@@ -52,7 +53,7 @@
       { "t": "Landing pages", "d": "A dedicated marketing page for every property – no extra software, no web agency needed." },
       { "t": "Seller portal", "d": "Your sellers can check the status themselves at any time – fewer questions, fewer status emails for you." }
     ],
-    "nextLabel": "Coming next:",
+    "nextLabel": "Coming next",
     "next": "CRM and prospects, directly in Valanto."
   },
   "audience": {
@@ -66,7 +67,7 @@
   "pricing": {
     "h2": "A plan for your role",
     "intro": "Price per user, per month, capped per office location and plan – cancel any month. To try it out, every company gets one free seat with one property, one valuation and one new-build project – no time limit.",
-    "note": "All prices excl. VAT · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Multiple locations, branch networks and other models: flat-rate solution on request.",
+    "note": "All prices excl. VAT · One office location equals one account. · All plans compliant with the Swiss FADP (revDSG), hosted in Switzerland. · Multiple locations, branch networks and other models: flat-rate solution on request.",
     "boxes": [
       {
         "t": "One account per company, one plan per user",

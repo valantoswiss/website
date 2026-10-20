@@ -19,6 +19,7 @@
   },
   "nav": {
     "features": "Fonctions",
+    "examples": "Exemples",
     "forwho": "Pour qui",
     "pricing": "Tarifs",
     "about": "À propos",
@@ -27,7 +28,7 @@
     "menu": "Menu"
   },
   "hero": {
-    "h1": "Estimer et commercialiser – enfin dans un seul outil.",
+    "h1": "Estimer et commercialiser – enfin dans un seul outil.",
     "lead": "Biens, estimations et commercialisation dans un seul flux – plutôt que dans Excel, des modèles Word et des solutions isolées.",
     "cta1": "Créer un compte gratuit",
     "cta2": "Voir des exemples",
@@ -52,7 +53,7 @@
       { "t": "Landing pages", "d": "Une page de commercialisation dédiée pour chaque bien – sans logiciel supplémentaire, sans agence web." },
       { "t": "Portail vendeurs", "d": "Vos vendeurs consultent l'état d'avancement eux-mêmes à tout moment – moins de questions, moins d'e-mails de suivi pour vous." }
     ],
-    "nextLabel": "Prochainement :",
+    "nextLabel": "Prochainement",
     "next": "CRM et prospects, directement dans Valanto."
   },
   "audience": {
@@ -66,7 +67,7 @@
   "pricing": {
     "h2": "Une offre pour votre rôle",
     "intro": "Prix par utilisateur et par mois, avec plafond par site de bureau et par offre – résiliable chaque mois. Pour essayer, chaque entreprise dispose d'un poste gratuit avec un bien, une estimation et un projet de construction – sans limite de durée.",
-    "note": "Tous les prix HT · Toutes les offres conformes à la nLPD, hébergées en Suisse. · Plusieurs sites, réseaux de succursales et autres modèles : forfait sur demande.",
+    "note": "Tous les prix HT · Un site correspond à un compte. · Toutes les offres conformes à la nLPD, hébergées en Suisse. · Plusieurs sites, réseaux de succursales et autres modèles : forfait sur demande.",
     "boxes": [
       {
         "t": "Un compte par entreprise, une offre par utilisateur",

@@ -66,7 +66,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Anker (#features, #audience, #pricing, #examples) rasten unter dem
+  /* Anker (#features, #video, #audience, #pricing, #examples) rasten unter dem
      sticky Header ein – seit die Dachzeilen fehlen, sässe sonst die H2
      darunter. Entspricht der Header-Höhe (85 px bei 1024, 94 px bei 1920). */
   scroll-padding-top: calc(84px + var(--g) * 2);
@@ -394,7 +394,19 @@ button:focus-visible,
   line-height: 1.06;
   color: var(--ink);
   letter-spacing: -0.03em;
-  text-wrap: balance; /* verhindert "Bewerten," allein auf Zeile 1 (Review 17.07.) */
+  /* pretty als Rückfall für Browser ohne balance; balance verhindert
+     "Bewerten," allein auf Zeile 1 (Review 17.07.). Das geschützte Leerzeichen
+     vor dem Halbgeviertstrich im Locale hält ihn an «vermarkten». */
+  text-wrap: pretty;
+  text-wrap: balance;
+}
+/* Zweispaltiger Hero bis 1280 px: Die Textspalte ist hier nur 430–540 px breit,
+   bei der Fliessformel oben (53 px bei 1024) gäbe es vier Zeilen. 4,3 vw
+   hält die Überschrift dreizeilig und trifft bei 1280 px wieder den Höchstwert. */
+@media (min-width: 901px) and (max-width: 1280px) {
+  .hero__title {
+    font-size: clamp(36px, 4.3vw, 54px);
+  }
 }
 /* Handout A2: Lead auf Scanlänge – 17.5px, engere Zeilen, 44ch statt 520px */
 .hero__lead {
@@ -476,7 +488,8 @@ button:focus-visible,
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  background: var(--bg);
+  /* Grundfläche, bis das Posterbild geladen ist */
+  background: var(--panel);
 }
 .video__toggle {
   position: absolute;
@@ -505,6 +518,32 @@ button:focus-visible,
   margin-top: calc(14px + var(--g) * 0.4);
   font-size: calc(13px + var(--g) * 0.3);
   color: var(--muted);
+}
+/* Mobil (Review 20.10.2026): Das Video läuft bis an die Bildschirmränder, damit
+   die Oberfläche im Bild lesbar bleibt, und der Knopf liegt in der Zeile unter
+   dem Bild statt darauf – gleiche Position, nur ausserhalb der Bildfläche.
+   Die Zeile trägt Knopf (44 px) und Hinweis «Beispieldaten» nebeneinander. */
+@media (max-width: 560px) {
+  .video__figure {
+    margin-inline: calc(var(--pad-x) * -1);
+  }
+  .video__frame {
+    border-inline: none;
+    box-shadow: none;
+  }
+  .video__toggle {
+    top: 100%;
+    bottom: auto;
+    right: var(--pad-x);
+    margin-top: 6px;
+  }
+  .video__note {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    margin-top: 0;
+    padding: 6px calc(var(--pad-x) + 56px) 0 var(--pad-x);
+  }
 }
 
 /* ============================================================
@@ -535,16 +574,19 @@ button:focus-visible,
   text-wrap: pretty;
   padding-bottom: 4px;
 }
-/* Handout A4: fünf echte Module in einem 1px-Rahmen. Aussenrahmen Anthrazit,
-   Innenlinien hell (--line-soft) – bei fünf schmalen Spalten wirkt ein volles
-   Anthrazit-Gitter wie ein Formular. */
+/* Handout A4: fünf echte Module plus Ausblick in einem 1px-Rahmen. Aussenrahmen Anthrazit,
+   Innenlinien hell (--line-soft) – ein volles Anthrazit-Gitter wirkt wie ein
+   Formular. Dreispaltig auf allen Breiten über 760 px (Review 20.10.2026):
+   sechs Zellen ergeben 3 × 2 ohne leeres Feld; sechs schmale Spalten hätten
+   bei 1440 px nur 175 px Textbreite und Zeilen mit Strich am Anfang gegeben. */
 .features__grid {
   border: 1px solid var(--ink);
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .feature {
   border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
   padding: calc(28px + var(--g) * 1.6) calc(22px + var(--g) * 1.6);
   background: var(--bg);
   display: flex;
@@ -553,23 +595,24 @@ button:focus-visible,
   min-height: 150px;
   transition: background 0.18s ease;
 }
-.feature:last-child {
+.feature:nth-child(3n) {
   border-right: none;
+}
+.feature:nth-last-child(-n + 3) {
+  border-bottom: none;
 }
 .feature:hover {
   background: #fff;
 }
-/* „Als Nächstes:" steht bewusst unter dem Rahmen, nicht als sechste Zelle –
-   ein Platzhalter zwischen fertigen Funktionen zieht das ganze Set runter. */
-.features__next {
-  margin-top: calc(18px + var(--g) * 0.6);
-  font-size: calc(13.5px + var(--g) * 0.3);
-  line-height: 1.6;
-  color: var(--muted);
+/* „Als Nächstes" ist die sechste Zelle (Review 20.10.2026): Sie füllt das Raster
+   auf, statt dass auf Tablet-Breite ein Feld leer bleibt. Der Panel-Grund
+   setzt sie als Ausblick ab, der Titel steht im gedämpften Ton. */
+.feature--next,
+.feature--next:hover {
+  background: var(--panel);
 }
-.features__next b {
-  font-weight: 700;
-  color: var(--ink);
+.feature--next .feature__title {
+  color: var(--text-soft);
 }
 /* Produkt-Screenshots unter dem Feature-Grid (Issue #5) */
 .features__shots {
@@ -599,7 +642,9 @@ button:focus-visible,
      zeigt die ganze Ansicht. In der Leiste statt auf dem Bild, damit das
      Icon keine Zahl im Ausschnitt verdeckt. */
   border-bottom-width: var(--hint);
-  background: #fff;
+  /* Grundfläche, solange das lazy geladene Bild noch fehlt: Die Höhe ist über
+     width/height am <img> reserviert, die Fläche bleibt sichtbar statt leer. */
+  background: var(--panel);
   cursor: zoom-in;
   transition: border-color 0.18s ease;
 }
@@ -805,7 +850,9 @@ button:focus-visible,
   display: block;
   width: 100%;
   height: auto;
-  background: #fff;
+  /* Grundfläche in Bühnenfarbe, bis das lazy geladene Bild da ist (Höhe über
+     width/height am <img> reserviert); alle Bilder sind deckend. */
+  background: var(--ink-deep);
   /* Petrol = Produkt: feiner Rand, die weissen Bilder heben sich allein ab */
   border: 1px solid var(--teal);
 }
@@ -813,6 +860,8 @@ button:focus-visible,
    damit die Tabelle nicht am Petrol-Rand klebt. */
 .aud__img--paper {
   padding: calc(14px + var(--g) * 0.6) calc(16px + var(--g) * 0.8);
+  /* Rand bleibt weiss wie das Papier, die Fläche dahinter dunkel bis zum Laden */
+  background: linear-gradient(var(--ink-deep), var(--ink-deep)) content-box, #fff;
 }
 /* Spezialist = beides: Verkaufsdokumentation, oben rechts versetzt das
    Exposé. Es liegt über dem Himmel des Fotos, Titel und Preis des
@@ -1259,8 +1308,6 @@ button:focus-visible,
   }
 }
 
-/* Fünf Spalten tragen nur auf dem Desktop; darunter stufenweise umbrechen.
-   Zellen brauchen dann wieder eine untere Trennlinie. */
 @media (max-width: 1080px) {
   /* Zielgruppen auf Tablet-Breite: halbe-halbe, damit lange Rollennamen
      (FR «Commercialisateur») in der Textspalte Platz haben. */
@@ -1268,30 +1315,17 @@ button:focus-visible,
   .aud--flip {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
-  .features__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .feature {
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .feature:nth-child(3n),
-  .feature:last-child {
-    border-right: none;
-  }
-  .feature:nth-last-child(-n + 2) {
-    border-bottom: none;
-  }
 }
 
 @media (max-width: 760px) {
   .features__grid {
     grid-template-columns: 1fr;
   }
-  /* :nth-last-child(-n + 2) hebt die 1080er-Regel gleicher Spezifität wieder
-     auf – mit .feature allein verlor Modul 04 im Einspalter seine Linie. */
+  /* :nth-last-child(-n + 3) hebt die Regel gleicher Spezifität oben wieder
+     auf – mit .feature allein verlöre das vorletzte Modul im Einspalter seine Linie. */
   .feature,
   .feature:nth-child(3n),
-  .feature:nth-last-child(-n + 2) {
+  .feature:nth-last-child(-n + 3) {
     border-right: none;
     border-bottom: 1px solid var(--line-soft);
   }

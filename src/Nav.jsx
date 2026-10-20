@@ -44,6 +44,7 @@ export default function Nav() {
   // in place, on /impressum or /datenschutz they do a normal navigation back
   // to "/" and the browser lands on the anchor after load.
   const links = [
+    { href: '/#video', label: t('nav.examples') },
     { href: '/#features', label: t('nav.features') },
     { href: '/#audience', label: t('nav.forwho') },
     { href: '/#pricing', label: t('nav.pricing') },
