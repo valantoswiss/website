@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ChevronDown, House, Lock, Maximize2 } from 'lucide-react'
 import Seo from '../Seo.jsx'
 import { APP_REGISTER_URL } from '../links.js'
-import { softwareApplication } from '../structuredData.js'
+import { faqPage, softwareApplication } from '../structuredData.js'
 import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
 import shotRaster2160 from '../assets/screenshots/bewertung-bauteil-raster-2160.webp'
 import shotSummary2160 from '../assets/screenshots/bewertung-zusammenfassung-2160.webp'
@@ -493,12 +493,13 @@ export default function Home() {
   return (
     <>
       {/* Nur die Startseite trägt das SoftwareApplication-Schema (Funktionen,
-          Preise) – Organisation und WebSite kommen auf jeder Seite über <Seo>. */}
+          Preise) und die FAQPage (Fragen und Antworten) – Organisation und
+          WebSite kommen auf jeder Seite über <Seo>. */}
       <Seo
         title={t('meta.title')}
         description={t('meta.description')}
         path="/"
-        jsonLd={[softwareApplication]}
+        jsonLd={[softwareApplication, faqPage]}
       />
       <Hero />
       <ProductVideo />

@@ -28,9 +28,43 @@ Preis pro Benutzer und Monat, exkl. MwSt., mit Obergrenze pro Bürostandort und 
 - Bewerter: CHF 90 pro Benutzer und Monat, max. CHF 300 pro Bürostandort – Bewertungen nach Realwert, Ertragswert und Residualwert, Liegenschaften-Grunddaten, Gutachten-Dossier als PDF.
 - Spezialist: CHF 140 pro Benutzer und Monat, max. CHF 450 pro Bürostandort – alles aus Vermarkter plus Bewertungen mit Dossier.
 
+## Fragen und Antworten
+
+### Welche Bewertungsmethoden bietet Valanto?
+
+Realwert mit Altersentwertung nach Bauteilen, Ertragswert und Residualwert. Sie wählen die Methoden pro Bewertung und gewichten sie in Prozent. Ein DCF-Verfahren ist vorbereitet und wird fachlich geprüft. Ein Vergleichswertverfahren gibt es nicht.
+
+### Woher kommt der Verkehrswert?
+
+Aus Ihren Eingaben: der gewichtete Mittelwert der gewählten Methoden, abzüglich Reparaturstau und Wohnrecht, jederzeit von Hand übersteuerbar. Keine externen Preismodelle, keine hedonischen Schätzungen, keine KI im Wert. Nachvollziehbar gerechnet, nicht geschätzt.
+
+### Was kann ich exportieren?
+
+Das Gutachten als PDF (beim Abschluss archiviert), das Verkaufsdossier als PDF, das Exposé als öffentliche Seite mit Dossier-Fassung, Kontakte und Rechnungen als CSV. Word-Export gibt es nicht.
+
+### Kann ich bestehende Daten importieren?
+
+Kontakte als CSV mit Vorlage. Anfragen von Ihrer Website kommen über eine Schnittstelle direkt in Valanto. Altdaten aus einem früheren System übernehmen wir auf Anfrage für Sie. Ein Import aus dem Gebäuderegister (GWR) ist geplant.
+
+### Erscheint mein Logo im Gutachten?
+
+Ja. Logo und Akzentfarbe prägen Gutachten, Dossier, Exposé, Verkäufer-Portal, Rechnungen, Projektseite und Homepage-Widget. Dazu Kontaktfoto, Ansprechperson, Titel unter der Unterschrift und bis zu drei Verbandslogos im Dossier.
+
+### Was passiert mit meinen Daten, wenn ich kündige?
+
+Das Abo ist monatlich kündbar. Ihre Daten erhalten Sie auf Anfrage innert 30 Tagen in einem gängigen Format, danach werden sie gelöscht, soweit keine Aufbewahrungspflicht besteht. Sie können Ihr Konto auch selbst löschen. Gehostet wird in der Schweiz bei Infomaniak in Genf, mit täglichen verschlüsselten Backups.
+
+### Was ist ein Bürostandort?
+
+Ein Bürostandort entspricht einem Konto. Die Obergrenze pro Paket gilt für alle Benutzer dieses Kontos. Mehrere Standorte und Filialnetze: Pauschallösung auf Anfrage.
+
+### In welcher Sprache läuft Valanto?
+
+Deutsch. Die Oberfläche lässt sich auch auf Englisch nutzen; Gutachten, Dossiers und Rechtstexte sind auf Deutsch.
+
 ## Seiten
 
-- [Startseite](https://valanto.ch/): Funktionen, Zielgruppen und Preise
+- [Startseite](https://valanto.ch/): Funktionen, Zielgruppen, Preise sowie Fragen und Antworten
 - [Über Valanto](https://valanto.ch/ueber-uns/): Herkunft aus der Schweizer Bewertungspraxis
 - [Kontakt](https://valanto.ch/kontakt/): Kontaktformular und Adresse
 - [Impressum](https://valanto.ch/impressum/): Betreiberin, Handelsregister, UID

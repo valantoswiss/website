@@ -7,6 +7,8 @@
    nachziehen. Preise gelten pro Benutzer und Monat mit Obergrenze je Paket und
    Bürostandort (Stand 17.10.2026). */
 
+import de from './locales/de.json'
+
 const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://valanto.ch').replace(/\/$/, '')
 
 export const organization = {
@@ -117,4 +119,20 @@ export const softwareApplication = {
         'Max. CHF 450 pro Bürostandort und Monat.',
     ),
   ],
+}
+
+/* FAQPage aus denselben Locale-Texten wie die Sektion «Fragen und Antworten»
+   (de.json, faq.items). Die Seite liefert DE aus, Fragen und Antworten sind
+   damit zeichengleich zur Seite. public/llms.txt führt dieselben acht Paare. */
+export const faqPage = {
+  '@type': 'FAQPage',
+  '@id': `${SITE_URL}/#faq`,
+  url: `${SITE_URL}/#faq`,
+  inLanguage: 'de-CH',
+  isPartOf: { '@id': website['@id'] },
+  mainEntity: de.faq.items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 }
