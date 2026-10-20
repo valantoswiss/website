@@ -1,29 +1,32 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
+import { House, Lock, Maximize2 } from 'lucide-react'
 import Seo from '../Seo.jsx'
 import { APP_REGISTER_URL } from '../links.js'
 import { softwareApplication } from '../structuredData.js'
 import heroCover from '../assets/screenshots/hero-gutachten-cover.webp'
-import shotRaster1080 from '../assets/screenshots/bewertung-bauteil-raster-1080.webp'
 import shotRaster2160 from '../assets/screenshots/bewertung-bauteil-raster-2160.webp'
-import shotSummary1080 from '../assets/screenshots/bewertung-zusammenfassung-1080.webp'
 import shotSummary2160 from '../assets/screenshots/bewertung-zusammenfassung-2160.webp'
+import cropRaster1080 from '../assets/screenshots/bewertung-raster-ausschnitt-1080.webp'
+import cropRaster1320 from '../assets/screenshots/bewertung-raster-ausschnitt-1320.webp'
+import cropSummary1080 from '../assets/screenshots/bewertung-resultat-ausschnitt-1080.webp'
+import cropSummary1320 from '../assets/screenshots/bewertung-resultat-ausschnitt-1320.webp'
+import audVermarkter1080 from '../assets/screenshots/zielgruppe-vermarkter-1080.webp'
+import audVermarkter1440 from '../assets/screenshots/zielgruppe-vermarkter-1440.webp'
+import audBewerter1080 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1080.webp'
+import audBewerter1585 from '../assets/screenshots/zielgruppe-bewerter-gutachten-1585.webp'
+import audDossier1080 from '../assets/screenshots/zielgruppe-spezialist-dossier-1080.webp'
+import audDossier1300 from '../assets/screenshots/zielgruppe-spezialist-dossier-1300.webp'
+import audExpose800 from '../assets/screenshots/zielgruppe-spezialist-expose-800.webp'
+import audExpose1200 from '../assets/screenshots/zielgruppe-spezialist-expose-1200.webp'
 
-const IconLock = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
-    <rect x="4" y="10.5" width="16" height="10.5" /><path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3" />
-  </svg>
-)
-const IconHouse = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" style={{ flex: 'none' }}>
-    <path d="M4 11 12 4l8 7" /><path d="M6 10.5V20h12v-9.5" />
-  </svg>
-)
+// Lucide (Entscheid Fabian 17.10.): Strichstärke 1.75, ohne Füllung.
+const ICON_PROPS = { size: 26, strokeWidth: 1.75, fill: 'none', 'aria-hidden': true, style: { flex: 'none' } }
 // positionsbasiert zu siv.points: Schloss = Datenschutz, Haus = Praxis.
 // Das Schweizerkreuz ist hier raus – es sass an der gestrichenen Hosting-Karte,
 // und C3 verbietet Icon-Farbflächen.
-const SIV_ICONS = [IconLock, IconHouse]
+const SIV_ICONS = [Lock, House]
 
 /* Lightbox als natives <dialog> (Review 17.10.): showModal() setzt den Fokus in
    den Dialog, sperrt den Hintergrund und gibt den Fokus beim Schliessen an den
@@ -207,10 +210,13 @@ function ProductVideo() {
   )
 }
 
-/* Echte Produkt-Screenshots zur Feature-Karte „Bewertungen mit Dossier" (Issue #5) */
+/* Echte Produkt-Screenshots zur Feature-Karte „Bewertungen mit Dossier" (Issue #5).
+   Auf der Seite stehen Ausschnitte statt Ganzseiten: Bei 1440 px liegt die
+   Tabellenschrift über 11 px, Hilfetext und %-Zeichen im Raster bei rund
+   10 px. Die Lightbox zeigt weiterhin die ganze Ansicht. */
 const PRODUCT_SHOTS = [
-  { key: 'raster', small: shotRaster1080, large: shotRaster2160 },
-  { key: 'summary', small: shotSummary1080, large: shotSummary2160 },
+  { key: 'raster', small: cropRaster1080, large: cropRaster1320, width: 1320, height: 1385, full: shotRaster2160 },
+  { key: 'summary', small: cropSummary1080, large: cropSummary1320, width: 1320, height: 1122, full: shotSummary2160 },
 ]
 
 function Features() {
@@ -246,18 +252,22 @@ function Features() {
                 <button
                   type="button"
                   className="shot__zoom"
-                  onClick={() => setLightboxShot({ src: s.large, alt, caption })}
+                  onClick={() => setLightboxShot({ src: s.full, alt, caption })}
                   aria-label={t('shots.zoom')}
                 >
                   <img
                     src={s.small}
-                    srcSet={`${s.small} 1080w, ${s.large} 2160w`}
+                    srcSet={`${s.small} 1080w, ${s.large} ${s.width}w`}
                     sizes="(max-width: 760px) 92vw, 45vw"
-                    alt={alt}
-                    width="1080"
-                    height="1250"
+                    alt={t(`shots.${s.key}.cropAlt`)}
+                    width={s.width}
+                    height={s.height}
                     loading="lazy"
                   />
+                  {/* Petrol-Ecke am Rahmen: zeigt, dass es die ganze Ansicht gibt */}
+                  <span className="shot__hint" aria-hidden="true">
+                    <Maximize2 size={18} strokeWidth={1.75} fill="none" />
+                  </span>
                 </button>
                 <figcaption className="shot__caption">{caption}</figcaption>
               </figure>
@@ -277,6 +287,29 @@ function Features() {
   )
 }
 
+/* Je Zielgruppe ein Produktbild, positionsbasiert zu audience.items:
+   Vermarkter = Neubauprojekt-Landingpage, Bewerter = Gutachten-Seite
+   «Berechnung Verkehrswert», Spezialist = Verkaufsdokumentation plus Exposé.
+   Die Reihen wechseln die Bildseite, damit kein Kastenraster entsteht. */
+const AUDIENCE_MEDIA = [
+  {
+    layout: 'wide',
+    imgs: [{ src: audVermarkter1080, srcSet: `${audVermarkter1080} 1080w, ${audVermarkter1440} 1440w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1440, height: 610, altKey: 'alt' }],
+  },
+  {
+    layout: 'flip',
+    imgs: [{ src: audBewerter1080, srcSet: `${audBewerter1080} 1080w, ${audBewerter1585} 1585w`, sizes: '(max-width: 760px) 92vw, 55vw', width: 1585, height: 420, altKey: 'alt', part: 'paper' }],
+  },
+  {
+    layout: 'combo',
+    imgs: [
+      { src: audDossier1080, srcSet: `${audDossier1080} 1080w, ${audDossier1300} 1300w`, sizes: '(max-width: 760px) 78vw, 48vw', width: 1300, height: 916, altKey: 'alt', part: 'main' },
+      { src: audExpose800, srcSet: `${audExpose800} 800w, ${audExpose1200} 1200w`, sizes: '(max-width: 760px) 55vw, 32vw', width: 1200, height: 583, altKey: 'alt2', part: 'inset' },
+    ],
+  },
+]
+
+/* Bühne auf Anthrazit wie der Abschluss (Entscheid Fabian 20.10.2026). */
 function Audience() {
   const { t } = useTranslation()
   const items = t('audience.items', { returnObjects: true })
@@ -286,14 +319,36 @@ function Audience() {
         <div className="audience__head">
           <h2 className="h2">{t('audience.h2')}</h2>
         </div>
-        <div className="audience__grid">
-          {items.map((a, i) => (
-            <div className={`aud ${i === 1 ? 'aud--mid' : ''}`} key={i}>
-              <h3 className="aud__role">{a.role}</h3>
-              <div className="aud__rule" />
-              <p className="aud__text">{a.text}</p>
-            </div>
-          ))}
+        <div className="audience__rows">
+          {items.map((a, i) => {
+            const media = AUDIENCE_MEDIA[i]
+            return (
+              <div className={`aud aud--${media?.layout ?? 'wide'}`} key={i}>
+                <div className="aud__copy">
+                  <h3 className="aud__role">{a.role}</h3>
+                  <div className="aud__rule" />
+                  <p className="aud__text">{a.text}</p>
+                </div>
+                {media && (
+                  <figure className={`aud__media aud__media--${media.layout}`}>
+                    {media.imgs.map((img) => (
+                      <img
+                        key={img.altKey}
+                        className={`aud__img${img.part ? ` aud__img--${img.part}` : ''}`}
+                        src={img.src}
+                        srcSet={img.srcSet}
+                        sizes={img.sizes}
+                        alt={a[img.altKey]}
+                        width={img.width}
+                        height={img.height}
+                        loading="lazy"
+                      />
+                    ))}
+                  </figure>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -369,7 +424,7 @@ function Siv() {
             const Icon = SIV_ICONS[i]
             return (
               <div className="sivrow" key={i}>
-                <span className="sivrow__icon">{Icon ? <Icon /> : null}</span>
+                <span className="sivrow__icon">{Icon ? <Icon {...ICON_PROPS} /> : null}</span>
                 <div>
                   <div className="sivrow__title">{p.t}</div>
                   <div className="sivrow__desc">{p.d}</div>

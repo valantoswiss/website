@@ -4,11 +4,13 @@
     "close": "Close",
     "raster": {
       "alt": "Calculation step in the Valanto wizard: detailed age depreciation with component grid – shares, lifespans, depreciation rates and CHF deductions per component",
-      "caption": "Age depreciation in detail: component grid with rates and deductions per component."
+      "caption": "Age depreciation in detail: component grid with rates and deductions per component.",
+      "cropAlt": "Detail of the component grid: base structure and building envelope with shares, lifespans, depreciation rates and CHF deductions"
     },
     "summary": {
       "alt": "Summary step in the Valanto wizard with gross yield and the final market value",
-      "caption": "Summary with gross yield and final market value."
+      "caption": "Summary with gross yield and final market value.",
+      "cropAlt": "Detail of the summary: building right, automatic market value, applied market value and gross yield"
     }
   },
   "meta": {
@@ -56,9 +58,9 @@
   "audience": {
     "h2": "Built for your work",
     "items": [
-      { "role": "Marketer", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs." },
-      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported." },
-      { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules." }
+      { "role": "Marketer", "text": "Market, steer projects, keep sellers up to date – without constantly switching programs.", "alt": "Building illustration of a new-build project with the note “3 of 12 flats still available”" },
+      { "role": "Valuer", "text": "Traceable valuations with a professional dossier. Quickly created, cleanly exported.", "alt": "Valuation report page “Market value calculation” with intrinsic value, income value, weighted value and applied market value" },
+      { "role": "Specialist", "text": "You do both? Then with Valanto you have everything on one continuous platform – with all modules.", "alt": "Cover page of a Valanto sales brochure with property photo, title and asking price", "alt2": "Detail of a public exposé with property type, condition, year of construction and asking price" }
     ]
   },
   "pricing": {
