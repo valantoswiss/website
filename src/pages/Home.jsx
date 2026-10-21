@@ -213,12 +213,15 @@ function ProductVideo() {
 }
 
 /* Echte Produkt-Screenshots zur Feature-Karte „Bewertungen mit Dossier" (Issue #5).
-   Auf der Seite stehen Ausschnitte statt Ganzseiten: Bei 1440 px liegt die
-   Tabellenschrift über 11 px, Hilfetext und %-Zeichen im Raster bei rund
-   10 px. Die Lightbox zeigt weiterhin die ganze Ansicht. */
+   Seit 21.10.2026 vom Beispielobjekt Seestrasse 14 (Verkehrswert CHF 1'240'000)
+   wie Hero, Dossier und Bewerter-Blatt. Auf der Seite stehen Ausschnitte statt
+   Ganzseiten: Karteninhalt aus einer 860-px-Aufnahme (Faktor 2), um 10 % auf
+   1320 px verkleinert; bei 1440 px liegt die Tabellenschrift über 12 px,
+   Hilfetext und %-Zeichen bei rund 10 px. Die Lightbox zeigt weiterhin die
+   ganze Ansicht (Aufnahme bei 1080 px, gleiche Werte). */
 const PRODUCT_SHOTS = [
-  { key: 'raster', small: cropRaster1080, large: cropRaster1320, width: 1320, height: 1385, full: shotRaster2160 },
-  { key: 'summary', small: cropSummary1080, large: cropSummary1320, width: 1320, height: 1122, full: shotSummary2160 },
+  { key: 'raster', small: cropRaster1080, large: cropRaster1320, width: 1320, height: 1173, full: shotRaster2160 },
+  { key: 'summary', small: cropSummary1080, large: cropSummary1320, width: 1320, height: 1093, full: shotSummary2160 },
 ]
 
 function Features() {
@@ -313,7 +316,7 @@ const AUDIENCE_MEDIA = [
     layout: 'combo',
     imgs: [
       { src: audDossier1080, srcSet: `${audDossier1080} 1080w, ${audDossier1300} 1300w`, sizes: '(max-width: 760px) 78vw, 48vw', width: 1300, height: 916, altKey: 'alt', part: 'main' },
-      { src: audExpose800, srcSet: `${audExpose800} 800w, ${audExpose1200} 1200w`, sizes: '(max-width: 760px) 55vw, 32vw', width: 1200, height: 583, altKey: 'alt2', part: 'inset' },
+      { src: audExpose800, srcSet: `${audExpose800} 800w, ${audExpose1200} 1200w`, sizes: '(max-width: 760px) 55vw, 32vw', width: 1200, height: 620, altKey: 'alt2', part: 'inset' },
     ],
   },
 ]
