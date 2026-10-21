@@ -316,7 +316,7 @@ const AUDIENCE_MEDIA = [
     layout: 'combo',
     imgs: [
       { src: audDossier1080, srcSet: `${audDossier1080} 1080w, ${audDossier1300} 1300w`, sizes: '(max-width: 760px) 78vw, 48vw', width: 1300, height: 916, altKey: 'alt', part: 'main' },
-      { src: audExpose800, srcSet: `${audExpose800} 800w, ${audExpose1200} 1200w`, sizes: '(max-width: 760px) 55vw, 32vw', width: 1200, height: 583, altKey: 'alt2', part: 'inset' },
+      { src: audExpose800, srcSet: `${audExpose800} 800w, ${audExpose1200} 1200w`, sizes: '(max-width: 760px) 55vw, 32vw', width: 1200, height: 620, altKey: 'alt2', part: 'inset' },
     ],
   },
 ]
