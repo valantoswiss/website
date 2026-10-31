@@ -9,7 +9,7 @@ Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). Hosting seit 12.08.2
 ## Typografie (verbindlich, Vorgabe Fabian 18.07.2026)
 
 - Gedankenstrich ist immer der Halbgeviertstrich «–» (U+2013), nie der Em-Dash «—» (U+2014) – deutsche Typografie.
-- Gilt überall: Locales (DE/FR/EN), Rechtsseiten, Mailtexte (`api/kontakt.js`), Metas, Kommentare sowie Commit-/PR-/Issue-Texte. Gleiche Regel im Repo `valantoswiss/app` (dortige CLAUDE.md).
+- Gilt überall: Locales (DE/FR/EN), Rechtsseiten, Metas, Kommentare sowie Commit-/PR-/Issue-Texte. Gleiche Regel im Repo `valantoswiss/app` (dortige CLAUDE.md).
 
 ## Design-Konventionen
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Seo from '../Seo.jsx'
+import { contactEndpoint } from '../links.js'
 
 export default function Kontakt() {
   const { t } = useTranslation()
@@ -13,7 +14,7 @@ export default function Kontakt() {
 
     setStatus('sending')
     try {
-      const response = await fetch('/api/kontakt', {
+      const response = await fetch(contactEndpoint(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -22,7 +23,7 @@ export default function Kontakt() {
       if (response.ok) {
         setStatus('success')
       } else if (response.status === 503) {
-        // SMTP-Zugangsdaten noch nicht hinterlegt → E-Mail-Fallback zeigen.
+        // Kein Support-Eingang in der App gesetzt → E-Mail-Fallback zeigen.
         setStatus('unavailable')
       } else {
         setStatus('error')
