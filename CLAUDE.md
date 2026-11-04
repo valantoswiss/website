@@ -26,5 +26,5 @@ Marketing-Site (Vite/React, vite-react-ssg, i18n DE/FR/EN). Hosting seit 12.08.2
 
 ## Inhalte
 
-- Produkt-Screenshots: Rohlinge liegen bei Fabian in `Desktop/valanto-screenshots/`; Demo-Mandant, Gutachter-Block im Gutachten-Deckblatt neutralisiert («Muster Immobilien AG»). Keine Demo-E-Mail (`test@example.com`) und kein «Valanto Demo AG» in Bildern.
+- Produkt-Screenshots: Rohlinge liegen bei Fabian in `Claude/valanto/medien/valanto-screenshots/`; Demo-Mandant, Gutachter-Block im Gutachten-Deckblatt neutralisiert («Muster Immobilien AG»). Keine Demo-E-Mail (`test@example.com`) und kein «Valanto Demo AG» in Bildern.
 - Sprachumschalter ist deaktiviert, FR/EN-Locales werden aber mitgepflegt.
